@@ -1,38 +1,65 @@
 import UIKit
 
 
-struct Level {
-    static var highestLevel = 1
-    let id: Int
-    var boss: String
-    var unlocked: Bool {
-        didSet {
-            if unlocked && id > Self.highestLevel {
-                Self.highestLevel = id
-            }
+//Challenge 1: Character count
+func countChar(_ str : String) -> String {
+    var charr = Array(str)
+    charr.sort()
+    return String(charr)
+}
+print(countChar("0918736472"))
+
+
+
+//Challenge 2: Word count
+func countWord(_ str : String) {
+    var i = 0
+    for _ in str {
+        i += 1
+    }
+    print("độ dài của chuỗi là : \(i)")
+}
+countWord("sacbdsskkaksdjifjie")
+
+
+// Challenge 3: Name formatter
+func format(_ str : String) {
+    let p = str.firstIndex(of: ",")!
+    let space  = str.firstIndex(of: " ")!
+    let char1 = str[..<p]
+    let char2 = str[str.index(after: space)...]
+    let a = char2 + " " + char1
+    print(a)
+}
+format("Galloway, Matt")
+
+
+//Challenge 4: Components
+func componentString(_ str: String) {
+    var c = str.components(separatedBy: ",")
+    print(c)
+}
+componentString("ksdm, cnabc, acn, cgon")
+
+
+//Challenge 5: Word reverser
+func revert(_ str : String) {
+    var str2 = ""
+    var cache = ""
+    for i in str.indices {
+        if str.index(str.startIndex,offsetBy: str.count - 1) == i {
+            str2 += String(str[i])
+            str2 += cache.reversed() + " "
+            break
+        }
+        if str[i] == " "  {
+            str2 += cache.reversed() + " "
+            cache = ""
+        }
+        else {
+            cache += String(str[i])
         }
     }
-    var height: Double = 10
-    var width: Double = 10
-    var diagonal: Int {
-        return Int((height * height + width * width).squareRoot().rounded())
-    }
+    print(str2)
 }
-var level = Level(id: 10, boss: "AK",unlocked: true)
-level.unlocked = false
-level.diagonal
-
-
-
-enum WithdrawalResult {
-    case success(newBalance: Int)
-    case error(message: String)
-}
-func withdraw(amount: Int) -> WithdrawalResult {
-    if amount <= 1000 {
-        print("oke")
-        return .success(newBalance: 1)
-    } else {
-        return .error(message: "Not enough money!")
-    }
-}
+revert("My dog is called Rover")
