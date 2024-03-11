@@ -47,7 +47,7 @@ func revert(_ str : String) {
     var str2 = ""
     var cache = ""
     for i in str.indices {
-        if str.index(str.startIndex,offsetBy: str.count - 1) == i {
+        if str.index(str.startIndex, offsetBy: str.count - 1) == i {
             str2 += String(str[i])
             str2 += cache.reversed() + " "
             break

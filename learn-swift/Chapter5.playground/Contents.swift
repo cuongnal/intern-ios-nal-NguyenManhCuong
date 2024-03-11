@@ -29,7 +29,7 @@ print("La so nguyen to : \(check(997)!)")
 
 //Challenge 3 . Fibonacy
 func fibo(n: Int) -> Int {
-    if(n==2 || n==1) {
+    if n==2 || n==1 {
         return 1
     }
     return fibo(n:n-1) + fibo(n:n-2)
