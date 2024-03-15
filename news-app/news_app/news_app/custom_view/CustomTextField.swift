@@ -15,7 +15,7 @@ class CustomTextField : UITextField {
     }
     func baselineOffsetFromBottom () {
         let bottom = CALayer()
-        bottom.frame = CGRect(x: 0, y: self.frame.height, width: self.frame.width, height: 1)
+        bottom.frame = CGRect(x: 0, y: self.frame.height * 0.8, width: self.frame.width, height: 1)
         bottom.backgroundColor = UIColor.black.cgColor
         
         self.layer.addSublayer(bottom)

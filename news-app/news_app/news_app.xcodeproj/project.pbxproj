@@ -17,6 +17,8 @@
 		AD8DBBFC2B9AE9300070D7A7 /* news_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DBBFB2B9AE9300070D7A7 /* news_appUITests.swift */; };
 		AD8DBBFE2B9AE9300070D7A7 /* news_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DBBFD2B9AE9300070D7A7 /* news_appUITestsLaunchTests.swift */; };
 		AD8DBC0D2B9B10680070D7A7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DBC0C2B9B10680070D7A7 /* CustomTextField.swift */; };
+		AD8DBC132B9EE89B0070D7A7 /* ButtonLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DBC122B9EE89B0070D7A7 /* ButtonLogin.swift */; };
+		AD8DBC162B9EF5090070D7A7 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DBC152B9EF5090070D7A7 /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		AD8DBBFB2B9AE9300070D7A7 /* news_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = news_appUITests.swift; sourceTree = "<group>"; };
 		AD8DBBFD2B9AE9300070D7A7 /* news_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = news_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		AD8DBC0C2B9B10680070D7A7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		AD8DBC122B9EE89B0070D7A7 /* ButtonLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLogin.swift; sourceTree = "<group>"; };
+		AD8DBC152B9EF5090070D7A7 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 		AD8DBBD92B9AE92A0070D7A7 /* news_app */ = {
 			isa = PBXGroup;
 			children = (
+				AD8DBC142B9EF4C40070D7A7 /* extension */,
 				AD8DBC0B2B9B0FE30070D7A7 /* custom_view */,
 				AD8DBC0A2B9B0E2E0070D7A7 /* controller */,
 				AD8DBBDA2B9AE92A0070D7A7 /* AppDelegate.swift */,
@@ -142,8 +147,17 @@
 			isa = PBXGroup;
 			children = (
 				AD8DBC0C2B9B10680070D7A7 /* CustomTextField.swift */,
+				AD8DBC122B9EE89B0070D7A7 /* ButtonLogin.swift */,
 			);
 			path = custom_view;
+			sourceTree = "<group>";
+		};
+		AD8DBC142B9EF4C40070D7A7 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				AD8DBC152B9EF5090070D7A7 /* Extension.swift */,
+			);
+			path = extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,7 +292,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD8DBC0D2B9B10680070D7A7 /* CustomTextField.swift in Sources */,
+				AD8DBC162B9EF5090070D7A7 /* Extension.swift in Sources */,
 				AD8DBBDF2B9AE92A0070D7A7 /* SignUpController.swift in Sources */,
+				AD8DBC132B9EE89B0070D7A7 /* ButtonLogin.swift in Sources */,
 				AD8DBBDB2B9AE92A0070D7A7 /* AppDelegate.swift in Sources */,
 				AD8DBBDD2B9AE92A0070D7A7 /* SceneDelegate.swift in Sources */,
 			);
