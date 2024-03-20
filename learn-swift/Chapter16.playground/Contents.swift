@@ -17,14 +17,15 @@ protocol TanksAndCages {
 }
 
 class Bird : PetsCanFly{
-    func caged() {
+     func caged() {
         print("Đây là bird")
     }
     
-    func bed() {
+     func bed() {
         print("Đã cho bird ăn")
     }
 }
+
 class Dog : PetsCanWalk {
     func exercise() {
         print("Đây là Dog")

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD0914172BA8129900287227 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0914162BA8129900287227 /* Constant.swift */; };
 		AD8DBBDB2B9AE92A0070D7A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DBBDA2B9AE92A0070D7A7 /* AppDelegate.swift */; };
 		AD8DBBDD2B9AE92A0070D7A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DBBDC2B9AE92A0070D7A7 /* SceneDelegate.swift */; };
 		AD8DBBDF2B9AE92A0070D7A7 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DBBDE2B9AE92A0070D7A7 /* SignUpController.swift */; };
@@ -19,6 +20,13 @@
 		AD8DBC0D2B9B10680070D7A7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DBC0C2B9B10680070D7A7 /* CustomTextField.swift */; };
 		AD8DBC132B9EE89B0070D7A7 /* ButtonLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DBC122B9EE89B0070D7A7 /* ButtonLogin.swift */; };
 		AD8DBC162B9EF5090070D7A7 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DBC152B9EF5090070D7A7 /* Extension.swift */; };
+		ADA2C3F42BA9329B009E4F7C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA2C3F32BA9329B009E4F7C /* HomeViewController.swift */; };
+		ADE00F9E2BA98D1C0041DE42 /* ItemCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE00F9D2BA98D1C0041DE42 /* ItemCollectionView.swift */; };
+		ADE00FEA2BAAB9B50041DE42 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE00FE92BAAB9B50041DE42 /* HomeCollectionViewCell.swift */; };
+		ADE00FEC2BAABD9C0041DE42 /* HomeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE00FEB2BAABD9C0041DE42 /* HomeCollectionView.swift */; };
+		ADE00FF02BAAD4800041DE42 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE00FEF2BAAD4800041DE42 /* HomeTableViewCell.swift */; };
+		ADE00FF32BAAE01A0041DE42 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE00FF22BAAE01A0041DE42 /* News.swift */; };
+		ADE00FF52BAAE4210041DE42 /* HomeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE00FF42BAAE4210041DE42 /* HomeTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD0914162BA8129900287227 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		AD8DBBD72B9AE92A0070D7A7 /* news_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = news_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD8DBBDA2B9AE92A0070D7A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD8DBBDC2B9AE92A0070D7A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +64,13 @@
 		AD8DBC0C2B9B10680070D7A7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		AD8DBC122B9EE89B0070D7A7 /* ButtonLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLogin.swift; sourceTree = "<group>"; };
 		AD8DBC152B9EF5090070D7A7 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		ADA2C3F32BA9329B009E4F7C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../SignUp/HomeViewController.swift; sourceTree = "<group>"; };
+		ADE00F9D2BA98D1C0041DE42 /* ItemCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionView.swift; sourceTree = "<group>"; };
+		ADE00FE92BAAB9B50041DE42 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		ADE00FEB2BAABD9C0041DE42 /* HomeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionView.swift; sourceTree = "<group>"; };
+		ADE00FEF2BAAD4800041DE42 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		ADE00FF22BAAE01A0041DE42 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		ADE00FF42BAAE4210041DE42 /* HomeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD0914152BA8128A00287227 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				AD0914162BA8129900287227 /* Constant.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		AD8DBBCE2B9AE92A0070D7A7 = {
 			isa = PBXGroup;
 			children = (
@@ -105,9 +129,10 @@
 		AD8DBBD92B9AE92A0070D7A7 /* news_app */ = {
 			isa = PBXGroup;
 			children = (
-				AD8DBC142B9EF4C40070D7A7 /* extension */,
-				AD8DBC0B2B9B0FE30070D7A7 /* custom_view */,
-				AD8DBC0A2B9B0E2E0070D7A7 /* controller */,
+				AD0914152BA8128A00287227 /* Base */,
+				AD8DBC142B9EF4C40070D7A7 /* Extension */,
+				ADE00FF82BAAF4270041DE42 /* Api */,
+				ADA2C3F52BA93E9A009E4F7C /* View */,
 				AD8DBBDA2B9AE92A0070D7A7 /* AppDelegate.swift */,
 				AD8DBBDC2B9AE92A0070D7A7 /* SceneDelegate.swift */,
 				AD8DBBE02B9AE92A0070D7A7 /* Main.storyboard */,
@@ -135,29 +160,84 @@
 			path = news_appUITests;
 			sourceTree = "<group>";
 		};
-		AD8DBC0A2B9B0E2E0070D7A7 /* controller */ = {
+		AD8DBC0A2B9B0E2E0070D7A7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AD8DBBDE2B9AE92A0070D7A7 /* SignUpController.swift */,
+				ADE00FF62BAAE57E0041DE42 /* SignUp */,
+				ADE00FE82BAAB9760041DE42 /* Home */,
 			);
-			path = controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
-		AD8DBC0B2B9B0FE30070D7A7 /* custom_view */ = {
+		AD8DBC0B2B9B0FE30070D7A7 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
 				AD8DBC0C2B9B10680070D7A7 /* CustomTextField.swift */,
 				AD8DBC122B9EE89B0070D7A7 /* ButtonLogin.swift */,
+				ADE00F9D2BA98D1C0041DE42 /* ItemCollectionView.swift */,
 			);
-			path = custom_view;
+			path = CustomView;
 			sourceTree = "<group>";
 		};
-		AD8DBC142B9EF4C40070D7A7 /* extension */ = {
+		AD8DBC142B9EF4C40070D7A7 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				AD8DBC152B9EF5090070D7A7 /* Extension.swift */,
 			);
-			path = extension;
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		ADA2C3F52BA93E9A009E4F7C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AD8DBC0B2B9B0FE30070D7A7 /* CustomView */,
+				AD8DBC0A2B9B0E2E0070D7A7 /* Controller */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ADE00FE82BAAB9760041DE42 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				ADA2C3F32BA9329B009E4F7C /* HomeViewController.swift */,
+				ADE00FE92BAAB9B50041DE42 /* HomeCollectionViewCell.swift */,
+				ADE00FEB2BAABD9C0041DE42 /* HomeCollectionView.swift */,
+				ADE00FEF2BAAD4800041DE42 /* HomeTableViewCell.swift */,
+				ADE00FF42BAAE4210041DE42 /* HomeTableView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		ADE00FF12BAADFF20041DE42 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ADE00FF22BAAE01A0041DE42 /* News.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ADE00FF62BAAE57E0041DE42 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				AD8DBBDE2B9AE92A0070D7A7 /* SignUpController.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		ADE00FF72BAAF4140041DE42 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		ADE00FF82BAAF4270041DE42 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				ADE00FF12BAADFF20041DE42 /* Model */,
+				ADE00FF72BAAF4140041DE42 /* Repository */,
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,11 +371,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADE00FF52BAAE4210041DE42 /* HomeTableView.swift in Sources */,
 				AD8DBC0D2B9B10680070D7A7 /* CustomTextField.swift in Sources */,
+				ADE00F9E2BA98D1C0041DE42 /* ItemCollectionView.swift in Sources */,
 				AD8DBC162B9EF5090070D7A7 /* Extension.swift in Sources */,
+				ADE00FEC2BAABD9C0041DE42 /* HomeCollectionView.swift in Sources */,
+				AD0914172BA8129900287227 /* Constant.swift in Sources */,
 				AD8DBBDF2B9AE92A0070D7A7 /* SignUpController.swift in Sources */,
+				ADE00FF02BAAD4800041DE42 /* HomeTableViewCell.swift in Sources */,
+				ADE00FEA2BAAB9B50041DE42 /* HomeCollectionViewCell.swift in Sources */,
+				ADA2C3F42BA9329B009E4F7C /* HomeViewController.swift in Sources */,
 				AD8DBC132B9EE89B0070D7A7 /* ButtonLogin.swift in Sources */,
 				AD8DBBDB2B9AE92A0070D7A7 /* AppDelegate.swift in Sources */,
+				ADE00FF32BAAE01A0041DE42 /* News.swift in Sources */,
 				AD8DBBDD2B9AE92A0070D7A7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

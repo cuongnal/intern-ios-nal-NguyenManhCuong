@@ -20,31 +20,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
-        // Called as the scene is being released by the system.
-        // This occurs shortly after the scene enters the background, or when its session is discarded.
-        // Release any resources associated with this scene that can be re-created the next time the scene connects.
-        // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
+//        Hàm này được gọi khi scene đang được giải phóng bởi hệ thống.
+//        Thường được sử dụng để giải phóng bất kỳ tài nguyên nào liên quan đến scene này mà có thể được tạo lại khi scene kết nối lại sau này.
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
-        // chuyển từ inActive sang Active
-        // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+//        Hàm này được gọi khi scene chuyển từ trạng thái không hoạt động sang trạng thái hoạt động.
+//        Trong hàm này, bạn có thể khởi động lại bất kỳ tác vụ nào đã tạm dừng hoặc chưa được bắt đầu khi scene không hoạt động.
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
-        // Called when the scene will move from an active state to an inactive state.
-        // This may occur due to temporary interruptions (ex. an incoming phone call).
+//        Hàm này được gọi khi scene sắp chuyển từ trạng thái hoạt động sang trạng thái không hoạt động.
+//        Thường được sử dụng để chuẩn bị cho bất kỳ gián đoạn tạm thời nào có thể xảy ra, chẳng hạn như một cuộc gọi điện thoại đến.
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
-        // Called as the scene transitions from the background to the foreground.
-        // Use this method to undo the changes made on entering the background.
+//        Hàm này được gọi khi scene chuyển từ nền sang phía trước.
+//        Thường được sử dụng để hoàn tác các thay đổi đã thực hiện khi ứng dụng chuyển sang nền.
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
-        // Called as the scene transitions from the foreground to the background.
-        // Use this method to save data, release shared resources, and store enough scene-specific state information
-        // to restore the scene back to its current state.
+//        Hàm này được gọi khi scene chuyển từ phía trước sang nền.
+//        Thường được sử dụng để lưu dữ liệu, giải phóng tài nguyên chia sẻ, và lưu trạng thái cụ thể của scene để khôi phục lại scene vào trạng thái hiện tại của nó.
     }
 
 

@@ -22,3 +22,4 @@ func chall4() -> Void {
    print(a)
 }
 chall4()
+@IBAction

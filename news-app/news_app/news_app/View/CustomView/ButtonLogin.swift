@@ -17,9 +17,9 @@ class ButtonLogin: UIButton {
     }
     func customButton() {
         layer.cornerRadius = 20
-        layer.backgroundColor = UIColor.gray.cgColor
+        layer.backgroundColor = Constant.COLOR_SIGN_UP_GRAY.cgColor
+        layer.borderColor = UIColor.black.cgColor
     }
   
-
 }
 

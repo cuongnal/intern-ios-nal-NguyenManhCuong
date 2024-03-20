@@ -26,3 +26,18 @@ c = nil
 
 //Challenge 4: To subclass or not
 // trong trường hợp này. nên tạo 1 lớp subclass StudentAthlete. như vậy sẽ sử dụng lại được các thuộc tính của StudentBaseballPlayer mà không cần viết lại các thuộc tính. điều đó sẽ giúp code gọn hơn
+
+
+protocol Animal {
+    func cag()
+}
+class Dog : Animal {
+    func cag() {
+        print("Đây là dog")
+    }
+}
+class DogHuckey : Dog {
+    override func cag() {
+        super.cag()
+    }
+}

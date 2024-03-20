@@ -34,3 +34,14 @@ let a = 4
 let b: Int32 = 100
 let c: UInt8 = 12
 // giá trị của a là 4, b là 100, c là 12
+
+
+
+func ifGruad(a: Int) {
+    guard a == 10 else {
+        print("không thành công")
+        return
+    }
+    print("thành công")
+}
+ifGruad(a: 10)
