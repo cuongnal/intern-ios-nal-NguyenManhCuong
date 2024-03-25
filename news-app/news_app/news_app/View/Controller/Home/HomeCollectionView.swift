@@ -36,7 +36,7 @@ class HomeCollectionView : UICollectionView, UICollectionViewDelegateFlowLayout,
         
         onClickCallBack!(list[indexPath.row])
     }
-
+    
     var list : [Category] = []
     
 }

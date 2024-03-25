@@ -1,14 +1,13 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  news_app
 //
-//  Created by hiepnv1 on 08/03/2024.
+//  Created by hiepnv1 on 25/03/2024.
 //
 
+import Foundation
 import UIKit
-import SwiftUI
-class SignUpController: UIViewController {
-    
+class SignInController : UIViewController{
     
     @IBOutlet weak var labelPassword: UILabel!
     @IBOutlet weak var labelEmail: UILabel!
@@ -16,7 +15,9 @@ class SignUpController: UIViewController {
     @IBOutlet weak var inputPassword: CustomTextField!
     @IBOutlet weak var inputEmail: CustomTextField!
     
-    @IBOutlet weak var btnSignUp: ButtonLogin!
+    @IBOutlet weak var labelForgotPassword: UILabel!
+    @IBOutlet weak var btnSignIn: ButtonLogin!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         inputPassword.enablePasswordToggle()
@@ -24,18 +25,22 @@ class SignUpController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
         
-        btnSignUp.addTarget(self, action: #selector(onTouchBtnSignUpButton), for: .touchUpInside)
+        btnSignIn.addTarget(self, action: #selector(onTouchBtnSignUpButton), for: .touchUpInside)
+    }
+    
+    @objc private func onTapForgotPassword() {
+        guard let signIn = storyboard?.instantiateViewController(withIdentifier: "signIn") else {return}
+        
+        self.addChild(signIn)
+        signIn.didMove(toParent: self)
+        self.view.addSubview(signIn.view)
+        signIn.view.didMoveToSuperview()
     }
     
     @objc private func onTouchBtnSignUpButton() {
         guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "home") else {return}
         self.removeFromParent()
         self.view.removeFromSuperview()
-        
-//        self.addChild(homeVC)
-//        homeVC.didMove(toParent: self)
-//        self.view.addSubview(homeVC.view)
-//        homeVC.view.didMoveToSuperview()
         
         guard let window = UIApplication.shared.windows.first else { return }
         window.rootViewController = homeVC
@@ -48,14 +53,13 @@ class SignUpController: UIViewController {
         
         if inputEmail.text?.isEmpty == false &&
             inputPassword.text?.isEmpty == false {
-            btnSignUp.backgroundColor = UIColor.black
+            btnSignIn.backgroundColor = UIColor.black
         }
         else {
-            btnSignUp.backgroundColor = Constant.COLOR_SIGN_UP_GRAY
+            btnSignIn.backgroundColor = Constant.COLOR_SIGN_UP_GRAY
         }
     }
     @objc func dismissKeyboard() {
-        view.endEditing(true) // Ẩn bàn phím
+        view.endEditing(true)
     }
 }
-

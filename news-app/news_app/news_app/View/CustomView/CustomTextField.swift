@@ -9,19 +9,27 @@ import Foundation
 import UIKit
 
 class CustomTextField : UITextField {
+    
+    private var bottomSeparator: UIView = UIView()
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.textContentType = .oneTimeCode
-        baselineOffsetFromBottom()
+        bottomSeparator.backgroundColor = .black
+        setBaseLine()
     }
-    func baselineOffsetFromBottom () {
-        let bottom = CALayer()
-        bottom.frame = CGRect(x: 0, y: self.frame.height * 0.8, width: self.frame.width, height: 1)
-        bottom.backgroundColor = UIColor.black.cgColor
-        
-        self.layer.addSublayer(bottom)
+    
+    private func setBaseLine() {
+        addSubview(bottomSeparator)
+        bottomSeparator.translatesAutoresizingMaskIntoConstraints = false
+        bottomSeparator.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        bottomSeparator.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        bottomSeparator.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        bottomSeparator.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        updateConstraintsIfNeeded()
     }
-    func setTongleImage(_ button : UIButton)  {
+
+     func setTongleImage(_ button : UIButton)  {
         if(isSecureTextEntry) {
             button.setImage(UIImage(named: Constant.IC_PASSWORD_VISIBLE_OFF), for: .normal)
         }

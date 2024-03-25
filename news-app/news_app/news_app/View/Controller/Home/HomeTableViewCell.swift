@@ -26,13 +26,13 @@ class HomeTableViewCell : UITableViewCell {
         typeNews.text = item.type
         authorNews.text = item.author
         titleNews.text = item.title
-     
+        
         imageNews.kf.setImage(with: URL(string: item.image),placeholder: UIImage(named: "placeholderImage"),
                               options: [
                                 .processor(ResizingImageProcessor(referenceSize: CGSize(width: 150, height: 150))),
-                                  .scaleFactor(UIScreen.main.scale),
-                                  .transition(.fade(1)),
-                                  .cacheOriginalImage
+                                .scaleFactor(UIScreen.main.scale),
+                                .transition(.fade(1)),
+                                .cacheOriginalImage
                               ])
     }
 }
