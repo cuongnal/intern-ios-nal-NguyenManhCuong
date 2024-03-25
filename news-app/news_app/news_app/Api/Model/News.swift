@@ -8,20 +8,11 @@
 import SwiftUI
 
 struct News {
-    var imageNews : String?
-    var titleNews : String?
-    var timeNews : String?
-    var authorNews : String?
-    var typeNews : String?
-    init(imageNews : String?, titleNews : String?,timeNews : String?,authorNews : String?,typeNews : String?) {
-        self.imageNews = imageNews
-        self.authorNews = authorNews
-        self.timeNews = timeNews
-        self.titleNews = titleNews
-        self.typeNews = typeNews
-    }
+    var image : String = ""
+    var title : String = ""
+    var pubDate : String = ""
+    var author : String = "Nguyễn Mạnh Cường"
+    var type : String = "Entertaiment"
+    var link : String = ""
+    var description : String = ""
 }
-struct ItemNews {
-    
-}
-

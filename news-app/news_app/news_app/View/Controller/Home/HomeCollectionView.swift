@@ -9,27 +9,21 @@ import SwiftUI
 
 class HomeCollectionView : UICollectionView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
     var itemOldOnClick : IndexPath = IndexPath(row: 0, section: 0)
- 
-    init(frame: CGRect, list : [String]) {
-        self.list = list
-        let layer = UICollectionViewFlowLayout()
-        super.init(frame: frame, collectionViewLayout: layer)
+    
+    var onClickCallBack : ((Category) -> ())? = nil
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
         self.delegate = self
         self.dataSource = self
     }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return list.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.HOME_COLLECTION_VIEW_CELLS, for: indexPath) as! HomeCollectionViewCell
-        cell.label.text = list[indexPath.row]
-        if indexPath == itemOldOnClick { cell.setBackGround(flag: true) }
+        cell.label.text = list[indexPath.item].title
+        cell.setBackGround(flag: indexPath == itemOldOnClick)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -39,8 +33,10 @@ class HomeCollectionView : UICollectionView, UICollectionViewDelegateFlowLayout,
         (collectionView.cellForItem(at: itemOldOnClick) as? HomeCollectionViewCell)?.setBackGround(flag: false)
         
         itemOldOnClick = indexPath
+        
+        onClickCallBack!(list[indexPath.row])
     }
 
-    var list : [String] = []
+    var list : [Category] = []
     
 }

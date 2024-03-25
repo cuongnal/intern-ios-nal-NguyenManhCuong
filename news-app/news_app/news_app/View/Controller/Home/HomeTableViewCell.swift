@@ -7,10 +7,11 @@
 
 import UIKit
 import UIKit
+import Kingfisher
 import Foundation
+import SwiftUI
 class HomeTableViewCell : UITableViewCell {
     
-   
     @IBOutlet weak var popupMenu: UIButton!
     @IBOutlet weak var timeNews: UILabel!
     @IBOutlet weak var typeNews: UILabel!
@@ -21,9 +22,17 @@ class HomeTableViewCell : UITableViewCell {
         super.init(coder: coder)
     }
     func setUpView(item: News) {
-        timeNews.text = item.timeNews
-        typeNews.text = item.typeNews
-        authorNews.text = item.authorNews
-        titleNews.text = item.titleNews
+        timeNews.text = item.pubDate
+        typeNews.text = item.type
+        authorNews.text = item.author
+        titleNews.text = item.title
+     
+        imageNews.kf.setImage(with: URL(string: item.image),placeholder: UIImage(named: "placeholderImage"),
+                              options: [
+                                .processor(ResizingImageProcessor(referenceSize: CGSize(width: 150, height: 150))),
+                                  .scaleFactor(UIScreen.main.scale),
+                                  .transition(.fade(1)),
+                                  .cacheOriginalImage
+                              ])
     }
 }

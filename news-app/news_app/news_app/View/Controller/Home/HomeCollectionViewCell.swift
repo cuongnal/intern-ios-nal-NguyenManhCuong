@@ -14,10 +14,7 @@ class HomeCollectionViewCell : UICollectionViewCell {
     @IBOutlet weak var label: UILabel!
 
     override func awakeFromNib() {
-        setUpUI()
-    }
-    override func prepareForReuse() {
-        super.prepareForReuse()
+        super.awakeFromNib()
         setUpUI()
     }
     func setUpUI(){

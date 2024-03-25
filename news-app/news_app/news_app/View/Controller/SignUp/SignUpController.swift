@@ -28,7 +28,6 @@ class SignUpController: UIViewController {
     }
     
     @objc private func onTouchBtnSignUpButton() {
-        print(self.parent)
         guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "home") else {return}
         self.removeFromParent()
         self.view.removeFromSuperview()
