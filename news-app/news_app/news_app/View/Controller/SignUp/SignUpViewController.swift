@@ -18,6 +18,9 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var btnSignInWithEmail: UIImageView!
     @IBOutlet weak var btnSignUp: ButtonLogin!
+    
+    @IBOutlet weak var labelIncorrectPassword: UILabel!
+    @IBOutlet weak var labelIncorrectEmail: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         inputPassword.enablePasswordToggle()
@@ -30,7 +33,7 @@ class SignUpViewController: UIViewController {
     }
     
     @objc private func onTouchBtnSignUpButton() {
-        guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "home") else {return}
+        guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "HomeController") else {return}
         self.removeFromParent()
         self.view.removeFromSuperview()
         
@@ -39,7 +42,7 @@ class SignUpViewController: UIViewController {
     }
     
     @objc private func onTouchBtnSignInWithEmail() {
-        guard let signIn = storyboard?.instantiateViewController(withIdentifier: "SignIn") else {return}
+        guard let signIn = storyboard?.instantiateViewController(withIdentifier: "SignInController") else {return}
         
         self.addChild(signIn)
         signIn.didMove(toParent: self)
@@ -61,6 +64,13 @@ class SignUpViewController: UIViewController {
     }
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+    @IBAction func onTapPolicy(_ sender: Any) {
+        guard let tearms = storyboard?.instantiateViewController(withIdentifier: "PolicyController") else {return}
+        self.addChild(tearms)
+        tearms.didMove(toParent: self)
+        self.view.addSubview(tearms.view)
+        tearms.view.didMoveToSuperview()
     }
 }
 

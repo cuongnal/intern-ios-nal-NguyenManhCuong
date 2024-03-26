@@ -32,14 +32,14 @@ class SignInController : UIViewController{
         self.removeFromParent()
         self.view.removeFromSuperview()
     }
-    @IBAction func onTapForgotPassword() {
-        guard let signIn = storyboard?.instantiateViewController(withIdentifier: "ForgotPassword") else {return}
-        
-        self.addChild(signIn)
-        signIn.didMove(toParent: self)
-        self.view.addSubview(signIn.view)
-        signIn.view.didMoveToSuperview()
-    }
+//    @IBAction func onTapForgotPassword() {
+//        guard let signIn = storyboard?.instantiateViewController(withIdentifier: "ForgotPassword") else {return}
+//
+//        self.addChild(signIn)
+//        signIn.didMove(toParent: self)
+//        self.view.addSubview(signIn.view)
+//        signIn.view.didMoveToSuperview()
+//    }
     
     @IBAction func onTouchBtnSignInButton() {
 //        guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "home") else {return}

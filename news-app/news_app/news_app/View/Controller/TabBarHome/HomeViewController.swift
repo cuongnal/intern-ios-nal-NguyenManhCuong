@@ -10,7 +10,6 @@ import Foundation
 
 class HomeViewController : UIViewController, XMLParserDelegateCallBack{
     
-    var selectedItemi : IndexPath = IndexPath(row: 0, section: 0)
     
     @IBOutlet weak var homeCollectionView : HomeCollectionView!
     @IBOutlet weak var homeTableView : HomeTableView!
@@ -19,13 +18,13 @@ class HomeViewController : UIViewController, XMLParserDelegateCallBack{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        homeCollectionView.list = Constant.VN_EXPRESS
+        homeCollectionView.list = Constant.CATEGORY_VN_EXPRESS
         
         homeCollectionView.reloadData()
         
         xmlParserToObject = XMLParserToObject()
         xmlParserToObject.callBack = self
-        startParser(url: URL(string: Constant.VN_EXPRESS[0].url)!, category: Constant.VN_EXPRESS[0])
+        startParser(url: URL(string: Constant.CATEGORY_VN_EXPRESS[0].url)!, category: Constant.CATEGORY_VN_EXPRESS[0])
         onClickCell()
     }
     func parsingWasFinished(arrNews: [News]) {

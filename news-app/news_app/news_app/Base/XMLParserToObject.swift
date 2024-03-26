@@ -19,7 +19,7 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
     
     var elementName : String = ""
     var news : News? = nil
-    var category : Category = Constant.VN_EXPRESS[0]
+    var category : Category = Constant.CATEGORY_VN_EXPRESS[0]
     var callBack : XMLParserDelegateCallBack? = nil
     
     func callFromByUrl(url : URL, category : Category) {

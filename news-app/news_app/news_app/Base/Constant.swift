@@ -14,10 +14,16 @@ struct Constant {
     static let COLOR_SIGN_UP_GRAY = UIColor.init(red: 238/255, green: 238/255, blue: 238/255, alpha: 1)
     static let COLOR_BLACK = UIColor.black
     static let COLOR_WHITE = UIColor.white
+    static let VN_EXPRESS = "Vn Express"
+    static let TUOI_TRE = "Tuổi trẻ"
     static let HOME_COLLECTION_VIEW_CELLS =  "HomeCollectionViewCells"
     static let HOME_TABLE_VIEW_CELLS = "HomeTableViewCells"
-
-    static let VN_EXPRESS = [
+    static let TITLE_POLICY_1 = "Paragrap 1 \n \n"
+    static let TITLE_POLICY_2 = "Paragrap 2 \n \n"
+    static let POLICY_1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis quis venenatis, diam leo. Sed bibendum ac dui condimentum consequat tempus vel sit. Lectus sit tristique in nullam vitae sed feugiat. Aliquet diam elit mus viverra. Neque, molestie morbi cursus amet pellentesque aenean posuere nascetur. Eu risus id ultricies est. Ac, faucibus pellentesque ullamcorper amet diam varius interdum. \n \n"
+    static let POLICY_2 = "Sit in vitae semper egestas sed posuere tellus nisl diam. Ipsum, nisl aenean fusce a, ut cras varius et. Enim egestas tempus velit molestie odio in aliquet. Orci gravida ac faucibus et eu phasellus elit, tellus. Dictum lacinia massa in amet elit. Felis magna et dis adipiscing porttitor sed. Fringilla ante lacus fermentum, ultricies volutpat neque, aliquet. Cras leo, porttitor tellus mi in. Nec volutpat in sed consequat pharetra tristique pulvinar sit. Id commodo tristique tellus in fringilla scelerisque mauris. Mauris quam euismod sit viverra a dictumst arcu sed laoreet. Volutpat bibendum amet diam semper. Nunc tellus eu auctor tellus vivamus a. Euismod orci, ut consequat consectetur praesent quis euismod id. \n \n"
+    static let POLICY_3 = "Ornare quis arcu eget aliquet pretium. Viverra nulla fringilla eget nibh habitasse cras vestibulum amet. Dui luctus dictum leo vulputate tristique lacus. Facilisis facilisi ullamcorper et vitae. Diam molestie sit laoreet lacinia ultrices. Convallis et ipsum quis consectetur sed. Quisque libero lectus quam in leo tincidunt. Venenatis id sodales pellentesque aliquet nibh egestas suspendisse nibh. Hendrerit non mauris, magna malesuada venenatis, eu. Enim, sed metus porttitor amet tortor neque sed. \n \n"
+    static let CATEGORY_VN_EXPRESS = [
         Category(id: 0, title: "Trang chủ", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.HOME),
         Category(id: 1, title: "Thế giới", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.WORLD),
         Category(id: 2, title: "Thời sự", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.NEWS),
@@ -41,7 +47,7 @@ struct Constant {
         Category(id: 20, title: "Tin xem nhiều", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.MOST_VIEWED)
     ]
     
-    static let TUOI_TRE = [
+    static let CATEGORY_TUOI_TRE = [
         Category(id: 0, title: "Trang chủ", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.HOME),
         Category(id: 1, title: "Thời sự", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.NEWS),
         Category(id: 2, title: "Thế giới", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.WORLD),
@@ -61,5 +67,4 @@ struct Constant {
         Category(id: 16, title: "Bạn đọc làm báo", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.READERS_AS_REPORTER),
         Category(id: 17, title: "Du lịch", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.TRAVEL)
     ]
-
 }

@@ -23,7 +23,9 @@
 		AD8DBC132B9EE89B0070D7A7 /* ButtonLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DBC122B9EE89B0070D7A7 /* ButtonLogin.swift */; };
 		AD8DBC162B9EF5090070D7A7 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DBC152B9EF5090070D7A7 /* Extension.swift */; };
 		ADA0BAE62BB2A26F007B39A8 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA0BAE52BB2A26F007B39A8 /* TabBarController.swift */; };
+		ADA0BAE92BB2B3A4007B39A8 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA0BAE82BB2B3A4007B39A8 /* BookmarkViewController.swift */; };
 		ADA2C3F42BA9329B009E4F7C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA2C3F32BA9329B009E4F7C /* HomeViewController.swift */; };
+		ADA2F7132BB2C3E0009CB25C /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA2F7122BB2C3E0009CB25C /* PolicyViewController.swift */; };
 		ADA5EC5E2BB10A7D00A26281 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5EC5D2BB10A7D00A26281 /* Api.swift */; };
 		ADA5EC602BB10B7A00A26281 /* XMLParserToObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5EC5F2BB10B7A00A26281 /* XMLParserToObject.swift */; };
 		ADD5E5EA2BB1987B00D296E5 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD5E5E92BB1987B00D296E5 /* ForgotPasswordViewController.swift */; };
@@ -80,7 +82,9 @@
 		AD8DBC122B9EE89B0070D7A7 /* ButtonLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLogin.swift; sourceTree = "<group>"; };
 		AD8DBC152B9EF5090070D7A7 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		ADA0BAE52BB2A26F007B39A8 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		ADA2C3F32BA9329B009E4F7C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../SignUp/HomeViewController.swift; sourceTree = "<group>"; };
+		ADA0BAE82BB2B3A4007B39A8 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
+		ADA2C3F32BA9329B009E4F7C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = news_app/View/Controller/TabBarHome/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
+		ADA2F7122BB2C3E0009CB25C /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
 		ADA5EC5D2BB10A7D00A26281 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		ADA5EC5F2BB10B7A00A26281 /* XMLParserToObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParserToObject.swift; sourceTree = "<group>"; };
 		ADD5E5E92BB1987B00D296E5 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -212,7 +216,7 @@
 		AD8DBC0A2B9B0E2E0070D7A7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				ADE00FE82BAAB9760041DE42 /* Home */,
+				ADA2F70F2BB2C0F7009CB25C /* Policy */,
 				ADA0BAE42BB2A24A007B39A8 /* TabBarHome */,
 				ADD5E5E82BB1985A00D296E5 /* ForgotPassword */,
 				AD35B3AE2BB14E9B00727358 /* SignIn */,
@@ -241,9 +245,19 @@
 		ADA0BAE42BB2A24A007B39A8 /* TabBarHome */ = {
 			isa = PBXGroup;
 			children = (
+				ADA0BAE72BB2B24A007B39A8 /* Bookmark */,
+				ADE00FE82BAAB9760041DE42 /* Home */,
 				ADA0BAE52BB2A26F007B39A8 /* TabBarController.swift */,
 			);
 			path = TabBarHome;
+			sourceTree = "<group>";
+		};
+		ADA0BAE72BB2B24A007B39A8 /* Bookmark */ = {
+			isa = PBXGroup;
+			children = (
+				ADA0BAE82BB2B3A4007B39A8 /* BookmarkViewController.swift */,
+			);
+			path = Bookmark;
 			sourceTree = "<group>";
 		};
 		ADA2C3F52BA93E9A009E4F7C /* View */ = {
@@ -253,6 +267,14 @@
 				AD8DBC0A2B9B0E2E0070D7A7 /* Controller */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		ADA2F70F2BB2C0F7009CB25C /* Policy */ = {
+			isa = PBXGroup;
+			children = (
+				ADA2F7122BB2C3E0009CB25C /* PolicyViewController.swift */,
+			);
+			path = Policy;
 			sourceTree = "<group>";
 		};
 		ADD5E5E82BB1985A00D296E5 /* ForgotPassword */ = {
@@ -266,11 +288,11 @@
 		ADE00FE82BAAB9760041DE42 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				ADA2C3F32BA9329B009E4F7C /* HomeViewController.swift */,
 				ADE00FE92BAAB9B50041DE42 /* HomeCollectionViewCell.swift */,
 				ADE00FEB2BAABD9C0041DE42 /* HomeCollectionView.swift */,
 				ADE00FEF2BAAD4800041DE42 /* HomeTableViewCell.swift */,
 				ADE00FF42BAAE4210041DE42 /* HomeTableView.swift */,
+				ADA2C3F32BA9329B009E4F7C /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -562,6 +584,7 @@
 				ADE00FF52BAAE4210041DE42 /* HomeTableView.swift in Sources */,
 				AD8DBC0D2B9B10680070D7A7 /* CustomTextField.swift in Sources */,
 				ADA5EC5E2BB10A7D00A26281 /* Api.swift in Sources */,
+				ADA0BAE92BB2B3A4007B39A8 /* BookmarkViewController.swift in Sources */,
 				AD8DBC162B9EF5090070D7A7 /* Extension.swift in Sources */,
 				ADE00FEC2BAABD9C0041DE42 /* HomeCollectionView.swift in Sources */,
 				ADD5E5EA2BB1987B00D296E5 /* ForgotPasswordViewController.swift in Sources */,
@@ -577,6 +600,7 @@
 				AD8DBBDB2B9AE92A0070D7A7 /* AppDelegate.swift in Sources */,
 				ADE00FF32BAAE01A0041DE42 /* News.swift in Sources */,
 				AD8DBBDD2B9AE92A0070D7A7 /* SceneDelegate.swift in Sources */,
+				ADA2F7132BB2C3E0009CB25C /* PolicyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

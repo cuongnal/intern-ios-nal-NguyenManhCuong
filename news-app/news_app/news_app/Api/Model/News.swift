@@ -11,7 +11,7 @@ struct News {
     var image : String = ""
     var title : String = ""
     var pubDate : String = ""
-    var author : String = "Nguyễn Mạnh Cường"
+    var author : String = Constant.VN_EXPRESS
     var type : String = "Trang chủ"
     var link : String = ""
     var description : String = ""
