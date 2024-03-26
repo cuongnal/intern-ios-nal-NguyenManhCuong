@@ -12,7 +12,7 @@ struct News {
     var title : String = ""
     var pubDate : String = ""
     var author : String = "Nguyễn Mạnh Cường"
-    var type : String = "Entertaiment"
+    var type : String = "Trang chủ"
     var link : String = ""
     var description : String = ""
 }

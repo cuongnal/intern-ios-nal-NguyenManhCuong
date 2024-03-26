@@ -19,14 +19,16 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
     
     var elementName : String = ""
     var news : News? = nil
-    
+    var category : Category = Constant.VN_EXPRESS[0]
     var callBack : XMLParserDelegateCallBack? = nil
     
-    func callFromByUrl(url : URL) {
+    func callFromByUrl(url : URL, category : Category) {
+        self.category = category
+        arrNews = []
         let parser = XMLParser(contentsOf: url)
         parser?.delegate = self
         parser?.parse()
-        arrNews = []
+        
     }
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
@@ -53,6 +55,7 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if flag {
             if elementName == rootElement {
+                news?.type = category.title
                 arrNews.append(news!)
                 news = nil
                 flag = false
@@ -88,9 +91,10 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
     func formatDateAndImage () {
         for (index, item) in arrNews.enumerated() {
             arrNews[index].pubDate = DateFormatter().convertStringDateFormat(dateString: item.pubDate) ?? ""
+            
             if let stringStart = item.description.range(of: "src=\""), let stringEnd = item.description.range(of: "\"",range: stringStart.upperBound..<item.description.endIndex){
                 arrNews[index].image = String(item.description[stringStart.upperBound..<stringEnd.lowerBound])
-                print(arrNews[index].image)
+              
             }
         }
     }

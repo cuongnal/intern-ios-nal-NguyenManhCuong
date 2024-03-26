@@ -16,7 +16,7 @@ struct Constant {
     static let COLOR_WHITE = UIColor.white
     static let HOME_COLLECTION_VIEW_CELLS =  "HomeCollectionViewCells"
     static let HOME_TABLE_VIEW_CELLS = "HomeTableViewCells"
-    
+
     static let VN_EXPRESS = [
         Category(id: 0, title: "Trang chủ", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.HOME),
         Category(id: 1, title: "Thế giới", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.WORLD),

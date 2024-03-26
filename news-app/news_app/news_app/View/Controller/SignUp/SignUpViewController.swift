@@ -39,7 +39,7 @@ class SignUpViewController: UIViewController {
     }
     
     @objc private func onTouchBtnSignInWithEmail() {
-        guard let signIn = storyboard?.instantiateViewController(withIdentifier: "signIn") else {return}
+        guard let signIn = storyboard?.instantiateViewController(withIdentifier: "SignIn") else {return}
         
         self.addChild(signIn)
         signIn.didMove(toParent: self)

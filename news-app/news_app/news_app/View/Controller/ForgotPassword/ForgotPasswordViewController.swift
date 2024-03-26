@@ -18,6 +18,7 @@ class ForgotPasswordViewController : UIViewController{
     @IBOutlet weak var btnReset: ButtonLogin!
     
     override func viewDidLoad() {
-        
+        super.viewDidLoad()
     }
+    
 }

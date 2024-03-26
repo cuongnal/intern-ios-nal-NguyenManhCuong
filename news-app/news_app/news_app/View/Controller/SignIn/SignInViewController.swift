@@ -15,8 +15,9 @@ class SignInController : UIViewController{
     @IBOutlet weak var inputPassword: CustomTextField!
     @IBOutlet weak var inputEmail: CustomTextField!
     
-    @IBOutlet weak var labelForgotPassword: UILabel!
     @IBOutlet weak var btnSignIn: ButtonLogin!
+    
+    @IBOutlet weak var btnRegister: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +26,14 @@ class SignInController : UIViewController{
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
         
-        btnSignIn.addTarget(self, action: #selector(onTouchBtnSignUpButton), for: .touchUpInside)
     }
     
-    @objc private func onTapForgotPassword() {
-        guard let signIn = storyboard?.instantiateViewController(withIdentifier: "signIn") else {return}
+    @IBAction func onTapBtnRegister(_ sender: Any) {
+        self.removeFromParent()
+        self.view.removeFromSuperview()
+    }
+    @IBAction func onTapForgotPassword() {
+        guard let signIn = storyboard?.instantiateViewController(withIdentifier: "ForgotPassword") else {return}
         
         self.addChild(signIn)
         signIn.didMove(toParent: self)
@@ -37,13 +41,16 @@ class SignInController : UIViewController{
         signIn.view.didMoveToSuperview()
     }
     
-    @objc private func onTouchBtnSignUpButton() {
-        guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "home") else {return}
-        self.removeFromParent()
-        self.view.removeFromSuperview()
-        
-        guard let window = UIApplication.shared.windows.first else { return }
-        window.rootViewController = homeVC
+    @IBAction func onTouchBtnSignInButton() {
+//        guard let homeVC = storyboard?.instantiateViewController(withIdentifier: "home") else {return}
+//        self.removeFromParent()
+//        self.view.removeFromSuperview()
+//
+//        guard let window = UIApplication.shared.windows.first else { return }
+//        window.rootViewController = homeVC
+        guard let tabBar = storyboard?.instantiateViewController(withIdentifier: "tabBarHome") else {return}
+        tabBar.modalPresentationStyle = .fullScreen
+        self.present(tabBar, animated: true, completion: nil)
     }
     
     @IBAction func emailAndPasswordChanged(_ sender: Any) {
