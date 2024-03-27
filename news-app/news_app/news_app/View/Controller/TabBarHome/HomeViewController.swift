@@ -22,7 +22,7 @@ class HomeViewController : UIViewController, XMLParserDelegateCallBack{
         
         homeCollectionView.reloadData()
         
-        xmlParserToObject = XMLParserToObject()
+        xmlParserToObject = XMLParserToObject.getInstance()
         xmlParserToObject.callBack = self
         startParser(url: URL(string: Constant.CATEGORY_VN_EXPRESS[0].url)!, category: Constant.CATEGORY_VN_EXPRESS[0])
         onClickCell()

@@ -22,6 +22,17 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
     var category : Category = Constant.CATEGORY_VN_EXPRESS[0]
     var callBack : XMLParserDelegateCallBack? = nil
     
+    private static var instance : XMLParserToObject? = nil
+    private override init() {
+        super.init()
+    }
+    static func getInstance() -> XMLParserToObject{
+        guard let instance = instance else {
+            instance = XMLParserToObject()
+            return instance!
+        }
+        return instance
+    }
     func callFromByUrl(url : URL, category : Category) {
         self.category = category
         arrNews = []
@@ -94,7 +105,7 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
             
             if let stringStart = item.description.range(of: "src=\""), let stringEnd = item.description.range(of: "\"",range: stringStart.upperBound..<item.description.endIndex){
                 arrNews[index].image = String(item.description[stringStart.upperBound..<stringEnd.lowerBound])
-              
+                
             }
         }
     }

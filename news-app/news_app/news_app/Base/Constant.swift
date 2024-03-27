@@ -12,12 +12,15 @@ struct Constant {
     static let IC_PASSWORD_VISIBLE : String = "ic_visibility"
     static let IC_PASSWORD_VISIBLE_OFF : String = "ic_visibility_off"
     static let COLOR_SIGN_UP_GRAY = UIColor.init(red: 238/255, green: 238/255, blue: 238/255, alpha: 1)
+    static let COLOR_WHITE = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 255/255)
     static let COLOR_BLACK = UIColor.black
-    static let COLOR_WHITE = UIColor.white
     static let VN_EXPRESS = "Vn Express"
     static let TUOI_TRE = "Tuổi trẻ"
     static let HOME_COLLECTION_VIEW_CELLS =  "HomeCollectionViewCells"
     static let HOME_TABLE_VIEW_CELLS = "HomeTableViewCells"
+    static let ERROR_PASSWORD = "Incorrect password"
+    static let ERROR_EMAIL = "Email error"
+    static let TEARMS_AND_CONDITIONS = "Terms & Conditions"
     static let TITLE_POLICY_1 = "Paragrap 1 \n \n"
     static let TITLE_POLICY_2 = "Paragrap 2 \n \n"
     static let POLICY_1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis quis venenatis, diam leo. Sed bibendum ac dui condimentum consequat tempus vel sit. Lectus sit tristique in nullam vitae sed feugiat. Aliquet diam elit mus viverra. Neque, molestie morbi cursus amet pellentesque aenean posuere nascetur. Eu risus id ultricies est. Ac, faucibus pellentesque ullamcorper amet diam varius interdum. \n \n"

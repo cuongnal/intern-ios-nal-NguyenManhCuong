@@ -9,10 +9,9 @@
 /* Begin PBXBuildFile section */
 		544050A4B8741F87310CF21A /* Pods_news_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB8E695BE926F81C9A6D2F6 /* Pods_news_appTests.framework */; };
 		AD0914172BA8129900287227 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0914162BA8129900287227 /* Constant.swift */; };
-		AD35B3B02BB14EB900727358 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35B3AF2BB14EB900727358 /* SignInViewController.swift */; };
 		AD8DBBDB2B9AE92A0070D7A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DBBDA2B9AE92A0070D7A7 /* AppDelegate.swift */; };
 		AD8DBBDD2B9AE92A0070D7A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DBBDC2B9AE92A0070D7A7 /* SceneDelegate.swift */; };
-		AD8DBBDF2B9AE92A0070D7A7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DBBDE2B9AE92A0070D7A7 /* SignUpViewController.swift */; };
+		AD8DBBDF2B9AE92A0070D7A7 /* SignUpSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DBBDE2B9AE92A0070D7A7 /* SignUpSignInViewController.swift */; };
 		AD8DBBE22B9AE92A0070D7A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD8DBBE02B9AE92A0070D7A7 /* Main.storyboard */; };
 		AD8DBBE42B9AE9300070D7A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD8DBBE32B9AE9300070D7A7 /* Assets.xcassets */; };
 		AD8DBBE72B9AE9300070D7A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD8DBBE52B9AE9300070D7A7 /* LaunchScreen.storyboard */; };
@@ -22,6 +21,8 @@
 		AD8DBC0D2B9B10680070D7A7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DBC0C2B9B10680070D7A7 /* CustomTextField.swift */; };
 		AD8DBC132B9EE89B0070D7A7 /* ButtonLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DBC122B9EE89B0070D7A7 /* ButtonLogin.swift */; };
 		AD8DBC162B9EF5090070D7A7 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DBC152B9EF5090070D7A7 /* Extension.swift */; };
+		AD8E537E2BB3D718000103DA /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8E537D2BB3D718000103DA /* AuthenticationModel.swift */; };
+		AD8E53802BB3D8B7000103DA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD8E537F2BB3D8B7000103DA /* Localizable.strings */; };
 		ADA0BAE62BB2A26F007B39A8 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA0BAE52BB2A26F007B39A8 /* TabBarController.swift */; };
 		ADA0BAE92BB2B3A4007B39A8 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA0BAE82BB2B3A4007B39A8 /* BookmarkViewController.swift */; };
 		ADA2C3F42BA9329B009E4F7C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA2C3F32BA9329B009E4F7C /* HomeViewController.swift */; };
@@ -64,11 +65,10 @@
 		8EB8E695BE926F81C9A6D2F6 /* Pods_news_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_news_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CFD5C337E84C3D3AC9C4F9 /* Pods-news_app-news_appUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-news_app-news_appUITests.debug.xcconfig"; path = "Target Support Files/Pods-news_app-news_appUITests/Pods-news_app-news_appUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD0914162BA8129900287227 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		AD35B3AF2BB14EB900727358 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		AD8DBBD72B9AE92A0070D7A7 /* news_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = news_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD8DBBDA2B9AE92A0070D7A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD8DBBDC2B9AE92A0070D7A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AD8DBBDE2B9AE92A0070D7A7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		AD8DBBDE2B9AE92A0070D7A7 /* SignUpSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSignInViewController.swift; sourceTree = "<group>"; };
 		AD8DBBE12B9AE92A0070D7A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD8DBBE32B9AE9300070D7A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD8DBBE62B9AE9300070D7A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,6 +81,8 @@
 		AD8DBC0C2B9B10680070D7A7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		AD8DBC122B9EE89B0070D7A7 /* ButtonLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLogin.swift; sourceTree = "<group>"; };
 		AD8DBC152B9EF5090070D7A7 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		AD8E537D2BB3D718000103DA /* AuthenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModel.swift; sourceTree = "<group>"; };
+		AD8E537F2BB3D8B7000103DA /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		ADA0BAE52BB2A26F007B39A8 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		ADA0BAE82BB2B3A4007B39A8 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		ADA2C3F32BA9329B009E4F7C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = news_app/View/Controller/TabBarHome/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -149,14 +151,6 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		AD35B3AE2BB14E9B00727358 /* SignIn */ = {
-			isa = PBXGroup;
-			children = (
-				AD35B3AF2BB14EB900727358 /* SignInViewController.swift */,
-			);
-			path = SignIn;
-			sourceTree = "<group>";
-		};
 		AD8DBBCE2B9AE92A0070D7A7 = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +181,7 @@
 				ADE00FF82BAAF4270041DE42 /* Api */,
 				ADA2C3F52BA93E9A009E4F7C /* View */,
 				AD8DBBDA2B9AE92A0070D7A7 /* AppDelegate.swift */,
+				AD8E537F2BB3D8B7000103DA /* Localizable.strings */,
 				AD8DBBDC2B9AE92A0070D7A7 /* SceneDelegate.swift */,
 				AD8DBBE02B9AE92A0070D7A7 /* Main.storyboard */,
 				AD8DBBE32B9AE9300070D7A7 /* Assets.xcassets */,
@@ -218,9 +213,7 @@
 			children = (
 				ADA2F70F2BB2C0F7009CB25C /* Policy */,
 				ADA0BAE42BB2A24A007B39A8 /* TabBarHome */,
-				ADD5E5E82BB1985A00D296E5 /* ForgotPassword */,
-				AD35B3AE2BB14E9B00727358 /* SignIn */,
-				ADE00FF62BAAE57E0041DE42 /* SignUp */,
+				ADE00FF62BAAE57E0041DE42 /* Authentication */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -306,12 +299,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		ADE00FF62BAAE57E0041DE42 /* SignUp */ = {
+		ADE00FF62BAAE57E0041DE42 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				AD8DBBDE2B9AE92A0070D7A7 /* SignUpViewController.swift */,
+				ADD5E5E82BB1985A00D296E5 /* ForgotPassword */,
+				AD8DBBDE2B9AE92A0070D7A7 /* SignUpSignInViewController.swift */,
+				AD8E537D2BB3D718000103DA /* AuthenticationModel.swift */,
 			);
-			path = SignUp;
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		ADE00FF72BAAF4140041DE42 /* Repository */ = {
@@ -451,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD8DBBE72B9AE9300070D7A7 /* LaunchScreen.storyboard in Resources */,
+				AD8E53802BB3D8B7000103DA /* Localizable.strings in Resources */,
 				AD8DBBE42B9AE9300070D7A7 /* Assets.xcassets in Resources */,
 				AD8DBBE22B9AE92A0070D7A7 /* Main.storyboard in Resources */,
 			);
@@ -580,7 +576,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD35B3B02BB14EB900727358 /* SignInViewController.swift in Sources */,
 				ADE00FF52BAAE4210041DE42 /* HomeTableView.swift in Sources */,
 				AD8DBC0D2B9B10680070D7A7 /* CustomTextField.swift in Sources */,
 				ADA5EC5E2BB10A7D00A26281 /* Api.swift in Sources */,
@@ -589,10 +584,11 @@
 				ADE00FEC2BAABD9C0041DE42 /* HomeCollectionView.swift in Sources */,
 				ADD5E5EA2BB1987B00D296E5 /* ForgotPasswordViewController.swift in Sources */,
 				AD0914172BA8129900287227 /* Constant.swift in Sources */,
-				AD8DBBDF2B9AE92A0070D7A7 /* SignUpViewController.swift in Sources */,
+				AD8DBBDF2B9AE92A0070D7A7 /* SignUpSignInViewController.swift in Sources */,
 				ADE00FF02BAAD4800041DE42 /* HomeTableViewCell.swift in Sources */,
 				ADA0BAE62BB2A26F007B39A8 /* TabBarController.swift in Sources */,
 				ADE00FEA2BAAB9B50041DE42 /* HomeCollectionViewCell.swift in Sources */,
+				AD8E537E2BB3D718000103DA /* AuthenticationModel.swift in Sources */,
 				ADA5EC602BB10B7A00A26281 /* XMLParserToObject.swift in Sources */,
 				ADE535872BB119E3004E2D42 /* Category.swift in Sources */,
 				ADA2C3F42BA9329B009E4F7C /* HomeViewController.swift in Sources */,

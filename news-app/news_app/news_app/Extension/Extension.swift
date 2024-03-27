@@ -7,15 +7,7 @@
 
 import UIKit
 
-extension UITextView {
-//    func vertivalTextView() {
-//        let fittingSize = CGSize(width: bounds.width, height: CGFloat.greatestFiniteMagnitude)
-//        let size = sizeThatFits(fittingSize)
-//        let topOffset = (bounds.size.height - size.height * zoomScale) / 2
-//        let positiveTopOffset = max(1, topOffset)
-//        contentOffset.y = -positiveTopOffset
-//    }
-}
+
 extension DateFormatter {
     func convertStringDateFormat(dateString: String) -> String? {
         self.dateFormat = "eee, dd MMM yyyy HH:mm:ss Z"
@@ -32,5 +24,31 @@ extension DateFormatter {
             self.dateFormat = "dd/MM/yyyy"
             return self.string(from: date)
         }
+    }
+}
+extension String {
+    func isValidEmail() -> Bool {
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegex)
+        return emailPred.evaluate(with: self)
+    }
+}
+extension UIViewController {
+    func showToast() {
+        let toast = UILabel (frame: CGRect(x: self.view.frame.size.width/7, y: self.view.frame.size.height - 100, width: (self.view.frame.size.width/8)*6, height: 50))
+        toast.backgroundColor = UIColor.black
+        toast.textColor = Constant.COLOR_WHITE
+        toast.text = "Email sent. Please check your email to reset your password"
+        toast.textAlignment = .center
+        toast.alpha = 1
+        toast.numberOfLines = 2
+        toast.clipsToBounds = true
+        toast.layer.cornerRadius = 25
+        
+        self.view.addSubview(toast)
+       
+        UIView.animate(withDuration: 4, delay: 0.1, options: .curveEaseInOut, animations: {
+            toast.alpha = 0
+        }, completion: nil)
     }
 }

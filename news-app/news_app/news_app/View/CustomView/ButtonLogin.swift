@@ -9,17 +9,25 @@ import UIKit
 import Foundation
 
 class ButtonLogin: UIButton {
-
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
-        customButton()
+        setColorButton(flag : false)
     }
-    func customButton() {
+    func setColorButton(flag : Bool) {
         layer.cornerRadius = 20
-        layer.backgroundColor = Constant.COLOR_SIGN_UP_GRAY.cgColor
+        self.titleLabel?.textColor = Constant.COLOR_WHITE
+        guard flag == true else {
+            layer.backgroundColor = Constant.COLOR_SIGN_UP_GRAY.cgColor
+            layer.borderColor = UIColor.black.cgColor
+            return
+        }
+        layer.backgroundColor = UIColor.black.cgColor
         layer.borderColor = UIColor.black.cgColor
     }
-  
+    
+    
+    
 }
 

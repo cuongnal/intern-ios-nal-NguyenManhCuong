@@ -17,6 +17,20 @@ class PolicyViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getPolicyApp()
+        let btnLeftFirst = UIBarButtonItem(image: UIImage(named: "ic_back"), style: .plain, target: self, action: #selector(goBack))
+        let btnLeftSecond = UIBarButtonItem(title: Constant.TEARMS_AND_CONDITIONS, style: .plain, target: nil, action: nil)
+        
+        btnLeftSecond.setTitleTextAttributes([
+            .font: UIFont.systemFont(ofSize: 17, weight: .bold),
+            .foregroundColor : UIColor.black
+        ], for: .normal)
+        
+        btnLeftSecond.customView?.isUserInteractionEnabled = false
+        navigationItem.leftBarButtonItems = [btnLeftFirst,btnLeftSecond]
+    }
+    
+    @objc private func goBack() {
+        self.navigationController?.popViewController(animated: true)
     }
     func getPolicyApp(){
         let titleFormat : [NSAttributedString.Key : Any] = [
