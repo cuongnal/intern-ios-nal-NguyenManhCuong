@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "ic_question.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "home.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },

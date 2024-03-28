@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 struct Constant {
+    
     static let IC_PASSWORD_VISIBLE : String = "ic_visibility"
     static let IC_PASSWORD_VISIBLE_OFF : String = "ic_visibility_off"
     static let COLOR_SIGN_UP_GRAY = UIColor.init(red: 238/255, green: 238/255, blue: 238/255, alpha: 1)
@@ -18,6 +19,7 @@ struct Constant {
     static let TUOI_TRE = "Tuổi trẻ"
     static let HOME_COLLECTION_VIEW_CELLS =  "HomeCollectionViewCells"
     static let HOME_TABLE_VIEW_CELLS = "HomeTableViewCells"
+    static let SETTING_TABLE_VIEW_CELLS = "SettingTableViewCell"
     static let ERROR_PASSWORD = "Incorrect password"
     static let ERROR_EMAIL = "Email error"
     static let TEARMS_AND_CONDITIONS = "Terms & Conditions"
@@ -71,3 +73,4 @@ struct Constant {
         Category(id: 17, title: "Du lịch", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.TRAVEL)
     ]
 }
+

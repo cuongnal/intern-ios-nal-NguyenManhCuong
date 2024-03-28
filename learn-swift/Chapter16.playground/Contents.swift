@@ -1,62 +1,28 @@
 import UIKit
 
-protocol Animal {
-    func bed()
-}
-protocol PetsCanFly : Animal {
-    func caged()
-}
-protocol PetsCanSwim : Animal {
-    func tank()
-}
-protocol PetsCanWalk : Animal {
-    func exercise()
-}
-protocol TanksAndCages {
-    func cleaned()
+func cong(a: Int, b: Int) async -> Int {
+    for i in a...b {
+        print("đây là cong\(i)")
+    }
+    return 2
 }
 
-class Bird : PetsCanFly{
-     func caged() {
-        print("Đây là bird")
+func nhan(a: Int, b: Int) async -> Int {
+    for i in a...b {
+        print("đây là nhan\(i)")
     }
-    
-     func bed() {
-        print("Đã cho bird ăn")
-    }
+    return 100
 }
 
-class Dog : PetsCanWalk {
-    func exercise() {
-        print("Đây là Dog")
-    }
-    
-    func bed() {
-        print("Đã cho Dog ăn")
-    }
+func tinh() async {
+    let A = 1
+    let B = 20
+    print("... #1")
+    let Cong = cong(a: A, b: B)
+    print("... #2")
+    let Nhan = nhan(a: A, b: B)
+    print("2 kết quả nè: \(Cong) & \(Nhan)")
 }
-class Fish : PetsCanSwim {
-    func tank() {
-        print("Đây là Fish")
-    }
-    
-    func bed() {
-        print("Đã cho Fish ăn")
-    }
-}
-var list : [Animal] = []
-var dogs = Dog(); var fish = Fish(); var bird = Bird();
-list.append(fish)
-list.append(dogs)
-list.append(bird)
-for item in list {
-    if let i = item as? PetsCanWalk {
-        i.exercise()
-    }
-    else if let i = item as? PetsCanFly {
-        i.caged()
-    }
-    else if let i = item as? PetsCanSwim {
-        i.tank()
-    }
+async {
+    await tinh()
 }

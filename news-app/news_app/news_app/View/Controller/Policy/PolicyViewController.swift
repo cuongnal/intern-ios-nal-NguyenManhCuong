@@ -31,6 +31,7 @@ class PolicyViewController : UIViewController {
     
     @objc private func goBack() {
         self.navigationController?.popViewController(animated: true)
+        
     }
     func getPolicyApp(){
         let titleFormat : [NSAttributedString.Key : Any] = [

@@ -1,0 +1,87 @@
+
+/* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "02A-ZT-UPe"; */
+"02A-ZT-UPe.normalTitle" = "Sign Up";
+
+/* Class = "UILabel"; text = "typeNews"; ObjectID = "03c-dh-sQ9"; */
+"03c-dh-sQ9.text" = "typeNews";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "0ML-XX-5dE"; */
+"0ML-XX-5dE.placeholder" = "Email";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "25b-3F-R8i"; */
+"25b-3F-R8i.text" = "Label";
+
+/* Class = "UILabel"; text = "Email error"; ObjectID = "2Ij-dv-sF3"; */
+"2Ij-dv-sF3.text" = "Email error";
+
+/* Class = "UILabel"; text = "Settings"; ObjectID = "Aaf-q7-FLS"; */
+"Aaf-q7-FLS.text" = "Settings";
+
+/* Class = "UILabel"; text = "32 phut truocdddddddddd"; ObjectID = "B7h-bW-zVt"; */
+"B7h-bW-zVt.text" = "32 phut truocdddddddddd";
+
+/* Class = "UILabel"; text = "Don't have an account ?"; ObjectID = "DrJ-Zh-qDw"; */
+"DrJ-Zh-qDw.text" = "Don't have an account ?";
+
+/* Class = "UILabel"; text = "Enter your email to be sent a reset password link."; ObjectID = "JVd-cp-Kev"; */
+"JVd-cp-Kev.text" = "Enter your email to be sent a reset password link.";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "LlV-Wd-ivP"; */
+"LlV-Wd-ivP.text" = "Password";
+
+/* Class = "UILabel"; text = "By signing up to News24 you are accepting our"; ObjectID = "ORA-vH-wXB"; */
+"ORA-vH-wXB.text" = "By signing up to News24 you are accepting our";
+
+/* Class = "UILabel"; text = "Incorrect password"; ObjectID = "Pkh-hR-OC8"; */
+"Pkh-hR-OC8.text" = "Incorrect password";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "R8D-Wx-wQv"; */
+"R8D-Wx-wQv.placeholder" = "Email";
+
+/* Class = "UIButton"; normalTitle = "Terms & Conditions"; ObjectID = "S6C-I4-peR"; */
+"S6C-I4-peR.normalTitle" = "Terms & Conditions";
+
+/* Class = "UILabel"; text = "re-send"; ObjectID = "SMl-O0-4gr"; */
+"SMl-O0-4gr.text" = "re-send";
+
+/* Class = "UILabel"; text = "áp dụng vào cho tedfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfcxbvcvbcbcvbcvbgbfgbfgbfgb\n"; ObjectID = "U69-3d-Xno"; */
+"U69-3d-Xno.text" = "áp dụng vào cho tedfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfcxbvcvbcbcvbcvbgbfgbfgbfgb\n";
+
+/* Class = "UIViewController"; title = "Home View Controller"; ObjectID = "Uyh-Ke-Mzh"; */
+"Uyh-Ke-Mzh.title" = "Home View Controller";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "Yjo-bg-bX8"; */
+"Yjo-bg-bX8.text" = "Email";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "eb0-Bf-fE1"; */
+"eb0-Bf-fE1.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UILabel"; text = "VNExpress"; ObjectID = "ek9-s6-g3u"; */
+"ek9-s6-g3u.text" = "VNExpress";
+
+/* Class = "UILabel"; text = "Or Sign Up with"; ObjectID = "gIF-Af-iGi"; */
+"gIF-Af-iGi.text" = "Or Sign Up with";
+
+/* Class = "UILabel"; text = "News 24"; ObjectID = "geP-Ti-8EH"; */
+"geP-Ti-8EH.text" = "News 24";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "kgy-r8-yx5"; */
+"kgy-r8-yx5.placeholder" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Reset"; ObjectID = "lTv-nS-fHt"; */
+"lTv-nS-fHt.normalTitle" = "Reset";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "oVo-Hu-xpD"; */
+"oVo-Hu-xpD.text" = "Email";
+
+/* Class = "UILabel"; text = "Didn’t receive an email?"; ObjectID = "opR-Qs-IbX"; */
+"opR-Qs-IbX.text" = "Didn’t receive an email?";
+
+/* Class = "UILabel"; text = "News 24"; ObjectID = "t09-A1-emi"; */
+"t09-A1-emi.text" = "News 24";
+
+/* Class = "UILabel"; text = "Bookmarked"; ObjectID = "uRZ-4b-bBh"; */
+"uRZ-4b-bBh.text" = "Bookmarked";
+
+/* Class = "UILabel"; text = "ffsdáp dụng vào\n"; ObjectID = "vuc-AS-HRS"; */
+"vuc-AS-HRS.text" = "ffsdáp dụng vào\n";

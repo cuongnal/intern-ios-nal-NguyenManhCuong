@@ -20,7 +20,9 @@ class AuthenticationModel  {
         return password!.count >= 6
     }
     func isTouchBtnSignUpSignIn(email : String?, password : String?) -> Bool {
-       return checkErrorEmail(email: email) && checkErrorPassword(password: password)
+        return true
+        // return true để auto cho đăng nhập
+      // return checkErrorEmail(email: email) && checkErrorPassword(password: password)
     }
 }
 

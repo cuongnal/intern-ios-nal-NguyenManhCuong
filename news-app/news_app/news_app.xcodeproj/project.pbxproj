@@ -22,7 +22,12 @@
 		AD8DBC132B9EE89B0070D7A7 /* ButtonLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DBC122B9EE89B0070D7A7 /* ButtonLogin.swift */; };
 		AD8DBC162B9EF5090070D7A7 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DBC152B9EF5090070D7A7 /* Extension.swift */; };
 		AD8E537E2BB3D718000103DA /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8E537D2BB3D718000103DA /* AuthenticationModel.swift */; };
-		AD8E53802BB3D8B7000103DA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD8E537F2BB3D8B7000103DA /* Localizable.strings */; };
+		AD8E53832BB54E97000103DA /* SettingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8E53822BB54E97000103DA /* SettingTableView.swift */; };
+		AD8E53852BB54EA7000103DA /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8E53842BB54EA7000103DA /* SettingTableViewCell.swift */; };
+		AD8E53872BB54EC0000103DA /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8E53862BB54EC0000103DA /* SettingViewController.swift */; };
+		AD8E538A2BB55177000103DA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD8E538C2BB55177000103DA /* Localizable.strings */; };
+		AD8E538F2BB5743E000103DA /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8E538E2BB5743E000103DA /* AccountViewController.swift */; };
+		AD8E53932BB576EA000103DA /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD8E53912BB576EA000103DA /* SettingTableViewCell.xib */; };
 		ADA0BAE62BB2A26F007B39A8 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA0BAE52BB2A26F007B39A8 /* TabBarController.swift */; };
 		ADA0BAE92BB2B3A4007B39A8 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA0BAE82BB2B3A4007B39A8 /* BookmarkViewController.swift */; };
 		ADA2C3F42BA9329B009E4F7C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA2C3F32BA9329B009E4F7C /* HomeViewController.swift */; };
@@ -82,7 +87,15 @@
 		AD8DBC122B9EE89B0070D7A7 /* ButtonLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLogin.swift; sourceTree = "<group>"; };
 		AD8DBC152B9EF5090070D7A7 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		AD8E537D2BB3D718000103DA /* AuthenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModel.swift; sourceTree = "<group>"; };
-		AD8E537F2BB3D8B7000103DA /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		AD8E53822BB54E97000103DA /* SettingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableView.swift; sourceTree = "<group>"; };
+		AD8E53842BB54EA7000103DA /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		AD8E53862BB54EC0000103DA /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		AD8E53882BB5502C000103DA /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
+		AD8E53892BB5502C000103DA /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		AD8E538B2BB55177000103DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AD8E538D2BB55179000103DA /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AD8E538E2BB5743E000103DA /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		AD8E53912BB576EA000103DA /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
 		ADA0BAE52BB2A26F007B39A8 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		ADA0BAE82BB2B3A4007B39A8 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		ADA2C3F32BA9329B009E4F7C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = news_app/View/Controller/TabBarHome/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -145,6 +158,7 @@
 		AD0914152BA8128A00287227 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				AD8E538C2BB55177000103DA /* Localizable.strings */,
 				AD0914162BA8129900287227 /* Constant.swift */,
 				ADA5EC5F2BB10B7A00A26281 /* XMLParserToObject.swift */,
 			);
@@ -162,6 +176,7 @@
 				C11F5970E587499231A2AB9E /* Frameworks */,
 			);
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		AD8DBBD82B9AE92A0070D7A7 /* Products */ = {
 			isa = PBXGroup;
@@ -181,7 +196,6 @@
 				ADE00FF82BAAF4270041DE42 /* Api */,
 				ADA2C3F52BA93E9A009E4F7C /* View */,
 				AD8DBBDA2B9AE92A0070D7A7 /* AppDelegate.swift */,
-				AD8E537F2BB3D8B7000103DA /* Localizable.strings */,
 				AD8DBBDC2B9AE92A0070D7A7 /* SceneDelegate.swift */,
 				AD8DBBE02B9AE92A0070D7A7 /* Main.storyboard */,
 				AD8DBBE32B9AE9300070D7A7 /* Assets.xcassets */,
@@ -211,6 +225,7 @@
 		AD8DBC0A2B9B0E2E0070D7A7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AD8E53812BB529C0000103DA /* Setting */,
 				ADA2F70F2BB2C0F7009CB25C /* Policy */,
 				ADA0BAE42BB2A24A007B39A8 /* TabBarHome */,
 				ADE00FF62BAAE57E0041DE42 /* Authentication */,
@@ -233,6 +248,18 @@
 				AD8DBC152B9EF5090070D7A7 /* Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		AD8E53812BB529C0000103DA /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				AD8E53822BB54E97000103DA /* SettingTableView.swift */,
+				AD8E53842BB54EA7000103DA /* SettingTableViewCell.swift */,
+				AD8E53912BB576EA000103DA /* SettingTableViewCell.xib */,
+				AD8E538E2BB5743E000103DA /* AccountViewController.swift */,
+				AD8E53862BB54EC0000103DA /* SettingViewController.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		ADA0BAE42BB2A24A007B39A8 /* TabBarHome */ = {
@@ -427,6 +454,7 @@
 			knownRegions = (
 				en,
 				Base,
+				vi,
 			);
 			mainGroup = AD8DBBCE2B9AE92A0070D7A7;
 			productRefGroup = AD8DBBD82B9AE92A0070D7A7 /* Products */;
@@ -446,8 +474,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD8DBBE72B9AE9300070D7A7 /* LaunchScreen.storyboard in Resources */,
-				AD8E53802BB3D8B7000103DA /* Localizable.strings in Resources */,
+				AD8E538A2BB55177000103DA /* Localizable.strings in Resources */,
 				AD8DBBE42B9AE9300070D7A7 /* Assets.xcassets in Resources */,
+				AD8E53932BB576EA000103DA /* SettingTableViewCell.xib in Resources */,
 				AD8DBBE22B9AE92A0070D7A7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -577,15 +606,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADE00FF52BAAE4210041DE42 /* HomeTableView.swift in Sources */,
+				AD8E538F2BB5743E000103DA /* AccountViewController.swift in Sources */,
 				AD8DBC0D2B9B10680070D7A7 /* CustomTextField.swift in Sources */,
 				ADA5EC5E2BB10A7D00A26281 /* Api.swift in Sources */,
 				ADA0BAE92BB2B3A4007B39A8 /* BookmarkViewController.swift in Sources */,
 				AD8DBC162B9EF5090070D7A7 /* Extension.swift in Sources */,
+				AD8E53852BB54EA7000103DA /* SettingTableViewCell.swift in Sources */,
 				ADE00FEC2BAABD9C0041DE42 /* HomeCollectionView.swift in Sources */,
 				ADD5E5EA2BB1987B00D296E5 /* ForgotPasswordViewController.swift in Sources */,
 				AD0914172BA8129900287227 /* Constant.swift in Sources */,
 				AD8DBBDF2B9AE92A0070D7A7 /* SignUpSignInViewController.swift in Sources */,
 				ADE00FF02BAAD4800041DE42 /* HomeTableViewCell.swift in Sources */,
+				AD8E53872BB54EC0000103DA /* SettingViewController.swift in Sources */,
 				ADA0BAE62BB2A26F007B39A8 /* TabBarController.swift in Sources */,
 				ADE00FEA2BAAB9B50041DE42 /* HomeCollectionViewCell.swift in Sources */,
 				AD8E537E2BB3D718000103DA /* AuthenticationModel.swift in Sources */,
@@ -596,6 +628,7 @@
 				AD8DBBDB2B9AE92A0070D7A7 /* AppDelegate.swift in Sources */,
 				ADE00FF32BAAE01A0041DE42 /* News.swift in Sources */,
 				AD8DBBDD2B9AE92A0070D7A7 /* SceneDelegate.swift in Sources */,
+				AD8E53832BB54E97000103DA /* SettingTableView.swift in Sources */,
 				ADA2F7132BB2C3E0009CB25C /* PolicyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -637,6 +670,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				AD8DBBE12B9AE92A0070D7A7 /* Base */,
+				AD8E53882BB5502C000103DA /* vi */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -645,8 +679,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				AD8DBBE62B9AE9300070D7A7 /* Base */,
+				AD8E53892BB5502C000103DA /* vi */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		AD8E538C2BB55177000103DA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD8E538B2BB55177000103DA /* en */,
+				AD8E538D2BB55179000103DA /* vi */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -656,6 +700,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -716,6 +761,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

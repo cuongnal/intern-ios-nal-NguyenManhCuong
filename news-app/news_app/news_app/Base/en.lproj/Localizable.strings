@@ -1,0 +1,53 @@
+/* 
+  Localizable.strings
+  news_app
+
+  Created by hiepnv1 on 27/03/2024.
+  
+*/
+// title báo
+"Home" = "Trang chủ";
+"World" = "Thế giới";
+"News" = "Thời sự";
+"Business" = "Kinh doanh";
+"Startup" = "Startup";
+"Entertainment" = "Giải trí";
+"Sports" = "Thể thao";
+"Law" = "Pháp luật";
+"Education" = "Giáo dục";
+"Latest News" = "Tin mới nhất";
+"Hot News" = "Tin nổi bật";
+"Health" = "Sức khỏe";
+"Lifestyle" = "Đời sống";
+"Travel" = "Du lịch";
+"Science" = "Khoa học";
+"Digital" = "Số hóa";
+"Cars" = "Xe";
+"Opinion" = "Ý kiến";
+"Confessions" = "Tâm sự";
+"Jokes" = "Cười";
+"Most Viewed" = "Tin xem nhiều";
+
+"Home" = "Trang chủ";
+"News" = "Thời sự";
+"World" = "Thế giới";
+"Law" = "Pháp luật";
+"Business" = "Kinh doanh";
+"Technology" = "Công nghệ";
+"Cars" = "Xe";
+"Youth Life" = "Nhịp sống trẻ";
+"Culture" = "Văn hóa";
+"Entertainment" = "Giải trí";
+"Sports" = "Thể thao";
+"Education" = "Giáo dục";
+"Science" = "Khoa học";
+"Health" = "Sức khỏe";
+"Fake News" = "Giả thật";
+"Relax" = "Thư giãn";
+"Readers as Reporter" = "Bạn đọc làm báo";
+"Travel" = "Du lịch";
+
+// string app
+"Incorrect password" = "Incorrect password";
+"Email error" = "Email error";
+"Terms & Conditions" = "Terms & Conditions";

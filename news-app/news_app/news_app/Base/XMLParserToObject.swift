@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol XMLParserDelegateCallBack {
+protocol XMLParserToObjectDelegate {
     func parsingWasFinished(arrNews: [News])
 }
 class XMLParserToObject : NSObject, XMLParserDelegate {
@@ -20,7 +20,7 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
     var elementName : String = ""
     var news : News? = nil
     var category : Category = Constant.CATEGORY_VN_EXPRESS[0]
-    var callBack : XMLParserDelegateCallBack? = nil
+    var callBack : XMLParserToObjectDelegate? = nil
     
     private static var instance : XMLParserToObject? = nil
     private override init() {
@@ -33,6 +33,7 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
         }
         return instance
     }
+    
     func callFromByUrl(url : URL, category : Category) {
         self.category = category
         arrNews = []
@@ -49,6 +50,7 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
             news = News()
         }
     }
+    
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         if flag {
             switch (elementName) {
@@ -63,6 +65,7 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
         }
         
     }
+    
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if flag {
             if elementName == rootElement {
@@ -73,6 +76,7 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
             }
         }
     }
+    
     func parser(_ parser: XMLParser, foundCDATA CDATABlock: Data) {
         if flag {
             switch (elementName) {

@@ -8,16 +8,16 @@
 import UIKit
 import Foundation
 
-class HomeViewController : UIViewController, XMLParserDelegateCallBack{
+class HomeViewController : UIViewController, XMLParserToObjectDelegate{
     
     
     @IBOutlet weak var homeCollectionView : HomeCollectionView!
     @IBOutlet weak var homeTableView : HomeTableView!
-    var xmlParserToObject : XMLParserToObject!
+    weak var xmlParserToObject : XMLParserToObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+      //  self.tabBarController?.navigationItem.hidesBackButton = false
         homeCollectionView.list = Constant.CATEGORY_VN_EXPRESS
         
         homeCollectionView.reloadData()

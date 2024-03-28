@@ -31,6 +31,7 @@ class HomeCollectionViewCell : UICollectionViewCell {
             self.layer.backgroundColor = Constant.COLOR_SIGN_UP_GRAY.cgColor
             self.label.textColor = Constant.COLOR_BLACK
         }
+
     }
     
 }
