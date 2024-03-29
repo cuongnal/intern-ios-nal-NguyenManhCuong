@@ -19,9 +19,10 @@ class ForgotPasswordViewController : UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_back"), style: .done, target: self, action: #selector(self.goBack))
-//        let btnLeftFirst = UIBarButtonItem(image: UIImage(named: "ic_back"), style: .plain, target: self, action: #selector(goBack))
-//        navigationItem.leftBarButtonItems = [btnLeftFirst]
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_back"),
+                                                                style: .done,
+                                                                target: self,
+                                                                action: #selector(self.goBack))
     }
     
     @objc private func goBack() {
@@ -31,14 +32,14 @@ class ForgotPasswordViewController : UIViewController{
     @IBAction func btnReset(_ sender: Any) {
         showToast()
     }
-//    func showToast(message: String, duration: TimeInterval = 2.0) {
-//        let alert = UIAlertController(title: nil, message: message, preferredStyle: .actionSheet)
-//        present(alert, animated: true)
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture))
-//        view.addGestureRecognizer(tapGesture)
-//
-//    }
-//    @objc func handleTapGesture(sender: UITapGestureRecognizer) {
-//
-//    }
+    //    func showToast(message: String, duration: TimeInterval = 2.0) {
+    //        let alert = UIAlertController(title: nil, message: message, preferredStyle: .actionSheet)
+    //        present(alert, animated: true)
+    //        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture))
+    //        view.addGestureRecognizer(tapGesture)
+    //
+    //    }
+    //    @objc func handleTapGesture(sender: UITapGestureRecognizer) {
+    //
+    //    }
 }

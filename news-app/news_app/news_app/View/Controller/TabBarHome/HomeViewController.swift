@@ -10,22 +10,25 @@ import Foundation
 
 class HomeViewController : UIViewController, XMLParserToObjectDelegate{
     
-    
     @IBOutlet weak var homeCollectionView : HomeCollectionView!
     @IBOutlet weak var homeTableView : HomeTableView!
-    weak var xmlParserToObject : XMLParserToObject!
+    var xmlParserToObject : XMLParserToObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      //  self.tabBarController?.navigationItem.hidesBackButton = false
+        
         homeCollectionView.list = Constant.CATEGORY_VN_EXPRESS
         
         homeCollectionView.reloadData()
         
         xmlParserToObject = XMLParserToObject.getInstance()
-        xmlParserToObject.callBack = self
+        xmlParserToObject.delegate = self
         startParser(url: URL(string: Constant.CATEGORY_VN_EXPRESS[0].url)!, category: Constant.CATEGORY_VN_EXPRESS[0])
         onClickCell()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
     }
     func parsingWasFinished(arrNews: [News]) {
         homeTableView.data.removeAll()
@@ -37,14 +40,26 @@ class HomeViewController : UIViewController, XMLParserToObjectDelegate{
         xmlParserToObject.callFromByUrl(url: url,category: category)
     }
     func onClickCell() {
-        homeCollectionView.onClickCallBack = { category in
+        homeCollectionView.callBack = {[weak self] category in
             if let url = URL(string: category.url) {
                 print(category.title)
-                self.startParser(url: url, category: category)
+                self?.startParser(url: url, category: category)
             }
         }
+        
+        homeTableView.callBack = {[weak self] item in
+            self?.openWebKitView(item: item)
+        }
     }
-    
+    func openWebKitView(item : News) {
+
+        guard let acc = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController else {
+            return
+        }
+        acc.newsItem = item
+        navigationController?.pushViewController(acc, animated: true)
+    }
+
     @objc private func back() {
         self.removeFromParent()
         self.view.removeFromSuperview()

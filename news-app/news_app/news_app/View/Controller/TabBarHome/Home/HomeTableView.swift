@@ -8,6 +8,7 @@
 import UIKit
 class HomeTableView : UITableView, UITableViewDataSource, UITableViewDelegate {
     var data : [News] = []
+    var callBack : ((News) -> ())!
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.delegate = self
@@ -21,6 +22,10 @@ class HomeTableView : UITableView, UITableViewDataSource, UITableViewDelegate {
         let item = tableView.dequeueReusableCell(withIdentifier: Constant.HOME_TABLE_VIEW_CELLS, for: indexPath) as! HomeTableViewCell
         item.setUpView(item: data[indexPath.row])
         return item
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        callBack(data[indexPath.item])
+        self.deselectRow(at: indexPath, animated: false)
     }
     
     

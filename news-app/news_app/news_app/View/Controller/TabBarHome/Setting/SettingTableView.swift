@@ -24,10 +24,12 @@ class SettingTableView : UITableView, UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = tableView.dequeueReusableCell(withIdentifier: Constant.SETTING_TABLE_VIEW_CELLS, for: indexPath) as! SettingTableViewCell
         item.setDataCell(item: data[indexPath.row])
+        if(data[indexPath.row].type == .user || data[indexPath.row].type == .logOut) {
+            item.accessoryType = .none
+        }
         return item
     }
-    func
-    tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         callBack!(data[indexPath.row].type)
     }
     // enum này dùng để check loại item được click là loại nào, sẽ mở ra màn hình tương ứng loại đó

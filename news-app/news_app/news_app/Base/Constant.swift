@@ -15,6 +15,8 @@ struct Constant {
     static let COLOR_SIGN_UP_GRAY = UIColor.init(red: 238/255, green: 238/255, blue: 238/255, alpha: 1)
     static let COLOR_WHITE = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 255/255)
     static let COLOR_BLACK = UIColor.black
+    static let KEY_ITEM_NEWS = "key_item_news"
+    static let SETTING = "Settings"
     static let VN_EXPRESS = "Vn Express"
     static let TUOI_TRE = "Tuổi trẻ"
     static let HOME_COLLECTION_VIEW_CELLS =  "HomeCollectionViewCells"
@@ -72,5 +74,6 @@ struct Constant {
         Category(id: 16, title: "Bạn đọc làm báo", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.READERS_AS_REPORTER),
         Category(id: 17, title: "Du lịch", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.TRAVEL)
     ]
+    
 }
 

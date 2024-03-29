@@ -41,6 +41,7 @@
 		ADE00FF32BAAE01A0041DE42 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE00FF22BAAE01A0041DE42 /* News.swift */; };
 		ADE00FF52BAAE4210041DE42 /* HomeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE00FF42BAAE4210041DE42 /* HomeTableView.swift */; };
 		ADE535872BB119E3004E2D42 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE535862BB119E3004E2D42 /* Category.swift */; };
+		ADE7C01C2BB6C2F400AEB78B /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE7C01B2BB6C2F300AEB78B /* WebViewController.swift */; };
 		C52CE6C8E9A07CAEE0167716 /* Pods_news_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD960B65A543EAA72928F457 /* Pods_news_app.framework */; };
 		D75363E81820EB1943230A60 /* Pods_news_app_news_appUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D777246889CA6F061FA9587A /* Pods_news_app_news_appUITests.framework */; };
 /* End PBXBuildFile section */
@@ -109,6 +110,7 @@
 		ADE00FF22BAAE01A0041DE42 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		ADE00FF42BAAE4210041DE42 /* HomeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableView.swift; sourceTree = "<group>"; };
 		ADE535862BB119E3004E2D42 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		ADE7C01B2BB6C2F300AEB78B /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		D777246889CA6F061FA9587A /* Pods_news_app_news_appUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_news_app_news_appUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29E3FA5701DD17A9825D9F4 /* Pods-news_app-news_appUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-news_app-news_appUITests.release.xcconfig"; path = "Target Support Files/Pods-news_app-news_appUITests/Pods-news_app-news_appUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FD960B65A543EAA72928F457 /* Pods_news_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_news_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -225,8 +227,6 @@
 		AD8DBC0A2B9B0E2E0070D7A7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AD8E53812BB529C0000103DA /* Setting */,
-				ADA2F70F2BB2C0F7009CB25C /* Policy */,
 				ADA0BAE42BB2A24A007B39A8 /* TabBarHome */,
 				ADE00FF62BAAE57E0041DE42 /* Authentication */,
 			);
@@ -265,8 +265,10 @@
 		ADA0BAE42BB2A24A007B39A8 /* TabBarHome */ = {
 			isa = PBXGroup;
 			children = (
+				AD8E53812BB529C0000103DA /* Setting */,
 				ADA0BAE72BB2B24A007B39A8 /* Bookmark */,
 				ADE00FE82BAAB9760041DE42 /* Home */,
+				ADE7C01A2BB6C2C700AEB78B /* WebView */,
 				ADA0BAE52BB2A26F007B39A8 /* TabBarController.swift */,
 			);
 			path = TabBarHome;
@@ -332,6 +334,7 @@
 				ADD5E5E82BB1985A00D296E5 /* ForgotPassword */,
 				AD8DBBDE2B9AE92A0070D7A7 /* SignUpSignInViewController.swift */,
 				AD8E537D2BB3D718000103DA /* AuthenticationModel.swift */,
+				ADA2F70F2BB2C0F7009CB25C /* Policy */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -351,6 +354,14 @@
 				ADA5EC5D2BB10A7D00A26281 /* Api.swift */,
 			);
 			path = Api;
+			sourceTree = "<group>";
+		};
+		ADE7C01A2BB6C2C700AEB78B /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				ADE7C01B2BB6C2F300AEB78B /* WebViewController.swift */,
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 		C11F5970E587499231A2AB9E /* Frameworks */ = {
@@ -616,6 +627,7 @@
 				ADD5E5EA2BB1987B00D296E5 /* ForgotPasswordViewController.swift in Sources */,
 				AD0914172BA8129900287227 /* Constant.swift in Sources */,
 				AD8DBBDF2B9AE92A0070D7A7 /* SignUpSignInViewController.swift in Sources */,
+				ADE7C01C2BB6C2F400AEB78B /* WebViewController.swift in Sources */,
 				ADE00FF02BAAD4800041DE42 /* HomeTableViewCell.swift in Sources */,
 				AD8E53872BB54EC0000103DA /* SettingViewController.swift in Sources */,
 				ADA0BAE62BB2A26F007B39A8 /* TabBarController.swift in Sources */,

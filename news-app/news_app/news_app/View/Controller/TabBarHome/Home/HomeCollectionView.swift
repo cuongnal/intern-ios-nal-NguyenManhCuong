@@ -10,7 +10,8 @@ import SwiftUI
 class HomeCollectionView : UICollectionView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
     var oldSelectedItemAt : IndexPath = IndexPath(row: 0, section: 0)
     
-    var onClickCallBack : ((Category) -> ())? = nil
+    var callBack : ((Category) -> ())?
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.delegate = self
@@ -34,7 +35,7 @@ class HomeCollectionView : UICollectionView, UICollectionViewDelegateFlowLayout,
         
         oldSelectedItemAt = indexPath
         
-        onClickCallBack!(list[indexPath.row])
+        callBack!(list[indexPath.row])
     }
     
     var list : [Category] = []

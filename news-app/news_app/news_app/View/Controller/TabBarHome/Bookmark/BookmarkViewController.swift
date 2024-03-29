@@ -6,7 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
-class BookmarkViewController : HomeViewController {
-    
+class BookmarkViewController : UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = false
+    }
 }
