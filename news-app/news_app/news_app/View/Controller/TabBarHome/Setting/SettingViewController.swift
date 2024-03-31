@@ -66,6 +66,6 @@ class SettingViewController : UIViewController {
         
     }
     func logOut() {
-        
+        navigationController?.popToRootViewController(animated: true)
     }
 }

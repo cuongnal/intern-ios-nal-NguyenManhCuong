@@ -27,7 +27,5 @@ class ButtonLogin: UIButton {
         layer.borderColor = UIColor.black.cgColor
     }
     
-    
-    
 }
 

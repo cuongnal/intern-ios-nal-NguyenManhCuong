@@ -28,16 +28,16 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
     }
     static func getInstance() -> XMLParserToObject{
         guard let instance = instance else {
-            instance = XMLParserToObject()
-            return instance!
+            self.instance = XMLParserToObject()
+            return self.instance!
         }
         return instance
     }
     
-    func callFromByUrl(url : URL, category : Category) {
+    func callFromByUrl(category : Category) {
         self.category = category
         arrNews = []
-        let parser = XMLParser(contentsOf: url)
+        let parser = XMLParser(contentsOf: URL(string: category.url)!)
         parser?.delegate = self
         parser?.parse()
         

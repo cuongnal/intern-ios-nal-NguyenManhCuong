@@ -7,10 +7,10 @@
 
 import UIKit
 import UIKit
-import Kingfisher
+//import Kingfisher
 import Foundation
 import SwiftUI
-class HomeTableViewCell : UITableViewCell {
+class HomeTableViewCell : UITableViewCell, UIPopoverPresentationControllerDelegate {
     
     @IBOutlet weak var popupMenu: UIButton!
     @IBOutlet weak var timeNews: UILabel!
@@ -26,13 +26,18 @@ class HomeTableViewCell : UITableViewCell {
         typeNews.text = item.type
         authorNews.text = item.author
         titleNews.text = item.title
-        imageNews.kf.setImage(with: URL(string: item.image),placeholder: UIImage(named: "placeholderImage"),
-                              options: [
-                                .processor(ResizingImageProcessor(referenceSize: CGSize(width: 140, height: 140))),
-                                .scaleFactor(UIScreen.main.scale),
-                                .transition(.fade(1)),
-                                .cacheOriginalImage
-                              ])
+        //        imageNews.kf.setImage(with: URL(string: item.image),placeholder: UIImage(named: "placeholderImage"),
+        //                              options: [
+        //                                .processor(ResizingImageProcessor(referenceSize: CGSize(width: 140, height: 140))),
+        //                                .scaleFactor(UIScreen.main.scale),
+        //                                .transition(.fade(1)),
+        //                                .cacheOriginalImage
+        //                              ])
+        popupMenu.addTarget(self, action: #selector(touchPopUp), for: .touchUpInside)
     }
-    
+    @objc func touchPopUp() {
+        NotificationCenter.default.post(name: NSNotification.Name(Constant.POP_OVER_NOTIFICATION), object: nil, userInfo: [Constant.ANCHOR_POPOVER:self.popupMenu!])
+        print()
+        print("ĐÃ Gửi \(String(describing: popupMenu))")
+    }
 }

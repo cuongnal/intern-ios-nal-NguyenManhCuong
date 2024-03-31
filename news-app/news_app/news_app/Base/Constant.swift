@@ -16,9 +16,11 @@ struct Constant {
     static let COLOR_WHITE = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 255/255)
     static let COLOR_BLACK = UIColor.black
     static let KEY_ITEM_NEWS = "key_item_news"
+    static let ANCHOR_POPOVER = "Anchor_Popover"
     static let SETTING = "Settings"
     static let VN_EXPRESS = "Vn Express"
     static let TUOI_TRE = "Tuổi trẻ"
+    static let POP_OVER_NOTIFICATION = "PopoverNotification"
     static let HOME_COLLECTION_VIEW_CELLS =  "HomeCollectionViewCells"
     static let HOME_TABLE_VIEW_CELLS = "HomeTableViewCells"
     static let SETTING_TABLE_VIEW_CELLS = "SettingTableViewCell"

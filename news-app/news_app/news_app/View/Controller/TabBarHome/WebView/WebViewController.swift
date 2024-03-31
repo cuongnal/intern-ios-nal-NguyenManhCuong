@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 import WebKit
-
 class WebViewController : UIViewController, WKNavigationDelegate {
     
     var newsItem : News? = nil

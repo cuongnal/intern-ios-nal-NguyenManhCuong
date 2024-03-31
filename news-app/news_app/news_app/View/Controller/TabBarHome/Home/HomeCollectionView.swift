@@ -17,6 +17,7 @@ class HomeCollectionView : UICollectionView, UICollectionViewDelegateFlowLayout,
         self.delegate = self
         self.dataSource = self
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return list.count
     }
@@ -27,6 +28,7 @@ class HomeCollectionView : UICollectionView, UICollectionViewDelegateFlowLayout,
         cell.setBackGround(flag: indexPath == oldSelectedItemAt)
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath == oldSelectedItemAt {return}
         
@@ -39,5 +41,10 @@ class HomeCollectionView : UICollectionView, UICollectionViewDelegateFlowLayout,
     }
     
     var list : [Category] = []
-    
+    override func reloadData() {
+        super.reloadData()
+        oldSelectedItemAt = IndexPath(item: 0, section: 0)
+        self.layoutIfNeeded()
+        self.scrollToItem(at: IndexPath(item: 0, section: 0), at: .left, animated: true)
+    }
 }
