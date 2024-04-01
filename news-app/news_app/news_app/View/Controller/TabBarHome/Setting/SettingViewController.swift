@@ -8,15 +8,13 @@
 import UIKit
 class SettingViewController : UIViewController {
     
+    @IBOutlet weak var viewPickLanguage: PickLanguageViewController!
     @IBOutlet weak var settingTableView: SettingTableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
         let btnLeftFirst = UIBarButtonItem()
- 
-        // navigationController?.navigationBar.topItem?.leftBarButtonItem = btnLeftFirst
-        // navigationController?.navigationItem.leftBarButtonItem = btnLeftFirst
-        // navigationItem.leftBarButtonItem = btnLeftFirst
+        
         let label = UILabel()
         label.text = Constant.SETTING
         label.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
@@ -26,10 +24,15 @@ class SettingViewController : UIViewController {
         navigationController?.navigationBar.topItem?.leftBarButtonItem = btnLeftFirst
         navigationController?.navigationBar.topItem?.title = Constant.SETTING
         navigationController?.navigationBar.topItem?.titleView = UIView()
+
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        viewPickLanguage.isHidden = true
     }
     @objc func nilAction() {}
     
@@ -50,13 +53,19 @@ class SettingViewController : UIViewController {
             case .logOut:
                 self?.logOut()
             default:
+                self?.viewPickLanguage.isHidden = true
                 return
             }
         }
         
     }
     func changeLanguages() {
-        
+        UIView.transition(with: viewPickLanguage, duration: 0.4,
+                          options: .transitionFlipFromBottom,
+                          animations: {
+            self.viewPickLanguage.isHidden = !self.viewPickLanguage.isHidden
+                      })
+       // viewPickLanguage.isHidden = !viewPickLanguage.isHidden
     }
     func openAccountViewController() {
         guard let acc = self.storyboard?.instantiateViewController(withIdentifier: "AccountViewController") as? AccountViewController else {
@@ -68,4 +77,5 @@ class SettingViewController : UIViewController {
     func logOut() {
         navigationController?.popToRootViewController(animated: true)
     }
+ 
 }

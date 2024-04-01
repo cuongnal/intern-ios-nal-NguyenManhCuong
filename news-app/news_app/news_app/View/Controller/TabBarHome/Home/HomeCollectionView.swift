@@ -45,6 +45,9 @@ class HomeCollectionView : UICollectionView, UICollectionViewDelegateFlowLayout,
         super.reloadData()
         oldSelectedItemAt = IndexPath(item: 0, section: 0)
         self.layoutIfNeeded()
+        if list.isEmpty {
+            return
+        }
         self.scrollToItem(at: IndexPath(item: 0, section: 0), at: .left, animated: true)
     }
 }

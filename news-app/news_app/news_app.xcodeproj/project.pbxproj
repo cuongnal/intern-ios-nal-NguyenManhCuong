@@ -28,6 +28,11 @@
 		AD8E538A2BB55177000103DA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD8E538C2BB55177000103DA /* Localizable.strings */; };
 		AD8E538F2BB5743E000103DA /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8E538E2BB5743E000103DA /* AccountViewController.swift */; };
 		AD8E53932BB576EA000103DA /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD8E53912BB576EA000103DA /* SettingTableViewCell.xib */; };
+		AD9287122BBA8DD500A9246F /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD9287102BBA8DD500A9246F /* PopoverViewController.xib */; };
+		AD9287132BBA8DD500A9246F /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9287112BBA8DD500A9246F /* PopoverViewController.swift */; };
+		AD9B873F2BBA946C0052A68A /* PickLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9B873E2BBA946C0052A68A /* PickLanguageViewController.swift */; };
+		AD9B87412BBABD030052A68A /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9B87402BBABD030052A68A /* BaseModel.swift */; };
+		AD9B87432BBAC46D0052A68A /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9B87422BBAC46D0052A68A /* HomeModel.swift */; };
 		ADA0BAE62BB2A26F007B39A8 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA0BAE52BB2A26F007B39A8 /* TabBarController.swift */; };
 		ADA0BAE92BB2B3A4007B39A8 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA0BAE82BB2B3A4007B39A8 /* BookmarkViewController.swift */; };
 		ADA2C3F42BA9329B009E4F7C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA2C3F32BA9329B009E4F7C /* HomeViewController.swift */; };
@@ -97,6 +102,11 @@
 		AD8E538D2BB55179000103DA /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AD8E538E2BB5743E000103DA /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		AD8E53912BB576EA000103DA /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
+		AD9287102BBA8DD500A9246F /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
+		AD9287112BBA8DD500A9246F /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		AD9B873E2BBA946C0052A68A /* PickLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickLanguageViewController.swift; sourceTree = "<group>"; };
+		AD9B87402BBABD030052A68A /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		AD9B87422BBAC46D0052A68A /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		ADA0BAE52BB2A26F007B39A8 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		ADA0BAE82BB2B3A4007B39A8 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		ADA2C3F32BA9329B009E4F7C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = news_app/View/Controller/TabBarHome/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -163,6 +173,7 @@
 				AD8E538C2BB55177000103DA /* Localizable.strings */,
 				AD0914162BA8129900287227 /* Constant.swift */,
 				ADA5EC5F2BB10B7A00A26281 /* XMLParserToObject.swift */,
+				AD9B87402BBABD030052A68A /* BaseModel.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -228,6 +239,8 @@
 			isa = PBXGroup;
 			children = (
 				ADA0BAE42BB2A24A007B39A8 /* TabBarHome */,
+				AD9287112BBA8DD500A9246F /* PopoverViewController.swift */,
+				AD9287102BBA8DD500A9246F /* PopoverViewController.xib */,
 				ADE00FF62BAAE57E0041DE42 /* Authentication */,
 			);
 			path = Controller;
@@ -258,6 +271,7 @@
 				AD8E53912BB576EA000103DA /* SettingTableViewCell.xib */,
 				AD8E538E2BB5743E000103DA /* AccountViewController.swift */,
 				AD8E53862BB54EC0000103DA /* SettingViewController.swift */,
+				AD9B873E2BBA946C0052A68A /* PickLanguageViewController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -315,6 +329,7 @@
 				ADE00FEF2BAAD4800041DE42 /* HomeTableViewCell.swift */,
 				ADE00FF42BAAE4210041DE42 /* HomeTableView.swift */,
 				ADA2C3F32BA9329B009E4F7C /* HomeViewController.swift */,
+				AD9B87422BBAC46D0052A68A /* HomeModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -486,6 +501,7 @@
 			files = (
 				AD8DBBE72B9AE9300070D7A7 /* LaunchScreen.storyboard in Resources */,
 				AD8E538A2BB55177000103DA /* Localizable.strings in Resources */,
+				AD9287122BBA8DD500A9246F /* PopoverViewController.xib in Resources */,
 				AD8DBBE42B9AE9300070D7A7 /* Assets.xcassets in Resources */,
 				AD8E53932BB576EA000103DA /* SettingTableViewCell.xib in Resources */,
 				AD8DBBE22B9AE92A0070D7A7 /* Main.storyboard in Resources */,
@@ -624,14 +640,18 @@
 				AD8DBC162B9EF5090070D7A7 /* Extension.swift in Sources */,
 				AD8E53852BB54EA7000103DA /* SettingTableViewCell.swift in Sources */,
 				ADE00FEC2BAABD9C0041DE42 /* HomeCollectionView.swift in Sources */,
+				AD9B87432BBAC46D0052A68A /* HomeModel.swift in Sources */,
 				ADD5E5EA2BB1987B00D296E5 /* ForgotPasswordViewController.swift in Sources */,
 				AD0914172BA8129900287227 /* Constant.swift in Sources */,
 				AD8DBBDF2B9AE92A0070D7A7 /* SignUpSignInViewController.swift in Sources */,
 				ADE7C01C2BB6C2F400AEB78B /* WebViewController.swift in Sources */,
 				ADE00FF02BAAD4800041DE42 /* HomeTableViewCell.swift in Sources */,
 				AD8E53872BB54EC0000103DA /* SettingViewController.swift in Sources */,
+				AD9B873F2BBA946C0052A68A /* PickLanguageViewController.swift in Sources */,
 				ADA0BAE62BB2A26F007B39A8 /* TabBarController.swift in Sources */,
 				ADE00FEA2BAAB9B50041DE42 /* HomeCollectionViewCell.swift in Sources */,
+				AD9B87412BBABD030052A68A /* BaseModel.swift in Sources */,
+				AD9287132BBA8DD500A9246F /* PopoverViewController.swift in Sources */,
 				AD8E537E2BB3D718000103DA /* AuthenticationModel.swift in Sources */,
 				ADA5EC602BB10B7A00A26281 /* XMLParserToObject.swift in Sources */,
 				ADE535872BB119E3004E2D42 /* Category.swift in Sources */,

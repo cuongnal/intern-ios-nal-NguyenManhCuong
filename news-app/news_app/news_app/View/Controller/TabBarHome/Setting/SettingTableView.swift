@@ -31,6 +31,7 @@ class SettingTableView : UITableView, UITableViewDataSource, UITableViewDelegate
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         callBack!(data[indexPath.row].type)
+        self.deselectRow(at: indexPath, animated: false)
     }
     // enum này dùng để check loại item được click là loại nào, sẽ mở ra màn hình tương ứng loại đó
     public enum TypeItemSelected {

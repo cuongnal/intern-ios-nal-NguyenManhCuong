@@ -7,9 +7,7 @@
 
 import Foundation
 
-protocol XMLParserToObjectDelegate : NSObjectProtocol {
-    func parsingWasFinished(arrNews: [News])
-}
+
 class XMLParserToObject : NSObject, XMLParserDelegate {
     
     var arrNews : [News] = []
@@ -20,7 +18,6 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
     var elementName : String = ""
     var news : News? = nil
     var category : Category = Constant.CATEGORY_VN_EXPRESS[0]
-    weak var delegate : XMLParserToObjectDelegate!
     
     private static var instance : XMLParserToObject? = nil
     private override init() {
@@ -34,13 +31,13 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
         return instance
     }
     
-    func callFromByUrl(category : Category) {
+    func callFromByUrl(category : Category, result : ([News])  -> ()) {
         self.category = category
         arrNews = []
         let parser = XMLParser(contentsOf: URL(string: category.url)!)
         parser?.delegate = self
         parser?.parse()
-        
+        result(arrNews)
     }
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
@@ -95,8 +92,8 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
     
     func parserDidEndDocument(_ parser: XMLParser) {
         formatDateAndImage()
-        delegate?.parsingWasFinished(arrNews : self.arrNews)
     }
+    
     func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
         
     }

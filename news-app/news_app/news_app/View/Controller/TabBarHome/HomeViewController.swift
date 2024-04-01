@@ -8,21 +8,20 @@
 import UIKit
 import Foundation
 
-class HomeViewController : UIViewController, XMLParserToObjectDelegate, UIPopoverPresentationControllerDelegate{
+class HomeViewController : UIViewController , UIPopoverPresentationControllerDelegate{
     
     @IBOutlet weak var homeCollectionView : HomeCollectionView!
     @IBOutlet weak var homeTableView : HomeTableView!
     var popover : PopoverViewController!
     @IBOutlet weak var iconNotification: UIButton!
-    var xmlParserToObject : XMLParserToObject!
     
+    let homeModel = HomeModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         receiverNotificationCenter()
-        xmlParserToObject = XMLParserToObject.getInstance()
+        
         setUpHomeCollectionView()
         popover = PopoverViewController(nibName: "PopoverViewController", bundle: nil) as PopoverViewController
-        xmlParserToObject.delegate = self
         handlerCallBack()
     }
     
@@ -33,33 +32,36 @@ class HomeViewController : UIViewController, XMLParserToObjectDelegate, UIPopove
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        startParser(category: Constant.CATEGORY_VN_EXPRESS[0])
+        homeModel.fetchDataNews(category: Constant.CATEGORY_VN_EXPRESS[0], updateView:  { (arrNews) in
+            self.parsingWasFinished(arrNews: arrNews)
+        })
     }
     
     func setUpHomeCollectionView(typeSource : TypeClickPopover = .vnExpress) {
-        homeCollectionView.list.removeAll()
-        homeCollectionView.reloadData()
+        if homeCollectionView.list.count != 0 {
+            homeCollectionView.list.removeAll()
+            homeCollectionView.reloadData()
+        }
         homeCollectionView.list = typeSource == .vnExpress ? Constant.CATEGORY_VN_EXPRESS : Constant.CATEGORY_TUOI_TRE
         homeCollectionView.reloadData()
-        startParser(category: homeCollectionView.list[0])
+        homeModel.fetchDataNews(category: homeCollectionView.list[0], updateView: { [weak self](arrNews) in
+            self?.parsingWasFinished(arrNews: arrNews)
+        })
     }
-    
     
     func parsingWasFinished(arrNews: [News]) {
-        homeTableView.data.removeAll()
+        if homeTableView.data.count != 0 {
+            homeTableView.data.removeAll()
+        }
         homeTableView.data.append(contentsOf: arrNews)
         homeTableView.reloadData()
-        
-    }
-    
-    func startParser(category : Category) {
-        xmlParserToObject?.callFromByUrl(category: category)
     }
     func handlerCallBack() {
         homeCollectionView.callBack = {[weak self] category in
             if URL(string: category.url) != nil {
-                print(category.title)
-                self?.startParser(category: category)
+                self?.homeModel.fetchDataNews(category: category, updateView: { (arrNews) in
+                    self?.parsingWasFinished(arrNews: arrNews)
+                })
             }
         }
         

@@ -7,7 +7,7 @@
 
 import UIKit
 import UIKit
-//import Kingfisher
+import Kingfisher
 import Foundation
 import SwiftUI
 class HomeTableViewCell : UITableViewCell, UIPopoverPresentationControllerDelegate {
@@ -18,6 +18,8 @@ class HomeTableViewCell : UITableViewCell, UIPopoverPresentationControllerDelega
     @IBOutlet weak var authorNews: UILabel!
     @IBOutlet weak var imageNews: UIImageView!
     @IBOutlet weak var titleNews: UILabel!
+    
+    var homeModel = HomeModel()
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -26,13 +28,13 @@ class HomeTableViewCell : UITableViewCell, UIPopoverPresentationControllerDelega
         typeNews.text = item.type
         authorNews.text = item.author
         titleNews.text = item.title
-        //        imageNews.kf.setImage(with: URL(string: item.image),placeholder: UIImage(named: "placeholderImage"),
-        //                              options: [
-        //                                .processor(ResizingImageProcessor(referenceSize: CGSize(width: 140, height: 140))),
-        //                                .scaleFactor(UIScreen.main.scale),
-        //                                .transition(.fade(1)),
-        //                                .cacheOriginalImage
-        //                              ])
+        imageNews.kf.setImage(with: URL(string: item.image),placeholder: UIImage(named: "placeholderImage"),
+                              options: [
+                                .processor(ResizingImageProcessor(referenceSize: CGSize(width: 140, height: 140))),
+                                .scaleFactor(UIScreen.main.scale),
+                                .transition(.fade(1)),
+                                .cacheOriginalImage
+                              ])
         popupMenu.addTarget(self, action: #selector(touchPopUp), for: .touchUpInside)
     }
     @objc func touchPopUp() {
