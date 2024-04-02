@@ -32,7 +32,7 @@ class HomeViewController : UIViewController , UIPopoverPresentationControllerDel
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        homeModel.fetchDataNews(category: Constant.CATEGORY_VN_EXPRESS[0], updateView:  { (arrNews) in
+        homeModel.fetchDataNews(category: Constant.CATEGORY_VN_EXPRESS[0], callBack:  { (arrNews) in
             self.parsingWasFinished(arrNews: arrNews)
         })
     }
@@ -44,12 +44,12 @@ class HomeViewController : UIViewController , UIPopoverPresentationControllerDel
         }
         homeCollectionView.list = typeSource == .vnExpress ? Constant.CATEGORY_VN_EXPRESS : Constant.CATEGORY_TUOI_TRE
         homeCollectionView.reloadData()
-        homeModel.fetchDataNews(category: homeCollectionView.list[0], updateView: { [weak self](arrNews) in
+        homeModel.fetchDataNews(category: homeCollectionView.list[0], callBack: { [weak self](arrNews) in
             self?.parsingWasFinished(arrNews: arrNews)
         })
     }
     
-    func parsingWasFinished(arrNews: [News]) {
+    func parsingWasFinished(arrNews: [ItemRss]) {
         if homeTableView.data.count != 0 {
             homeTableView.data.removeAll()
         }
@@ -59,8 +59,9 @@ class HomeViewController : UIViewController , UIPopoverPresentationControllerDel
     func handlerCallBack() {
         homeCollectionView.callBack = {[weak self] category in
             if URL(string: category.url) != nil {
-                self?.homeModel.fetchDataNews(category: category, updateView: { (arrNews) in
+                self?.homeModel.fetchDataNews(category: category, callBack: { (arrNews) in
                     self?.parsingWasFinished(arrNews: arrNews)
+
                 })
             }
         }
@@ -69,7 +70,7 @@ class HomeViewController : UIViewController , UIPopoverPresentationControllerDel
             self?.openWebKitView(item: item)
         }
     }
-    func openWebKitView(item : News) {
+    func openWebKitView(item : ItemRss) {
         
         guard let acc = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController else {
             return

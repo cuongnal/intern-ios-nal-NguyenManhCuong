@@ -735,6 +735,97 @@
             </objects>
             <point key="canvasLocation" x="3028" y="-537"/>
         </scene>
+        <!--Pick Language View Controller-->
+        <scene sceneID="wly-ke-6hp">
+            <objects>
+                <viewController storyboardIdentifier="PickLanguageViewController" id="elr-XO-uC7" customClass="PickLanguageViewController" customModule="news_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I8F-9X-fVt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RE1-UZ-rjV">
+                                <rect key="frame" x="30" y="107" width="354" height="130"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VUM-lt-Ynh">
+                                        <rect key="frame" x="0.0" y="-3" width="75" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="dP8-Us-Q5P"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Huỷ">
+                                                    <attributes>
+                                                        <font key="NSFont" metaFont="system" size="19"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancleViewController:" destination="elr-XO-uC7" eventType="touchUpInside" id="zk1-mV-Lwg"/>
+                                        </connections>
+                                    </button>
+                                    <pickerView contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Rsc-WF-PsU">
+                                        <rect key="frame" x="0.0" y="30" width="354" height="100"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="iDR-qJ-zo2"/>
+                                        </constraints>
+                                    </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g5C-q8-K66">
+                                        <rect key="frame" x="279" y="-3" width="75" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="y3O-6a-MLb"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Chọn">
+                                                    <attributes>
+                                                        <font key="NSFont" metaFont="system" size="19"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="chooseLanguage:" destination="elr-XO-uC7" eventType="touchUpInside" id="RRj-lx-gFX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Rsc-WF-PsU" firstAttribute="top" secondItem="VUM-lt-Ynh" secondAttribute="bottom" id="0Px-7D-rgX"/>
+                                    <constraint firstItem="VUM-lt-Ynh" firstAttribute="leading" secondItem="RE1-UZ-rjV" secondAttribute="leading" id="ddY-ny-b7O"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rsc-WF-PsU" secondAttribute="trailing" id="gdA-1p-W7Q"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rsc-WF-PsU" secondAttribute="bottom" id="i2J-bm-Nhe"/>
+                                    <constraint firstAttribute="trailing" secondItem="g5C-q8-K66" secondAttribute="trailing" id="lUY-ol-PLM"/>
+                                    <constraint firstItem="Rsc-WF-PsU" firstAttribute="top" secondItem="g5C-q8-K66" secondAttribute="bottom" id="qUL-VF-zZI"/>
+                                    <constraint firstAttribute="height" constant="130" id="tS1-Hf-bDG"/>
+                                    <constraint firstItem="Rsc-WF-PsU" firstAttribute="leading" secondItem="RE1-UZ-rjV" secondAttribute="leading" id="zPV-H7-Ngu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bmv-ED-6aD"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RE1-UZ-rjV" firstAttribute="centerY" secondItem="bmv-ED-6aD" secondAttribute="centerY" id="I6I-G9-iDl"/>
+                            <constraint firstItem="bmv-ED-6aD" firstAttribute="trailing" secondItem="RE1-UZ-rjV" secondAttribute="trailing" constant="30" id="SAH-8Z-P1V"/>
+                            <constraint firstItem="RE1-UZ-rjV" firstAttribute="leading" secondItem="bmv-ED-6aD" secondAttribute="leading" constant="30" id="b0N-KW-OwP"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="414" height="300"/>
+                    <connections>
+                        <outlet property="viewParent" destination="RE1-UZ-rjV" id="lyX-17-OAU"/>
+                        <outlet property="viewPickerLanguage" destination="Rsc-WF-PsU" id="CNu-Vb-e4g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tHR-nh-8vG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4866.666666666667" y="-952.23214285714278"/>
+        </scene>
         <!--Settings-->
         <scene sceneID="ug3-dc-x8C">
             <objects>
@@ -748,20 +839,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <sections/>
                             </tableView>
-                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ODE-wE-z3W" customClass="PickLanguageViewController" customModule="news_app" customModuleProvider="target">
-                                <rect key="frame" x="20" y="548" width="374" height="216"/>
-                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7sD-R9-i4b"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="7sD-R9-i4b" firstAttribute="trailing" secondItem="ODE-wE-z3W" secondAttribute="trailing" constant="20" id="DFo-tS-2AA"/>
                             <constraint firstItem="kDy-JW-jN5" firstAttribute="bottom" secondItem="7sD-R9-i4b" secondAttribute="bottom" constant="10" id="Wod-Ma-UlE"/>
-                            <constraint firstItem="7sD-R9-i4b" firstAttribute="bottom" secondItem="ODE-wE-z3W" secondAttribute="bottom" id="cML-UZ-oHF"/>
                             <constraint firstItem="kDy-JW-jN5" firstAttribute="leading" secondItem="7sD-R9-i4b" secondAttribute="leading" constant="20" id="iF8-6Z-Y06"/>
                             <constraint firstItem="kDy-JW-jN5" firstAttribute="top" secondItem="7sD-R9-i4b" secondAttribute="top" constant="20" id="kYn-8d-Col"/>
                             <constraint firstItem="7sD-R9-i4b" firstAttribute="trailing" secondItem="kDy-JW-jN5" secondAttribute="trailing" constant="20" id="n2N-0H-fsp"/>
-                            <constraint firstItem="ODE-wE-z3W" firstAttribute="leading" secondItem="7sD-R9-i4b" secondAttribute="leading" constant="20" id="pLm-AD-JUk"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="ic_setting" id="VaZ-rR-B5H">
@@ -771,7 +856,6 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="settingTableView" destination="kDy-JW-jN5" id="JLT-Ck-HDZ"/>
-                        <outlet property="viewPickLanguage" destination="ODE-wE-z3W" id="5mV-5b-jBI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="blV-Nb-c7I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

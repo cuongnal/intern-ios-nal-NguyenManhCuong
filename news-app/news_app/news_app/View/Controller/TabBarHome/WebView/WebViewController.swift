@@ -10,10 +10,11 @@ import UIKit
 import WebKit
 class WebViewController : UIViewController, WKNavigationDelegate {
     
-    var newsItem : News? = nil
+    var newsItem : ItemRss? = nil
     
     @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var webKitView: WKWebView!
+    var webViewModel = WebViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpBarButton()
@@ -22,8 +23,9 @@ class WebViewController : UIViewController, WKNavigationDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
-        let request = URLRequest(url: URL(string: newsItem!.link)!, cachePolicy: .reloadRevalidatingCacheData, timeoutInterval: 2.0)
-        webKitView.load(request)
+        webViewModel.getDetailNews(newsItem: newsItem, callBack: { [weak self] data in
+            self?.webKitView.load(data)
+        })
     }
     func setUpBarButton() {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_back"),

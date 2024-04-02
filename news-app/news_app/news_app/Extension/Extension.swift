@@ -60,6 +60,5 @@ extension UIButton {
             alpha = isEnabled ? 1.0 : 0.5
         }
     }
-
 }
 

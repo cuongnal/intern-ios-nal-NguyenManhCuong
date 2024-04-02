@@ -20,6 +20,7 @@ struct Constant {
     static let SETTING = "Settings"
     static let VN_EXPRESS = "Vn Express"
     static let TUOI_TRE = "Tuổi trẻ"
+    static let PICK_LANGUAGE_VIEW_CONTROLLER = "PickLanguageViewController"
     static let POP_OVER_NOTIFICATION = "PopoverNotification"
     static let HOME_COLLECTION_VIEW_CELLS =  "HomeCollectionViewCells"
     static let HOME_TABLE_VIEW_CELLS = "HomeTableViewCells"

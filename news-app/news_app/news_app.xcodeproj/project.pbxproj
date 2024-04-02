@@ -35,6 +35,9 @@
 		AD9B87432BBAC46D0052A68A /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9B87422BBAC46D0052A68A /* HomeModel.swift */; };
 		ADA0BAE62BB2A26F007B39A8 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA0BAE52BB2A26F007B39A8 /* TabBarController.swift */; };
 		ADA0BAE92BB2B3A4007B39A8 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA0BAE82BB2B3A4007B39A8 /* BookmarkViewController.swift */; };
+		ADA1360E2BBBE0D500E74F6E /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA1360D2BBBE0D500E74F6E /* WebViewModel.swift */; };
+		ADA136132BBBE64C00E74F6E /* DataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ADA136112BBBE64C00E74F6E /* DataBase.xcdatamodeld */; };
+		ADA136852BBC0BDC00E74F6E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA136842BBC0BDC00E74F6E /* CoreData.framework */; };
 		ADA2C3F42BA9329B009E4F7C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA2C3F32BA9329B009E4F7C /* HomeViewController.swift */; };
 		ADA2F7132BB2C3E0009CB25C /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA2F7122BB2C3E0009CB25C /* PolicyViewController.swift */; };
 		ADA5EC5E2BB10A7D00A26281 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5EC5D2BB10A7D00A26281 /* Api.swift */; };
@@ -43,7 +46,7 @@
 		ADE00FEA2BAAB9B50041DE42 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE00FE92BAAB9B50041DE42 /* HomeCollectionViewCell.swift */; };
 		ADE00FEC2BAABD9C0041DE42 /* HomeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE00FEB2BAABD9C0041DE42 /* HomeCollectionView.swift */; };
 		ADE00FF02BAAD4800041DE42 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE00FEF2BAAD4800041DE42 /* HomeTableViewCell.swift */; };
-		ADE00FF32BAAE01A0041DE42 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE00FF22BAAE01A0041DE42 /* News.swift */; };
+		ADE00FF32BAAE01A0041DE42 /* ItemRss.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE00FF22BAAE01A0041DE42 /* ItemRss.swift */; };
 		ADE00FF52BAAE4210041DE42 /* HomeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE00FF42BAAE4210041DE42 /* HomeTableView.swift */; };
 		ADE535872BB119E3004E2D42 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE535862BB119E3004E2D42 /* Category.swift */; };
 		ADE7C01C2BB6C2F400AEB78B /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE7C01B2BB6C2F300AEB78B /* WebViewController.swift */; };
@@ -109,6 +112,9 @@
 		AD9B87422BBAC46D0052A68A /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		ADA0BAE52BB2A26F007B39A8 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		ADA0BAE82BB2B3A4007B39A8 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
+		ADA1360D2BBBE0D500E74F6E /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
+		ADA136122BBBE64C00E74F6E /* DataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataBase.xcdatamodel; sourceTree = "<group>"; };
+		ADA136842BBC0BDC00E74F6E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		ADA2C3F32BA9329B009E4F7C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = news_app/View/Controller/TabBarHome/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		ADA2F7122BB2C3E0009CB25C /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
 		ADA5EC5D2BB10A7D00A26281 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
@@ -117,7 +123,7 @@
 		ADE00FE92BAAB9B50041DE42 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		ADE00FEB2BAABD9C0041DE42 /* HomeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionView.swift; sourceTree = "<group>"; };
 		ADE00FEF2BAAD4800041DE42 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
-		ADE00FF22BAAE01A0041DE42 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		ADE00FF22BAAE01A0041DE42 /* ItemRss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRss.swift; sourceTree = "<group>"; };
 		ADE00FF42BAAE4210041DE42 /* HomeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableView.swift; sourceTree = "<group>"; };
 		ADE535862BB119E3004E2D42 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		ADE7C01B2BB6C2F300AEB78B /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADA136852BBC0BDC00E74F6E /* CoreData.framework in Frameworks */,
 				C52CE6C8E9A07CAEE0167716 /* Pods_news_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,7 +213,7 @@
 			children = (
 				AD0914152BA8128A00287227 /* Base */,
 				AD8DBC142B9EF4C40070D7A7 /* Extension */,
-				ADE00FF82BAAF4270041DE42 /* Api */,
+				ADA1360F2BBBE57000E74F6E /* Data */,
 				ADA2C3F52BA93E9A009E4F7C /* View */,
 				AD8DBBDA2B9AE92A0070D7A7 /* AppDelegate.swift */,
 				AD8DBBDC2B9AE92A0070D7A7 /* SceneDelegate.swift */,
@@ -296,6 +303,23 @@
 			path = Bookmark;
 			sourceTree = "<group>";
 		};
+		ADA1360F2BBBE57000E74F6E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				ADA136102BBBE59100E74F6E /* Local */,
+				ADE00FF82BAAF4270041DE42 /* Api */,
+				ADA136112BBBE64C00E74F6E /* DataBase.xcdatamodeld */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		ADA136102BBBE59100E74F6E /* Local */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
 		ADA2C3F52BA93E9A009E4F7C /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,15 +358,6 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		ADE00FF12BAADFF20041DE42 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				ADE00FF22BAAE01A0041DE42 /* News.swift */,
-				ADE535862BB119E3004E2D42 /* Category.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		ADE00FF62BAAE57E0041DE42 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,18 +369,11 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
-		ADE00FF72BAAF4140041DE42 /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repository;
-			sourceTree = "<group>";
-		};
 		ADE00FF82BAAF4270041DE42 /* Api */ = {
 			isa = PBXGroup;
 			children = (
-				ADE00FF12BAADFF20041DE42 /* Model */,
-				ADE00FF72BAAF4140041DE42 /* Repository */,
+				ADE00FF22BAAE01A0041DE42 /* ItemRss.swift */,
+				ADE535862BB119E3004E2D42 /* Category.swift */,
 				ADA5EC5D2BB10A7D00A26281 /* Api.swift */,
 			);
 			path = Api;
@@ -375,6 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				ADE7C01B2BB6C2F300AEB78B /* WebViewController.swift */,
+				ADA1360D2BBBE0D500E74F6E /* WebViewModel.swift */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -382,6 +391,7 @@
 		C11F5970E587499231A2AB9E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ADA136842BBC0BDC00E74F6E /* CoreData.framework */,
 				FD960B65A543EAA72928F457 /* Pods_news_app.framework */,
 				D777246889CA6F061FA9587A /* Pods_news_app_news_appUITests.framework */,
 				8EB8E695BE926F81C9A6D2F6 /* Pods_news_appTests.framework */,
@@ -634,6 +644,7 @@
 			files = (
 				ADE00FF52BAAE4210041DE42 /* HomeTableView.swift in Sources */,
 				AD8E538F2BB5743E000103DA /* AccountViewController.swift in Sources */,
+				ADA136132BBBE64C00E74F6E /* DataBase.xcdatamodeld in Sources */,
 				AD8DBC0D2B9B10680070D7A7 /* CustomTextField.swift in Sources */,
 				ADA5EC5E2BB10A7D00A26281 /* Api.swift in Sources */,
 				ADA0BAE92BB2B3A4007B39A8 /* BookmarkViewController.swift in Sources */,
@@ -655,10 +666,11 @@
 				AD8E537E2BB3D718000103DA /* AuthenticationModel.swift in Sources */,
 				ADA5EC602BB10B7A00A26281 /* XMLParserToObject.swift in Sources */,
 				ADE535872BB119E3004E2D42 /* Category.swift in Sources */,
+				ADA1360E2BBBE0D500E74F6E /* WebViewModel.swift in Sources */,
 				ADA2C3F42BA9329B009E4F7C /* HomeViewController.swift in Sources */,
 				AD8DBC132B9EE89B0070D7A7 /* ButtonLogin.swift in Sources */,
 				AD8DBBDB2B9AE92A0070D7A7 /* AppDelegate.swift in Sources */,
-				ADE00FF32BAAE01A0041DE42 /* News.swift in Sources */,
+				ADE00FF32BAAE01A0041DE42 /* ItemRss.swift in Sources */,
 				AD8DBBDD2B9AE92A0070D7A7 /* SceneDelegate.swift in Sources */,
 				AD8E53832BB54E97000103DA /* SettingTableView.swift in Sources */,
 				ADA2F7132BB2C3E0009CB25C /* PolicyViewController.swift in Sources */,
@@ -1020,6 +1032,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ADA136112BBBE64C00E74F6E /* DataBase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ADA136122BBBE64C00E74F6E /* DataBase.xcdatamodel */,
+			);
+			currentVersion = ADA136122BBBE64C00E74F6E /* DataBase.xcdatamodel */;
+			path = DataBase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AD8DBBCF2B9AE92A0070D7A7 /* Project object */;
 }

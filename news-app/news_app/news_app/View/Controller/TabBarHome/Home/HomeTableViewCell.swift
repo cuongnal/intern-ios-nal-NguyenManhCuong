@@ -23,7 +23,7 @@ class HomeTableViewCell : UITableViewCell, UIPopoverPresentationControllerDelega
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    func setUpView(item: News) {
+    func setUpView(item: ItemRss) {
         timeNews.text = item.pubDate
         typeNews.text = item.type
         authorNews.text = item.author

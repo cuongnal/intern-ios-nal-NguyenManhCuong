@@ -5,9 +5,9 @@
 //  Created by hiepnv1 on 20/03/2024.
 //
 
-import SwiftUI
+import UIKit
 
-struct News {
+struct ItemRss {
     var image : String = ""
     var title : String = ""
     var pubDate : String = ""

@@ -10,13 +10,13 @@ import Foundation
 
 class XMLParserToObject : NSObject, XMLParserDelegate {
     
-    var arrNews : [News] = []
+    var arrNews : [ItemRss] = []
     var rootElement = "item"
     
     var flag = false
     
     var elementName : String = ""
-    var news : News? = nil
+    var news : ItemRss? = nil
     var category : Category = Constant.CATEGORY_VN_EXPRESS[0]
     
     private static var instance : XMLParserToObject? = nil
@@ -31,7 +31,7 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
         return instance
     }
     
-    func callFromByUrl(category : Category, result : ([News])  -> ()) {
+    func callFromByUrl(category : Category, result : ([ItemRss])  -> ()) {
         self.category = category
         arrNews = []
         let parser = XMLParser(contentsOf: URL(string: category.url)!)
@@ -44,7 +44,7 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
         self.elementName = elementName
         if(elementName == rootElement) {
             flag = true
-            news = News()
+            news = ItemRss()
         }
     }
     
@@ -66,7 +66,7 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if flag {
             if elementName == rootElement {
-                news?.type = category.title
+             //   news?.type = category.title
                 arrNews.append(news!)
                 news = nil
                 flag = false
