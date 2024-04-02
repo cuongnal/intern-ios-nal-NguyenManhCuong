@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Kingfisher
+//import Kingfisher
 class HomeModel : BaseModel {
     var xmlParser = XMLParserToObject.getInstance()
     var arrNews : [ItemRss] = []
@@ -28,7 +28,7 @@ class HomeModel : BaseModel {
     func getImageByUrl(arr: [ItemRss]) {
         for item in arr {
             if let url = URL(string: item.image) {
-                KingfisherManager.shared.retrieveImage(with: url, options: nil) { result in}
+           //     KingfisherManager.shared.retrieveImage(with: url, options: nil) { result in}
             }
         }
     }
