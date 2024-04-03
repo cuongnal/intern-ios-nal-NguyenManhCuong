@@ -4,6 +4,7 @@
 target 'news_app' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
+  pod 'FirebaseAuth'
 
   target 'news_appTests' do
     inherit! :search_paths

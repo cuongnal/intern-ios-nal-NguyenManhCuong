@@ -6,7 +6,8 @@
 //
 
 import Foundation
-class AuthenticationModel  {
+import FirebaseAuth
+class AuthenticationModel  : BaseModel {
     func checkErrorEmail(email : String?) -> Bool{
         guard email != nil else {
             return false
@@ -20,9 +21,25 @@ class AuthenticationModel  {
         return password!.count >= 6
     }
     func isTouchBtnSignUpSignIn(email : String?, password : String?) -> Bool {
-        return true
+        // return true
         // return true để auto cho đăng nhập
-      // return checkErrorEmail(email: email) && checkErrorPassword(password: password)
+        return checkErrorEmail(email: email) && checkErrorPassword(password: password)
+    }
+    
+    func loggingEmail(email : String, password : String) {
+        excuteNetwork(task: {
+            
+            FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { (authDataResult, error) in
+                guard let error = error else {
+                    return authDataResult
+                }
+                return error
+            }
+          
+        }, complete: {_ in
+            
+        })
+        
     }
 }
 

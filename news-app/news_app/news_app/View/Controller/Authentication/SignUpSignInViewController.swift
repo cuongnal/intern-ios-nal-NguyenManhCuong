@@ -24,6 +24,7 @@ class SignUpSignInViewController: UIViewController {
     
     @IBOutlet weak var labelIncorrectPassword: UILabel!
     @IBOutlet weak var labelIncorrectEmail: UILabel!
+    var flagSign : typeSignUpIn = .signIn
     
     let authenModel = AuthenticationModel()
     var flagCheckSignInSignUp = HiddenView.signUp
@@ -36,21 +37,26 @@ class SignUpSignInViewController: UIViewController {
         hiddenView()
     }
     
+    @IBAction func onTouchSignUpAndSignIn(_ sender: Any) {
+        var tabBar = storyboard?.instantiateViewController(withIdentifier: "TabBarHome") as! TabBarController
+        navigationController?.pushViewController(tabBar, animated: true)
+    }
     @IBAction func onTouchBtnSignInWithEmail() {
         flagCheckSignInSignUp = .signIn
         UIView.transition(with: self.view.superview!, duration: 0.3, options:
                 .transitionFlipFromLeft, animations: {self.hiddenView()}, completion: nil)
+        flagSign = .signIn
     }
     @IBAction func onTouchRegisterButton(_ sender: Any) {
         flagCheckSignInSignUp = .signUp
         UIView.transition(with: self.view.superview!, duration: 0.2, options:
                 .transitionFlipFromLeft, animations: {self.hiddenView()}, completion: nil)
+        flagSign = .signUp
     }
     
     @IBAction func passwordEditingChanged(_ sender: Any) {
         labelPassword.alpha = inputPassword.text?.isEmpty == true ? 0 : 1
         labelIncorrectPassword.alpha = authenModel.checkErrorPassword(password: inputPassword.text) ? 0 : 1
-        print(authenModel.isTouchBtnSignUpSignIn(email: inputEmail?.text, password: inputPassword?.text))
         guard authenModel.isTouchBtnSignUpSignIn(email: inputEmail?.text, password: inputPassword?.text) == true else{
             btnSignUpAndSignIn.backgroundColor = Constant.COLOR_SIGN_UP_GRAY
             return
@@ -95,4 +101,6 @@ class SignUpSignInViewController: UIViewController {
         }
     }
 }
-
+enum typeSignUpIn {
+    case signIn, signUp
+}

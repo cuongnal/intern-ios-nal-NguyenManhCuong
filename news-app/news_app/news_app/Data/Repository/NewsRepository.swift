@@ -8,6 +8,6 @@
 import Foundation
 protocol NewsRepository {
     func getNewsByTypeCategory(category : Category ) -> [ItemRss]
-    
+
     func getNewsDetail(newsItem : ItemRss?) -> URLRequest?
 }
