@@ -26,8 +26,8 @@ class BaseModel  {
     }
     
     func excuteNetwork<T>(blockUI : Bool = false,
-                       task : @escaping (()-> T),
-                       complete : @escaping ((T) -> Void)
+                       task : @escaping (()-> T?),
+                       complete : @escaping ((T?) -> Void)
     ) {
         if blockUI == true {
             DispatchQueue.main.async {

@@ -77,6 +77,10 @@ struct Constant {
         Category(id: 16, title: "Bạn đọc làm báo", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.READERS_AS_REPORTER),
         Category(id: 17, title: "Du lịch", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.TRAVEL)
     ]
+    struct Key {
+        static let KEY_USERS_DF_TUOITRE = "KEY_USERS_DF_TUOITRE"
+        static let KEY_USERS_DF_VN_EXPRESS = "KEY_USERS_DF_VN_EXPRESS"
+    }
     
 }
 

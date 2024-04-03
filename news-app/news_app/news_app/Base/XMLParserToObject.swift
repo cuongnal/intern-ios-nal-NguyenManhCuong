@@ -39,6 +39,14 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
         parser?.parse()
         result(arrNews)
     }
+    func callFromByUrl(category : Category) -> [ItemRss] {
+        self.category = category
+        arrNews = []
+        let parser = XMLParser(contentsOf: URL(string: category.url)!)
+        parser?.delegate = self
+        parser?.parse()
+        return arrNews
+    }
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         self.elementName = elementName

@@ -7,15 +7,15 @@
 
 import Foundation
 class WebViewModel : BaseModel {
+    let newsRepository = NewsRepositoryImp()
     
     func getDetailNews(newsItem : ItemRss?, callBack : @escaping ((URLRequest) -> ())) {
-        guard let item = newsItem  else {
-            return
-        }
-        excuteNetwork(task: {
-            return URLRequest(url: URL(string: item.link)!, cachePolicy: .reloadRevalidatingCacheData, timeoutInterval: 2.0)
+        excuteNetwork(task: { [weak self] in
+            return self?.newsRepository.getNewsDetail(newsItem: newsItem)
         }, complete: { (data) in
-            callBack(data)
+            if let data = data {
+                callBack(data)
+            }
         })
     }
 }

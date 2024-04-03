@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21G531" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Bookmark" representedClassName="Bookmark" syncable="YES">
-        <attribute name="idBookmark" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="idBookmark" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="news" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="News" inverseName="bookmark" inverseEntity="News"/>
         <relationship name="users" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="bookmark" inverseEntity="Users"/>
     </entity>
     <entity name="Categories" representedClassName="Categories" syncable="YES">
-        <attribute name="idCategory" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="idCategory" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
-        <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="typeCategory" optional="YES" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="String"/>
         <relationship name="listCategory" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ListCategory" inverseName="categories" inverseEntity="ListCategory"/>
         <relationship name="news" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="News" inverseName="categories" inverseEntity="News"/>
     </entity>
     <entity name="ListCategory" representedClassName="ListCategory" syncable="YES">
-        <attribute name="idListCategory" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="idListCategory" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Categories" inverseName="listCategory" inverseEntity="Categories"/>
         <relationship name="users" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="listCategory" inverseEntity="Users"/>
     </entity>
     <entity name="News" representedClassName="News" syncable="YES">
         <attribute name="author" optional="YES" attributeType="String"/>
         <attribute name="des" optional="YES" attributeType="String"/>
-        <attribute name="idNews" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="idNews" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="link" optional="YES" attributeType="String"/>
         <attribute name="pubDate" optional="YES" attributeType="String"/>
@@ -30,17 +30,17 @@
         <relationship name="categories" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Categories" inverseName="news" inverseEntity="Categories"/>
     </entity>
     <entity name="Users" representedClassName="Users" syncable="YES">
-        <attribute name="idUser" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="idUser" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="password" optional="YES" attributeType="String"/>
         <relationship name="bookmark" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Bookmark" inverseName="users" inverseEntity="Bookmark"/>
         <relationship name="listCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ListCategory" inverseName="users" inverseEntity="ListCategory"/>
     </entity>
     <elements>
-        <element name="Users" positionX="-15165.07641601562" positionY="722.4967803955078" width="128" height="118"/>
-        <element name="News" positionX="-14893.64172363281" positionY="1048.137985229492" width="128" height="178"/>
-        <element name="Categories" positionX="-15410.41778564453" positionY="1061.949066162109" width="128" height="133"/>
-        <element name="ListCategory" positionX="-15361.68499755859" positionY="825.8747863769531" width="128" height="88"/>
-        <element name="Bookmark" positionX="-14920.90881347656" positionY="792.2568359375" width="128" height="88"/>
+        <element name="Bookmark" positionX="-14945.88891601562" positionY="829.9753265380859" width="128" height="88"/>
+        <element name="Categories" positionX="-15384.25256347656" positionY="1105.085876464843" width="128" height="133"/>
+        <element name="ListCategory" positionX="-15362.43347167968" positionY="837.4787750244141" width="128" height="88"/>
+        <element name="News" positionX="-14966.16906738281" positionY="1060.199844360351" width="128" height="178"/>
+        <element name="Users" positionX="-15131.15283203124" positionY="813.1492767333984" width="128" height="118"/>
     </elements>
 </model>

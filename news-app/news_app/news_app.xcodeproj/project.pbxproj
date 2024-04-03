@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -38,6 +38,19 @@
 		ADA1360E2BBBE0D500E74F6E /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA1360D2BBBE0D500E74F6E /* WebViewModel.swift */; };
 		ADA136132BBBE64C00E74F6E /* DataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ADA136112BBBE64C00E74F6E /* DataBase.xcdatamodeld */; };
 		ADA136852BBC0BDC00E74F6E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA136842BBC0BDC00E74F6E /* CoreData.framework */; };
+		ADA136DB2BBCEE6300E74F6E /* NewsRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA136DA2BBCEE6300E74F6E /* NewsRepositoryImp.swift */; };
+		ADA136DD2BBCEE8800E74F6E /* NewsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA136DC2BBCEE8800E74F6E /* NewsRepository.swift */; };
+		ADA136E32BBD32A200E74F6E /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA136E22BBD32A100E74F6E /* UserDefault.swift */; };
+		ADA137022BBD3C4C00E74F6E /* Categories+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA136F82BBD3C4B00E74F6E /* Categories+CoreDataClass.swift */; };
+		ADA137032BBD3C4C00E74F6E /* Categories+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA136F92BBD3C4B00E74F6E /* Categories+CoreDataProperties.swift */; };
+		ADA137042BBD3C4C00E74F6E /* Users+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA136FA2BBD3C4B00E74F6E /* Users+CoreDataClass.swift */; };
+		ADA137052BBD3C4C00E74F6E /* Users+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA136FB2BBD3C4B00E74F6E /* Users+CoreDataProperties.swift */; };
+		ADA137062BBD3C4C00E74F6E /* Bookmark+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA136FC2BBD3C4C00E74F6E /* Bookmark+CoreDataClass.swift */; };
+		ADA137072BBD3C4C00E74F6E /* Bookmark+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA136FD2BBD3C4C00E74F6E /* Bookmark+CoreDataProperties.swift */; };
+		ADA137082BBD3C4C00E74F6E /* News+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA136FE2BBD3C4C00E74F6E /* News+CoreDataClass.swift */; };
+		ADA137092BBD3C4C00E74F6E /* News+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA136FF2BBD3C4C00E74F6E /* News+CoreDataProperties.swift */; };
+		ADA1370A2BBD3C4C00E74F6E /* ListCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA137002BBD3C4C00E74F6E /* ListCategory+CoreDataClass.swift */; };
+		ADA1370B2BBD3C4C00E74F6E /* ListCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA137012BBD3C4C00E74F6E /* ListCategory+CoreDataProperties.swift */; };
 		ADA2C3F42BA9329B009E4F7C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA2C3F32BA9329B009E4F7C /* HomeViewController.swift */; };
 		ADA2F7132BB2C3E0009CB25C /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA2F7122BB2C3E0009CB25C /* PolicyViewController.swift */; };
 		ADA5EC5E2BB10A7D00A26281 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5EC5D2BB10A7D00A26281 /* Api.swift */; };
@@ -115,6 +128,19 @@
 		ADA1360D2BBBE0D500E74F6E /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
 		ADA136122BBBE64C00E74F6E /* DataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataBase.xcdatamodel; sourceTree = "<group>"; };
 		ADA136842BBC0BDC00E74F6E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		ADA136DA2BBCEE6300E74F6E /* NewsRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRepositoryImp.swift; sourceTree = "<group>"; };
+		ADA136DC2BBCEE8800E74F6E /* NewsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRepository.swift; sourceTree = "<group>"; };
+		ADA136E22BBD32A100E74F6E /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		ADA136F82BBD3C4B00E74F6E /* Categories+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Categories+CoreDataClass.swift"; sourceTree = "<group>"; };
+		ADA136F92BBD3C4B00E74F6E /* Categories+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Categories+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		ADA136FA2BBD3C4B00E74F6E /* Users+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Users+CoreDataClass.swift"; sourceTree = "<group>"; };
+		ADA136FB2BBD3C4B00E74F6E /* Users+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Users+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		ADA136FC2BBD3C4C00E74F6E /* Bookmark+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bookmark+CoreDataClass.swift"; sourceTree = "<group>"; };
+		ADA136FD2BBD3C4C00E74F6E /* Bookmark+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bookmark+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		ADA136FE2BBD3C4C00E74F6E /* News+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+CoreDataClass.swift"; sourceTree = "<group>"; };
+		ADA136FF2BBD3C4C00E74F6E /* News+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		ADA137002BBD3C4C00E74F6E /* ListCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		ADA137012BBD3C4C00E74F6E /* ListCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ADA2C3F32BA9329B009E4F7C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = news_app/View/Controller/TabBarHome/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		ADA2F7122BB2C3E0009CB25C /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
 		ADA5EC5D2BB10A7D00A26281 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
@@ -306,6 +332,7 @@
 		ADA1360F2BBBE57000E74F6E /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				ADA136D92BBCEE3400E74F6E /* Repository */,
 				ADA136102BBBE59100E74F6E /* Local */,
 				ADE00FF82BAAF4270041DE42 /* Api */,
 				ADA136112BBBE64C00E74F6E /* DataBase.xcdatamodeld */,
@@ -316,8 +343,28 @@
 		ADA136102BBBE59100E74F6E /* Local */ = {
 			isa = PBXGroup;
 			children = (
+				ADA136F82BBD3C4B00E74F6E /* Categories+CoreDataClass.swift */,
+				ADA136F92BBD3C4B00E74F6E /* Categories+CoreDataProperties.swift */,
+				ADA136FA2BBD3C4B00E74F6E /* Users+CoreDataClass.swift */,
+				ADA136FB2BBD3C4B00E74F6E /* Users+CoreDataProperties.swift */,
+				ADA136FC2BBD3C4C00E74F6E /* Bookmark+CoreDataClass.swift */,
+				ADA136FD2BBD3C4C00E74F6E /* Bookmark+CoreDataProperties.swift */,
+				ADA136FE2BBD3C4C00E74F6E /* News+CoreDataClass.swift */,
+				ADA136FF2BBD3C4C00E74F6E /* News+CoreDataProperties.swift */,
+				ADA137002BBD3C4C00E74F6E /* ListCategory+CoreDataClass.swift */,
+				ADA137012BBD3C4C00E74F6E /* ListCategory+CoreDataProperties.swift */,
+				ADA136E22BBD32A100E74F6E /* UserDefault.swift */,
 			);
 			path = Local;
+			sourceTree = "<group>";
+		};
+		ADA136D92BBCEE3400E74F6E /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				ADA136DC2BBCEE8800E74F6E /* NewsRepository.swift */,
+				ADA136DA2BBCEE6300E74F6E /* NewsRepositoryImp.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		ADA2C3F52BA93E9A009E4F7C /* View */ = {
@@ -482,7 +529,7 @@
 				};
 			};
 			buildConfigurationList = AD8DBBD22B9AE92A0070D7A7 /* Build configuration list for PBXProject "news_app" */;
-			compatibilityVersion = "Xcode 11.4";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -607,6 +654,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADE00FF52BAAE4210041DE42 /* HomeTableView.swift in Sources */,
+				ADA137072BBD3C4C00E74F6E /* Bookmark+CoreDataProperties.swift in Sources */,
 				AD8E538F2BB5743E000103DA /* AccountViewController.swift in Sources */,
 				ADA136132BBBE64C00E74F6E /* DataBase.xcdatamodeld in Sources */,
 				AD8DBC0D2B9B10680070D7A7 /* CustomTextField.swift in Sources */,
@@ -616,22 +664,34 @@
 				AD8E53852BB54EA7000103DA /* SettingTableViewCell.swift in Sources */,
 				ADE00FEC2BAABD9C0041DE42 /* HomeCollectionView.swift in Sources */,
 				AD9B87432BBAC46D0052A68A /* HomeModel.swift in Sources */,
+				ADA137092BBD3C4C00E74F6E /* News+CoreDataProperties.swift in Sources */,
 				ADD5E5EA2BB1987B00D296E5 /* ForgotPasswordViewController.swift in Sources */,
 				AD0914172BA8129900287227 /* Constant.swift in Sources */,
+				ADA1370A2BBD3C4C00E74F6E /* ListCategory+CoreDataClass.swift in Sources */,
 				AD8DBBDF2B9AE92A0070D7A7 /* SignUpSignInViewController.swift in Sources */,
 				ADE7C01C2BB6C2F400AEB78B /* WebViewController.swift in Sources */,
 				ADE00FF02BAAD4800041DE42 /* HomeTableViewCell.swift in Sources */,
+				ADA137022BBD3C4C00E74F6E /* Categories+CoreDataClass.swift in Sources */,
+				ADA137052BBD3C4C00E74F6E /* Users+CoreDataProperties.swift in Sources */,
 				AD8E53872BB54EC0000103DA /* SettingViewController.swift in Sources */,
 				AD9B873F2BBA946C0052A68A /* PickLanguageViewController.swift in Sources */,
 				ADA0BAE62BB2A26F007B39A8 /* TabBarController.swift in Sources */,
+				ADA136DD2BBCEE8800E74F6E /* NewsRepository.swift in Sources */,
+				ADA137042BBD3C4C00E74F6E /* Users+CoreDataClass.swift in Sources */,
 				ADE00FEA2BAAB9B50041DE42 /* HomeCollectionViewCell.swift in Sources */,
 				AD9B87412BBABD030052A68A /* BaseModel.swift in Sources */,
 				AD9287132BBA8DD500A9246F /* PopoverViewController.swift in Sources */,
+				ADA137082BBD3C4C00E74F6E /* News+CoreDataClass.swift in Sources */,
 				AD8E537E2BB3D718000103DA /* AuthenticationModel.swift in Sources */,
+				ADA136DB2BBCEE6300E74F6E /* NewsRepositoryImp.swift in Sources */,
+				ADA137032BBD3C4C00E74F6E /* Categories+CoreDataProperties.swift in Sources */,
 				ADA5EC602BB10B7A00A26281 /* XMLParserToObject.swift in Sources */,
+				ADA1370B2BBD3C4C00E74F6E /* ListCategory+CoreDataProperties.swift in Sources */,
+				ADA136E32BBD32A200E74F6E /* UserDefault.swift in Sources */,
 				ADE535872BB119E3004E2D42 /* Category.swift in Sources */,
 				ADA1360E2BBBE0D500E74F6E /* WebViewModel.swift in Sources */,
 				ADA2C3F42BA9329B009E4F7C /* HomeViewController.swift in Sources */,
+				ADA137062BBD3C4C00E74F6E /* Bookmark+CoreDataClass.swift in Sources */,
 				AD8DBC132B9EE89B0070D7A7 /* ButtonLogin.swift in Sources */,
 				AD8DBBDB2B9AE92A0070D7A7 /* AppDelegate.swift in Sources */,
 				ADE00FF32BAAE01A0041DE42 /* ItemRss.swift in Sources */,
