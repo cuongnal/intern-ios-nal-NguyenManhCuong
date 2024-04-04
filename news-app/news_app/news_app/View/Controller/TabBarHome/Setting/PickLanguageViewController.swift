@@ -22,7 +22,8 @@ class PickLanguageViewController : UIViewController, UIPickerViewDelegate, UIPic
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewParent.layer.cornerRadius = 25
+        viewParent.layer.cornerRadius = 30
+
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

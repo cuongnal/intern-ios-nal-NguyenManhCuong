@@ -16,6 +16,7 @@
     <entity name="ListCategory" representedClassName="ListCategory" syncable="YES">
         <attribute name="idListCategory" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="idUser" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="listIdCategories" optional="YES" attributeType="Transformable"/>
         <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Categories" inverseName="listCategory" inverseEntity="Categories"/>
     </entity>
     <entity name="News" representedClassName="News" syncable="YES">

@@ -39,6 +39,8 @@ class SignUpSignInViewController: UIViewController {
     
     @IBAction func onTouchSignUpAndSignIn(_ sender: Any) {
         var tabBar = storyboard?.instantiateViewController(withIdentifier: "TabBarHome") as! TabBarController
+        
+        authenModel.loggingEmail(email: "", password: "")
         navigationController?.pushViewController(tabBar, animated: true)
     }
     @IBAction func onTouchBtnSignInWithEmail() {

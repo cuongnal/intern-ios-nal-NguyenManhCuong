@@ -6,3 +6,6 @@
 //
 
 import Foundation
+protocol FirebaseRepository {
+    func userLoginEmail(email : String, password : String) -> ()
+}

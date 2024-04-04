@@ -29,11 +29,11 @@ class BaseModel  {
                        task : @escaping (()-> T?),
                        complete : @escaping ((T?) -> Void)
     ) {
-        if blockUI == true {
-            DispatchQueue.main.async {
-                
-            }
-        }
+//        if blockUI == true {
+//            DispatchQueue.main.async {
+//
+//            }
+//        }
         DispatchQueue.global().async {
             let result = task()
             DispatchQueue.main.async {
