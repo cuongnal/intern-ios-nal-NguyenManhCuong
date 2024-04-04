@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="22G513" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Bookmark" representedClassName="Bookmark" syncable="YES">
+        <attribute name="idNews" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="idUser" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="newsBookmark" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="News" inverseName="newsBookmark" inverseEntity="News"/>
+        <relationship name="usersBookmark" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="usersBookmark" inverseEntity="Users"/>
+    </entity>
+    <entity name="Categories" representedClassName="Categories" syncable="YES">
+        <attribute name="idCategory" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="typeSource" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="categoriesNews" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="News" inverseName="categoriesNews" inverseEntity="News"/>
+    </entity>
+    <entity name="News" representedClassName="News" syncable="YES">
+        <attribute name="author" optional="YES" attributeType="String"/>
+        <attribute name="des" optional="YES" attributeType="String"/>
+        <attribute name="idNews" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="link" optional="YES" attributeType="String"/>
+        <attribute name="pubDate" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="categoriesNews" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Categories" inverseName="categoriesNews" inverseEntity="Categories"/>
+        <relationship name="newsBookmark" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bookmark" inverseName="newsBookmark" inverseEntity="Bookmark"/>
+    </entity>
+    <entity name="Users" representedClassName="Users" syncable="YES">
+        <attribute name="idUser" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="listIndexCategories" attributeType="Transformable" valueTransformerName="" customClassName="Array&lt;Int&gt;"/>
+        <relationship name="usersBookmark" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bookmark" inverseName="usersBookmark" inverseEntity="Bookmark"/>
+    </entity>
+</model>

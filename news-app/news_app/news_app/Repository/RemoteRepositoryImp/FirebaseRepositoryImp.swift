@@ -11,7 +11,7 @@ import FirebaseCore
 
 class FirebaseRepositoryImp : FirebaseRepository {
     func userLoginEmail(email: String, password: String) -> () {
-        var a = FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password)
+        let a = FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password)
         print(a)
     }
     

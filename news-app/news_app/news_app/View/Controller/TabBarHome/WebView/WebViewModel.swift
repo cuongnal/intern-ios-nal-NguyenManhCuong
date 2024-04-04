@@ -7,15 +7,6 @@
 
 import Foundation
 class WebViewModel : BaseModel {
-    let newsRepository = NewsRepositoryImp()
-    
-    func getDetailNews(newsItem : ItemRss?, callBack : @escaping ((URLRequest) -> ())) {
-        excuteNetwork(task: { [weak self] in
-            return self?.newsRepository.getNewsDetail(newsItem: newsItem)
-        }, complete: { (data) in
-            if let data = data {
-                callBack(data)
-            }
-        })
-    }
+    let newsRepository = RemoteNewsRepositoryImp()
+
 }

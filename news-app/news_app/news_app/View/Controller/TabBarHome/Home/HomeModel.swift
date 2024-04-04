@@ -8,7 +8,7 @@
 import Foundation
 //import Kingfisher
 class HomeModel : BaseModel {
-    let newsRepository = NewsRepositoryImp()
+    let newsRepository = RemoteNewsRepositoryImp()
     var arrNews : [ItemRss] = []
     
     func fetchDataNews(category : Category, callBack : @escaping (([ItemRss]) -> Void)) {

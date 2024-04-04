@@ -6,8 +6,10 @@
 //
 
 import Foundation
-protocol NewsRepository {
+import UIKit
+
+protocol RemoteNewsRepository {
     func getNewsByTypeCategory(category : Category ) -> [ItemRss]
 
-    func getNewsDetail(newsItem : ItemRss?) -> URLRequest?
+ //   func getNewsDetail(newsItem : ItemRss?) -> URLRequest?
 }

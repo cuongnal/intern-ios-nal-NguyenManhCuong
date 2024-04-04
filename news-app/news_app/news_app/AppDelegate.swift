@@ -14,9 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+        AppDelegate.dataBaseContext = persistentContainer.viewContext
         FirebaseApp.configure()
-
+        print("Documents Directory: ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not Found!")
         return true
     }
 
@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "dfgdfg")
+        let container = NSPersistentContainer(name: "DataBase")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
@@ -74,6 +74,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
+        }
+    }
+    func importDataCategoriesDefault() {
+        do {
+            var arr : [Categories] = []
+            var item :[Categories] = try AppDelegate.dataBaseContext.fetch(Categories.fetchRequest())
+            if item.count == 0 {
+                for (it) in Constant.CATEGORY_VN_EXPRESS {
+                    var i = Categories()
+                    i.idCategory = UUID(uuidString: "\(it.id)")
+                    i.title = it.sourceType
+                    i.url = it.url
+                    i.typeSource = it.sourceType
+                    arr.append(i)
+                }
+            }
+            item.append(contentsOf: arr)
+            
+        }
+        catch {
+            
         }
     }
 }

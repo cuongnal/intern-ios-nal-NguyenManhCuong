@@ -23,9 +23,8 @@ class WebViewController : UIViewController, WKNavigationDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
-        webViewModel.getDetailNews(newsItem: newsItem, callBack: { [weak self] data in
-            self?.webKitView.load(data)
-        })
+        guard let item = newsItem, let url = URL(string: item.link) else {return}
+        self.webKitView.load (URLRequest(url: url, cachePolicy: .reloadRevalidatingCacheData, timeoutInterval: 5.0))
     }
     func setUpBarButton() {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_back"),
@@ -62,6 +61,9 @@ class WebViewController : UIViewController, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         loading.stopAnimating()
+    }
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+       // loading.stopAnimating()
     }
     
 }
