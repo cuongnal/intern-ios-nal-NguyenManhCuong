@@ -1,8 +1,8 @@
 //
-//  News+CoreDataProperties.swift
+//  CDNews+CoreDataProperties.swift
 //  news_app
 //
-//  Created by admin1 on 4/4/24.
+//  Created by user on 4/5/24.
 //
 //
 
@@ -10,32 +10,32 @@ import Foundation
 import CoreData
 
 
-extension News {
+extension CDNews {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<News> {
-        return NSFetchRequest<News>(entityName: "News")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<CDNews> {
+        return NSFetchRequest<CDNews>(entityName: "CDNews")
     }
 
     @NSManaged public var author: String?
     @NSManaged public var des: String?
-    @NSManaged public var idNews: UUID?
+    @NSManaged public var idNews: String?
     @NSManaged public var image: String?
     @NSManaged public var link: String?
     @NSManaged public var pubDate: String?
     @NSManaged public var title: String?
-    @NSManaged public var categoriesNews: Categories?
+    @NSManaged public var categoriesNews: CDCategory?
     @NSManaged public var newsBookmark: NSSet?
 
 }
 
 // MARK: Generated accessors for newsBookmark
-extension News {
+extension CDNews {
 
     @objc(addNewsBookmarkObject:)
-    @NSManaged public func addToNewsBookmark(_ value: Bookmark)
+    @NSManaged public func addToNewsBookmark(_ value: CDBookmark)
 
     @objc(removeNewsBookmarkObject:)
-    @NSManaged public func removeFromNewsBookmark(_ value: Bookmark)
+    @NSManaged public func removeFromNewsBookmark(_ value: CDBookmark)
 
     @objc(addNewsBookmark:)
     @NSManaged public func addToNewsBookmark(_ values: NSSet)
@@ -45,6 +45,6 @@ extension News {
 
 }
 
-extension News : Identifiable {
+extension CDNews : Identifiable {
 
 }

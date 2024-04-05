@@ -10,7 +10,7 @@ import Foundation
 class HomeModel : BaseModel {
     let newsRepository = RemoteNewsRepositoryImp()
     var arrNews : [ItemRss] = []
-    
+    var categoryUseCase = CategoryUseCase()
     func fetchDataNews(category : Category, callBack : @escaping (([ItemRss]) -> Void)) {
         excuteNetwork(
             task: { [weak self] in
@@ -24,5 +24,16 @@ class HomeModel : BaseModel {
             }
         )
     }
+    func getCategoryByUser(idUser : String, typeSource : TypeClickPopover, callBack : @escaping (([Category]) -> Void) ) {
+        let type = typeSource == .vnExpress ? Constant.Key.KEY_TYPE_VN_EXPRESS : Constant.Key.KEY_TYPE_TUOI_TRE
+        excuteTask(
+            task: {[weak self] in
+                return self!.categoryUseCase.run(param: Param(idUser: idUser, typeSource: type))},
+            complete: { (category) in
+                print("Đây là \(category)")
+                callBack(category!)
+            })
+    }
+    
 }
 

@@ -9,7 +9,7 @@ import Foundation
 
 extension UserDefaults {
 //    static func setDefaultValue () {
-//        self.standard.register(
+//        self.standard.register( 
 //            defaults: [Constant.Key.KEY_USERS_DF_TUOITRE :
 //                                [Category(id: 0, title: "Trang chủ", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.HOME),
 //                                 Category(id: 1, title: "Thế giới", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.WORLD),

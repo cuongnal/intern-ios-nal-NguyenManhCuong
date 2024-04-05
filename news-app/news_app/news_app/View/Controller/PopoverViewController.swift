@@ -37,11 +37,10 @@ class PopoverViewController: UIViewController{
 
         ppc?.sourceRect = hiddenDirections ? CGRect(x: 0, y: 80, width: 0, height: 0) : CGRect.null
     }
-    deinit {
-        print("ĐÃ HỦY ĐỐI TƯỢNG")
-    }
-    
 }
-public enum TypeClickPopover{
-    case vnExpress, tuoiTre, share, bookmark
+public enum TypeClickPopover : String{
+    case vnExpress
+    case tuoiTre
+    case share
+    case bookmark
 }

@@ -74,7 +74,7 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if flag {
             if elementName == rootElement {
-             //   news?.type = category.title
+                //   news?.type = category.title
                 arrNews.append(news!)
                 news = nil
                 flag = false
@@ -110,8 +110,10 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
     }
     func formatDateAndImage () {
         for (index, item) in arrNews.enumerated() {
-            arrNews[index].pubDate = DateFormatter().convertStringDateFormat(dateString: item.pubDate) ?? ""
-            
+            do {
+                try arrNews[index].pubDate = DateFormatter().convertStringDateFormat(dateString: item.pubDate) ?? ""
+            }
+            catch {}
             if let stringStart = item.description.range(of: "src=\""), let stringEnd = item.description.range(of: "\"",range: stringStart.upperBound..<item.description.endIndex){
                 arrNews[index].image = String(item.description[stringStart.upperBound..<stringEnd.lowerBound])
                 

@@ -32,9 +32,9 @@ class HomeViewController : UIViewController , UIPopoverPresentationControllerDel
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        homeModel.fetchDataNews(category: Constant.CATEGORY_VN_EXPRESS[0], callBack:  { (arrNews) in
-            self.parsingWasFinished(arrNews: arrNews)
-        })
+//        homeModel.fetchDataNews(category: Constant.CATEGORY_VN_EXPRESS[0], callBack:  { (arrNews) in
+//            self.parsingWasFinished(arrNews: arrNews)
+//        })
     }
     
     func setUpHomeCollectionView(typeSource : TypeClickPopover = .vnExpress) {
@@ -42,11 +42,15 @@ class HomeViewController : UIViewController , UIPopoverPresentationControllerDel
             homeCollectionView.list.removeAll()
             homeCollectionView.reloadData()
         }
-        homeCollectionView.list = typeSource == .vnExpress ? Constant.CATEGORY_VN_EXPRESS : Constant.CATEGORY_TUOI_TRE
-        homeCollectionView.reloadData()
-        homeModel.fetchDataNews(category: homeCollectionView.list[0], callBack: { [weak self](arrNews) in
-            self?.parsingWasFinished(arrNews: arrNews)
+        homeModel.getCategoryByUser(idUser: "kJLXcuZUgNSTonSg3IO9688pz173", typeSource: typeSource, callBack: { [weak self] (arrCategory) in
+            self?.homeCollectionView.list = arrCategory
+            print("Đây là \(self?.homeCollectionView.list)")
+            self?.homeCollectionView.reloadData()
         })
+        
+//        homeModel.fetchDataNews(category: homeCollectionView.list[0], callBack: { [weak self](arrNews) in
+//            self?.parsingWasFinished(arrNews: arrNews)
+//        })
     }
     
     func parsingWasFinished(arrNews: [ItemRss]) {
@@ -61,7 +65,7 @@ class HomeViewController : UIViewController , UIPopoverPresentationControllerDel
             if URL(string: category.url) != nil {
                 self?.homeModel.fetchDataNews(category: category, callBack: { (arrNews) in
                     self?.parsingWasFinished(arrNews: arrNews)
-
+                    
                 })
             }
         }

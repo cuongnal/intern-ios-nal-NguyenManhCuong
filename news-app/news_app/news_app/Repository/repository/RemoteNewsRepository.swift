@@ -12,4 +12,6 @@ protocol RemoteNewsRepository {
     func getNewsByTypeCategory(category : Category ) -> [ItemRss]
 
  //   func getNewsDetail(newsItem : ItemRss?) -> URLRequest?
+    
+ 
 }

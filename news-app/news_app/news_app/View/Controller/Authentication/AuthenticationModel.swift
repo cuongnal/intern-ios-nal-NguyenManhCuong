@@ -29,7 +29,6 @@ class AuthenticationModel  : BaseModel {
     
     func loggingEmail(email : String, password : String) {
         firebaseRepository.userLoginEmail(email: "cuon@gmail.com", password: "123456")
-        
     }
 }
 

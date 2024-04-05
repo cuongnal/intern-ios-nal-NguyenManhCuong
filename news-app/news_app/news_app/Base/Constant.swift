@@ -77,8 +77,6 @@ struct Constant {
         Category(id: 17, title: "Du lịch", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.TRAVEL,sourceType: Constant.Key.KEY_TYPE_TUOI_TRE)
     ]
     struct Key {
-        static let KEY_USERS_DF_TUOITRE = "KEY_USERS_DF_TUOITRE"
-        static let KEY_USERS_DF_VN_EXPRESS = "KEY_USERS_DF_VN_EXPRESS"
         static let KEY_TYPE_VN_EXPRESS = "KEY_TYPE_VN_EXPRESS"
         static let KEY_TYPE_TUOI_TRE = "KEY_TYPE_TUOI_TRE"
     }

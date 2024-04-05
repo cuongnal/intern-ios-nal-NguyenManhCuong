@@ -1,8 +1,8 @@
 //
-//  Categories+CoreDataProperties.swift
+//  CDCategory+CoreDataProperties.swift
 //  news_app
 //
-//  Created by admin1 on 4/4/24.
+//  Created by user on 4/5/24.
 //
 //
 
@@ -10,13 +10,13 @@ import Foundation
 import CoreData
 
 
-extension Categories {
+extension CDCategory {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Categories> {
-        return NSFetchRequest<Categories>(entityName: "Categories")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<CDCategory> {
+        return NSFetchRequest<CDCategory>(entityName: "CDCategory")
     }
 
-    @NSManaged public var idCategory: UUID?
+    @NSManaged public var idCategory: Int64
     @NSManaged public var title: String?
     @NSManaged public var typeSource: String?
     @NSManaged public var url: String?
@@ -25,13 +25,13 @@ extension Categories {
 }
 
 // MARK: Generated accessors for categoriesNews
-extension Categories {
+extension CDCategory {
 
     @objc(addCategoriesNewsObject:)
-    @NSManaged public func addToCategoriesNews(_ value: News)
+    @NSManaged public func addToCategoriesNews(_ value: CDNews)
 
     @objc(removeCategoriesNewsObject:)
-    @NSManaged public func removeFromCategoriesNews(_ value: News)
+    @NSManaged public func removeFromCategoriesNews(_ value: CDNews)
 
     @objc(addCategoriesNews:)
     @NSManaged public func addToCategoriesNews(_ values: NSSet)
@@ -41,6 +41,6 @@ extension Categories {
 
 }
 
-extension Categories : Identifiable {
+extension CDCategory : Identifiable {
 
 }
