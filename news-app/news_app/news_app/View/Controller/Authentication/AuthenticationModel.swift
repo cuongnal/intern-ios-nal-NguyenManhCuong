@@ -27,8 +27,11 @@ class AuthenticationModel  : BaseModel {
        // return checkErrorEmail(email: email) && checkErrorPassword(password: password)
     }
     
-    func loggingEmail(email : String, password : String) {
+    func signInEmail(email : String, password : String) {
         firebaseRepository.userLoginEmail(email: "cuon@gmail.com", password: "123456")
+    }
+    func signUpEmail(email : String, password : String) {
+        
     }
 }
 
