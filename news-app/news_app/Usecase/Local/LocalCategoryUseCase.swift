@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CategoryUseCase {
+class LocalCategoryUseCase {
     
     private var localUserRepository = LocalUsersRepositoryImp()
     private var localCategoryRepository = LocalCategoryRepositoryImp()
@@ -17,18 +17,17 @@ class CategoryUseCase {
         let cdCategory : [CDCategory] = localCategoryRepository.getCategoriesByTypeSource()
         var arr : [Category] = []
         
-        
         for i in stride(from: 0, to: user!.listIndexCategories![param.typeSource]!.count, by:1) {
-            let indexCategory = user!.listIndexCategories![param.typeSource]![i]
-            var itemCategory : Category = Category()
+            let indexCategory : Int = user!.listIndexCategories![param.typeSource]![i]
+            var item : Category = Category()
             
-            let tg = cdCategory.first(where: {$0.idCategory == indexCategory})
+            let tg = cdCategory.first(where: {$0.indexCategory == indexCategory})
             if let tg = tg {
-                itemCategory.id = Int(tg.idCategory)
-                itemCategory.url = tg.url
-                itemCategory.sourceType = tg.typeSource
-                itemCategory.title = tg.title
-                arr.append(itemCategory)
+                item.id = tg.idCate
+                item.url = tg.url
+                item.sourceType = tg.typeSource
+                item.title = tg.title
+                arr.append(item)
             }
         }
  

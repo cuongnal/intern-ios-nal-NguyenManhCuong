@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-class HomeViewController : UIViewController , UIPopoverPresentationControllerDelegate{
+class HomeViewController : BaseViewController , UIPopoverPresentationControllerDelegate{
     
     @IBOutlet weak var homeCollectionView : HomeCollectionView!
     @IBOutlet weak var homeTableView : HomeTableView!
@@ -44,7 +44,7 @@ class HomeViewController : UIViewController , UIPopoverPresentationControllerDel
         }
         homeModel.getCategoryByUser(idUser: "kJLXcuZUgNSTonSg3IO9688pz173", typeSource: typeSource, callBack: { [weak self] (arrCategory) in
             self?.homeCollectionView.list = arrCategory
-            print("Đây là \(self?.homeCollectionView.list)")
+            //print("Đây là \(self?.homeCollectionView.list)")
             self?.homeCollectionView.reloadData()
         })
         
@@ -53,7 +53,7 @@ class HomeViewController : UIViewController , UIPopoverPresentationControllerDel
 //        })
     }
     
-    func parsingWasFinished(arrNews: [ItemRss]) {
+    func parsingWasFinished(arrNews: [News]) {
         if homeTableView.data.count != 0 {
             homeTableView.data.removeAll()
         }
@@ -74,7 +74,7 @@ class HomeViewController : UIViewController , UIPopoverPresentationControllerDel
             self?.openWebKitView(item: item)
         }
     }
-    func openWebKitView(item : ItemRss) {
+    func openWebKitView(item : News) {
         
         guard let acc = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController else {
             return

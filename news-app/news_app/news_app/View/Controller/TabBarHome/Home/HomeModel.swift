@@ -9,9 +9,9 @@ import Foundation
 //import Kingfisher
 class HomeModel : BaseModel {
     let newsRepository = RemoteNewsRepositoryImp()
-    var arrNews : [ItemRss] = []
-    var categoryUseCase = CategoryUseCase()
-    func fetchDataNews(category : Category, callBack : @escaping (([ItemRss]) -> Void)) {
+    var arrNews : [News] = []
+    var categoryUseCase = LocalCategoryUseCase()
+    func fetchDataNews(category : Category, callBack : @escaping (([News]) -> Void)) {
         excuteNetwork(
             task: { [weak self] in
                 let arr =  self?.newsRepository.getNewsByTypeCategory(category: category)
@@ -29,9 +29,8 @@ class HomeModel : BaseModel {
         excuteTask(
             task: {[weak self] in
                 return self!.categoryUseCase.run(param: Param(idUser: idUser, typeSource: type))},
-            complete: { (category) in
-                print("Đây là \(category)")
-                callBack(category!)
+            complete: { (arrCategory) in
+                callBack(arrCategory!)
             })
     }
     

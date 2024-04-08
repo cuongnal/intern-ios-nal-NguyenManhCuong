@@ -7,8 +7,8 @@
 
 import UIKit
 class HomeTableView : UITableView, UITableViewDataSource, UITableViewDelegate {
-    var data : [ItemRss] = []
-    var callBack : ((ItemRss) -> ())!
+    var data : [News] = []
+    var callBack : ((News) -> ())!
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.delegate = self

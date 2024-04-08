@@ -8,6 +8,5 @@
 import Foundation
 
 protocol LocalNewsRepository {
-    func getNewsByTypeCategory(category : Category ) -> [ItemRss]
-
+    func getNewsByCategory(category: Category) -> [CDNews]
 }

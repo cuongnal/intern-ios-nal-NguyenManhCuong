@@ -23,9 +23,9 @@ class HomeTableViewCell : UITableViewCell, UIPopoverPresentationControllerDelega
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    func setUpView(item: ItemRss) {
+    func setUpView(item: News) {
         timeNews.text = item.pubDate
-        typeNews.text = item.type
+        typeNews.text = item.typeCategory
         authorNews.text = item.author
         titleNews.text = item.title
         imageNews.image = UIImage(named: "test")
@@ -40,7 +40,6 @@ class HomeTableViewCell : UITableViewCell, UIPopoverPresentationControllerDelega
     }
     @objc func touchPopUp() {
         NotificationCenter.default.post(name: NSNotification.Name(Constant.POP_OVER_NOTIFICATION), object: nil, userInfo: [Constant.ANCHOR_POPOVER:self.popupMenu!])
-        print()
-        print("ĐÃ Gửi \(String(describing: popupMenu))")
+
     }
 }

@@ -22,13 +22,18 @@ class AuthenticationModel  : BaseModel {
         return password!.count >= 6
     }
     func isTouchBtnSignUpSignIn(email : String?, password : String?) -> Bool {
-         return true
-        // return true để auto cho đăng nhập
-       // return checkErrorEmail(email: email) && checkErrorPassword(password: password)
+       // return true
+       // return true để auto cho đăng nhập
+        return checkErrorEmail(email: email) && checkErrorPassword(password: password)
     }
     
-    func signInEmail(email : String, password : String) {
-        firebaseRepository.userLoginEmail(email: "cuon@gmail.com", password: "123456")
+    func signInEmail(email : String, password : String, callBack : @escaping (() -> ())) {
+        excuteNetwork(blockUI: true,
+                   task: { [self] in
+            firebaseRepository.userLoginEmail(email: email, password: password)
+        }, complete: {_ in 
+            callBack()
+        })
     }
     func signUpEmail(email : String, password : String) {
         

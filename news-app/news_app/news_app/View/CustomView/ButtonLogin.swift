@@ -18,12 +18,14 @@ class ButtonLogin: UIButton {
     func setColorButton(flag : Bool) {
         layer.cornerRadius = 20
         self.titleLabel?.textColor = Constant.COLOR_WHITE
-        guard flag == true else {
-            layer.backgroundColor = Constant.COLOR_SIGN_UP_GRAY.cgColor
+        self.isUserInteractionEnabled = flag
+        
+        if flag == true {
+            layer.backgroundColor = UIColor.black.cgColor
             layer.borderColor = UIColor.black.cgColor
             return
         }
-        layer.backgroundColor = UIColor.black.cgColor
+        layer.backgroundColor = Constant.COLOR_SIGN_UP_GRAY.cgColor
         layer.borderColor = UIColor.black.cgColor
     }
     

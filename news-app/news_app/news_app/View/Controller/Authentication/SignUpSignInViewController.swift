@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignUpSignInViewController: UIViewController {
+class SignUpSignInViewController: BaseViewController {
     
     @IBOutlet weak var imageLogo: UIImageView!
     @IBOutlet weak var labelPassword: UILabel!
@@ -30,8 +30,8 @@ class SignUpSignInViewController: UIViewController {
     var flagCheckSignInSignUp = HiddenView.signUp
     override func viewDidLoad() {
         super.viewDidLoad()
+        authenModel.delegate = self
         inputPassword.enablePasswordToggle()
-        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
         hiddenView()
@@ -40,8 +40,9 @@ class SignUpSignInViewController: UIViewController {
     @IBAction func onTouchSignUpAndSignIn(_ sender: Any) {
         var tabBar = storyboard?.instantiateViewController(withIdentifier: "TabBarHome") as! TabBarController
         
-        authenModel.loggingEmail(email: "", password: "")
-        navigationController?.pushViewController(tabBar, animated: true)
+        authenModel.signInEmail(email: inputEmail.text!, password: inputPassword.text!, callBack: {
+            self.navigationController?.pushViewController(tabBar, animated: true)
+        })
     }
     @IBAction func onTouchBtnSignInWithEmail() {
         flagCheckSignInSignUp = .signIn
@@ -60,10 +61,10 @@ class SignUpSignInViewController: UIViewController {
         labelPassword.alpha = inputPassword.text?.isEmpty == true ? 0 : 1
         labelIncorrectPassword.alpha = authenModel.checkErrorPassword(password: inputPassword.text) ? 0 : 1
         guard authenModel.isTouchBtnSignUpSignIn(email: inputEmail?.text, password: inputPassword?.text) == true else{
-            btnSignUpAndSignIn.backgroundColor = Constant.COLOR_SIGN_UP_GRAY
+            btnSignUpAndSignIn.setColorButton(flag: false)
             return
         }
-        btnSignUpAndSignIn.backgroundColor = UIColor.black
+        btnSignUpAndSignIn.setColorButton(flag: true)
     }
     @IBAction func emailEditingChanged(_ sender : Any) {
         labelEmail.alpha = inputEmail.text?.isEmpty == true ? 0 : 1

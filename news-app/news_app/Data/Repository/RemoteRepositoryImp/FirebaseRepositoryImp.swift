@@ -15,6 +15,7 @@ class FirebaseRepositoryImp : FirebaseRepository {
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
             user.email = authResult?.user.email
             user.idUser = authResult?.user.uid
+            print(authResult as Any)
         }
         user.listIndexCategory = [Constant.Key.KEY_TYPE_TUOI_TRE: Array(0...17),
                                   Constant.Key.KEY_TYPE_VN_EXPRESS : Array(0...21)]

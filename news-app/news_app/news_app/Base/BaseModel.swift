@@ -7,16 +7,21 @@
 
 import Foundation
 
+protocol BaseModelDelegate{
+    func startLoading()
+    func cancelLoading()
+}
 class BaseModel  {
+    var delegate : BaseViewController?
     func excuteTask<T>(blockUI : Bool = false,
                        task : @escaping (()-> T?),
                        complete : @escaping ((T?) -> Void)
     ) {
-//        if blockUI == true {
-//            DispatchQueue.main.async {
-//                
-//            }
-//        }
+        if blockUI == true {
+            DispatchQueue.main.async {
+                
+            }
+        }
         DispatchQueue.global().async {
             let result = task()
             DispatchQueue.main.async {
@@ -29,14 +34,15 @@ class BaseModel  {
                           task : @escaping (()-> T?),
                           complete : @escaping ((T?) -> Void)
     ) {
-        //        if blockUI == true {
-        //            DispatchQueue.main.async {
-        //
-        //            }
-        //        }
+        if blockUI == true {
+            DispatchQueue.main.async {
+                self.delegate?.startLoading()
+            }
+        }
         DispatchQueue.global().async {
             let result = task()
             DispatchQueue.main.async {
+                self.delegate?.cancelLoading()
                 complete(result)
             }
         }

@@ -7,7 +7,8 @@
         <relationship name="usersBookmark" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDUser" inverseName="usersBookmark" inverseEntity="CDUser"/>
     </entity>
     <entity name="CDCategory" representedClassName="CDCategory" syncable="YES">
-        <attribute name="idCategory" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="idCate" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="indexCategory" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="typeSource" optional="YES" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="String"/>
@@ -16,6 +17,7 @@
     <entity name="CDNews" representedClassName="CDNews" syncable="YES">
         <attribute name="author" optional="YES" attributeType="String"/>
         <attribute name="des" optional="YES" attributeType="String"/>
+        <attribute name="idCategory" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="idNews" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="link" optional="YES" attributeType="String"/>

@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 class WebViewController : UIViewController, WKNavigationDelegate {
     
-    var newsItem : ItemRss? = nil
+    var newsItem : News? = nil
     
     @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var webKitView: WKWebView!

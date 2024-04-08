@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         importDataCategoriesDefault()
         
-        if let directoryLocation = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask).last {             print("Documents Directory: \(directoryLocation)Application Support") }
+//        if let directoryLocation = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask).last {             print("Documents Directory: \(directoryLocation)Application Support") }
         
         return true
     }
@@ -90,31 +90,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 user.idUser = "kJLXcuZUgNSTonSg3IO9688pz173"
                 user.email = "cuong@gmail.com"
                 user.listIndexCategories = [Constant.Key.KEY_TYPE_TUOI_TRE : Array(0...17),
-                                            Constant.Key.KEY_TYPE_VN_EXPRESS : [20,15,1,3,16,6,5,4,8,9,10,11,12,13,14,2,17,7,18,19,0,21]]
+                                            Constant.Key.KEY_TYPE_VN_EXPRESS : [0,15,20,3,16,6,5,4,8,9,10,11,12,13,14,21,17,7,18,19,1,2]]
                 try AppDelegate.context.save()
                 
-                
-                for (it) in Constant.CATEGORY_VN_EXPRESS {
+                for (index, item) in Constant.CATEGORY_VN_EXPRESS.enumerated() {
                     let i = CDCategory(context: AppDelegate.context)
-                    i.idCategory = Int64(it.id)
-                    i.title = it.title
-                    i.url = it.url
-                    i.typeSource = it.sourceType
+                    i.indexCategory = Int64(index)
+                    i.title = item.title
+                    i.url = item.url
+                    i.idCate = item.id
+                    i.typeSource = item.sourceType
                     arr.append(i)
                 }
-                for (it) in Constant.CATEGORY_TUOI_TRE {
+                for (index, item) in Constant.CATEGORY_TUOI_TRE.enumerated() {
                     let i = CDCategory(context: AppDelegate.context)
-                    i.idCategory = Int64(it.id)
-                    i.title = it.title
-                    i.url = it.url
-                    i.typeSource = it.sourceType
+                    i.indexCategory = Int64(index)
+                    i.title = item.title
+                    i.url = item.url
+                    i.idCate = item.id
+                    i.typeSource = item.sourceType
                     arr.append(i)
                 }
                 try AppDelegate.context.save()
             }
-            
-            //            try print("\(AppDelegate.context.fetch(Categories.fetchRequest()))")
-            //            try print("\(AppDelegate.context.fetch(Users.fetchRequest()))")
         }
         catch let error {
             print("Lỗi khi lưu\(error)")

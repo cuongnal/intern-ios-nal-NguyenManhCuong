@@ -7,8 +7,8 @@
 
 import Foundation
 import UIKit
-struct Category {
-    var id : Int!
+public struct Category {
+    var id : UUID!
     var title : String!
     var url : String!
     var sourceType : String!

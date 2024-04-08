@@ -2,7 +2,7 @@
 //  CDCategory+CoreDataProperties.swift
 //  news_app
 //
-//  Created by user on 4/5/24.
+//  Created by user on 4/8/24.
 //
 //
 
@@ -16,10 +16,11 @@ extension CDCategory {
         return NSFetchRequest<CDCategory>(entityName: "CDCategory")
     }
 
-    @NSManaged public var idCategory: Int64
+    @NSManaged public var indexCategory: Int64
     @NSManaged public var title: String?
     @NSManaged public var typeSource: String?
     @NSManaged public var url: String?
+    @NSManaged public var idCate: UUID?
     @NSManaged public var categoriesNews: NSSet?
 
 }
