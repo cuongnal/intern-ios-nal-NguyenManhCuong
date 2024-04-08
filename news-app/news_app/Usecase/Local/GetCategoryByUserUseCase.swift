@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LocalCategoryUseCase {
+class GetCategoryByUserUseCase {
     
     private var localUserRepository = LocalUsersRepositoryImp()
     private var localCategoryRepository = LocalCategoryRepositoryImp()
@@ -38,7 +38,7 @@ class Param {
     var data :(([Category]) -> ())?
     var idUser : String
     var typeSource : String
-    init(data: ( ([Category]) -> Void)? = nil, idUser: String, typeSource: String) {
+    init(data: ( ([Category]) -> Void)? = nil, idUser: String, keyTypeSourceConstant typeSource: String) {
         self.data = data
         self.idUser = idUser
         self.typeSource = typeSource

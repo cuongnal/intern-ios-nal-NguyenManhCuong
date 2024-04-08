@@ -19,7 +19,15 @@ class LocalNewsRepositoryImp : LocalNewsRepository {
         }
         return []
     }
-    
+    func getAllNews() -> [CDNews] {
+        do {
+            var arr = try CDNews.getAll()
+            return arr
+        }catch let err {
+            print("Lỗi khi getAllNews\(err)")
+            return []
+        }
+    }
     func insertNewsByCategory(arrNews : [CDNews], category : Category ) -> Bool {
         do {
             var a = try CDNews.insertListNews(cdNews: arrNews, category: category)

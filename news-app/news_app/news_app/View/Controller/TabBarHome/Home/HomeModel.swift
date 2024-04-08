@@ -10,7 +10,7 @@ import Foundation
 class HomeModel : BaseModel {
     let newsRepository = RemoteNewsRepositoryImp()
     var arrNews : [News] = []
-    var categoryUseCase = LocalCategoryUseCase()
+    var categoryUseCase = GetCategoryByUserUseCase()
     func fetchDataNews(category : Category, callBack : @escaping (([News]) -> Void)) {
         excuteNetwork(
             task: { [weak self] in

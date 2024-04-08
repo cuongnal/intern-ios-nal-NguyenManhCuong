@@ -64,7 +64,7 @@
 		CE1DADDC2BBFA8AF00F87A47 /* LocalUsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DADDB2BBFA8AF00F87A47 /* LocalUsersRepository.swift */; };
 		CE1DADDE2BBFA96F00F87A47 /* LocalUsersRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DADDD2BBFA96F00F87A47 /* LocalUsersRepositoryImp.swift */; };
 		CE1DAE1E2BBFE28300F87A47 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DAE1D2BBFE28300F87A47 /* UseCase.swift */; };
-		CE1DAE202BBFE2CA00F87A47 /* LocalCategoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DAE1F2BBFE2CA00F87A47 /* LocalCategoryUseCase.swift */; };
+		CE1DAE202BBFE2CA00F87A47 /* GetCategoryByUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DAE1F2BBFE2CA00F87A47 /* GetCategoryByUserUseCase.swift */; };
 		CE1DAE292BBFE52000F87A47 /* CDNews+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DAE212BBFE52000F87A47 /* CDNews+CoreDataClass.swift */; };
 		CE1DAE2A2BBFE52000F87A47 /* CDNews+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DAE222BBFE52000F87A47 /* CDNews+CoreDataProperties.swift */; };
 		CE1DAE2B2BBFE52000F87A47 /* CDUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DAE232BBFE52000F87A47 /* CDUser+CoreDataClass.swift */; };
@@ -79,6 +79,9 @@
 		CEA2C1F92BC3969800C4B2B3 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2C1F82BC3969800C4B2B3 /* LoadingViewController.swift */; };
 		CEA2C1FD2BC3D87E00C4B2B3 /* CDNewsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2C1FC2BC3D87E00C4B2B3 /* CDNewsExtension.swift */; };
 		CEA2C1FF2BC3E14100C4B2B3 /* CDCategoryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2C1FE2BC3E14100C4B2B3 /* CDCategoryExtension.swift */; };
+		CEA2C2012BC4154400C4B2B3 /* RemoteGetAllNewsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2C2002BC4154400C4B2B3 /* RemoteGetAllNewsUseCase.swift */; };
+		CEA2C2032BC418C700C4B2B3 /* LocalGetAllNewsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2C2022BC418C700C4B2B3 /* LocalGetAllNewsUseCase.swift */; };
+		CEA2C2052BC41B2500C4B2B3 /* InsertNewsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2C2042BC41B2500C4B2B3 /* InsertNewsUseCase.swift */; };
 		D75363E81820EB1943230A60 /* Pods_news_app_news_appUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D777246889CA6F061FA9587A /* Pods_news_app_news_appUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -168,7 +171,7 @@
 		CE1DADDB2BBFA8AF00F87A47 /* LocalUsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUsersRepository.swift; sourceTree = "<group>"; };
 		CE1DADDD2BBFA96F00F87A47 /* LocalUsersRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUsersRepositoryImp.swift; sourceTree = "<group>"; };
 		CE1DAE1D2BBFE28300F87A47 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
-		CE1DAE1F2BBFE2CA00F87A47 /* LocalCategoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCategoryUseCase.swift; sourceTree = "<group>"; };
+		CE1DAE1F2BBFE2CA00F87A47 /* GetCategoryByUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoryByUserUseCase.swift; sourceTree = "<group>"; };
 		CE1DAE212BBFE52000F87A47 /* CDNews+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDNews+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CE1DAE222BBFE52000F87A47 /* CDNews+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDNews+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CE1DAE232BBFE52000F87A47 /* CDUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -183,6 +186,9 @@
 		CEA2C1F82BC3969800C4B2B3 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		CEA2C1FC2BC3D87E00C4B2B3 /* CDNewsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDNewsExtension.swift; sourceTree = "<group>"; };
 		CEA2C1FE2BC3E14100C4B2B3 /* CDCategoryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCategoryExtension.swift; sourceTree = "<group>"; };
+		CEA2C2002BC4154400C4B2B3 /* RemoteGetAllNewsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGetAllNewsUseCase.swift; sourceTree = "<group>"; };
+		CEA2C2022BC418C700C4B2B3 /* LocalGetAllNewsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalGetAllNewsUseCase.swift; sourceTree = "<group>"; };
+		CEA2C2042BC41B2500C4B2B3 /* InsertNewsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertNewsUseCase.swift; sourceTree = "<group>"; };
 		D777246889CA6F061FA9587A /* Pods_news_app_news_appUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_news_app_news_appUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29E3FA5701DD17A9825D9F4 /* Pods-news_app-news_appUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-news_app-news_appUITests.release.xcconfig"; path = "Target Support Files/Pods-news_app-news_appUITests/Pods-news_app-news_appUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FD960B65A543EAA72928F457 /* Pods_news_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_news_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -542,8 +548,10 @@
 		CEA2C1FA2BC3C97700C4B2B3 /* Local */ = {
 			isa = PBXGroup;
 			children = (
+				CEA2C2022BC418C700C4B2B3 /* LocalGetAllNewsUseCase.swift */,
 				CE1DAE342BC0183900F87A47 /* LocalNewsUseCase.swift */,
-				CE1DAE1F2BBFE2CA00F87A47 /* LocalCategoryUseCase.swift */,
+				CE1DAE1F2BBFE2CA00F87A47 /* GetCategoryByUserUseCase.swift */,
+				CEA2C2042BC41B2500C4B2B3 /* InsertNewsUseCase.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -551,6 +559,7 @@
 		CEA2C1FB2BC3C97D00C4B2B3 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				CEA2C2002BC4154400C4B2B3 /* RemoteGetAllNewsUseCase.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -807,13 +816,15 @@
 				CEA2C1F72BC38FB900C4B2B3 /* BaseViewController.swift in Sources */,
 				ADA5EC5E2BB10A7D00A26281 /* Api.swift in Sources */,
 				ADA0BAE92BB2B3A4007B39A8 /* BookmarkViewController.swift in Sources */,
+				CEA2C2012BC4154400C4B2B3 /* RemoteGetAllNewsUseCase.swift in Sources */,
 				AD8DBC162B9EF5090070D7A7 /* Extension.swift in Sources */,
 				CE1DADD72BBFA02400F87A47 /* LocalCategoriesRepository.swift in Sources */,
-				CE1DAE202BBFE2CA00F87A47 /* LocalCategoryUseCase.swift in Sources */,
+				CE1DAE202BBFE2CA00F87A47 /* GetCategoryByUserUseCase.swift in Sources */,
 				CEA2C1F92BC3969800C4B2B3 /* LoadingViewController.swift in Sources */,
 				AD8E53852BB54EA7000103DA /* SettingTableViewCell.swift in Sources */,
 				ADE00FEC2BAABD9C0041DE42 /* HomeCollectionView.swift in Sources */,
 				CE1DAE2B2BBFE52000F87A47 /* CDUser+CoreDataClass.swift in Sources */,
+				CEA2C2032BC418C700C4B2B3 /* LocalGetAllNewsUseCase.swift in Sources */,
 				CE1DAE1E2BBFE28300F87A47 /* UseCase.swift in Sources */,
 				AD9B87432BBAC46D0052A68A /* HomeModel.swift in Sources */,
 				ADD5E5EA2BB1987B00D296E5 /* ForgotPasswordViewController.swift in Sources */,
@@ -824,6 +835,7 @@
 				AD8DBBDF2B9AE92A0070D7A7 /* SignUpSignInViewController.swift in Sources */,
 				ADE7C01C2BB6C2F400AEB78B /* WebViewController.swift in Sources */,
 				ADE00FF02BAAD4800041DE42 /* HomeTableViewCell.swift in Sources */,
+				CEA2C2052BC41B2500C4B2B3 /* InsertNewsUseCase.swift in Sources */,
 				AD8E53872BB54EC0000103DA /* SettingViewController.swift in Sources */,
 				AD9B873F2BBA946C0052A68A /* PickLanguageViewController.swift in Sources */,
 				CE1DAE2F2BBFE52000F87A47 /* CDCategory+CoreDataClass.swift in Sources */,

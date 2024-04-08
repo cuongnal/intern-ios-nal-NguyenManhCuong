@@ -18,7 +18,7 @@ extension CDNews {
         var cate = try CDCategory.getCDCategory(category : category)
         for item in cdNews {
             let cdN = CDNews(context: AppDelegate.context)
-            cdN.author  = item.author
+            cdN.author = item.author
             cdN.des = item.des
             cdN.idNews = item.idNews
             cdN.image = item.image
@@ -32,5 +32,9 @@ extension CDNews {
         }
         try AppDelegate.context.save()
         return true
+    }
+    @nonobjc public class func getAll() throws -> [CDNews] {
+        let a = CDNews.fetchRequest()
+        return try AppDelegate.context.fetch(a)
     }
 }

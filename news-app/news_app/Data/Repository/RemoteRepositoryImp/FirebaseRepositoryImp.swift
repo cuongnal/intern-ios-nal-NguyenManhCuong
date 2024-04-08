@@ -17,11 +17,9 @@ class FirebaseRepositoryImp : FirebaseRepository {
             user.idUser = authResult?.user.uid
             print(authResult as Any)
         }
-        user.listIndexCategory = [Constant.Key.KEY_TYPE_TUOI_TRE: Array(0...17),
-                                  Constant.Key.KEY_TYPE_VN_EXPRESS : Array(0...21)]
         return user
     }
-    func createUser(with email : String, with password : String) -> User? {
+    func createUser(withEmail email : String, withPassword password : String) -> User? {
         var user : User? = User()
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
             if(error == nil) {

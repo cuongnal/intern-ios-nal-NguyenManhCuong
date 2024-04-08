@@ -18,7 +18,7 @@ extension CDNews {
 
     @NSManaged public var author: String?
     @NSManaged public var des: String?
-    @NSManaged public var idNews: String?
+    @NSManaged public var idNews: String
     @NSManaged public var image: String?
     @NSManaged public var link: String?
     @NSManaged public var pubDate: String?
