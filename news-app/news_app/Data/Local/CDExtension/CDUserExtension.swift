@@ -15,7 +15,7 @@ extension CDUser {
         return try AppDelegate.context.fetch(a).first
     }
     @nonobjc public class func insertUser(withUser user : User) throws -> CDUser? {
-        var u = CDUser(context: AppDelegate.context)
+        let u = CDUser(context: AppDelegate.context)
         u.email = user.email
         u.idUser = user.email
         u.listIndexCategory = user.listIndexCategory

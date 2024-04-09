@@ -8,7 +8,6 @@
 import Foundation
 import FirebaseAuth
 class AuthenticationModel  : BaseModel {
-    let firebaseRepository = FirebaseRepositoryImp()
     let categoryRepository = CategoryRepositoryImp()
     let userRepository = UsersRepositoryImp()
     func checkErrorEmail(email : String?) -> Bool{
@@ -62,15 +61,7 @@ class AuthenticationModel  : BaseModel {
 //    }
     
     func signUpEmail(email : String, password : String, callBack : @escaping (() -> Void)) {
-        excuteNetwork(
-            blockUI: true,
-            task: { [weak self] in
-                self?.firebaseRepository.createUser(withEmail: email, withPassword: password)
-            }, 
-            complete: { (user) in
-                if user == nil {return}
-                callBack()
-            })
+        Auth.auth().sig
     }
     func getAllNews() {
 //        excuteNetwork(task: { [weak self] in

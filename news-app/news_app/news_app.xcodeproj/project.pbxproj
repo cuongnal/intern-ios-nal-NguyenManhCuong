@@ -10,8 +10,6 @@
 		544050A4B8741F87310CF21A /* Pods_news_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB8E695BE926F81C9A6D2F6 /* Pods_news_appTests.framework */; };
 		AD0914172BA8129900287227 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0914162BA8129900287227 /* Constant.swift */; };
 		AD74958F2BBD7209002CF754 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD74958E2BBD7209002CF754 /* GoogleService-Info.plist */; };
-		AD7495932BBD8011002CF754 /* FirebaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7495922BBD8011002CF754 /* FirebaseRepository.swift */; };
-		AD7495952BBD8024002CF754 /* FirebaseRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7495942BBD8024002CF754 /* FirebaseRepositoryImp.swift */; };
 		AD8DBBDB2B9AE92A0070D7A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DBBDA2B9AE92A0070D7A7 /* AppDelegate.swift */; };
 		AD8DBBDD2B9AE92A0070D7A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DBBDC2B9AE92A0070D7A7 /* SceneDelegate.swift */; };
 		AD8DBBDF2B9AE92A0070D7A7 /* SignUpSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8DBBDE2B9AE92A0070D7A7 /* SignUpSignInViewController.swift */; };
@@ -109,8 +107,6 @@
 		A5CFD5C337E84C3D3AC9C4F9 /* Pods-news_app-news_appUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-news_app-news_appUITests.debug.xcconfig"; path = "Target Support Files/Pods-news_app-news_appUITests/Pods-news_app-news_appUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD0914162BA8129900287227 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		AD74958E2BBD7209002CF754 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		AD7495922BBD8011002CF754 /* FirebaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRepository.swift; sourceTree = "<group>"; };
-		AD7495942BBD8024002CF754 /* FirebaseRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRepositoryImp.swift; sourceTree = "<group>"; };
 		AD8DBBD72B9AE92A0070D7A7 /* news_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = news_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD8DBBDA2B9AE92A0070D7A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD8DBBDC2B9AE92A0070D7A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -483,7 +479,6 @@
 		B2F8DE2B2BBEA6B200A471EB /* repository */ = {
 			isa = PBXGroup;
 			children = (
-				AD7495922BBD8011002CF754 /* FirebaseRepository.swift */,
 				B2F8DE2E2BBEB27200A471EB /* NewsRepository.swift */,
 				CE1DADD62BBFA02400F87A47 /* CategoriesRepository.swift */,
 				CE1DADDB2BBFA8AF00F87A47 /* UsersRepository.swift */,
@@ -534,7 +529,6 @@
 		CEA2C2062BC4DD7400C4B2B3 /* RepostitoryImp */ = {
 			isa = PBXGroup;
 			children = (
-				AD7495942BBD8024002CF754 /* FirebaseRepositoryImp.swift */,
 				B2F8DE2C2BBEA6DC00A471EB /* NewsRepositoryImp.swift */,
 				CE1DADD92BBFA22900F87A47 /* CategoryRepositoryImp.swift */,
 				CE1DADDD2BBFA96F00F87A47 /* UsersRepositoryImp.swift */,
@@ -830,7 +824,6 @@
 				ADA5EC602BB10B7A00A26281 /* XMLParserToObject.swift in Sources */,
 				CE18A8BA2BC5360A00B88718 /* CDCategory+CoreDataProperties.swift in Sources */,
 				ADA136E32BBD32A200E74F6E /* UserDefault.swift in Sources */,
-				AD7495952BBD8024002CF754 /* FirebaseRepositoryImp.swift in Sources */,
 				ADE535872BB119E3004E2D42 /* Category.swift in Sources */,
 				ADA1360E2BBBE0D500E74F6E /* WebViewModel.swift in Sources */,
 				ADA2C3F42BA9329B009E4F7C /* HomeViewController.swift in Sources */,
@@ -839,7 +832,6 @@
 				CEA2C1FD2BC3D87E00C4B2B3 /* CDNewsExtension.swift in Sources */,
 				CE18A8B42BC5360A00B88718 /* CDUser+CoreDataProperties.swift in Sources */,
 				ADE00FF32BAAE01A0041DE42 /* News.swift in Sources */,
-				AD7495932BBD8011002CF754 /* FirebaseRepository.swift in Sources */,
 				AD8DBBDD2B9AE92A0070D7A7 /* SceneDelegate.swift in Sources */,
 				AD8E53832BB54E97000103DA /* SettingTableView.swift in Sources */,
 				CE1DADDE2BBFA96F00F87A47 /* UsersRepositoryImp.swift in Sources */,
