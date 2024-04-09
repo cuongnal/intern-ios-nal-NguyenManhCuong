@@ -8,52 +8,40 @@
 import Foundation
 
 extension UserDefaults {
-//    static func setDefaultValue () {
-//        self.standard.register( 
-//            defaults: [Constant.Key.KEY_USERS_DF_TUOITRE :
-//                                [Category(id: 0, title: "Trang chủ", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.HOME),
-//                                 Category(id: 1, title: "Thế giới", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.WORLD),
-//                                 Category(id: 2, title: "Thời sự", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.NEWS),
-//                                 Category(id: 3, title: "Kinh doanh", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.BUSINESS),
-//                                 Category(id: 4, title: "Startup", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.STARTUP),
-//                                 Category(id: 5, title: "Giải trí", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.ENTERTAINMENT),
-//                                 Category(id: 6, title: "Thể thao", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.SPORT),
-//                                 Category(id: 7, title: "Pháp luật", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.LAW),
-//                                 Category(id: 8, title: "Giáo dục", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.EDUCATION),
-//                                 Category(id: 9, title: "Tin mới nhất", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.LATES_NEWS),
-//                                 Category(id: 10, title: "Tin nổi bật", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.HOT_NEWS),
-//                                 Category(id: 11, title: "Sức khỏe", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.HEALTH),
-//                                 Category(id: 12, title: "Đời sống", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.LIFE),
-//                                 Category(id: 13, title: "Du lịch", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.TRAVEL),
-//                                 Category(id: 14, title: "Khoa học", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.SCIENCE),
-//                                 Category(id: 15, title: "Số hóa", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.DIGITAL),
-//                                 Category(id: 16, title: "Xe", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.CAR),
-//                                 Category(id: 17, title: "Ý kiến", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.OPINION),
-//                                 Category(id: 18, title: "Tâm sự", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.CONFESSION),
-//                                 Category(id: 19, title: "Cười", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.JOKE),
-//                                 Category(id: 20, title: "Tin xem nhiều", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.MOST_VIEWED)],
-//
-//                       Constant.Key.KEY_USERS_DF_VN_EXPRESS : [
-//                                Category(id: 0, title: "Trang chủ", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.HOME),
-//                                Category(id: 1, title: "Thời sự", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.NEWS),
-//                                Category(id: 2, title: "Thế giới", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.WORLD),
-//                                Category(id: 3, title: "Pháp luật", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.LAW),
-//                                Category(id: 4, title: "Kinh doanh", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.BUSINESS),
-//                                Category(id: 5, title: "Công nghệ", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.TECHNOLOGY),
-//                                Category(id: 6, title: "Xe", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.CAR),
-//                                Category(id: 7, title: "Nhịp sống trẻ", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.YOUTH_LIFE),
-//                                Category(id: 8, title: "Văn hóa", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.CULTURE),
-//                                Category(id: 9, title: "Giải trí", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.ENTERTAINMENT),
-//                                Category(id: 10, title: "Thể thao", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.SPORT),
-//                                Category(id: 11, title: "Giáo dục", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.EDUCATION),
-//                                Category(id: 12, title: "Khoa học", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.SCIENCE),
-//                                Category(id: 13, title: "Sức khỏe", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.HEALTH),
-//                                Category(id: 14, title: "Giả thật", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.FAKE_NEWS),
-//                                Category(id: 15, title: "Thư giãn", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.RELAX),
-//                                Category(id: 16, title: "Bạn đọc làm báo", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.READERS_AS_REPORTER),
-//                                Category(id: 17, title: "Du lịch", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.TRAVEL)]
-//                      ])
+    public static func setUser(user : User) {
+        do {
+            let data = try JSONEncoder().encode(user)
+            self.standard.set(data, forKey: Constant.Key.USER_LOGIN)
+        }
+        catch {}
+    }
+    public static func getUser() -> User? {
+        if let data = self.standard.data(forKey: Constant.Key.USER_LOGIN) {
+            do {
+                let user = try JSONDecoder().decode(User.self, from: data)
+                return user
+            }
+            catch{}
+        }
+        return nil
+    }
+    public func setIndexCategoryDefault()  -> [String:[Int]]{
+        return [TypeSource.tuoiTre.rawValue : Array(0...17),
+                TypeSource.vnExpress.rawValue : [20,15,0,3,16,6,5,4,8,9,10,11,12,13,14,21,17,7,18,19,1,2] ]
+    }
+//    static func getValue<T> (_ type: T.Type, forKey : String ) -> T? where T : Decodable {
+//        if let data = self.standard.data(forKey: forKey) {
+//            
+//            do {
+//                let user = try JSONDecoder().decode(User.self, from: data)
+//                return user
+//            }
+//            catch{
+//                return nil
+//            }
+//        }
 //    }
+    
 }
-//
+
 

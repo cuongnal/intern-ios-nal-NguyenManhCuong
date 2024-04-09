@@ -17,7 +17,7 @@
     <entity name="CDNews" representedClassName="CDNews" syncable="YES">
         <attribute name="author" optional="YES" attributeType="String"/>
         <attribute name="des" optional="YES" attributeType="String"/>
-        <attribute name="idCategory" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="idCate" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="idNews" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="link" optional="YES" attributeType="String"/>
@@ -29,7 +29,7 @@
     <entity name="CDUser" representedClassName="CDUser" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="idUser" attributeType="String"/>
-        <attribute name="listIndexCategories" attributeType="Transformable" valueTransformerName="" customClassName="Dictionary&lt;String , Array&lt;Int&gt; &gt;"/>
+        <attribute name="listIndexCategory" attributeType="Transformable" valueTransformerName="" customClassName="Dictionary&lt;String , Array&lt;Int&gt; &gt;"/>
         <relationship name="usersBookmark" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDBookmark" inverseName="usersBookmark" inverseEntity="CDBookmark"/>
     </entity>
 </model>

@@ -31,8 +31,8 @@ class FirebaseRepositoryImp : FirebaseRepository {
                 user!.idUser = authResult?.user.uid
             }
         }
-        user?.listIndexCategory = [Constant.Key.KEY_TYPE_TUOI_TRE: Array(0...17),
-                                   Constant.Key.KEY_TYPE_VN_EXPRESS : Array(0...21)]
+        user?.listIndexCategory = [TypeSource.tuoiTre.rawValue: Array(0...17),
+                                   TypeSource.vnExpress.rawValue : Array(0...21)]
         return user
     }
     

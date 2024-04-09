@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol LocalUsersRepository {
+protocol UsersRepository {
     func getAllUser()
-    func getUserDetail(idUser : String) -> CDUser?
+    func getUserDetail(idUser : String) -> User?
 }

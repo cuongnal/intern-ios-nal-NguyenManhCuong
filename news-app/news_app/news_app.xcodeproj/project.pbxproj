@@ -41,8 +41,6 @@
 		ADA1360E2BBBE0D500E74F6E /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA1360D2BBBE0D500E74F6E /* WebViewModel.swift */; };
 		ADA136132BBBE64C00E74F6E /* DataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ADA136112BBBE64C00E74F6E /* DataBase.xcdatamodeld */; };
 		ADA136852BBC0BDC00E74F6E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA136842BBC0BDC00E74F6E /* CoreData.framework */; };
-		ADA136DB2BBCEE6300E74F6E /* RemoteNewsRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA136DA2BBCEE6300E74F6E /* RemoteNewsRepositoryImp.swift */; };
-		ADA136DD2BBCEE8800E74F6E /* RemoteNewsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA136DC2BBCEE8800E74F6E /* RemoteNewsRepository.swift */; };
 		ADA136E32BBD32A200E74F6E /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA136E22BBD32A100E74F6E /* UserDefault.swift */; };
 		ADA2C3F42BA9329B009E4F7C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA2C3F32BA9329B009E4F7C /* HomeViewController.swift */; };
 		ADA2F7132BB2C3E0009CB25C /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA2F7122BB2C3E0009CB25C /* PolicyViewController.swift */; };
@@ -56,22 +54,22 @@
 		ADE00FF52BAAE4210041DE42 /* HomeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE00FF42BAAE4210041DE42 /* HomeTableView.swift */; };
 		ADE535872BB119E3004E2D42 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE535862BB119E3004E2D42 /* Category.swift */; };
 		ADE7C01C2BB6C2F400AEB78B /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE7C01B2BB6C2F300AEB78B /* WebViewController.swift */; };
-		B2F8DE2D2BBEA6DC00A471EB /* LocalNewsRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F8DE2C2BBEA6DC00A471EB /* LocalNewsRepositoryImp.swift */; };
-		B2F8DE2F2BBEB27200A471EB /* LocalNewsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F8DE2E2BBEB27200A471EB /* LocalNewsRepository.swift */; };
+		B2F8DE2D2BBEA6DC00A471EB /* NewsRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F8DE2C2BBEA6DC00A471EB /* NewsRepositoryImp.swift */; };
+		B2F8DE2F2BBEB27200A471EB /* NewsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F8DE2E2BBEB27200A471EB /* NewsRepository.swift */; };
 		C52CE6C8E9A07CAEE0167716 /* Pods_news_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD960B65A543EAA72928F457 /* Pods_news_app.framework */; };
-		CE1DADD72BBFA02400F87A47 /* LocalCategoriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DADD62BBFA02400F87A47 /* LocalCategoriesRepository.swift */; };
-		CE1DADDA2BBFA22900F87A47 /* LocalCategoryRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DADD92BBFA22900F87A47 /* LocalCategoryRepositoryImp.swift */; };
-		CE1DADDC2BBFA8AF00F87A47 /* LocalUsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DADDB2BBFA8AF00F87A47 /* LocalUsersRepository.swift */; };
-		CE1DADDE2BBFA96F00F87A47 /* LocalUsersRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DADDD2BBFA96F00F87A47 /* LocalUsersRepositoryImp.swift */; };
-		CE1DAE1E2BBFE28300F87A47 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DAE1D2BBFE28300F87A47 /* UseCase.swift */; };
-		CE1DAE202BBFE2CA00F87A47 /* GetCategoryByUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DAE1F2BBFE2CA00F87A47 /* GetCategoryByUserUseCase.swift */; };
-		CE1DAE292BBFE52000F87A47 /* CDNews+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DAE212BBFE52000F87A47 /* CDNews+CoreDataClass.swift */; };
-		CE1DAE2A2BBFE52000F87A47 /* CDNews+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DAE222BBFE52000F87A47 /* CDNews+CoreDataProperties.swift */; };
-		CE1DAE2B2BBFE52000F87A47 /* CDUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DAE232BBFE52000F87A47 /* CDUser+CoreDataClass.swift */; };
-		CE1DAE2C2BBFE52000F87A47 /* CDUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DAE242BBFE52000F87A47 /* CDUser+CoreDataProperties.swift */; };
-		CE1DAE2D2BBFE52000F87A47 /* CDBookmark+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DAE252BBFE52000F87A47 /* CDBookmark+CoreDataClass.swift */; };
-		CE1DAE2F2BBFE52000F87A47 /* CDCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DAE272BBFE52000F87A47 /* CDCategory+CoreDataClass.swift */; };
-		CE1DAE302BBFE52000F87A47 /* CDCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DAE282BBFE52000F87A47 /* CDCategory+CoreDataProperties.swift */; };
+		CE18A8B32BC5360A00B88718 /* CDUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18A8AB2BC5360A00B88718 /* CDUser+CoreDataClass.swift */; };
+		CE18A8B42BC5360A00B88718 /* CDUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18A8AC2BC5360A00B88718 /* CDUser+CoreDataProperties.swift */; };
+		CE18A8B52BC5360A00B88718 /* CDBookmark+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18A8AD2BC5360A00B88718 /* CDBookmark+CoreDataClass.swift */; };
+		CE18A8B62BC5360A00B88718 /* CDBookmark+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18A8AE2BC5360A00B88718 /* CDBookmark+CoreDataProperties.swift */; };
+		CE18A8B72BC5360A00B88718 /* CDNews+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18A8AF2BC5360A00B88718 /* CDNews+CoreDataClass.swift */; };
+		CE18A8B82BC5360A00B88718 /* CDNews+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18A8B02BC5360A00B88718 /* CDNews+CoreDataProperties.swift */; };
+		CE18A8B92BC5360A00B88718 /* CDCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18A8B12BC5360A00B88718 /* CDCategory+CoreDataClass.swift */; };
+		CE18A8BA2BC5360A00B88718 /* CDCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18A8B22BC5360A00B88718 /* CDCategory+CoreDataProperties.swift */; };
+		CE1DADD72BBFA02400F87A47 /* CategoriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DADD62BBFA02400F87A47 /* CategoriesRepository.swift */; };
+		CE1DADDA2BBFA22900F87A47 /* CategoryRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DADD92BBFA22900F87A47 /* CategoryRepositoryImp.swift */; };
+		CE1DADDC2BBFA8AF00F87A47 /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DADDB2BBFA8AF00F87A47 /* UsersRepository.swift */; };
+		CE1DADDE2BBFA96F00F87A47 /* UsersRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DADDD2BBFA96F00F87A47 /* UsersRepositoryImp.swift */; };
+		CE1DAE202BBFE2CA00F87A47 /* DataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DAE1F2BBFE2CA00F87A47 /* DataMapper.swift */; };
 		CE1DAE332BBFE5CE00F87A47 /* CDUserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DAE322BBFE5CE00F87A47 /* CDUserExtension.swift */; };
 		CE1DAE352BC0183900F87A47 /* LocalNewsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DAE342BC0183900F87A47 /* LocalNewsUseCase.swift */; };
 		CE9A31AC2BC01F070035C298 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A31AB2BC01F070035C298 /* User.swift */; };
@@ -149,8 +147,6 @@
 		ADA1360D2BBBE0D500E74F6E /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
 		ADA136122BBBE64C00E74F6E /* DataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataBase.xcdatamodel; sourceTree = "<group>"; };
 		ADA136842BBC0BDC00E74F6E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		ADA136DA2BBCEE6300E74F6E /* RemoteNewsRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteNewsRepositoryImp.swift; sourceTree = "<group>"; };
-		ADA136DC2BBCEE8800E74F6E /* RemoteNewsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteNewsRepository.swift; sourceTree = "<group>"; };
 		ADA136E22BBD32A100E74F6E /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		ADA2C3F32BA9329B009E4F7C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = news_app/View/Controller/TabBarHome/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		ADA2F7122BB2C3E0009CB25C /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
@@ -164,21 +160,21 @@
 		ADE00FF42BAAE4210041DE42 /* HomeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableView.swift; sourceTree = "<group>"; };
 		ADE535862BB119E3004E2D42 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		ADE7C01B2BB6C2F300AEB78B /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		B2F8DE2C2BBEA6DC00A471EB /* LocalNewsRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNewsRepositoryImp.swift; sourceTree = "<group>"; };
-		B2F8DE2E2BBEB27200A471EB /* LocalNewsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNewsRepository.swift; sourceTree = "<group>"; };
-		CE1DADD62BBFA02400F87A47 /* LocalCategoriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCategoriesRepository.swift; sourceTree = "<group>"; };
-		CE1DADD92BBFA22900F87A47 /* LocalCategoryRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCategoryRepositoryImp.swift; sourceTree = "<group>"; };
-		CE1DADDB2BBFA8AF00F87A47 /* LocalUsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUsersRepository.swift; sourceTree = "<group>"; };
-		CE1DADDD2BBFA96F00F87A47 /* LocalUsersRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUsersRepositoryImp.swift; sourceTree = "<group>"; };
-		CE1DAE1D2BBFE28300F87A47 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
-		CE1DAE1F2BBFE2CA00F87A47 /* GetCategoryByUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoryByUserUseCase.swift; sourceTree = "<group>"; };
-		CE1DAE212BBFE52000F87A47 /* CDNews+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDNews+CoreDataClass.swift"; sourceTree = "<group>"; };
-		CE1DAE222BBFE52000F87A47 /* CDNews+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDNews+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		CE1DAE232BBFE52000F87A47 /* CDUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataClass.swift"; sourceTree = "<group>"; };
-		CE1DAE242BBFE52000F87A47 /* CDUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		CE1DAE252BBFE52000F87A47 /* CDBookmark+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDBookmark+CoreDataClass.swift"; sourceTree = "<group>"; };
-		CE1DAE272BBFE52000F87A47 /* CDCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
-		CE1DAE282BBFE52000F87A47 /* CDCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B2F8DE2C2BBEA6DC00A471EB /* NewsRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRepositoryImp.swift; sourceTree = "<group>"; };
+		B2F8DE2E2BBEB27200A471EB /* NewsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRepository.swift; sourceTree = "<group>"; };
+		CE18A8AB2BC5360A00B88718 /* CDUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CE18A8AC2BC5360A00B88718 /* CDUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CE18A8AD2BC5360A00B88718 /* CDBookmark+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDBookmark+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CE18A8AE2BC5360A00B88718 /* CDBookmark+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDBookmark+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CE18A8AF2BC5360A00B88718 /* CDNews+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDNews+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CE18A8B02BC5360A00B88718 /* CDNews+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDNews+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CE18A8B12BC5360A00B88718 /* CDCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CE18A8B22BC5360A00B88718 /* CDCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CE1DADD62BBFA02400F87A47 /* CategoriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRepository.swift; sourceTree = "<group>"; };
+		CE1DADD92BBFA22900F87A47 /* CategoryRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepositoryImp.swift; sourceTree = "<group>"; };
+		CE1DADDB2BBFA8AF00F87A47 /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
+		CE1DADDD2BBFA96F00F87A47 /* UsersRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepositoryImp.swift; sourceTree = "<group>"; };
+		CE1DAE1F2BBFE2CA00F87A47 /* DataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMapper.swift; sourceTree = "<group>"; };
 		CE1DAE322BBFE5CE00F87A47 /* CDUserExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDUserExtension.swift; sourceTree = "<group>"; };
 		CE1DAE342BC0183900F87A47 /* LocalNewsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNewsUseCase.swift; sourceTree = "<group>"; };
 		CE9A31AB2BC01F070035C298 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -252,8 +248,9 @@
 		AD8DBBCE2B9AE92A0070D7A7 = {
 			isa = PBXGroup;
 			children = (
+				CEA2C1FB2BC3C97D00C4B2B3 /* Trash */,
 				ADA1360F2BBBE57000E74F6E /* Data */,
-				CE1DADD82BBFA19600F87A47 /* Usecase */,
+				CE1DADD82BBFA19600F87A47 /* DataMapper */,
 				AD8DBBD92B9AE92A0070D7A7 /* news_app */,
 				AD8DBBF02B9AE9300070D7A7 /* news_appTests */,
 				AD8DBBFA2B9AE9300070D7A7 /* news_appUITests */,
@@ -392,8 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				B2F8DE2B2BBEA6B200A471EB /* repository */,
-				B2F8DE2A2BBEA5B500A471EB /* RemoteRepositoryImp */,
-				B2F8DE292BBEA4E200A471EB /* LocalRepositoryImp */,
+				CEA2C2062BC4DD7400C4B2B3 /* RepostitoryImp */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -470,46 +466,27 @@
 		B2F8DE282BBEA4C800A471EB /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				CE1DAE212BBFE52000F87A47 /* CDNews+CoreDataClass.swift */,
-				CE1DAE222BBFE52000F87A47 /* CDNews+CoreDataProperties.swift */,
-				CE1DAE232BBFE52000F87A47 /* CDUser+CoreDataClass.swift */,
-				CE1DAE242BBFE52000F87A47 /* CDUser+CoreDataProperties.swift */,
-				CE1DAE252BBFE52000F87A47 /* CDBookmark+CoreDataClass.swift */,
-				CE1DAE272BBFE52000F87A47 /* CDCategory+CoreDataClass.swift */,
-				CE1DAE282BBFE52000F87A47 /* CDCategory+CoreDataProperties.swift */,
+				CE18A8AB2BC5360A00B88718 /* CDUser+CoreDataClass.swift */,
+				CE18A8AC2BC5360A00B88718 /* CDUser+CoreDataProperties.swift */,
+				CE18A8AD2BC5360A00B88718 /* CDBookmark+CoreDataClass.swift */,
+				CE18A8AE2BC5360A00B88718 /* CDBookmark+CoreDataProperties.swift */,
+				CE18A8AF2BC5360A00B88718 /* CDNews+CoreDataClass.swift */,
+				CE18A8B02BC5360A00B88718 /* CDNews+CoreDataProperties.swift */,
+				CE18A8B12BC5360A00B88718 /* CDCategory+CoreDataClass.swift */,
+				CE18A8B22BC5360A00B88718 /* CDCategory+CoreDataProperties.swift */,
 				ADA136112BBBE64C00E74F6E /* DataBase.xcdatamodeld */,
 				ADA136E22BBD32A100E74F6E /* UserDefault.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		B2F8DE292BBEA4E200A471EB /* LocalRepositoryImp */ = {
-			isa = PBXGroup;
-			children = (
-				B2F8DE2C2BBEA6DC00A471EB /* LocalNewsRepositoryImp.swift */,
-				CE1DADD92BBFA22900F87A47 /* LocalCategoryRepositoryImp.swift */,
-				CE1DADDD2BBFA96F00F87A47 /* LocalUsersRepositoryImp.swift */,
-			);
-			path = LocalRepositoryImp;
-			sourceTree = "<group>";
-		};
-		B2F8DE2A2BBEA5B500A471EB /* RemoteRepositoryImp */ = {
-			isa = PBXGroup;
-			children = (
-				AD7495942BBD8024002CF754 /* FirebaseRepositoryImp.swift */,
-				ADA136DA2BBCEE6300E74F6E /* RemoteNewsRepositoryImp.swift */,
-			);
-			path = RemoteRepositoryImp;
-			sourceTree = "<group>";
-		};
 		B2F8DE2B2BBEA6B200A471EB /* repository */ = {
 			isa = PBXGroup;
 			children = (
-				ADA136DC2BBCEE8800E74F6E /* RemoteNewsRepository.swift */,
 				AD7495922BBD8011002CF754 /* FirebaseRepository.swift */,
-				B2F8DE2E2BBEB27200A471EB /* LocalNewsRepository.swift */,
-				CE1DADD62BBFA02400F87A47 /* LocalCategoriesRepository.swift */,
-				CE1DADDB2BBFA8AF00F87A47 /* LocalUsersRepository.swift */,
+				B2F8DE2E2BBEB27200A471EB /* NewsRepository.swift */,
+				CE1DADD62BBFA02400F87A47 /* CategoriesRepository.swift */,
+				CE1DADDB2BBFA8AF00F87A47 /* UsersRepository.swift */,
 			);
 			path = repository;
 			sourceTree = "<group>";
@@ -525,14 +502,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CE1DADD82BBFA19600F87A47 /* Usecase */ = {
+		CE1DADD82BBFA19600F87A47 /* DataMapper */ = {
 			isa = PBXGroup;
 			children = (
-				CEA2C1FB2BC3C97D00C4B2B3 /* Remote */,
-				CEA2C1FA2BC3C97700C4B2B3 /* Local */,
-				CE1DAE1D2BBFE28300F87A47 /* UseCase.swift */,
+				CE1DAE1F2BBFE2CA00F87A47 /* DataMapper.swift */,
 			);
-			path = Usecase;
+			path = DataMapper;
 			sourceTree = "<group>";
 		};
 		CE1DAE312BBFE59E00F87A47 /* CDExtension */ = {
@@ -545,23 +520,26 @@
 			path = CDExtension;
 			sourceTree = "<group>";
 		};
-		CEA2C1FA2BC3C97700C4B2B3 /* Local */ = {
+		CEA2C1FB2BC3C97D00C4B2B3 /* Trash */ = {
 			isa = PBXGroup;
 			children = (
-				CEA2C2022BC418C700C4B2B3 /* LocalGetAllNewsUseCase.swift */,
-				CE1DAE342BC0183900F87A47 /* LocalNewsUseCase.swift */,
-				CE1DAE1F2BBFE2CA00F87A47 /* GetCategoryByUserUseCase.swift */,
 				CEA2C2042BC41B2500C4B2B3 /* InsertNewsUseCase.swift */,
-			);
-			path = Local;
-			sourceTree = "<group>";
-		};
-		CEA2C1FB2BC3C97D00C4B2B3 /* Remote */ = {
-			isa = PBXGroup;
-			children = (
+				CE1DAE342BC0183900F87A47 /* LocalNewsUseCase.swift */,
+				CEA2C2022BC418C700C4B2B3 /* LocalGetAllNewsUseCase.swift */,
 				CEA2C2002BC4154400C4B2B3 /* RemoteGetAllNewsUseCase.swift */,
 			);
-			path = Remote;
+			path = Trash;
+			sourceTree = "<group>";
+		};
+		CEA2C2062BC4DD7400C4B2B3 /* RepostitoryImp */ = {
+			isa = PBXGroup;
+			children = (
+				AD7495942BBD8024002CF754 /* FirebaseRepositoryImp.swift */,
+				B2F8DE2C2BBEA6DC00A471EB /* NewsRepositoryImp.swift */,
+				CE1DADD92BBFA22900F87A47 /* CategoryRepositoryImp.swift */,
+				CE1DADDD2BBFA96F00F87A47 /* UsersRepositoryImp.swift */,
+			);
+			path = RepostitoryImp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -809,65 +787,63 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADE00FF52BAAE4210041DE42 /* HomeTableView.swift in Sources */,
-				CE1DADDA2BBFA22900F87A47 /* LocalCategoryRepositoryImp.swift in Sources */,
+				CE1DADDA2BBFA22900F87A47 /* CategoryRepositoryImp.swift in Sources */,
 				AD8E538F2BB5743E000103DA /* AccountViewController.swift in Sources */,
 				ADA136132BBBE64C00E74F6E /* DataBase.xcdatamodeld in Sources */,
 				AD8DBC0D2B9B10680070D7A7 /* CustomTextField.swift in Sources */,
 				CEA2C1F72BC38FB900C4B2B3 /* BaseViewController.swift in Sources */,
+				CE18A8B62BC5360A00B88718 /* CDBookmark+CoreDataProperties.swift in Sources */,
 				ADA5EC5E2BB10A7D00A26281 /* Api.swift in Sources */,
 				ADA0BAE92BB2B3A4007B39A8 /* BookmarkViewController.swift in Sources */,
 				CEA2C2012BC4154400C4B2B3 /* RemoteGetAllNewsUseCase.swift in Sources */,
 				AD8DBC162B9EF5090070D7A7 /* Extension.swift in Sources */,
-				CE1DADD72BBFA02400F87A47 /* LocalCategoriesRepository.swift in Sources */,
-				CE1DAE202BBFE2CA00F87A47 /* GetCategoryByUserUseCase.swift in Sources */,
+				CE1DADD72BBFA02400F87A47 /* CategoriesRepository.swift in Sources */,
+				CE1DAE202BBFE2CA00F87A47 /* DataMapper.swift in Sources */,
+				CE18A8B52BC5360A00B88718 /* CDBookmark+CoreDataClass.swift in Sources */,
 				CEA2C1F92BC3969800C4B2B3 /* LoadingViewController.swift in Sources */,
+				CE18A8B82BC5360A00B88718 /* CDNews+CoreDataProperties.swift in Sources */,
+				CE18A8B72BC5360A00B88718 /* CDNews+CoreDataClass.swift in Sources */,
 				AD8E53852BB54EA7000103DA /* SettingTableViewCell.swift in Sources */,
 				ADE00FEC2BAABD9C0041DE42 /* HomeCollectionView.swift in Sources */,
-				CE1DAE2B2BBFE52000F87A47 /* CDUser+CoreDataClass.swift in Sources */,
 				CEA2C2032BC418C700C4B2B3 /* LocalGetAllNewsUseCase.swift in Sources */,
-				CE1DAE1E2BBFE28300F87A47 /* UseCase.swift in Sources */,
 				AD9B87432BBAC46D0052A68A /* HomeModel.swift in Sources */,
 				ADD5E5EA2BB1987B00D296E5 /* ForgotPasswordViewController.swift in Sources */,
-				CE1DAE2A2BBFE52000F87A47 /* CDNews+CoreDataProperties.swift in Sources */,
 				AD0914172BA8129900287227 /* Constant.swift in Sources */,
 				CE1DAE352BC0183900F87A47 /* LocalNewsUseCase.swift in Sources */,
-				B2F8DE2D2BBEA6DC00A471EB /* LocalNewsRepositoryImp.swift in Sources */,
+				B2F8DE2D2BBEA6DC00A471EB /* NewsRepositoryImp.swift in Sources */,
 				AD8DBBDF2B9AE92A0070D7A7 /* SignUpSignInViewController.swift in Sources */,
 				ADE7C01C2BB6C2F400AEB78B /* WebViewController.swift in Sources */,
 				ADE00FF02BAAD4800041DE42 /* HomeTableViewCell.swift in Sources */,
 				CEA2C2052BC41B2500C4B2B3 /* InsertNewsUseCase.swift in Sources */,
 				AD8E53872BB54EC0000103DA /* SettingViewController.swift in Sources */,
 				AD9B873F2BBA946C0052A68A /* PickLanguageViewController.swift in Sources */,
-				CE1DAE2F2BBFE52000F87A47 /* CDCategory+CoreDataClass.swift in Sources */,
-				CE1DADDC2BBFA8AF00F87A47 /* LocalUsersRepository.swift in Sources */,
+				CE1DADDC2BBFA8AF00F87A47 /* UsersRepository.swift in Sources */,
 				ADA0BAE62BB2A26F007B39A8 /* TabBarController.swift in Sources */,
 				CE1DAE332BBFE5CE00F87A47 /* CDUserExtension.swift in Sources */,
 				CEA2C1FF2BC3E14100C4B2B3 /* CDCategoryExtension.swift in Sources */,
-				ADA136DD2BBCEE8800E74F6E /* RemoteNewsRepository.swift in Sources */,
+				CE18A8B92BC5360A00B88718 /* CDCategory+CoreDataClass.swift in Sources */,
 				ADE00FEA2BAAB9B50041DE42 /* HomeCollectionViewCell.swift in Sources */,
 				AD9B87412BBABD030052A68A /* BaseModel.swift in Sources */,
 				AD9287132BBA8DD500A9246F /* PopoverViewController.swift in Sources */,
 				AD8E537E2BB3D718000103DA /* AuthenticationModel.swift in Sources */,
-				ADA136DB2BBCEE6300E74F6E /* RemoteNewsRepositoryImp.swift in Sources */,
-				B2F8DE2F2BBEB27200A471EB /* LocalNewsRepository.swift in Sources */,
-				CE1DAE2C2BBFE52000F87A47 /* CDUser+CoreDataProperties.swift in Sources */,
+				B2F8DE2F2BBEB27200A471EB /* NewsRepository.swift in Sources */,
 				ADA5EC602BB10B7A00A26281 /* XMLParserToObject.swift in Sources */,
+				CE18A8BA2BC5360A00B88718 /* CDCategory+CoreDataProperties.swift in Sources */,
 				ADA136E32BBD32A200E74F6E /* UserDefault.swift in Sources */,
 				AD7495952BBD8024002CF754 /* FirebaseRepositoryImp.swift in Sources */,
-				CE1DAE2D2BBFE52000F87A47 /* CDBookmark+CoreDataClass.swift in Sources */,
 				ADE535872BB119E3004E2D42 /* Category.swift in Sources */,
 				ADA1360E2BBBE0D500E74F6E /* WebViewModel.swift in Sources */,
-				CE1DAE292BBFE52000F87A47 /* CDNews+CoreDataClass.swift in Sources */,
 				ADA2C3F42BA9329B009E4F7C /* HomeViewController.swift in Sources */,
 				AD8DBC132B9EE89B0070D7A7 /* ButtonLogin.swift in Sources */,
 				AD8DBBDB2B9AE92A0070D7A7 /* AppDelegate.swift in Sources */,
 				CEA2C1FD2BC3D87E00C4B2B3 /* CDNewsExtension.swift in Sources */,
+				CE18A8B42BC5360A00B88718 /* CDUser+CoreDataProperties.swift in Sources */,
 				ADE00FF32BAAE01A0041DE42 /* News.swift in Sources */,
-				CE1DAE302BBFE52000F87A47 /* CDCategory+CoreDataProperties.swift in Sources */,
 				AD7495932BBD8011002CF754 /* FirebaseRepository.swift in Sources */,
 				AD8DBBDD2B9AE92A0070D7A7 /* SceneDelegate.swift in Sources */,
 				AD8E53832BB54E97000103DA /* SettingTableView.swift in Sources */,
-				CE1DADDE2BBFA96F00F87A47 /* LocalUsersRepositoryImp.swift in Sources */,
+				CE1DADDE2BBFA96F00F87A47 /* UsersRepositoryImp.swift in Sources */,
+				CE18A8B32BC5360A00B88718 /* CDUser+CoreDataClass.swift in Sources */,
 				ADA2F7132BB2C3E0009CB25C /* PolicyViewController.swift in Sources */,
 				CE9A31AC2BC01F070035C298 /* User.swift in Sources */,
 			);

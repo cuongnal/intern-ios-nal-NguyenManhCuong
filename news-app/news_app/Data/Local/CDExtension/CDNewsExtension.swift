@@ -14,20 +14,18 @@ extension CDNews {
         a.predicate = NSPredicate(format: "%K == %@", #keyPath(CDCategory.idCate), idCate as CVarArg)
         return try AppDelegate.context.fetch(a)
     }
-    @nonobjc public class func insertListNews(cdNews : [CDNews], category : Category) throws -> Bool {
-        var cate = try CDCategory.getCDCategory(category : category)
-        for item in cdNews {
+    @nonobjc public class func insertListNews(listNews : [News], category : Category? = nil) throws -> Bool {
+        for item in listNews {
             let cdN = CDNews(context: AppDelegate.context)
+            let cate = try CDCategory.getCDCategory(idCate: item.idCate)
             cdN.author = item.author
-            cdN.des = item.des
+            cdN.des = item.description
             cdN.idNews = item.idNews
             cdN.image = item.image
             cdN.link = item.link
             cdN.pubDate = item.pubDate
             cdN.title = item.title
-            cdN.idCategory = item.idCategory
-            cdN.categoriesNews = item.categoriesNews
-            cdN.newsBookmark = item.newsBookmark
+            cdN.idCate = item.idCate
             cate?.addToCategoriesNews(cdN)
         }
         try AppDelegate.context.save()

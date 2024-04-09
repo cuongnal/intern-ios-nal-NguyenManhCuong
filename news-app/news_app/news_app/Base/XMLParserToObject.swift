@@ -76,7 +76,7 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
             if elementName == rootElement {
           //      news?.typeSource = category.title
                 news?.createPrimaryKey()
-                news?.idCategory = category.id
+                news?.idCate = category.idCate
                 arrNews.append(news!)
                 news = nil
                 flag = false

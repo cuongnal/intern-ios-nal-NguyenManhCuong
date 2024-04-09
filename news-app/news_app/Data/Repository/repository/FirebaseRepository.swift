@@ -7,5 +7,5 @@
 
 import Foundation
 protocol FirebaseRepository {
-    func userLoginEmail(email : String, password : String) -> User
+    func userLoginEmail(email: String, password: String) -> User
 }

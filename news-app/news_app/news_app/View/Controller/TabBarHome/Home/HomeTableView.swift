@@ -27,6 +27,12 @@ class HomeTableView : UITableView, UITableViewDataSource, UITableViewDelegate {
         callBack(data[indexPath.item])
         self.deselectRow(at: indexPath, animated: false)
     }
-    
+    func setUpHomeTableView(arrNews: [News]) {
+        if data.count != 0 {
+            self.data.removeAll()
+        }
+        self.data.append(contentsOf: arrNews)
+        self.reloadData()
+    }
     
 }

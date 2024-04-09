@@ -8,13 +8,15 @@
 import Foundation
 //import Kingfisher
 class HomeModel : BaseModel {
-    let newsRepository = RemoteNewsRepositoryImp()
+    var newsRepository : NewsRepository! = NewsRepositoryImp()
     var arrNews : [News] = []
-    var categoryUseCase = GetCategoryByUserUseCase()
+    var categoryRepository = CategoryRepositoryImp()
+    
+    
     func fetchDataNews(category : Category, callBack : @escaping (([News]) -> Void)) {
         excuteNetwork(
             task: { [weak self] in
-                let arr =  self?.newsRepository.getNewsByTypeCategory(category: category)
+                let arr =  self?.newsRepository.getNewsByCategory(category: category)
                 self?.arrNews.removeAll()
                 self?.arrNews.append(contentsOf: arr ?? [])
             },
@@ -24,15 +26,18 @@ class HomeModel : BaseModel {
             }
         )
     }
-    func getCategoryByUser(idUser : String, typeSource : TypeClickPopover, callBack : @escaping (([Category]) -> Void) ) {
-        let type = typeSource == .vnExpress ? Constant.Key.KEY_TYPE_VN_EXPRESS : Constant.Key.KEY_TYPE_TUOI_TRE
+    func getCategoryByUser(typeClick : TypeClickPopover, callBack : @escaping (([Category]) -> Void) ) {
+        let type = typeClick == .tuoiTre ? TypeSource.tuoiTre : TypeSource.vnExpress
         excuteTask(
             task: {[weak self] in
-                return self!.categoryUseCase.run(param: Param(idUser: idUser, typeSource: type))},
+                
+                return self!.categoryRepository.getCategoriesByTypeSource(withTypeSource: type, withUser: UserDefaults.getUser()!)
+            },
             complete: { (arrCategory) in
                 callBack(arrCategory!)
             })
     }
+    
     
 }
 

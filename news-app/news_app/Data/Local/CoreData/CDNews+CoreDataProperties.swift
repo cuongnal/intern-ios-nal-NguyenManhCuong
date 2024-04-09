@@ -2,7 +2,7 @@
 //  CDNews+CoreDataProperties.swift
 //  news_app
 //
-//  Created by user on 4/8/24.
+//  Created by user on 4/9/24.
 //
 //
 
@@ -18,12 +18,12 @@ extension CDNews {
 
     @NSManaged public var author: String?
     @NSManaged public var des: String?
-    @NSManaged public var idNews: String
+    @NSManaged public var idCate: UUID?
+    @NSManaged public var idNews: String?
     @NSManaged public var image: String?
     @NSManaged public var link: String?
     @NSManaged public var pubDate: String?
     @NSManaged public var title: String?
-    @NSManaged public var idCategory: Int64
     @NSManaged public var categoriesNews: CDCategory?
     @NSManaged public var newsBookmark: NSSet?
 

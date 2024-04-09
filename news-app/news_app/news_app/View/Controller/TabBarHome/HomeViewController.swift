@@ -30,41 +30,22 @@ class HomeViewController : BaseViewController , UIPopoverPresentationControllerD
         self.navigationController?.isNavigationBarHidden = true
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-//        homeModel.fetchDataNews(category: Constant.CATEGORY_VN_EXPRESS[0], callBack:  { (arrNews) in
-//            self.parsingWasFinished(arrNews: arrNews)
-//        })
-    }
-    
     func setUpHomeCollectionView(typeSource : TypeClickPopover = .vnExpress) {
         if homeCollectionView.list.count != 0 {
             homeCollectionView.list.removeAll()
             homeCollectionView.reloadData()
         }
-        homeModel.getCategoryByUser(idUser: "kJLXcuZUgNSTonSg3IO9688pz173", typeSource: typeSource, callBack: { [weak self] (arrCategory) in
+        homeModel.getCategoryByUser(typeClick: typeSource, callBack: { [weak self] (arrCategory) in
             self?.homeCollectionView.list = arrCategory
-            //print("Đây là \(self?.homeCollectionView.list)")
             self?.homeCollectionView.reloadData()
         })
-        
-//        homeModel.fetchDataNews(category: homeCollectionView.list[0], callBack: { [weak self](arrNews) in
-//            self?.parsingWasFinished(arrNews: arrNews)
-//        })
     }
     
-    func parsingWasFinished(arrNews: [News]) {
-        if homeTableView.data.count != 0 {
-            homeTableView.data.removeAll()
-        }
-        homeTableView.data.append(contentsOf: arrNews)
-        homeTableView.reloadData()
-    }
     func handlerCallBack() {
         homeCollectionView.callBack = {[weak self] category in
             if URL(string: category.url) != nil {
                 self?.homeModel.fetchDataNews(category: category, callBack: { (arrNews) in
-                    self?.parsingWasFinished(arrNews: arrNews)
+                    self?.homeTableView.setUpHomeTableView(arrNews: arrNews)
                     
                 })
             }

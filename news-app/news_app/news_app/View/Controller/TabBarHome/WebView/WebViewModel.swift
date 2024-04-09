@@ -7,6 +7,6 @@
 
 import Foundation
 class WebViewModel : BaseModel {
-    let newsRepository = RemoteNewsRepositoryImp()
+    let newsRepository = NewsRepositoryImp()
 
 }

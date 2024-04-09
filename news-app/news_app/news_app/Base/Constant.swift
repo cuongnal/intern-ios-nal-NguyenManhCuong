@@ -33,52 +33,53 @@ struct Constant {
     static let POLICY_2 = "Sit in vitae semper egestas sed posuere tellus nisl diam. Ipsum, nisl aenean fusce a, ut cras varius et. Enim egestas tempus velit molestie odio in aliquet. Orci gravida ac faucibus et eu phasellus elit, tellus. Dictum lacinia massa in amet elit. Felis magna et dis adipiscing porttitor sed. Fringilla ante lacus fermentum, ultricies volutpat neque, aliquet. Cras leo, porttitor tellus mi in. Nec volutpat in sed consequat pharetra tristique pulvinar sit. Id commodo tristique tellus in fringilla scelerisque mauris. Mauris quam euismod sit viverra a dictumst arcu sed laoreet. Volutpat bibendum amet diam semper. Nunc tellus eu auctor tellus vivamus a. Euismod orci, ut consequat consectetur praesent quis euismod id. \n \n"
     static let POLICY_3 = "Ornare quis arcu eget aliquet pretium. Viverra nulla fringilla eget nibh habitasse cras vestibulum amet. Dui luctus dictum leo vulputate tristique lacus. Facilisis facilisi ullamcorper et vitae. Diam molestie sit laoreet lacinia ultrices. Convallis et ipsum quis consectetur sed. Quisque libero lectus quam in leo tincidunt. Venenatis id sodales pellentesque aliquet nibh egestas suspendisse nibh. Hendrerit non mauris, magna malesuada venenatis, eu. Enim, sed metus porttitor amet tortor neque sed. \n \n"
     static let CATEGORY_VN_EXPRESS = [
-        Category(id: UUID(), title: "Trang chủ", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.HOME,sourceType: Constant.Key.KEY_TYPE_VN_EXPRESS),
-        Category(id: UUID(), title: "Thế giới", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.WORLD,sourceType: Constant.Key.KEY_TYPE_VN_EXPRESS),
-        Category(id: UUID(), title: "Thời sự", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.NEWS,sourceType: Constant.Key.KEY_TYPE_VN_EXPRESS),
-        Category(id: UUID(), title: "Kinh doanh", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.BUSINESS,sourceType: Constant.Key.KEY_TYPE_VN_EXPRESS),
-        Category(id: UUID(), title: "Startup", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.STARTUP,sourceType: Constant.Key.KEY_TYPE_VN_EXPRESS),
-        Category(id: UUID(), title: "Giải trí", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.ENTERTAINMENT,sourceType: Constant.Key.KEY_TYPE_VN_EXPRESS),
-        Category(id: UUID(), title: "Thể thao", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.SPORT,sourceType: Constant.Key.KEY_TYPE_VN_EXPRESS),
-        Category(id: UUID(), title: "Pháp luật", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.LAW,sourceType: Constant.Key.KEY_TYPE_VN_EXPRESS),
-        Category(id: UUID(), title: "Giáo dục", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.EDUCATION,sourceType: Constant.Key.KEY_TYPE_VN_EXPRESS),
-        Category(id: UUID(), title: "Tin mới nhất", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.LATES_NEWS,sourceType: Constant.Key.KEY_TYPE_VN_EXPRESS),
-        Category(id:  UUID(), title: "Tin nổi bật", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.HOT_NEWS,sourceType: Constant.Key.KEY_TYPE_VN_EXPRESS),
-        Category(id:  UUID(), title: "Sức khỏe", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.HEALTH,sourceType: Constant.Key.KEY_TYPE_VN_EXPRESS),
-        Category(id:  UUID(), title: "Đời sống", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.LIFE,sourceType: Constant.Key.KEY_TYPE_VN_EXPRESS),
-        Category(id:  UUID(), title: "Du lịch", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.TRAVEL,sourceType: Constant.Key.KEY_TYPE_VN_EXPRESS),
-        Category(id:  UUID(), title: "Khoa học", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.SCIENCE,sourceType: Constant.Key.KEY_TYPE_VN_EXPRESS),
-        Category(id:  UUID(), title: "Số hóa", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.DIGITAL,sourceType: Constant.Key.KEY_TYPE_VN_EXPRESS),
-        Category(id:  UUID(), title: "Xe", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.CAR,sourceType: Constant.Key.KEY_TYPE_VN_EXPRESS),
-        Category(id:  UUID(), title: "Ý kiến", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.OPINION,sourceType: Constant.Key.KEY_TYPE_VN_EXPRESS),
-        Category(id:  UUID(), title: "Tâm sự", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.CONFESSION,sourceType: Constant.Key.KEY_TYPE_VN_EXPRESS),
-        Category(id:  UUID(), title: "Cười", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.JOKE,sourceType: Constant.Key.KEY_TYPE_VN_EXPRESS),
-        Category(id:  UUID(), title: "Tin xem nhiều", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.MOST_VIEWED,sourceType: Constant.Key.KEY_TYPE_VN_EXPRESS)
+        Category(idCate: UUID(), title: "Trang chủ", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.HOME,typeSource: TypeSource.vnExpress.rawValue),
+        Category(idCate: UUID(), title: "Thế giới", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.WORLD,typeSource: TypeSource.vnExpress.rawValue),
+        Category(idCate: UUID(), title: "Thời sự", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.NEWS,typeSource: TypeSource.vnExpress.rawValue),
+        Category(idCate: UUID(), title: "Kinh doanh", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.BUSINESS,typeSource: TypeSource.vnExpress.rawValue),
+        Category(idCate: UUID(), title: "Startup", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.STARTUP,typeSource: TypeSource.vnExpress.rawValue),
+        Category(idCate: UUID(), title: "Giải trí", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.ENTERTAINMENT,typeSource: TypeSource.vnExpress.rawValue),
+        Category(idCate: UUID(), title: "Thể thao", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.SPORT,typeSource: TypeSource.vnExpress.rawValue),
+        Category(idCate: UUID(), title: "Pháp luật", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.LAW,typeSource: TypeSource.vnExpress.rawValue),
+        Category(idCate: UUID(), title: "Giáo dục", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.EDUCATION,typeSource: TypeSource.vnExpress.rawValue),
+        Category(idCate: UUID(), title: "Tin mới nhất", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.LATES_NEWS,typeSource: TypeSource.vnExpress.rawValue),
+        Category(idCate:  UUID(), title: "Tin nổi bật", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.HOT_NEWS,typeSource: TypeSource.vnExpress.rawValue),
+        Category(idCate:  UUID(), title: "Sức khỏe", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.HEALTH,typeSource: TypeSource.vnExpress.rawValue),
+        Category(idCate:  UUID(), title: "Đời sống", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.LIFE,typeSource: TypeSource.vnExpress.rawValue),
+        Category(idCate:  UUID(), title: "Du lịch", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.TRAVEL,typeSource: TypeSource.vnExpress.rawValue),
+        Category(idCate:  UUID(), title: "Khoa học", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.SCIENCE,typeSource: TypeSource.vnExpress.rawValue),
+        Category(idCate:  UUID(), title: "Số hóa", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.DIGITAL,typeSource: TypeSource.vnExpress.rawValue),
+        Category(idCate:  UUID(), title: "Xe", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.CAR,typeSource: TypeSource.vnExpress.rawValue),
+        Category(idCate:  UUID(), title: "Ý kiến", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.OPINION,typeSource: TypeSource.vnExpress.rawValue),
+        Category(idCate:  UUID(), title: "Tâm sự", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.CONFESSION,typeSource: TypeSource.vnExpress.rawValue),
+        Category(idCate:  UUID(), title: "Cười", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.JOKE,typeSource: TypeSource.vnExpress.rawValue),
+        Category(idCate:  UUID(), title: "Tin xem nhiều", url: Api.BASE_URL_VNEXPRESSS + Api.Vnexpress.MOST_VIEWED,typeSource: TypeSource.vnExpress.rawValue)
     ]
     
     static let CATEGORY_TUOI_TRE = [
-        Category(id: UUID(), title: "Trang chủ", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.HOME,sourceType: Constant.Key.KEY_TYPE_TUOI_TRE),
-        Category(id: UUID(), title: "Thời sự", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.NEWS,sourceType: Constant.Key.KEY_TYPE_TUOI_TRE),
-        Category(id: UUID(), title: "Thế giới", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.WORLD,sourceType: Constant.Key.KEY_TYPE_TUOI_TRE),
-        Category(id: UUID(), title: "Pháp luật", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.LAW,sourceType: Constant.Key.KEY_TYPE_TUOI_TRE),
-        Category(id: UUID(), title: "Kinh doanh", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.BUSINESS,sourceType: Constant.Key.KEY_TYPE_TUOI_TRE),
-        Category(id: UUID(), title: "Công nghệ", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.TECHNOLOGY,sourceType: Constant.Key.KEY_TYPE_TUOI_TRE),
-        Category(id: UUID(), title: "Xe", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.CAR,sourceType: Constant.Key.KEY_TYPE_TUOI_TRE),
-        Category(id: UUID(), title: "Nhịp sống trẻ", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.YOUTH_LIFE,sourceType: Constant.Key.KEY_TYPE_TUOI_TRE),
-        Category(id: UUID(), title: "Văn hóa", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.CULTURE,sourceType: Constant.Key.KEY_TYPE_TUOI_TRE),
-        Category(id: UUID(), title: "Giải trí", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.ENTERTAINMENT,sourceType: Constant.Key.KEY_TYPE_TUOI_TRE),
-        Category(id:  UUID(), title: "Thể thao", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.SPORT,sourceType: Constant.Key.KEY_TYPE_TUOI_TRE),
-        Category(id:  UUID(), title: "Giáo dục", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.EDUCATION,sourceType: Constant.Key.KEY_TYPE_TUOI_TRE),
-        Category(id:  UUID(), title: "Khoa học", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.SCIENCE,sourceType: Constant.Key.KEY_TYPE_TUOI_TRE),
-        Category(id:  UUID(), title: "Sức khỏe", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.HEALTH,sourceType: Constant.Key.KEY_TYPE_TUOI_TRE),
-        Category(id:  UUID(), title: "Giả thật", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.FAKE_NEWS,sourceType: Constant.Key.KEY_TYPE_TUOI_TRE),
-        Category(id:  UUID(), title: "Thư giãn", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.RELAX,sourceType: Constant.Key.KEY_TYPE_TUOI_TRE),
-        Category(id:  UUID(), title: "Bạn đọc làm báo", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.READERS_AS_REPORTER,sourceType: Constant.Key.KEY_TYPE_TUOI_TRE),
-        Category(id:  UUID(), title: "Du lịch", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.TRAVEL,sourceType: Constant.Key.KEY_TYPE_TUOI_TRE)
+        Category(idCate: UUID(), title: "Trang chủ", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.HOME,typeSource: TypeSource.tuoiTre.rawValue),
+        Category(idCate: UUID(), title: "Thời sự", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.NEWS,typeSource: TypeSource.tuoiTre.rawValue),
+        Category(idCate: UUID(), title: "Thế giới", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.WORLD,typeSource: TypeSource.tuoiTre.rawValue),
+        Category(idCate: UUID(), title: "Pháp luật", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.LAW,typeSource: TypeSource.tuoiTre.rawValue),
+        Category(idCate: UUID(), title: "Kinh doanh", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.BUSINESS,typeSource: TypeSource.tuoiTre.rawValue),
+        Category(idCate: UUID(), title: "Công nghệ", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.TECHNOLOGY,typeSource: TypeSource.tuoiTre.rawValue),
+        Category(idCate: UUID(), title: "Xe", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.CAR,typeSource: TypeSource.tuoiTre.rawValue),
+        Category(idCate: UUID(), title: "Nhịp sống trẻ", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.YOUTH_LIFE,typeSource: TypeSource.tuoiTre.rawValue),
+        Category(idCate: UUID(), title: "Văn hóa", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.CULTURE,typeSource: TypeSource.tuoiTre.rawValue),
+        Category(idCate: UUID(), title: "Giải trí", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.ENTERTAINMENT,typeSource: TypeSource.tuoiTre.rawValue),
+        Category(idCate:  UUID(), title: "Thể thao", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.SPORT,typeSource: TypeSource.tuoiTre.rawValue),
+        Category(idCate:  UUID(), title: "Giáo dục", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.EDUCATION,typeSource: TypeSource.tuoiTre.rawValue),
+        Category(idCate:  UUID(), title: "Khoa học", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.SCIENCE,typeSource: TypeSource.tuoiTre.rawValue),
+        Category(idCate:  UUID(), title: "Sức khỏe", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.HEALTH,typeSource: TypeSource.tuoiTre.rawValue),
+        Category(idCate:  UUID(), title: "Giả thật", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.FAKE_NEWS,typeSource: TypeSource.tuoiTre.rawValue),
+        Category(idCate:  UUID(), title: "Thư giãn", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.RELAX,typeSource: TypeSource.tuoiTre.rawValue),
+        Category(idCate:  UUID(), title: "Bạn đọc làm báo", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.READERS_AS_REPORTER,typeSource: TypeSource.tuoiTre.rawValue),
+        Category(idCate:  UUID(), title: "Du lịch", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.TRAVEL,typeSource: TypeSource.tuoiTre.rawValue)
     ]
     struct Key {
         static let KEY_TYPE_VN_EXPRESS = "KEY_TYPE_VN_EXPRESS"
         static let KEY_TYPE_TUOI_TRE = "KEY_TYPE_TUOI_TRE"
+        static let USER_LOGIN = "USER_LOGIN"
     }
     
 }

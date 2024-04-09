@@ -12,14 +12,15 @@ import FirebaseCore
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     static var context : NSManagedObjectContext!
-    
+    static var userLogin : User?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         AppDelegate.context = persistentContainer.viewContext
         FirebaseApp.configure()
-        importDataCategoriesDefault()
+        if UserDefaults.getUser() == nil {}
+        importDataDefault()
         
-//        if let directoryLocation = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask).last {             print("Documents Directory: \(directoryLocation)Application Support") }
+        if let directoryLocation = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask).last {             print("Documents Directory: \(directoryLocation)Application Support") }
         
         return true
     }
@@ -80,26 +81,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-    func importDataCategoriesDefault() {
+    func importDataDefault() {
         do {
-            
             var arr : [CDCategory] = []
             let item :[CDCategory] = try AppDelegate.context.fetch(CDCategory.fetchRequest())
             if item.count == 0 {
-                let user = CDUser(context: AppDelegate.context)
-                user.idUser = "kJLXcuZUgNSTonSg3IO9688pz173"
-                user.email = "cuong@gmail.com"
-                user.listIndexCategories = [Constant.Key.KEY_TYPE_TUOI_TRE : Array(0...17),
-                                            Constant.Key.KEY_TYPE_VN_EXPRESS : [0,15,20,3,16,6,5,4,8,9,10,11,12,13,14,21,17,7,18,19,1,2]]
-                try AppDelegate.context.save()
-                
                 for (index, item) in Constant.CATEGORY_VN_EXPRESS.enumerated() {
                     let i = CDCategory(context: AppDelegate.context)
                     i.indexCategory = Int64(index)
                     i.title = item.title
                     i.url = item.url
-                    i.idCate = item.id
-                    i.typeSource = item.sourceType
+                    i.idCate = item.idCate
+                    i.typeSource = item.typeSource
                     arr.append(i)
                 }
                 for (index, item) in Constant.CATEGORY_TUOI_TRE.enumerated() {
@@ -107,15 +100,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     i.indexCategory = Int64(index)
                     i.title = item.title
                     i.url = item.url
-                    i.idCate = item.id
-                    i.typeSource = item.sourceType
+                    i.idCate = item.idCate
+                    i.typeSource = item.typeSource
                     arr.append(i)
                 }
                 try AppDelegate.context.save()
+                
+                let repoNews = NewsRepositoryImp()
+                
+                getNewsFromServer(repoNews: repoNews, completionHandler: { arr in
+                    _ = repoNews.insertNewsByCategory(arrNews: arr)
+                })
+                
             }
         }
         catch let error {
             print("Lỗi khi lưu\(error)")
+        }
+    }
+    private func getNewsFromServer(repoNews: NewsRepositoryImp ,completionHandler: @escaping (([News]) -> ())) {
+        DispatchQueue.global(qos: .background).async {
+            let vnExpressNews = repoNews.getAllNewsFromServerSource(typeSource: .vnExpress)
+            let tuoiTreNews = repoNews.getAllNewsFromServerSource(typeSource: .tuoiTre)
+            DispatchQueue.main.async {
+                completionHandler(vnExpressNews + tuoiTreNews)
+            }
         }
     }
 }

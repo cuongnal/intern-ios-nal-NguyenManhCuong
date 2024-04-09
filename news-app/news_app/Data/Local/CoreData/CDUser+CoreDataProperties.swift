@@ -2,7 +2,7 @@
 //  CDUser+CoreDataProperties.swift
 //  news_app
 //
-//  Created by user on 4/5/24.
+//  Created by user on 4/9/24.
 //
 //
 
@@ -16,9 +16,9 @@ extension CDUser {
         return NSFetchRequest<CDUser>(entityName: "CDUser")
     }
 
-    @NSManaged public var idUser: String?
-    @NSManaged public var listIndexCategories: Dictionary<String , Array<Int> >?
     @NSManaged public var email: String?
+    @NSManaged public var idUser: String?
+    @NSManaged public var listIndexCategory: Dictionary<String , Array<Int> >?
     @NSManaged public var usersBookmark: NSSet?
 
 }

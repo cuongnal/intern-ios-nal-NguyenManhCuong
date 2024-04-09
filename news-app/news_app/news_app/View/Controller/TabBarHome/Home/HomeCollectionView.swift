@@ -11,7 +11,7 @@ class HomeCollectionView : UICollectionView, UICollectionViewDelegateFlowLayout,
     var oldSelectedItemAt : IndexPath = IndexPath(row: 0, section: 0)
     
     var callBack : ((Category) -> ())?
-    
+    var list : [Category] = []
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.delegate = self
@@ -40,7 +40,6 @@ class HomeCollectionView : UICollectionView, UICollectionViewDelegateFlowLayout,
         callBack!(list[indexPath.row])
     }
     
-    var list : [Category] = []
     override func reloadData() {
         super.reloadData()
         oldSelectedItemAt = IndexPath(item: 0, section: 0)
@@ -49,5 +48,10 @@ class HomeCollectionView : UICollectionView, UICollectionViewDelegateFlowLayout,
             return
         }
         self.scrollToItem(at: IndexPath(item: 0, section: 0), at: .left, animated: true)
+        
+        // khi bằng reload mà list khác không, chứng tỏ là mới mở app, hoặc đổi source báo, nên gọi callback luôn
+        if list.count > 0 {
+            callBack?(list[0])
+        }
     }
 }

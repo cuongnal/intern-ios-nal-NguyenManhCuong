@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 public struct Category {
-    var id : UUID!
+    var idCate : UUID!
     var title : String!
     var url : String!
-    var sourceType : String!
+    var typeSource : String!
 }

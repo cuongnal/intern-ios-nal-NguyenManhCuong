@@ -7,12 +7,12 @@
 
 import UIKit
 import CryptoKit
-struct News {
+public struct News {
     var idNews : String!
     var image : String = ""
     var title : String = ""
     var pubDate : String = ""
-    var idCategory : UUID!
+    var idCate : UUID!
     var author : String = Constant.VN_EXPRESS
     var typeCategory : String = "Trang chủ"
     var link : String = ""
@@ -22,12 +22,12 @@ struct News {
         let hashedData = SHA256.hash(data: inputData)
         idNews = hashedData.compactMap { String(format: "%02x", $0) }.joined()
     }
-    init(idNews: String!, image: String, title: String, pubDate: String, idCategory: UUID, author: String, typeCategory: String, link: String, description: String) {
+    init(idNews: String!, image: String, title: String, pubDate: String, idCate: UUID, author: String, typeCategory: String, link: String, description: String) {
         self.idNews = idNews
         self.image = image
         self.title = title
         self.pubDate = pubDate
-        self.idCategory = idCategory
+        self.idCate = idCate
         self.author = author
         self.typeCategory = typeCategory
         self.link = link
@@ -35,7 +35,7 @@ struct News {
     }
     init() {}
 }
-enum TypeSourceNews : String {
+public enum TypeSource : String {
     case vnExpress = "VN_EXPRESS"
     case tuoiTre = "TUOI_TRE"
 }
