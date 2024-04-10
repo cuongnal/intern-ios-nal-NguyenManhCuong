@@ -81,6 +81,14 @@ struct Constant {
         static let KEY_TYPE_TUOI_TRE = "KEY_TYPE_TUOI_TRE"
         static let USER_LOGIN = "USER_LOGIN"
     }
+    struct Error {
+        static let LABLE_ERROR = "Lỗi"
+        static let ERROR_PASSWORD = "Mật khẩu không chính xác"
+        static let ERROR_EMAIL = "Email chưa được đăng ký"
+        static let EMAIL_ALREADY_IN_USE = "Email đã được sử dụng"
+        static let INVALID_EMAIL = "Email không hợp lệ"
+        static let NIL = "Lỗi không xác định : \n"
+    }
     
 }
 

@@ -43,6 +43,6 @@ class SettingTableView : UITableView, UITableViewDataSource, UITableViewDelegate
                                           (text: "Categories management", image: "ic_question", type: .categories),
                                           (text: "Log out", image: "ic_logout", type: .logOut)]
     
-    static let ACCOUNT_TABLE_LIST_ITEM = [(text: "email@email.com",image: "ic_email", type: TypeItemSelected.user),
+    static let ACCOUNT_TABLE_LIST_ITEM = [(text: UserDefaults.getUser()?.email ?? "",image: "ic_email", type: TypeItemSelected.user),
                                           (text: "Change password",image: "ic_lock", type: .changePassword)]
 }

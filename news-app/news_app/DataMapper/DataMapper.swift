@@ -9,7 +9,7 @@ import Foundation
 
 class DataMapper {
     
-    static func MapCDCategoryToEntity(withTypeSource type: TypeSource, withUser user: User, cdCategory : [CDCategory]) -> [Category] {
+    class func MapCDCategoryToEntity(withTypeSource type: TypeSource, withUser user: User, cdCategory : [CDCategory]) -> [Category] {
         var arr : [Category] = []
         
         for i in stride(from: 0, to: user.listIndexCategory![type.rawValue]!.count, by:1) {
@@ -27,10 +27,10 @@ class DataMapper {
         }
         return arr
     }
-    static func MapCDUsertoEntity(withCDUser cdUser: CDUser) -> User {
+    class func MapCDUsertoEntity(withCDUser cdUser: CDUser) -> User {
         return User(idUser: cdUser.idUser, email: cdUser.email, listIndexCategory: cdUser.listIndexCategory)
     }
-    static func MapCDNewsToEntity(withCDNews cdNews : CDNews) -> News {
+    class func MapCDNewsToEntity(withCDNews cdNews : CDNews) -> News {
         var news = News()
         news.idNews = cdNews.idNews ?? ""
         news.image = cdNews.image ?? ""

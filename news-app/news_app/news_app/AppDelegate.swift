@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         AppDelegate.context = persistentContainer.viewContext
         FirebaseApp.configure()
-        if UserDefaults.getUser() == nil {}
         importDataDefault()
         
         if let directoryLocation = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask).last {             print("Documents Directory: \(directoryLocation)Application Support") }

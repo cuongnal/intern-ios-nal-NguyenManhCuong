@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 
 extension DateFormatter {
     func convertStringDateFormat(dateString: String) throws -> String?  {

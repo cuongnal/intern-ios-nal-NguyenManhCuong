@@ -28,16 +28,17 @@ class AuthenticationModel  : BaseModel {
         return checkErrorEmail(email: email) && checkErrorPassword(password: password)
     }
     
-    func signInEmail(email : String, password : String, callBack : @escaping (() -> Void)) {
+    func signInEmail(email : String, password : String, callBack : @escaping ((Bool, String?) -> Void)) {
         self.delegate?.startLoading()
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] (authResult, error) in
-            if error != nil {
+            if let error = error {
+                callBack(false, FirebaseErrorCode.error(withError: error) )
                 return
             }
             let user : User? = self?.userRepository.getUserDetail(idUser: (authResult?.user.uid)!)
             if let user = user {
                 UserDefaults.setUser(user: user)
-                callBack()
+                callBack(true, nil)
                 self?.delegate?.cancelLoading()
             }
             else {
@@ -47,37 +48,51 @@ class AuthenticationModel  : BaseModel {
                 user.listIndexCategory = UserDefaults.standard.setIndexCategoryDefault()
                 let userInsert : User? = self?.userRepository.insertUser(user: user)
                 UserDefaults.setUser(user: userInsert!)
-                callBack()
+                callBack(true, nil)
                 self?.delegate?.cancelLoading()
             }
         }
     }
-//    private func getCategory(result : @escaping (([Category]) -> Void)) {
-//        excuteTask(task: { [weak self] in
-//            self?.categoryRepository.getCategoriesByTypeSource(withTypeSource:.vnExpress, withUser: UserDefaults.getUser()!)
-//        }, complete: { (arr) in
-//            result(arr!)
-//        })
-//    }
+    //    private func getCategory(result : @escaping (([Category]) -> Void)) {
+    //        excuteTask(task: { [weak self] in
+    //            self?.categoryRepository.getCategoriesByTypeSource(withTypeSource:.vnExpress, withUser: UserDefaults.getUser()!)
+    //        }, complete: { (arr) in
+    //            result(arr!)
+    //        })
+    //    }
     
-    func signUpEmail(email : String, password : String, callBack : @escaping (() -> Void)) {
-        Auth.auth().sig
+    func signUpEmail(email : String, password : String, callBack : @escaping ((Bool, String?) -> Void)) {
+        self.delegate?.startLoading()
+        Auth.auth().createUser(withEmail: email, password: password, completion: { [weak self](authDataResult,error) in
+            if let error = error  {
+                callBack(false, FirebaseErrorCode.error(withError: error))
+                return
+            }
+            var user = User()
+            user.email = authDataResult?.user.email
+            user.idUser = authDataResult?.user.uid
+            user.listIndexCategory = UserDefaults.standard.setIndexCategoryDefault()
+            let userInsert : User? = self?.userRepository.insertUser(user: user)
+            UserDefaults.setUser(user: userInsert!)
+            callBack(true, nil)
+            self?.delegate?.cancelLoading()
+        })
     }
     func getAllNews() {
-//        excuteNetwork(task: { [weak self] in
-//            let remoteArrNews  : [News]? = self?.remoteGetAllNewsUseCase.getAllNews()
-//            let localArrNews : [CDNews]? = self?.localGetAllNewsUseCase.getAllNews()
-//            if let remoteArrNews = remoteArrNews, let localArrNews = localArrNews {
-//               return self?.insertNewsUseCase.insertAllNews(remoteArrNews: remoteArrNews, localArrNews: localArrNews)
-//            } else {
-//                return false
-//            }
-//        }, complete: {(isInsert) in
-//            
-//        })
+        //        excuteNetwork(task: { [weak self] in
+        //            let remoteArrNews  : [News]? = self?.remoteGetAllNewsUseCase.getAllNews()
+        //            let localArrNews : [CDNews]? = self?.localGetAllNewsUseCase.getAllNews()
+        //            if let remoteArrNews = remoteArrNews, let localArrNews = localArrNews {
+        //               return self?.insertNewsUseCase.insertAllNews(remoteArrNews: remoteArrNews, localArrNews: localArrNews)
+        //            } else {
+        //                return false
+        //            }
+        //        }, complete: {(isInsert) in
+        //
+        //        })
     }
 }
 
-enum HiddenView {
+enum TypeScreen {
     case signUp, signIn
 }

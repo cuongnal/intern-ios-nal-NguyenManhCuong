@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -78,6 +78,8 @@
 		CEA2C2012BC4154400C4B2B3 /* RemoteGetAllNewsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2C2002BC4154400C4B2B3 /* RemoteGetAllNewsUseCase.swift */; };
 		CEA2C2032BC418C700C4B2B3 /* LocalGetAllNewsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2C2022BC418C700C4B2B3 /* LocalGetAllNewsUseCase.swift */; };
 		CEA2C2052BC41B2500C4B2B3 /* InsertNewsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2C2042BC41B2500C4B2B3 /* InsertNewsUseCase.swift */; };
+		CEF6E0F32BC649EA00DBA72B /* FirebaseErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6E0F22BC649EA00DBA72B /* FirebaseErrorCode.swift */; };
+		CEF6E0F52BC6781700DBA72B /* AppNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6E0F42BC6781700DBA72B /* AppNavigationViewController.swift */; };
 		D75363E81820EB1943230A60 /* Pods_news_app_news_appUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D777246889CA6F061FA9587A /* Pods_news_app_news_appUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -181,6 +183,8 @@
 		CEA2C2002BC4154400C4B2B3 /* RemoteGetAllNewsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGetAllNewsUseCase.swift; sourceTree = "<group>"; };
 		CEA2C2022BC418C700C4B2B3 /* LocalGetAllNewsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalGetAllNewsUseCase.swift; sourceTree = "<group>"; };
 		CEA2C2042BC41B2500C4B2B3 /* InsertNewsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertNewsUseCase.swift; sourceTree = "<group>"; };
+		CEF6E0F22BC649EA00DBA72B /* FirebaseErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseErrorCode.swift; sourceTree = "<group>"; };
+		CEF6E0F42BC6781700DBA72B /* AppNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationViewController.swift; sourceTree = "<group>"; };
 		D777246889CA6F061FA9587A /* Pods_news_app_news_appUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_news_app_news_appUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29E3FA5701DD17A9825D9F4 /* Pods-news_app-news_appUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-news_app-news_appUITests.release.xcconfig"; path = "Target Support Files/Pods-news_app-news_appUITests/Pods-news_app-news_appUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FD960B65A543EAA72928F457 /* Pods_news_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_news_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -274,6 +278,7 @@
 				AD0914152BA8128A00287227 /* Base */,
 				AD8DBC142B9EF4C40070D7A7 /* Extension */,
 				ADA2C3F52BA93E9A009E4F7C /* View */,
+				CEF6E0F42BC6781700DBA72B /* AppNavigationViewController.swift */,
 				AD8DBBDA2B9AE92A0070D7A7 /* AppDelegate.swift */,
 				AD8DBBDC2B9AE92A0070D7A7 /* SceneDelegate.swift */,
 				AD8DBBE02B9AE92A0070D7A7 /* Main.storyboard */,
@@ -501,6 +506,7 @@
 			isa = PBXGroup;
 			children = (
 				CE1DAE1F2BBFE2CA00F87A47 /* DataMapper.swift */,
+				CEF6E0F22BC649EA00DBA72B /* FirebaseErrorCode.swift */,
 			);
 			path = DataMapper;
 			sourceTree = "<group>";
@@ -621,7 +627,7 @@
 				};
 			};
 			buildConfigurationList = AD8DBBD22B9AE92A0070D7A7 /* Build configuration list for PBXProject "news_app" */;
-			compatibilityVersion = "Xcode 12.0";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -789,6 +795,7 @@
 				CE18A8B62BC5360A00B88718 /* CDBookmark+CoreDataProperties.swift in Sources */,
 				ADA5EC5E2BB10A7D00A26281 /* Api.swift in Sources */,
 				ADA0BAE92BB2B3A4007B39A8 /* BookmarkViewController.swift in Sources */,
+				CEF6E0F52BC6781700DBA72B /* AppNavigationViewController.swift in Sources */,
 				CEA2C2012BC4154400C4B2B3 /* RemoteGetAllNewsUseCase.swift in Sources */,
 				AD8DBC162B9EF5090070D7A7 /* Extension.swift in Sources */,
 				CE1DADD72BBFA02400F87A47 /* CategoriesRepository.swift in Sources */,
@@ -819,6 +826,7 @@
 				ADE00FEA2BAAB9B50041DE42 /* HomeCollectionViewCell.swift in Sources */,
 				AD9B87412BBABD030052A68A /* BaseModel.swift in Sources */,
 				AD9287132BBA8DD500A9246F /* PopoverViewController.swift in Sources */,
+				CEF6E0F32BC649EA00DBA72B /* FirebaseErrorCode.swift in Sources */,
 				AD8E537E2BB3D718000103DA /* AuthenticationModel.swift in Sources */,
 				B2F8DE2F2BBEB27200A471EB /* NewsRepository.swift in Sources */,
 				ADA5EC602BB10B7A00A26281 /* XMLParserToObject.swift in Sources */,
@@ -1031,7 +1039,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = news_app/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1061,7 +1069,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = news_app/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

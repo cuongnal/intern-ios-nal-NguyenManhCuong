@@ -7,7 +7,8 @@
 
 import UIKit
 import Foundation
-
+import FirebaseAuth
+import FirebaseCore
 class HomeViewController : BaseViewController , UIPopoverPresentationControllerDelegate{
     
     @IBOutlet weak var homeCollectionView : HomeCollectionView!
@@ -23,6 +24,7 @@ class HomeViewController : BaseViewController , UIPopoverPresentationControllerD
         setUpHomeCollectionView()
         popover = PopoverViewController(nibName: "PopoverViewController", bundle: nil) as PopoverViewController
         handlerCallBack()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,6 +80,7 @@ class HomeViewController : BaseViewController , UIPopoverPresentationControllerD
                 self?.setUpHomeCollectionView(typeSource: type)
             }
         }
+
     }
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {

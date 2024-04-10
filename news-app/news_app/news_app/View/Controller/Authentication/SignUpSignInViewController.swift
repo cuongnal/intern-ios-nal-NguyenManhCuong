@@ -27,7 +27,7 @@ class SignUpSignInViewController: BaseViewController {
     var flagSign : typeSignUpIn = .signIn
     
     let authenModel = AuthenticationModel()
-    var flagCheckSignInSignUp = HiddenView.signUp
+    var flagCheckSignInSignUp = TypeScreen.signUp
     override func viewDidLoad() {
         super.viewDidLoad()
         authenModel.delegate = self
@@ -40,16 +40,33 @@ class SignUpSignInViewController: BaseViewController {
     @IBAction func onTouchSignUpAndSignIn(_ sender: Any) {
         let tabBar = storyboard?.instantiateViewController(withIdentifier: "TabBarHome") as! TabBarController
         
-        authenModel.signInEmail(email: inputEmail.text!, password: inputPassword.text!, callBack: { 
-            self.navigationController?.pushViewController(tabBar, animated: true)
-        })
+        if flagCheckSignInSignUp == .signIn {
+            authenModel.signInEmail(email: inputEmail.text!, password: inputPassword.text!, callBack: { [weak self](complete, error)  in
+                guard complete else {
+                    self?.showAlertError(error: error!)
+                    return
+                }
+                self?.navigationController?.pushViewController(tabBar, animated: true)
+            })
+        }
+        else {
+            authenModel.signUpEmail(email: inputEmail.text!, password: inputPassword.text!, callBack: { [weak self](complete, error)  in
+                guard complete else {
+                    self?.showAlertError(error: error!)
+                    return
+                }
+                self?.navigationController?.pushViewController(tabBar, animated: true)
+            })
+        }
     }
+    
     @IBAction func onTouchBtnSignInWithEmail() {
         flagCheckSignInSignUp = .signIn
         UIView.transition(with: self.view.superview!, duration: 0.3, options:
                 .transitionFlipFromLeft, animations: {self.hiddenView()}, completion: nil)
         flagSign = .signIn
     }
+    
     @IBAction func onTouchRegisterButton(_ sender: Any) {
         flagCheckSignInSignUp = .signUp
         UIView.transition(with: self.view.superview!, duration: 0.2, options:
@@ -75,7 +92,7 @@ class SignUpSignInViewController: BaseViewController {
         }
         btnSignUpAndSignIn.setColorButton(flag: true)
     }
-
+    
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
