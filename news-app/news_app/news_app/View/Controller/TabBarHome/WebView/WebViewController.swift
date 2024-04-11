@@ -22,6 +22,7 @@ class WebViewController : UIViewController, WKNavigationDelegate {
         loading.hidesWhenStopped = true
     }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
         guard let item = newsItem, let url = URL(string: item.link) else {return}
         self.webKitView.load (URLRequest(url: url, cachePolicy: .reloadRevalidatingCacheData, timeoutInterval: 5.0))
@@ -57,6 +58,10 @@ class WebViewController : UIViewController, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         loading.startAnimating()
+        guard let newsItem = newsItem else {
+            return
+        }
+        webViewModel.saveNews(withNews: newsItem)
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {

@@ -19,6 +19,7 @@ class HomeViewController : BaseViewController , UIPopoverPresentationControllerD
     let homeModel = HomeModel()
     override func viewDidLoad() {
         super.viewDidLoad()
+        homeTableView.register(UINib(nibName: Constant.NEWS_TABLE_VIEW_CELL, bundle: .main), forCellReuseIdentifier: Constant.NEWS_TABLE_VIEW_CELL)
         receiverNotificationCenter()
         
         setUpHomeCollectionView()
@@ -48,7 +49,6 @@ class HomeViewController : BaseViewController , UIPopoverPresentationControllerD
             if URL(string: category.url) != nil {
                 self?.homeModel.fetchDataNews(category: category, callBack: { (arrNews) in
                     self?.homeTableView.setUpHomeTableView(arrNews: arrNews)
-                    
                 })
             }
         }
@@ -56,14 +56,6 @@ class HomeViewController : BaseViewController , UIPopoverPresentationControllerD
         homeTableView.callBack = {[weak self] item in
             self?.openWebKitView(item: item)
         }
-    }
-    func openWebKitView(item : News) {
-        
-        guard let acc = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController else {
-            return
-        }
-        acc.newsItem = item
-        navigationController?.pushViewController(acc, animated: true)
     }
     
     @objc private func back() {

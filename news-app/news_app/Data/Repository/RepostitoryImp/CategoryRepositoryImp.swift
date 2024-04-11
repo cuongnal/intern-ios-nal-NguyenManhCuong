@@ -15,7 +15,8 @@ class CategoryRepositoryImp : CategoriesRepository {
             let arr =  try CDCategory.getCDCategoryWithTypeSource(withTypeSource: type)
             return DataMapper.MapCDCategoryToEntity(withTypeSource: type, withUser : user, cdCategory: arr)
         }
-        catch {
+        catch let err {
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
             return []
         }
 

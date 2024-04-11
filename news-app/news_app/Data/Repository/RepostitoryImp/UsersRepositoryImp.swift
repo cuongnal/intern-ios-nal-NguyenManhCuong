@@ -20,8 +20,8 @@ class UsersRepositoryImp : UsersRepository {
             }
             return DataMapper.MapCDUsertoEntity(withCDUser: user)
         }
-        catch let error {
-            print(error)
+        catch let err {
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
         }
         return nil
     }
@@ -33,8 +33,8 @@ class UsersRepositoryImp : UsersRepository {
             }
             return nil
         }
-        catch {
-            print("Lưu user không thành công")
+        catch let err{
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
             return nil
         }
     }

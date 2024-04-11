@@ -2,7 +2,7 @@
 //  CDNews+CoreDataProperties.swift
 //  news_app
 //
-//  Created by user on 4/9/24.
+//  Created by user on 4/11/24.
 //
 //
 
@@ -25,24 +25,42 @@ extension CDNews {
     @NSManaged public var pubDate: String?
     @NSManaged public var title: String?
     @NSManaged public var categoriesNews: CDCategory?
-    @NSManaged public var newsBookmark: NSSet?
+    @NSManaged public var seenNews: NSSet?
+    @NSManaged public var saveBookmark: NSSet?
 
 }
 
-// MARK: Generated accessors for newsBookmark
+// MARK: Generated accessors for seenNews
 extension CDNews {
 
-    @objc(addNewsBookmarkObject:)
-    @NSManaged public func addToNewsBookmark(_ value: CDBookmark)
+    @objc(addSeenNewsObject:)
+    @NSManaged public func addToSeenNews(_ value: CDUser)
 
-    @objc(removeNewsBookmarkObject:)
-    @NSManaged public func removeFromNewsBookmark(_ value: CDBookmark)
+    @objc(removeSeenNewsObject:)
+    @NSManaged public func removeFromSeenNews(_ value: CDUser)
 
-    @objc(addNewsBookmark:)
-    @NSManaged public func addToNewsBookmark(_ values: NSSet)
+    @objc(addSeenNews:)
+    @NSManaged public func addToSeenNews(_ values: NSSet)
 
-    @objc(removeNewsBookmark:)
-    @NSManaged public func removeFromNewsBookmark(_ values: NSSet)
+    @objc(removeSeenNews:)
+    @NSManaged public func removeFromSeenNews(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for saveBookmark
+extension CDNews {
+
+    @objc(addSaveBookmarkObject:)
+    @NSManaged public func addToSaveBookmark(_ value: CDUser)
+
+    @objc(removeSaveBookmarkObject:)
+    @NSManaged public func removeFromSaveBookmark(_ value: CDUser)
+
+    @objc(addSaveBookmark:)
+    @NSManaged public func addToSaveBookmark(_ values: NSSet)
+
+    @objc(removeSaveBookmark:)
+    @NSManaged public func removeFromSaveBookmark(_ values: NSSet)
 
 }
 

@@ -8,9 +8,16 @@
 import Foundation
 import UIKit
 
-class BookmarkViewController : UIViewController {
+class BookmarkViewController : BaseViewController {
+    
+    @IBOutlet weak var bookmarkCollectionView: BookmarkCollectionViewCell!
+    @IBOutlet weak var bookmarkTableView: BookmarkTableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = false
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+      
     }
 }

@@ -9,10 +9,17 @@ import Foundation
 import UIKit
 
 class BaseViewController : UIViewController, BaseModelDelegate {
-    var loadingController = LoadingViewController()
-    var backgroundLoading : UIView!
+    private var loadingController = LoadingViewController()
+    private var backgroundLoading : UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    func openWebKitView(item : News) {
+        guard let acc = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController else {
+            return
+        }
+        acc.newsItem = item
+        navigationController?.pushViewController(acc, animated: true)
     }
     func startLoading() {
         loadingController.modalPresentationStyle = .overFullScreen

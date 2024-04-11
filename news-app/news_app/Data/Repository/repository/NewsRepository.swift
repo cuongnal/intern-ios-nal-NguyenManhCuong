@@ -8,9 +8,17 @@
 import Foundation
 
 protocol NewsRepository {
+    func getAllNews() -> [CDNews] 
+    
     func getNewsByCategory(category: Category) -> [News]
     
+    func insertNewsByCategory(arrNews : [News]) -> Bool
+    
     func getNewsFromServer(category : Category ) -> [News]
+    
     func getAllNewsFromServerSource (typeSource : TypeSource) -> [News]
+    
+    
+    func getNewsSeenWithUser(withUserLogin user : User)  -> [News]
 
 }

@@ -2,7 +2,7 @@
 //  CDCategory+CoreDataProperties.swift
 //  news_app
 //
-//  Created by user on 4/9/24.
+//  Created by user on 4/11/24.
 //
 //
 

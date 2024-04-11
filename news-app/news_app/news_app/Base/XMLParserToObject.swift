@@ -77,7 +77,8 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
           //      news?.typeSource = category.title
                 news?.createPrimaryKey()
                 news?.idCate = category.idCate
-                news?.author = category.typeSource
+                news?.author = category.typeSource == TypeSource.vnExpress.rawValue
+                                                ? Constant.VN_EXPRESS : Constant.TUOI_TRE
                 arrNews.append(news!)
                 news = nil
                 flag = false

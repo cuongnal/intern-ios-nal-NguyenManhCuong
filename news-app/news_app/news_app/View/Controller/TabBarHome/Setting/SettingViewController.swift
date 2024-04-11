@@ -13,8 +13,8 @@ class SettingViewController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
-        let btnLeftFirst = UIBarButtonItem()
         
+        let btnLeftFirst = UIBarButtonItem()
         let label = UILabel()
         label.text = Constant.SETTING
         label.frame = CGRect(x: 0, y: 0, width: 44, height: 44)

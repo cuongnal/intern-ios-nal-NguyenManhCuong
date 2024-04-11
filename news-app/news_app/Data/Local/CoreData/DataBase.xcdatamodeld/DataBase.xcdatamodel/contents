@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="22G513" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="CDBookmark" representedClassName="CDBookmark" syncable="YES">
-        <attribute name="idNews" attributeType="String"/>
-        <attribute name="idUser" attributeType="String"/>
-        <relationship name="newsBookmark" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDNews" inverseName="newsBookmark" inverseEntity="CDNews"/>
-        <relationship name="usersBookmark" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDUser" inverseName="usersBookmark" inverseEntity="CDUser"/>
-    </entity>
     <entity name="CDCategory" representedClassName="CDCategory" syncable="YES">
         <attribute name="idCate" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="indexCategory" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -24,12 +18,14 @@
         <attribute name="pubDate" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="categoriesNews" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDCategory" inverseName="categoriesNews" inverseEntity="CDCategory"/>
-        <relationship name="newsBookmark" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDBookmark" inverseName="newsBookmark" inverseEntity="CDBookmark"/>
+        <relationship name="saveBookmark" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDUser" inverseName="saveBookmark" inverseEntity="CDUser"/>
+        <relationship name="seenNews" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDUser" inverseName="seenNews" inverseEntity="CDUser"/>
     </entity>
     <entity name="CDUser" representedClassName="CDUser" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="idUser" attributeType="String"/>
         <attribute name="listIndexCategory" attributeType="Transformable" valueTransformerName="" customClassName="Dictionary&lt;String , Array&lt;Int&gt; &gt;"/>
-        <relationship name="usersBookmark" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDBookmark" inverseName="usersBookmark" inverseEntity="CDBookmark"/>
+        <relationship name="saveBookmark" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDNews" inverseName="saveBookmark" inverseEntity="CDNews"/>
+        <relationship name="seenNews" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDNews" inverseName="seenNews" inverseEntity="CDNews"/>
     </entity>
 </model>

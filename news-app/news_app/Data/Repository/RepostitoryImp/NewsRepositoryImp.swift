@@ -8,12 +8,12 @@
 import Foundation
 
 class NewsRepositoryImp : NewsRepository {
-
+    
     let parser = XMLParserToObject.getInstance()
     
     func getNewsByCategory(category: Category) -> [News] {
         do {
-            let arrCDNews = try CDNews.fetchNewsByCategory(idCate: category.idCate)
+            let arrCDNews = try CDNews.getCDNewsByCategory(idCate: category.idCate)
             var arrNews : [News] = []
             for item in arrCDNews {
                 arrNews.append(DataMapper.MapCDNewsToEntity(withCDNews: item))
@@ -21,7 +21,7 @@ class NewsRepositoryImp : NewsRepository {
             return arrNews
         }
         catch let err {
-            print("Lỗi khi getNewsByCategory \(err)")
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
         }
         return []
     }
@@ -30,17 +30,17 @@ class NewsRepositoryImp : NewsRepository {
             let arr = try CDNews.getAll()
             return arr
         }catch let err {
-            print("Lỗi khi getAllNews\(err)")
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
             return []
         }
     }
     func insertNewsByCategory(arrNews : [News]) -> Bool {
         do {
-            _ = try CDNews.insertListNews(listNews: arrNews)
+            _ = try CDNews.insertCDListNews(listNews: arrNews)
             return true
         }
         catch let err {
-            print("Lỗi khi insertNewsByCategory \(err)")
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
             return false
         }
     }
@@ -63,5 +63,22 @@ class NewsRepositoryImp : NewsRepository {
         }
         return arrNews
     }
-    
+    func insertNewsSeenWithUser (withUserLogin user : User , withNews news : News) {
+        do {
+            try CDNews.saveSeenNewsWithUser(withNews: news, withUser: user)
+        }
+        catch let err {
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
+        }
+    }
+    func getNewsSeenWithUser(withUserLogin user : User)  -> [News]{
+        do {
+            let arrCDNews = try CDNews.getSeenWithUser(withUser: user)
+            return DataMapper.MapCDNewsToEntity(withArrayCDNews: arrCDNews)
+        }
+        catch let err {
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
+            return []
+        }
+    }
 }
