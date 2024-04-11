@@ -22,12 +22,12 @@ class PopoverChangeSourceVC : UIViewController {
         btnSecond.setTitle(Constant.TUOI_TRE,for: .normal)
     }
     
-    @IBAction func touchVNExpress(_ sender: Any) {
+    @IBAction func touchFirst(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
         callBack!(.vnExpress)
     }
     
-    @IBAction func touchTuoiTre(_ sender: Any) {
+    @IBAction func touchSecond(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
         callBack!(.tuoiTre)
     }

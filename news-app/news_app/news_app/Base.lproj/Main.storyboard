@@ -852,7 +852,7 @@
                     <tabBarItem key="tabBarItem" title="" image="ic_search" id="w7L-l6-G42">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" id="PkR-X5-sah">
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="PkR-X5-sah">
                         <barButtonItem key="leftBarButtonItem" title="Search" style="done" id="QXK-Bo-VH8">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>

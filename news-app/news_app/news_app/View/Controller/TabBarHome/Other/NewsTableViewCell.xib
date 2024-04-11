@@ -36,7 +36,7 @@
                         <rect key="frame" x="155" y="70" width="209" height="53.666666666666657"/>
                         <string key="text">ffsdáp dụng vào
 </string>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>

@@ -18,7 +18,7 @@ struct Constant {
     static let ANCHOR_POPOVER = "Anchor_Popover"
     static let SETTING = "Settings"
     static let ACCOUNT = "Account"
-    static let SENT = "Sent"
+    static let SENT = "Bookmark"
     static let VN_EXPRESS = "Vn Express"
     static let TUOI_TRE = "Tuổi Trẻ"
     static let SHARE = "Share"

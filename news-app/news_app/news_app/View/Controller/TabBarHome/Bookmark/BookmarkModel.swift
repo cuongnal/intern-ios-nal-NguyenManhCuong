@@ -11,9 +11,9 @@ import UIKit
 class BookmarkModel : BaseModel {
     var newsRepository = NewsRepositoryImp()
     
-//    func getNews(callBack : @escaping ((arr) -> Void) ) {
-//        excuteTask(task: {
-//            newsRepository.ge
-//        }, complete: <#T##((T?) -> Void)##((T?) -> Void)##(T?) -> Void#>)
-//    }
+    func getNews(callBack : @escaping ((arr) -> Void) ) {
+        excuteTask(task: {
+            newsRepository.get
+        }, complete: <#T##((T?) -> Void)##((T?) -> Void)##(T?) -> Void#>)
+    }
 }

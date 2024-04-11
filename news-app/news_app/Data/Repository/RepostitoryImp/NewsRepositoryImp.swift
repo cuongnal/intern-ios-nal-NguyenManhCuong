@@ -100,5 +100,10 @@ class NewsRepositoryImp : NewsRepository {
             return []
         }
     }
+    func getBookmarkWithCategory(withUserLogin user : User) -> (arrNews : [News], arrCate : [Category]) {
+        do {
+            var arr = CDNews.getBookmarkWithUser(withUser: <#T##User#>)
+        }
+    }
     
 }

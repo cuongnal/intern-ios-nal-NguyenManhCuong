@@ -20,12 +20,13 @@ class PopoverTableViewCellVC: UIViewController{
         btnFirst.setImage(UIImage(named: "ic_share"), for: .normal)
         btnSecond.setImage(UIImage(named: "ic_bookmark"), for: .normal)
     }
-    
-    @IBAction func touchShare(_ sender: Any) {
+    // first là share
+    @IBAction func touchFirst(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
         callBack!(.share)
     }
-    @IBAction func touchBookmark(_ sender: Any) {
+    //second là bookmark
+    @IBAction func touchSecond(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
         callBack!(.bookmark)
     }
