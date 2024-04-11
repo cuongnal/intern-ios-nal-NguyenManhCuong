@@ -9,4 +9,7 @@ import Foundation
 
 class BookmarkCollectionView : CategoryCollectionView {
     
+    override func reloadData() {
+        super.reloadData()
+    }
 }

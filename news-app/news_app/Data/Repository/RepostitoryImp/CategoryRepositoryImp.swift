@@ -21,4 +21,14 @@ class CategoryRepositoryImp : CategoriesRepository {
         }
 
     }
+    func getAll() -> [Category] {
+        do {
+            let arr = try CDCategory.getAll()
+            return DataMapper.MapCDCategoryToEntity(withCDCategory: arr)
+        }
+        catch let err {
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
+            return []
+        }
+    }
 }

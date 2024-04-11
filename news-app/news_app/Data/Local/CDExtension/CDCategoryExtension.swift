@@ -23,4 +23,8 @@ extension CDCategory {
         a.predicate = NSPredicate(format: "%K == %@", #keyPath(CDCategory.typeSource), type.rawValue)
         return try AppDelegate.context.fetch(a)
     }
+    @nonobjc public class func getAll() throws -> [CDCategory] {
+        let a = CDCategory.fetchRequest()
+        return try AppDelegate.context.fetch(a)
+    }
 }

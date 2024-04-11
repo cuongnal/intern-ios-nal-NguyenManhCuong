@@ -100,9 +100,15 @@ class NewsRepositoryImp : NewsRepository {
             return []
         }
     }
-    func getBookmarkWithCategory(withUserLogin user : User) -> (arrNews : [News], arrCate : [Category]) {
+    func getBookmarkWithCategory(withUserLogin user : User) -> [News] {
         do {
-            var arr = CDNews.getBookmarkWithUser(withUser: <#T##User#>)
+            var arrCDNews = try CDNews.getBookmarkWithUser(withUser: user)
+            return DataMapper.MapCDNewsToEntity(withArrayCDNews: arrCDNews)
+            
+        }
+        catch let err{
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
+            return []
         }
     }
     
