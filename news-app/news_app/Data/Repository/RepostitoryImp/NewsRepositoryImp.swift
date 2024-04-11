@@ -9,6 +9,7 @@ import Foundation
 
 class NewsRepositoryImp : NewsRepository {
     
+    
     let parser = XMLParserToObject.getInstance()
     
     func getNewsByCategory(category: Category) -> [News] {
@@ -36,7 +37,7 @@ class NewsRepositoryImp : NewsRepository {
     }
     func insertNewsByCategory(arrNews : [News]) -> Bool {
         do {
-            _ = try CDNews.insertCDListNews(listNews: arrNews)
+            _ = try CDNews.insertNews(listNews: arrNews)
             return true
         }
         catch let err {
@@ -63,17 +64,17 @@ class NewsRepositoryImp : NewsRepository {
         }
         return arrNews
     }
-    func insertNewsSeenWithUser (withUserLogin user : User , withNews news : News) {
+    func insertNewsSentWithUser (withUserLogin user : User , withNews news : News) {
         do {
-            try CDNews.saveSeenNewsWithUser(withNews: news, withUser: user)
+            try CDNews.saveSentNewsWithUser(withNews: news, withUser: user)
         }
         catch let err {
             print("Function:   \(#function)   line: \(#line)   error: \(err)")
         }
     }
-    func getNewsSeenWithUser(withUserLogin user : User)  -> [News]{
+    func getNewsSentWithUser(withUserLogin user : User)  -> [News]{
         do {
-            let arrCDNews = try CDNews.getSeenWithUser(withUser: user)
+            let arrCDNews = try CDNews.getSentWithUser(withUser: user)
             return DataMapper.MapCDNewsToEntity(withArrayCDNews: arrCDNews)
         }
         catch let err {
@@ -81,4 +82,23 @@ class NewsRepositoryImp : NewsRepository {
             return []
         }
     }
+    
+    func insertNewsToBookmark(withNews news: News, withUserLogin user: User) {
+        do {try CDNews.saveBookmarkWithUser(withNews: news, withUser: user)}
+        catch let err {
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
+        }
+    }
+    
+    func getBookmarkWithUser(withUserLogin user: User) -> [News] {
+        do {
+            var arr = try CDNews.getBookmarkWithUser(withUser: user)
+            return DataMapper.MapCDNewsToEntity(withArrayCDNews: arr)
+        }
+        catch let err {
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
+            return []
+        }
+    }
+    
 }

@@ -7,35 +7,36 @@
 
 import UIKit
 
-class PopoverViewController: UIViewController{
+class PopoverTableViewCellVC: UIViewController{
     
-    var callBack : ((TypeClickPopover) -> ())? = nil
-    
+    lazy var callBack : ((TypeClickPopover) -> ())? = nil
     @IBOutlet weak var btnFirst: UIButton!
     @IBOutlet weak var btnSecond: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        btnFirst.setTitle(Constant.SHARE, for: .normal)
+        btnSecond.setTitle(Constant.BOOKMARK,for: .normal)
         
+        btnFirst.setImage(UIImage(named: "ic_share"), for: .normal)
+        btnSecond.setImage(UIImage(named: "ic_bookmark"), for: .normal)
     }
     
-    @IBAction func touchTuoiTre(_ sender: Any) {
+    @IBAction func touchShare(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
-        callBack!(.tuoiTre)
+        callBack!(.share)
     }
-    @IBAction func touchVNExpress(_ sender: Any) {
+    @IBAction func touchBookmark(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
-        callBack!(.vnExpress)
+        callBack!(.bookmark)
     }
-    func setUp(anchor : UIView, hiddenDirections : Bool) {
+    func setUp(anchor : UIView) {
         self.preferredContentSize = CGSize(width: 180, height: 90)
         self.modalPresentationStyle = .popover
         let ppc = self.popoverPresentationController
-        ppc?.permittedArrowDirections = hiddenDirections ? [] : .up
+        ppc?.permittedArrowDirections = .up
         ppc?.sourceView = anchor
+        ppc!.popoverLayoutMargins = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 0)
         
-        ppc!.popoverLayoutMargins = hiddenDirections ? UIEdgeInsets() : UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 0)
-
-        ppc?.sourceRect = hiddenDirections ? CGRect(x: 0, y: 80, width: 0, height: 0) : CGRect.null
     }
 }
 public enum TypeClickPopover : String{

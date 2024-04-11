@@ -18,12 +18,14 @@ struct Constant {
     static let ANCHOR_POPOVER = "Anchor_Popover"
     static let SETTING = "Settings"
     static let ACCOUNT = "Account"
-    static let SEEN = "Seen"
+    static let SENT = "Sent"
     static let VN_EXPRESS = "Vn Express"
     static let TUOI_TRE = "Tuổi Trẻ"
+    static let SHARE = "Share"
+    static let BOOKMARK = "Bookmark"
     static let PICK_LANGUAGE_VIEW_CONTROLLER = "PickLanguageViewController"
     static let POP_OVER_NOTIFICATION = "PopoverNotification"
-    static let CATEGORY_COLLECTION_VIEW_CELLS = "CategoryCollectionViewCell"
+    static let CATEGORY_COLLECTION_VIEW_CELL = "CategoryCollectionViewCell"
     static let NEWS_TABLE_VIEW_CELL = "NewsTableViewCell"
     static let SETTING_TABLE_VIEW_CELLS = "SettingTableViewCell"
     static let ERROR_PASSWORD = "Incorrect password"
@@ -79,6 +81,7 @@ struct Constant {
         Category(idCate:  UUID(), title: "Du lịch", url: Api.BASE_URL_TUOITRE + Api.TuoiTre.TRAVEL,typeSource: TypeSource.tuoiTre.rawValue)
     ]
     struct Key {
+        static let KEY_NEWS_BOOKMARK = "KEY_NEWS_BOOKMARK"
         static let KEY_TYPE_VN_EXPRESS = "KEY_TYPE_VN_EXPRESS"
         static let KEY_TYPE_TUOI_TRE = "KEY_TYPE_TUOI_TRE"
         static let USER_LOGIN = "USER_LOGIN"

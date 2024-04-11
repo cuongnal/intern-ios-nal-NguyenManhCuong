@@ -7,6 +7,6 @@
 
 import Foundation
 
-class BookmarkCollectionViewCell : CategoryCollectionView {
+class BookmarkCollectionViewCell : CategoryCollectionViewCell {
     
 }

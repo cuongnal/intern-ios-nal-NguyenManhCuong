@@ -13,6 +13,10 @@ protocol BaseModelDelegate{
 }
 class BaseModel  {
     var delegate : BaseViewController?
+    
+    class func saveBookmark(withNews news : News) {
+        NewsRepositoryImp().insertNewsToBookmark(withNews: news, withUserLogin: UserDefaults.getUser()!)
+    }
     func excuteTask<T>(blockUI : Bool = false,
                        task : @escaping (()-> T?),
                        complete : @escaping ((T?) -> Void)

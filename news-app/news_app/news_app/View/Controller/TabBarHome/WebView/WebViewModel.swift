@@ -10,9 +10,6 @@ class WebViewModel : BaseModel {
     let newsRepository = NewsRepositoryImp()
     
     func saveNews(withNews news : News) {
-        self.newsRepository.insertNewsSeenWithUser(withUserLogin:UserDefaults.getUser()! , withNews: news)
-//        excuteTask(task: { [weak self] in
-//            self?.newsRepository.insertNewsSeenWithUser(withUserLogin:UserDefaults.getUser()! , withNews: news)
-//        }, complete: {_ in})
+        self.newsRepository.insertNewsSentWithUser(withUserLogin:UserDefaults.getUser()! , withNews: news)
     }
 }

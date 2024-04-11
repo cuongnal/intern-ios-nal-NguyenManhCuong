@@ -19,7 +19,7 @@ extension CDNews {
         a.predicate = NSPredicate(format: "%K == %@", #keyPath(CDNews.idNews), news.idNews as CVarArg)
         return try AppDelegate.context.fetch(a).first
     }
-    @nonobjc public class func insertCDListNews(listNews : [News], category : Category? = nil) throws -> Bool {
+    @nonobjc public class func insertNews(listNews : [News], category : Category? = nil) throws -> Bool {
         for item in listNews {
             let cdN = CDNews(context: AppDelegate.context)
             let cate = try CDCategory.getCDCategory(idCate: item.idCate)
@@ -41,13 +41,13 @@ extension CDNews {
         return try AppDelegate.context.fetch(a)
     }
     
-    @nonobjc public class func saveSeenNewsWithUser (withNews news : News, withUser user : User) throws {
+    @nonobjc public class func saveSentNewsWithUser (withNews news : News, withUser user : User) throws {
         let cdUser = try CDUser.fetchUserById(idUser: user.idUser!)
         let cdNews = try CDNews.getCDNews(withNewsEntity: news)
         guard let cdNews = cdNews else {
             return
         }
-        cdUser?.addToSeenNews(cdNews)
+        cdUser?.addToSentNews(cdNews)
         try AppDelegate.context.save()
     }
     @nonobjc public class func saveBookmarkWithUser(withNews news : News , withUser user : User) throws {
@@ -60,7 +60,7 @@ extension CDNews {
         try AppDelegate.context.save()
     }
 
-    @nonobjc public class func getSeenWithUser(withUser user : User) throws -> [CDNews] {
+    @nonobjc public class func getSentWithUser(withUser user : User) throws -> [CDNews] {
         let cdUser = try CDUser.fetchUserById(idUser: user.idUser!)
         let a = CDNews.fetchRequest()
         if let cdUser = cdUser {

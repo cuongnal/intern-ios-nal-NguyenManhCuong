@@ -10,7 +10,7 @@ import FirebaseAuth
 
 public class FirebaseErrorCode {
     public class func error(withError error : Error)  -> String{
-        var a  = AuthErrorCode(_nsError: error as NSError).code
+        let a  = AuthErrorCode(_nsError: error as NSError).code
 
         switch (a) {
         case .wrongPassword :

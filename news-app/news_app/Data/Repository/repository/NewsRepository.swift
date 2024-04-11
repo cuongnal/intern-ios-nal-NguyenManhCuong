@@ -8,7 +8,7 @@
 import Foundation
 
 protocol NewsRepository {
-    func getAllNews() -> [CDNews] 
+    func getAllNews() -> [CDNews]
     
     func getNewsByCategory(category: Category) -> [News]
     
@@ -19,6 +19,9 @@ protocol NewsRepository {
     func getAllNewsFromServerSource (typeSource : TypeSource) -> [News]
     
     
-    func getNewsSeenWithUser(withUserLogin user : User)  -> [News]
-
+    func getNewsSentWithUser(withUserLogin user : User)  -> [News]
+    
+    func insertNewsToBookmark(withNews news : News, withUserLogin user : User)
+    
+    func getBookmarkWithUser (withUserLogin user : User) -> [News]
 }

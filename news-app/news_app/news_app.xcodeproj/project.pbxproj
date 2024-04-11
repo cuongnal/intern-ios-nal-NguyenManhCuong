@@ -30,7 +30,7 @@
 		AD8E538F2BB5743E000103DA /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8E538E2BB5743E000103DA /* AccountViewController.swift */; };
 		AD8E53932BB576EA000103DA /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD8E53912BB576EA000103DA /* SettingTableViewCell.xib */; };
 		AD9287122BBA8DD500A9246F /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD9287102BBA8DD500A9246F /* PopoverViewController.xib */; };
-		AD9287132BBA8DD500A9246F /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9287112BBA8DD500A9246F /* PopoverViewController.swift */; };
+		AD9287132BBA8DD500A9246F /* PopoverTableViewCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9287112BBA8DD500A9246F /* PopoverTableViewCellVC.swift */; };
 		AD9B873F2BBA946C0052A68A /* PickLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9B873E2BBA946C0052A68A /* PickLanguageViewController.swift */; };
 		AD9B87412BBABD030052A68A /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9B87402BBABD030052A68A /* BaseModel.swift */; };
 		AD9B87432BBAC46D0052A68A /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9B87422BBAC46D0052A68A /* HomeModel.swift */; };
@@ -74,6 +74,7 @@
 		CEC12A742BC7EA6F00A6CF21 /* CategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC12A732BC7EA6F00A6CF21 /* CategoryCollectionView.swift */; };
 		CEC12A762BC7EB6100A6CF21 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC12A752BC7EB6100A6CF21 /* CategoryCollectionViewCell.swift */; };
 		CEC12A782BC7ED5B00A6CF21 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC12A772BC7ED5B00A6CF21 /* CategoryCollectionViewCell.xib */; };
+		CEC12A7A2BC7F1C100A6CF21 /* PopoverChangeSourceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC12A792BC7F1C100A6CF21 /* PopoverChangeSourceVC.swift */; };
 		CEC541E42BC788C800D8691B /* CDUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC541DE2BC788C800D8691B /* CDUser+CoreDataClass.swift */; };
 		CEC541E52BC788C800D8691B /* CDUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC541DF2BC788C800D8691B /* CDUser+CoreDataProperties.swift */; };
 		CEC541E62BC788C800D8691B /* CDCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC541E02BC788C800D8691B /* CDCategory+CoreDataClass.swift */; };
@@ -142,7 +143,7 @@
 		AD8E538E2BB5743E000103DA /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		AD8E53912BB576EA000103DA /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
 		AD9287102BBA8DD500A9246F /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
-		AD9287112BBA8DD500A9246F /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		AD9287112BBA8DD500A9246F /* PopoverTableViewCellVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverTableViewCellVC.swift; sourceTree = "<group>"; };
 		AD9B873E2BBA946C0052A68A /* PickLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickLanguageViewController.swift; sourceTree = "<group>"; };
 		AD9B87402BBABD030052A68A /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		AD9B87422BBAC46D0052A68A /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
@@ -185,6 +186,7 @@
 		CEC12A732BC7EA6F00A6CF21 /* CategoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionView.swift; sourceTree = "<group>"; };
 		CEC12A752BC7EB6100A6CF21 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEC12A772BC7ED5B00A6CF21 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		CEC12A792BC7F1C100A6CF21 /* PopoverChangeSourceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverChangeSourceVC.swift; sourceTree = "<group>"; };
 		CEC541DE2BC788C800D8691B /* CDUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CEC541DF2BC788C800D8691B /* CDUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CEC541E02BC788C800D8691B /* CDCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -372,11 +374,11 @@
 		ADA0BAE72BB2B24A007B39A8 /* Bookmark */ = {
 			isa = PBXGroup;
 			children = (
-				ADA0BAE82BB2B3A4007B39A8 /* BookmarkViewController.swift */,
-				CEC12A642BC7E49100A6CF21 /* BookmarkModel.swift */,
-				CEC12A662BC7E4A900A6CF21 /* BookmarkTableView.swift */,
 				CEC12A6A2BC7E70400A6CF21 /* BookmarkCollectionView.swift */,
 				CEC12A6C2BC7E71C00A6CF21 /* BookmarkCollectionViewCell.swift */,
+				CEC12A662BC7E4A900A6CF21 /* BookmarkTableView.swift */,
+				ADA0BAE82BB2B3A4007B39A8 /* BookmarkViewController.swift */,
+				CEC12A642BC7E49100A6CF21 /* BookmarkModel.swift */,
 			);
 			path = Bookmark;
 			sourceTree = "<group>";
@@ -439,8 +441,8 @@
 			children = (
 				ADE00FE92BAAB9B50041DE42 /* HomeCollectionViewCell.swift */,
 				ADE00FEB2BAABD9C0041DE42 /* HomeCollectionView.swift */,
-				ADA2C3F32BA9329B009E4F7C /* HomeViewController.swift */,
 				ADE00FF42BAAE4210041DE42 /* HomeTableView.swift */,
+				ADA2C3F32BA9329B009E4F7C /* HomeViewController.swift */,
 				AD9B87422BBAC46D0052A68A /* HomeModel.swift */,
 			);
 			path = Home;
@@ -567,7 +569,8 @@
 			isa = PBXGroup;
 			children = (
 				CEC12A702BC7E79E00A6CF21 /* ListView */,
-				AD9287112BBA8DD500A9246F /* PopoverViewController.swift */,
+				CEC12A792BC7F1C100A6CF21 /* PopoverChangeSourceVC.swift */,
+				AD9287112BBA8DD500A9246F /* PopoverTableViewCellVC.swift */,
 				ADA0BAE52BB2A26F007B39A8 /* TabBarController.swift */,
 				CEC541EA2BC78AF100D8691B /* NewsTableViewCell.xib */,
 				AD9287102BBA8DD500A9246F /* PopoverViewController.xib */,
@@ -862,8 +865,9 @@
 				CEA2C1FF2BC3E14100C4B2B3 /* CDCategoryExtension.swift in Sources */,
 				ADE00FEA2BAAB9B50041DE42 /* HomeCollectionViewCell.swift in Sources */,
 				AD9B87412BBABD030052A68A /* BaseModel.swift in Sources */,
-				AD9287132BBA8DD500A9246F /* PopoverViewController.swift in Sources */,
+				AD9287132BBA8DD500A9246F /* PopoverTableViewCellVC.swift in Sources */,
 				CEF6E0F32BC649EA00DBA72B /* FirebaseErrorCode.swift in Sources */,
+				CEC12A7A2BC7F1C100A6CF21 /* PopoverChangeSourceVC.swift in Sources */,
 				AD8E537E2BB3D718000103DA /* AuthenticationModel.swift in Sources */,
 				B2F8DE2F2BBEB27200A471EB /* NewsRepository.swift in Sources */,
 				ADA5EC602BB10B7A00A26281 /* XMLParserToObject.swift in Sources */,

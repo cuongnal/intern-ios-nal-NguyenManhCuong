@@ -18,11 +18,12 @@ class NewsTableViewCell : UITableViewCell, UIPopoverPresentationControllerDelega
     @IBOutlet weak var authorNews: UILabel!
     @IBOutlet weak var imageNews: UIImageView!
     @IBOutlet weak var titleNews: UILabel!
-
+    var news : News?
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     func setUpView(item: News) {
+        news = item
         timeNews.text = item.pubDate
         typeNews.text = item.typeCategory
         authorNews.text = item.author
@@ -38,7 +39,8 @@ class NewsTableViewCell : UITableViewCell, UIPopoverPresentationControllerDelega
         popupMenu.addTarget(self, action: #selector(touchPopUp), for: .touchUpInside)
     }
     @objc func touchPopUp() {
-        NotificationCenter.default.post(name: NSNotification.Name(Constant.POP_OVER_NOTIFICATION), object: nil, userInfo: [Constant.ANCHOR_POPOVER: self.popupMenu!])
-
+        guard let news = news else{ return }
+        var data : [String : Any] = [Constant.ANCHOR_POPOVER: self.popupMenu!, Constant.Key.KEY_NEWS_BOOKMARK : news]
+        NotificationCenter.default.post(name: NSNotification.Name(Constant.POP_OVER_NOTIFICATION), object: nil, userInfo: data)
     }
 }

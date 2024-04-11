@@ -11,7 +11,7 @@ class SearchModel  : BaseModel{
     
     func getAllNews(callBack : @escaping ([News]) -> Void) {
         excuteTask(blockUI: true, task: { [weak self] in
-            self?.newsRepository.getNewsSeenWithUser(withUserLogin: UserDefaults.getUser()!)
+            self?.newsRepository.getNewsSentWithUser(withUserLogin: UserDefaults.getUser()!)
         }, complete: {(arrNews) in
             callBack(arrNews!)
         })

@@ -10,11 +10,14 @@ import UIKit
 
 class BookmarkViewController : BaseViewController {
     
-    @IBOutlet weak var bookmarkCollectionView: BookmarkCollectionViewCell!
+    @IBOutlet weak var bookmarkCollectionView: BookmarkCollectionView!
     @IBOutlet weak var bookmarkTableView: BookmarkTableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bookmarkTableView.register(UINib(nibName: Constant.NEWS_TABLE_VIEW_CELL, bundle: .main), forCellReuseIdentifier: Constant.NEWS_TABLE_VIEW_CELL)
+        bookmarkCollectionView.register(UINib(nibName: Constant.CATEGORY_COLLECTION_VIEW_CELL, bundle: .main), forCellWithReuseIdentifier: Constant.CATEGORY_COLLECTION_VIEW_CELL)
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

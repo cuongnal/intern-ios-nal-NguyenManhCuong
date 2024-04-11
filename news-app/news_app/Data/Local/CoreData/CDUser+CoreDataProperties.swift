@@ -28,7 +28,7 @@ extension CDUser {
 extension CDUser {
 
     @objc(addSeenNewsObject:)
-    @NSManaged public func addToSeenNews(_ value: CDNews)
+    @NSManaged public func addToSentNews(_ value: CDNews)
 
     @objc(removeSeenNewsObject:)
     @NSManaged public func removeFromSeenNews(_ value: CDNews)

@@ -616,7 +616,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wfu-h2-kaI" customClass="BookmarkCollectionViewCell" customModule="news_app" customModuleProvider="target">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wfu-h2-kaI" customClass="BookmarkCollectionView" customModule="news_app" customModuleProvider="target">
                                 <rect key="frame" x="20" y="98" width="374" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -653,8 +653,8 @@
                     <navigationItem key="navigationItem" id="A2r-jw-kta"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="bookmarkCollectionView" destination="wfu-h2-kaI" id="CpQ-cq-e9L"/>
-                        <outlet property="bookmarkTableView" destination="PVP-5J-oli" id="MbU-OH-gQm"/>
+                        <outlet property="bookmarkCollectionView" destination="wfu-h2-kaI" id="0Ki-K5-bRn"/>
+                        <outlet property="bookmarkTableView" destination="PVP-5J-oli" id="nIC-il-8LU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L4W-pT-kL1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

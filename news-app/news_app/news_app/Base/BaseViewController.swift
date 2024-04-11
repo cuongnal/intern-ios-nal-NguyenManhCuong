@@ -8,11 +8,12 @@
 import Foundation
 import UIKit
 
-class BaseViewController : UIViewController, BaseModelDelegate {
-    private var loadingController = LoadingViewController()
-    private var backgroundLoading : UIView!
+class BaseViewController : UIViewController, BaseModelDelegate, UIPopoverPresentationControllerDelegate {
+    private lazy var loadingController = LoadingViewController()
+    private lazy var popover = PopoverTableViewCellVC(nibName: "PopoverViewController", bundle: nil) as PopoverTableViewCellVC
     override func viewDidLoad() {
         super.viewDidLoad()
+        receiverNotificationCenter()
     }
     func openWebKitView(item : News) {
         guard let acc = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController else {
@@ -37,5 +38,37 @@ class BaseViewController : UIViewController, BaseModelDelegate {
         })
         alert.addAction(action)
         present(alert, animated: true)
+    }
+    
+    
+    func receiverNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(oke(_:)), name: NSNotification.Name(Constant.POP_OVER_NOTIFICATION), object: nil)
+    }
+    @objc func oke(_ notification: Notification) {
+        let positionAnchor = (notification.userInfo?[Constant.ANCHOR_POPOVER]) as? UIButton
+        let itemNews = (notification.userInfo?[Constant.Key.KEY_NEWS_BOOKMARK]) as? News
+        popover.setUp(anchor: positionAnchor!)
+        popover.popoverPresentationController?.delegate = self
+        present(popover, animated: true, completion: nil)
+        
+        popover.callBack = {[weak self] (type) in
+            if type == .bookmark {
+                self?.saveBookmark(news : itemNews)
+            }
+            else {
+                self?.shareNews(news: itemNews)
+            }
+        }
+    }
+    private func saveBookmark(news : News?) {
+        guard let news = news else {
+            return
+        }
+        BaseModel.saveBookmark(withNews: news)
+    }
+    open func shareNews(news : News?) {}
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
     }
 }

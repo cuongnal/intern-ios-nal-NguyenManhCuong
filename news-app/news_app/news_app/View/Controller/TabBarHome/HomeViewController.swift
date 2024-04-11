@@ -9,21 +9,22 @@ import UIKit
 import Foundation
 import FirebaseAuth
 import FirebaseCore
-class HomeViewController : BaseViewController , UIPopoverPresentationControllerDelegate{
+class HomeViewController : BaseViewController {
     
     @IBOutlet weak var homeCollectionView : HomeCollectionView!
     @IBOutlet weak var homeTableView : HomeTableView!
-    var popover : PopoverViewController!
+    var popover : PopoverChangeSourceVC!
+    
     @IBOutlet weak var iconNotification: UIButton!
     
     let homeModel = HomeModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         homeTableView.register(UINib(nibName: Constant.NEWS_TABLE_VIEW_CELL, bundle: .main), forCellReuseIdentifier: Constant.NEWS_TABLE_VIEW_CELL)
-        receiverNotificationCenter()
+        homeCollectionView.register(UINib(nibName: Constant.CATEGORY_COLLECTION_VIEW_CELL, bundle: .main), forCellWithReuseIdentifier: Constant.CATEGORY_COLLECTION_VIEW_CELL)
         
         setUpHomeCollectionView()
-        popover = PopoverViewController(nibName: "PopoverViewController", bundle: nil) as PopoverViewController
+        popover = PopoverChangeSourceVC(nibName: "PopoverViewController", bundle: nil) as PopoverChangeSourceVC
         handlerCallBack()
 
     }
@@ -63,7 +64,7 @@ class HomeViewController : BaseViewController , UIPopoverPresentationControllerD
         self.view.removeFromSuperview()
     }
     @IBAction func onTouchBtnNotification(_ sender: Any) {
-        popover.setUp(anchor: iconNotification, hiddenDirections: false)
+        popover.setUp(anchor: iconNotification)
         popover.popoverPresentationController?.delegate = self
         present(popover, animated: true, completion: nil)
         popover.callBack = {[weak self]
@@ -74,25 +75,7 @@ class HomeViewController : BaseViewController , UIPopoverPresentationControllerD
         }
 
     }
-    
-    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
-        return .none
-    }
-    func receiverNotificationCenter() {
-        NotificationCenter.default.addObserver(self, selector: #selector(oke(_:)), name: NSNotification.Name(Constant.POP_OVER_NOTIFICATION), object: nil)
-    }
-    @objc func oke(_ notification: Notification) {
-        let positionAnchor = (notification.userInfo?[Constant.ANCHOR_POPOVER]) as? UIButton
-        popover.setUp(anchor: positionAnchor!, hiddenDirections: true)
-        popover.popoverPresentationController?.delegate = self
-        present(popover, animated: true, completion: nil)
-        popover.callBack = {[weak self]
-            (type) in
-            if type == .vnExpress || type == .tuoiTre {
-                self?.setUpHomeCollectionView(typeSource: type)
-            }
-        }
-    }
+
 }
 
 

@@ -27,7 +27,7 @@ class UsersRepositoryImp : UsersRepository {
     }
     func insertUser(user : User) -> User? {
         do {
-            var cdUser = try CDUser.insertUser(withUser: user)
+            let cdUser = try CDUser.insertUser(withUser: user)
             if let cdUser = cdUser {
                 return DataMapper.MapCDUsertoEntity(withCDUser: cdUser)
             }

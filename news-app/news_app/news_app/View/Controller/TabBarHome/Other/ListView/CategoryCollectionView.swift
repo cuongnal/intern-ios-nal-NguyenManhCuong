@@ -24,7 +24,7 @@ class CategoryCollectionView : UICollectionView, UICollectionViewDelegateFlowLay
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CATEGORY_COLLECTION_VIEW_CELLS, for: indexPath) as! HomeCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CATEGORY_COLLECTION_VIEW_CELL, for: indexPath) as! CategoryCollectionViewCell
         cell.label.text = list[indexPath.item].title
         cell.setBackGround(flag: indexPath == oldSelectedItemAt)
         return cell
