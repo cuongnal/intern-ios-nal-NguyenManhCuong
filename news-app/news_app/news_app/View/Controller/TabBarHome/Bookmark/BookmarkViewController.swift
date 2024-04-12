@@ -12,7 +12,7 @@ class BookmarkViewController : BaseViewController {
     
     @IBOutlet weak var bookmarkCollectionView: BookmarkCollectionView!
     @IBOutlet weak var bookmarkTableView: BookmarkTableView!
-    let bookmarkModel = BookmarkModel()
+    let bookmarkModel = BookmarkModel(newsRepository: NewsRepositoryImp(), categoryRepository: CategoryRepositoryImp() )
     override func viewDidLoad() {
         super.viewDidLoad()
         bookmarkTableView.register(UINib(nibName: Constant.NEWS_TABLE_VIEW_CELL, bundle: .main), forCellReuseIdentifier: Constant.NEWS_TABLE_VIEW_CELL)
@@ -24,13 +24,14 @@ class BookmarkViewController : BaseViewController {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
         setLeftTitle()
-        setUpCollectionView()
+        setUpView()
     }
-    func setUpCollectionView() {
+    func setUpView() {
         // lần đầu tiên khi mở thì phải gọi
         bookmarkModel.getCategoryAndNews(callBack: {[weak self](arrCategory) in
             self?.bookmarkCollectionView.data = arrCategory
             self?.bookmarkCollectionView.reloadData()
+            guard arrCategory.count > 0 else {return}
             self?.bookmarkModel.getBookmarkOfCategory(withCategory: arrCategory[0], callBack: {[weak self] (arrNews)in
                 guard let arrNews = arrNews else {return}
                 self?.bookmarkTableView.data = arrNews
@@ -44,6 +45,9 @@ class BookmarkViewController : BaseViewController {
                 self?.bookmarkTableView.data = arrNews
                 self?.bookmarkTableView.reloadData()
             })
+        }
+        bookmarkTableView.callBack = { [weak self] (itemNews) in
+            self?.openWebKitView(item: itemNews)
         }
     }
     

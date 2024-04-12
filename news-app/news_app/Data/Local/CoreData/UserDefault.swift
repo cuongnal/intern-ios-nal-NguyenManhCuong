@@ -27,7 +27,7 @@ extension UserDefaults {
     }
     public func setIndexCategoryDefault()  -> [String:[Int]]{
         return [TypeSource.tuoiTre.rawValue : Array(0...17),
-                TypeSource.vnExpress.rawValue : [20,15,0,3,16,6,5,4,8,9,10,11,12,13,14,21,17,7,18,19,1,2] ]
+                TypeSource.vnExpress.rawValue : [20,15,14,3,16,6,5,4,8,9,10,11,12,13,0,21,17,7,18,19,1,2] ]
     }
 //    static func getValue<T> (_ type: T.Type, forKey : String ) -> T? where T : Decodable {
 //        if let data = self.standard.data(forKey: forKey) {

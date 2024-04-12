@@ -8,15 +8,14 @@
 import Foundation
 import UIKit
 
-class ForgotPasswordViewController : UIViewController{
+class ForgotPasswordViewController : BaseViewController{
     
     
     @IBOutlet weak var inputEmail: CustomTextField!
     
-    @IBOutlet weak var labelInputEmail: UILabel!
+    @IBOutlet weak var labelEmail: UILabel!
     @IBOutlet weak var btnReset: ButtonLogin!
-    let authenModel = AuthenticationModel()
-    
+    let authenModel = AuthenticationModel(categoryRepository: CategoryRepositoryImp(), userRepository: UsersRepositoryImp() )
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_back"),
@@ -30,16 +29,16 @@ class ForgotPasswordViewController : UIViewController{
     }
     
     @IBAction func btnReset(_ sender: Any) {
-        showToast()
+        showToast(text: Constant.Error.ERROR_SENT_MAIL)
     }
-    //    func showToast(message: String, duration: TimeInterval = 2.0) {
-    //        let alert = UIAlertController(title: nil, message: message, preferredStyle: .actionSheet)
-    //        present(alert, animated: true)
-    //        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture))
-    //        view.addGestureRecognizer(tapGesture)
-    //
-    //    }
-    //    @objc func handleTapGesture(sender: UITapGestureRecognizer) {
-    //
-    //    }
+    @IBAction func emailEditingChanged(_ sender : Any) {
+        labelEmail.alpha = inputEmail.text?.isEmpty == true ? 0 : 1
+        
+        guard authenModel.checkErrorEmail(email: inputEmail.text) == true else{
+            btnReset.setColorButton(flag: false)
+            return
+        }
+        btnReset.setColorButton(flag: true)
+    }
 }
+

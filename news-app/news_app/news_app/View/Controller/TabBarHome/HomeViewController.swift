@@ -11,6 +11,7 @@ import FirebaseAuth
 import FirebaseCore
 class HomeViewController : BaseViewController {
     
+    @IBOutlet weak var titleOfNews: UILabel!
     @IBOutlet weak var homeCollectionView : HomeCollectionView!
     @IBOutlet weak var homeTableView : HomeTableView!
     var popover : PopoverChangeSourceVC!
@@ -39,6 +40,7 @@ class HomeViewController : BaseViewController {
             homeCollectionView.data.removeAll()
             homeCollectionView.reloadData()
         }
+        titleOfNews.text = typeSource == .vnExpress ? Constant.VN_EXPRESS : Constant.TUOI_TRE
         homeModel.getCategoryByUser(typeClick: typeSource, callBack: { [weak self] (arrCategory) in
             self?.homeCollectionView.data = arrCategory
             self?.homeCollectionView.reloadData()

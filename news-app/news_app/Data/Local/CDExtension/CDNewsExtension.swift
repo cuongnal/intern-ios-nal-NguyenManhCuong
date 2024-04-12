@@ -82,8 +82,8 @@ extension CDNews {
         let cdUser = try CDUser.fetchUserById(idUser: user.idUser!)
         let a = CDNews.fetchRequest()
         if let cdUser = cdUser {
-            var preFirst = NSPredicate(format: "ANY saveBookmark == %@", cdUser)
-            var preSecond = NSPredicate(format: "%K == %@", #keyPath(CDNews.idCate),category.idCate! as CVarArg )
+            let preFirst = NSPredicate(format: "ANY saveBookmark == %@", cdUser)
+            let preSecond = NSPredicate(format: "%K == %@", #keyPath(CDNews.idCate),category.idCate! as CVarArg )
             a.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [preFirst,preSecond])
             return try AppDelegate.context.fetch(a)
         }

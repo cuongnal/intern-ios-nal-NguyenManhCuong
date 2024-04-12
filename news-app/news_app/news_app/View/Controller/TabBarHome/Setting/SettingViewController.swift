@@ -14,6 +14,14 @@ class SettingViewController : UIViewController{
         super.viewDidLoad()
         setUpTableView()
         
+        setUpLabel()
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
+    func setUpLabel() {
         let btnLeftFirst = UIBarButtonItem()
         let label = UILabel()
         label.text = Constant.SETTING
@@ -24,14 +32,6 @@ class SettingViewController : UIViewController{
         navigationController?.navigationBar.topItem?.leftBarButtonItem = btnLeftFirst
         navigationController?.navigationBar.topItem?.title = Constant.SETTING
         navigationController?.navigationBar.topItem?.titleView = UIView()
-        
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = false
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
     }
     @objc func nilAction() {}
     

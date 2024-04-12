@@ -8,8 +8,14 @@
 import Foundation
 import FirebaseAuth
 class AuthenticationModel  : BaseModel {
-    let categoryRepository = CategoryRepositoryImp()
-    let userRepository = UsersRepositoryImp()
+    let categoryRepository : CategoryRepository
+    let userRepository : UsersRepository
+    
+    
+    init(categoryRepository: CategoryRepository, userRepository: UsersRepository) {
+        self.categoryRepository = categoryRepository
+        self.userRepository = userRepository
+    }
     func checkErrorEmail(email : String?) -> Bool{
         guard email != nil else {
             return false

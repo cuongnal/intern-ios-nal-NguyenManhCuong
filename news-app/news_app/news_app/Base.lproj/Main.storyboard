@@ -275,7 +275,6 @@
                         <outlet property="labelPassword" destination="LlV-Wd-ivP" id="1Ff-bD-Vcg"/>
                         <outlet property="policyView" destination="ORA-vH-wXB" id="gFI-w0-Q4d"/>
                         <outlet property="registerView" destination="UOF-se-lsx" id="xe3-gO-Enb"/>
-                        <segue destination="d8K-do-hvh" kind="show" id="mgr-hk-yXW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b93-60-iUG" sceneMemberID="firstResponder"/>
@@ -291,7 +290,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="nQW-eR-0ng">
-                                <rect key="frame" x="137.66666666666663" y="98" width="140.33333333333337" height="40"/>
+                                <rect key="frame" x="137.66666666666663" y="54" width="140.33333333333337" height="40"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newsLogo 1" translatesAutoresizingMaskIntoConstraints="NO" id="rjC-OY-wLg">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -309,7 +308,7 @@
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="W1j-5A-Dp5" customClass="HomeCollectionView" customModule="news_app" customModuleProvider="target">
-                                <rect key="frame" x="20" y="153" width="374" height="50"/>
+                                <rect key="frame" x="20" y="109" width="374" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7mj-F5-KKV"/>
@@ -349,11 +348,11 @@
                                 </cells>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jyg-qs-t9v" customClass="HomeTableView" customModule="news_app" customModuleProvider="target">
-                                <rect key="frame" x="20" y="218" width="374" height="536"/>
+                                <rect key="frame" x="20" y="174" width="374" height="629"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUo-ID-pqn">
-                                <rect key="frame" x="374" y="100" width="20" height="36"/>
+                                <rect key="frame" x="374" y="56" width="20" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="Mvv-y8-VWY"/>
                                 </constraints>
@@ -390,6 +389,7 @@
                         <outlet property="homeCollectionView" destination="W1j-5A-Dp5" id="VOz-I4-wyu"/>
                         <outlet property="homeTableView" destination="jyg-qs-t9v" id="BAe-tH-8xH"/>
                         <outlet property="iconNotification" destination="RUo-ID-pqn" id="u5l-ol-sYG"/>
+                        <outlet property="titleOfNews" destination="ek9-s6-g3u" id="dv1-zm-eig"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x4T-n7-7lr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -440,7 +440,7 @@
         <!--Forgot Password View Controller-->
         <scene sceneID="Zwu-fD-uft">
             <objects>
-                <viewController storyboardIdentifier="ForgotPassword" modalTransitionStyle="crossDissolve" id="65e-VZ-W0W" customClass="ForgotPasswordViewController" customModule="news_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForgotPassword" modalTransitionStyle="crossDissolve" id="65e-VZ-W0W" customClass="ForgotPasswordViewController" customModule="news_app" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OR9-lf-Hca">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -458,10 +458,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Reset">
-                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="btnReset:" destination="65e-VZ-W0W" eventType="touchUpInside" id="Eaa-O2-mgp"/>
+                                    <action selector="btnReset:" destination="65e-VZ-W0W" eventType="touchUpInside" id="NDr-MP-R4H"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleAspectFit" semanticContentAttribute="forceLeftToRight" axis="vertical" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ijh-TM-bAy" userLabel="group_sign_up">
@@ -481,6 +481,9 @@
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="emailEditingChanged:" destination="65e-VZ-W0W" eventType="editingChanged" id="cuJ-ZV-SCe"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -549,9 +552,9 @@
                     <navigationItem key="navigationItem" id="uUi-Hr-VSl"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="btnReset" destination="lTv-nS-fHt" id="fzn-Z6-OwC"/>
-                        <outlet property="inputEmail" destination="0ML-XX-5dE" id="xWy-Qg-OTx"/>
-                        <outlet property="labelInputEmail" destination="Yjo-bg-bX8" id="PuD-k8-Z9U"/>
+                        <outlet property="btnReset" destination="lTv-nS-fHt" id="2F2-Vh-jFM"/>
+                        <outlet property="inputEmail" destination="0ML-XX-5dE" id="nsm-0j-R3X"/>
+                        <outlet property="labelEmail" destination="Yjo-bg-bX8" id="PuD-k8-Z9U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rNd-yt-1QA" sceneMemberID="firstResponder"/>
@@ -617,7 +620,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wfu-h2-kaI" customClass="BookmarkCollectionView" customModule="news_app" customModuleProvider="target">
-                                <rect key="frame" x="20" y="98" width="374" height="50"/>
+                                <rect key="frame" x="20" y="44" width="374" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="RIL-M7-SY7"/>
@@ -631,7 +634,7 @@
                                 <cells/>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" separatorInsetReference="fromAutomaticInsets" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PVP-5J-oli" customClass="BookmarkTableView" customModule="news_app" customModuleProvider="target">
-                                <rect key="frame" x="20" y="158" width="374" height="606"/>
+                                <rect key="frame" x="20" y="94" width="374" height="719"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
@@ -640,12 +643,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="PVP-5J-oli" firstAttribute="leading" secondItem="UfS-Qs-e9j" secondAttribute="leading" constant="20" id="4LT-lM-xrn"/>
-                            <constraint firstItem="wfu-h2-kaI" firstAttribute="top" secondItem="UfS-Qs-e9j" secondAttribute="top" constant="10" id="Oxc-1w-PIk"/>
+                            <constraint firstItem="wfu-h2-kaI" firstAttribute="top" secondItem="UfS-Qs-e9j" secondAttribute="top" id="Oxc-1w-PIk"/>
                             <constraint firstItem="wfu-h2-kaI" firstAttribute="leading" secondItem="UfS-Qs-e9j" secondAttribute="leading" constant="20" id="Up6-V0-7OJ"/>
                             <constraint firstItem="UfS-Qs-e9j" firstAttribute="trailing" secondItem="wfu-h2-kaI" secondAttribute="trailing" constant="20" id="YAh-Zl-81H"/>
                             <constraint firstItem="UfS-Qs-e9j" firstAttribute="trailing" secondItem="PVP-5J-oli" secondAttribute="trailing" constant="20" id="ZbD-nz-Ktv"/>
                             <constraint firstItem="PVP-5J-oli" firstAttribute="bottom" secondItem="UfS-Qs-e9j" secondAttribute="bottom" id="hE8-4f-ebV"/>
-                            <constraint firstItem="PVP-5J-oli" firstAttribute="top" secondItem="wfu-h2-kaI" secondAttribute="bottom" constant="10" id="xwJ-qm-F2w"/>
+                            <constraint firstItem="PVP-5J-oli" firstAttribute="top" secondItem="wfu-h2-kaI" secondAttribute="bottom" id="xwJ-qm-F2w"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="ic_bookmark" id="dFE-HA-Ano">
@@ -769,7 +772,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" separatorInsetReference="fromAutomaticInsets" rowHeight="55" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kDy-JW-jN5" customClass="SettingTableView" customModule="news_app" customModuleProvider="target">
-                                <rect key="frame" x="20" y="108" width="374" height="666"/>
+                                <rect key="frame" x="20" y="64" width="374" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <sections/>
@@ -837,7 +840,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="96Y-fe-Khm" customClass="SearchTableView" customModule="news_app" customModuleProvider="target">
-                                <rect key="frame" x="15" y="98" width="384" height="666"/>
+                                <rect key="frame" x="15" y="54" width="384" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>

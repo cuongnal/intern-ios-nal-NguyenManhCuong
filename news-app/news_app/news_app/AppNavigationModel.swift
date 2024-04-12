@@ -10,6 +10,7 @@ import Foundation
 class AppNavigationModel : BaseModel {
     
     func importDataDefault() {
+        
         do {
             var arr : [CDCategory] = []
             let item :[CDCategory] = try AppDelegate.context.fetch(CDCategory.fetchRequest())
@@ -57,3 +58,5 @@ class AppNavigationModel : BaseModel {
     }
     
 }
+
+// 

@@ -12,10 +12,12 @@ protocol BaseModelDelegate{
     func cancelLoading()
 }
 class BaseModel  {
-    var delegate : BaseViewController?
+    weak var delegate : BaseViewController?
     
     class func saveBookmark(withNews news : News) {
-        NewsRepositoryImp().insertNewsToBookmark(withNews: news, withUserLogin: UserDefaults.getUser()!)
+        DispatchQueue.global().async {
+            NewsRepositoryImp().insertNewsToBookmark(withNews: news, withUserLogin: UserDefaults.getUser()!)
+        }
     }
     func excuteTask<T>(blockUI : Bool = false,
                        task : @escaping (()-> T?),

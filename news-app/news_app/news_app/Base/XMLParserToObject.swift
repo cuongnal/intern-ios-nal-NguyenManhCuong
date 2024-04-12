@@ -50,6 +50,7 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         self.elementName = elementName
+        print("ElementName = \(elementName)")
         if(elementName == rootElement) {
             flag = true
             news = News()
@@ -57,6 +58,7 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
     }
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {
+        
         if flag {
             switch (elementName) {
             case "title" :
@@ -103,6 +105,7 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
     }
     
     func parserDidEndDocument(_ parser: XMLParser) {
+        print("Đã xong -----------------------")
         formatDateAndImage()
     }
     

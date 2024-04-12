@@ -30,7 +30,6 @@ class HomeModel : BaseModel {
         let type = typeClick == .tuoiTre ? TypeSource.tuoiTre : TypeSource.vnExpress
         excuteTask(
             task: {[weak self] in
-                
                 return self!.categoryRepository.getCategoriesByTypeSource(withTypeSource: type, withUser: UserDefaults.getUser()!)
             },
             complete: { (arrCategory) in

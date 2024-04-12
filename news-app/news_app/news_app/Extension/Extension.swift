@@ -34,11 +34,11 @@ extension String {
     }
 }
 extension UIViewController {
-    func showToast() {
-        let toast = UITextView(frame: CGRect(x: self.view.frame.size.width/7, y: self.view.frame.size.height - 100, width: (self.view.frame.size.width/8)*6, height: 55))
+    func showToast(text : String) {
+        let toast = UITextView(frame: CGRect(x: self.view.frame.size.width/7, y: self.view.frame.size.height * 5 / 6, width: (self.view.frame.size.width/8)*6, height: 55))
         toast.backgroundColor = UIColor.black
         toast.textColor = Constant.COLOR_WHITE
-        toast.text = "Email sent. Please check your email to reset your password"
+        toast.text = text
         toast.textAlignment = .center
         toast.alpha = 1
         toast.font = UIFont.systemFont(ofSize: 16)
@@ -47,10 +47,10 @@ extension UIViewController {
         toast.textContainerInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0);
         toast.updateConstraintsIfNeeded()
         self.view.addSubview(toast)
-        
+        toast.didMoveToSuperview()
         UIView.animate(withDuration: 4, delay: 0.1, options: .curveEaseInOut, animations: {
             toast.alpha = 0
-        }, completion: nil)
+        }, completion: {_ in toast.removeFromSuperview()})
     }
 }
 extension UIButton {

@@ -10,4 +10,5 @@ import Foundation
 protocol UsersRepository {
     func getAllUser()
     func getUserDetail(idUser : String) -> User?
+    func insertUser(user : User) -> User?
 }

@@ -18,7 +18,7 @@ protocol NewsRepository {
     
     func getAllNewsFromServerSource (typeSource : TypeSource) -> [News]
     
-    
+    func insertNewsSentWithUser (withUserLogin user : User , withNews news : News)
     func getNewsSentWithUser(withUserLogin user : User)  -> [News]
     
     func insertNewsToBookmark(withNews news : News, withUserLogin user : User)

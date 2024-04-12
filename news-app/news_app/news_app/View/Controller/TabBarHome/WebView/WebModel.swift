@@ -6,9 +6,11 @@
 //
 
 import Foundation
-class WebViewModel : BaseModel {
-    let newsRepository = NewsRepositoryImp()
-    
+class WebModel : BaseModel {
+    let newsRepository : NewsRepository
+    init(newsRepository: NewsRepository) {
+        self.newsRepository = newsRepository
+    }
     func saveNews(withNews news : News) {
         self.newsRepository.insertNewsSentWithUser(withUserLogin:UserDefaults.getUser()! , withNews: news)
     }

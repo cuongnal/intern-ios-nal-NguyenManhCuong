@@ -7,7 +7,11 @@
 
 import Foundation
 class SearchModel  : BaseModel{
-    let newsRepository = NewsRepositoryImp()
+    let newsRepository : NewsRepository!
+    
+    init(newsRepository: NewsRepository!) {
+        self.newsRepository = newsRepository
+    }
     
     func getAllNews(callBack : @escaping ([News]) -> Void) {
         excuteTask(blockUI: true, task: { [weak self] in

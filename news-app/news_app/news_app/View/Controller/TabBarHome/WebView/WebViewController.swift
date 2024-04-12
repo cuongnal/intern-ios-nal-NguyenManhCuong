@@ -8,18 +8,19 @@
 import Foundation
 import UIKit
 import WebKit
-class WebViewController : UIViewController, WKNavigationDelegate {
+class WebViewController : BaseViewController, WKNavigationDelegate {
     
     var newsItem : News? = nil
     
     @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var webKitView: WKWebView!
-    var webViewModel = WebViewModel()
+    var webViewModel = WebModel(newsRepository: NewsRepositoryImp() )
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpBarButton()
         webKitView.navigationDelegate = self
         loading.hidesWhenStopped = true
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -32,16 +33,16 @@ class WebViewController : UIViewController, WKNavigationDelegate {
                                                                 style: .done,
                                                                 target: self,
                                                                 action: #selector(self.goBack))
-        let btnRightFirst = UIBarButtonItem(image: UIImage(named: "ic_share"), style: .plain, target: self, action: #selector(sharingNewsToOther))
-        let btnRightSecond = UIBarButtonItem(image: UIImage(named: "ic_bookmark"), style: .plain, target: nil, action: #selector(saveToBookmark))
+        let btnShare = UIBarButtonItem(image: UIImage(named: "ic_share"), style: .plain, target: self, action: #selector(sharingNewsToOther))
+        let btnBookmark = UIBarButtonItem(image: UIImage(named: "ic_bookmark"), style: .plain, target: self, action: #selector(saveToBookmark))
         
-        btnRightSecond.setTitleTextAttributes([
+        btnBookmark.setTitleTextAttributes([
             .font: UIFont.systemFont(ofSize: 17, weight: .bold),
             .foregroundColor : UIColor.black
         ], for: .normal)
         
-        btnRightSecond.customView?.isUserInteractionEnabled = false
-        navigationItem.rightBarButtonItems = [btnRightFirst,btnRightSecond]
+        btnBookmark.customView?.isUserInteractionEnabled = false
+        navigationItem.rightBarButtonItems = [btnShare,btnBookmark]
     }
     @objc private func goBack() {
         self.navigationController?.popViewController(animated: true)
@@ -50,7 +51,8 @@ class WebViewController : UIViewController, WKNavigationDelegate {
         
     }
     @objc private func saveToBookmark() {
-        
+        saveBookmark(news: newsItem)
+        self.show(text: Constant.SAVED_BOOKMARK)
     }
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         loading.stopAnimating()
@@ -68,7 +70,7 @@ class WebViewController : UIViewController, WKNavigationDelegate {
         loading.stopAnimating()
     }
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-       // loading.stopAnimating()
+        // loading.stopAnimating()
     }
     
 }

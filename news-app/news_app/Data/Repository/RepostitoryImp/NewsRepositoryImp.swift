@@ -83,7 +83,7 @@ class NewsRepositoryImp : NewsRepository {
         }
     }
     
-    func insertNewsToBookmark(withNews news: News, withUserLogin user: User) {
+    func insertNewsToBookmark(withNews news: News, withUserLogin user: User){
         do {try CDNews.saveBookmarkWithUser(withNews: news, withUser: user)}
         catch let err {
             print("Function:   \(#function)   line: \(#line)   error: \(err)")

@@ -31,6 +31,7 @@ struct Constant {
     static let SETTING_TABLE_VIEW_CELLS = "SettingTableViewCell"
     static let ERROR_PASSWORD = "Incorrect password"
     static let ERROR_EMAIL = "Email error"
+    static let SAVED_BOOKMARK = "Đã lưu bookmark"
     static let TEARMS_AND_CONDITIONS = "Terms & Conditions"
     static let TITLE_POLICY_1 = "Paragrap 1 \n \n"
     static let TITLE_POLICY_2 = "Paragrap 2 \n \n"
@@ -94,6 +95,7 @@ struct Constant {
         static let EMAIL_ALREADY_IN_USE = "Email đã được sử dụng"
         static let INVALID_EMAIL = "Email không hợp lệ"
         static let NIL = "Lỗi không xác định : \n"
+        static let ERROR_SENT_MAIL = "Email sent. Please check your email to reset your password"
     }
     
 }

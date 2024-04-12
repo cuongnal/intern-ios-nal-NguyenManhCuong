@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CategoryRepositoryImp : CategoriesRepository {
+class CategoryRepositoryImp : CategoryRepository {
     
     func getCategoriesByTypeSource(withTypeSource type : TypeSource, withUser user : User) -> [Category] {
         do {

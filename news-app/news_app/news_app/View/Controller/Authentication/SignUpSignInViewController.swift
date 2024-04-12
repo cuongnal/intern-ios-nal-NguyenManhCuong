@@ -26,7 +26,7 @@ class SignUpSignInViewController: BaseViewController {
     @IBOutlet weak var labelIncorrectEmail: UILabel!
     var flagSign : typeSignUpIn = .signIn
     
-    let authenModel = AuthenticationModel()
+    let authenModel = AuthenticationModel(categoryRepository: CategoryRepositoryImp(), userRepository: UsersRepositoryImp())
     var flagCheckSignInSignUp = TypeScreen.signUp
     override func viewDidLoad() {
         super.viewDidLoad()

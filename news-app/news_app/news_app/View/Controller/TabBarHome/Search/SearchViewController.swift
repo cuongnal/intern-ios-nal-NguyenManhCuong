@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class SearchViewController : BaseViewController {
-    private let searchModel = SearchModel()
+    private let searchModel = SearchModel(newsRepository: NewsRepositoryImp() )
     private let btnLeftFirst = UIBarButtonItem()
     @IBOutlet weak var searchTableView: SearchTableView!
     override func viewDidLoad() {

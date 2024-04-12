@@ -9,12 +9,16 @@ import Foundation
 import UIKit
 
 class BookmarkModel : BaseModel {
-    var newsRepository = NewsRepositoryImp()
-    var categoryRepository = CategoryRepositoryImp()
+    var newsRepository : NewsRepository!
+    var categoryRepository : CategoryRepository!
     var arrCategory : [Category] = []
     var arrNews : [News] = []
     
-    
+    init(newsRepository: NewsRepository!, categoryRepository: CategoryRepository!) {
+        self.newsRepository = newsRepository
+        self.categoryRepository = categoryRepository
+    }
+   
     func getCategoryAndNews(callBack : @escaping (([Category]) -> Void) ) {
         excuteTask(task: { [weak self] in
             let arrNews = self?.newsRepository.getBookmarkOfUser(withUserLogin: UserDefaults.getUser()!)
