@@ -12,7 +12,7 @@ class CategoryCollectionView : UICollectionView, UICollectionViewDelegateFlowLay
     var oldSelectedItemAt : IndexPath = IndexPath(row: 0, section: 0)
     
     var callBack : ((Category) -> ())?
-    var list : [Category] = []
+    var data : [Category] = []
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.delegate = self
@@ -20,12 +20,12 @@ class CategoryCollectionView : UICollectionView, UICollectionViewDelegateFlowLay
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return list.count
+        return data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CATEGORY_COLLECTION_VIEW_CELL, for: indexPath) as! CategoryCollectionViewCell
-        cell.label.text = list[indexPath.item].title
+        cell.label.text = data[indexPath.item].title
         cell.setBackGround(flag: indexPath == oldSelectedItemAt)
         return cell
     }
@@ -38,7 +38,7 @@ class CategoryCollectionView : UICollectionView, UICollectionViewDelegateFlowLay
         
         oldSelectedItemAt = indexPath
         
-        callBack!(list[indexPath.row])
+        callBack!(data[indexPath.row])
     }
     
 }

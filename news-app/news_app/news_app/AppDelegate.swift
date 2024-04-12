@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         AppDelegate.context = persistentContainer.viewContext
         FirebaseApp.configure()
-        importDataDefault()
         
         if let directoryLocation = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask).last {             print("Documents Directory: \(directoryLocation)Application Support") }
         
@@ -77,52 +76,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
-    }
-    func importDataDefault() {
-        do {
-            var arr : [CDCategory] = []
-            let item :[CDCategory] = try AppDelegate.context.fetch(CDCategory.fetchRequest())
-            if item.count == 0 {
-                for (index, item) in Constant.CATEGORY_VN_EXPRESS.enumerated() {
-                    let i = CDCategory(context: AppDelegate.context)
-                    i.indexCategory = Int64(index)
-                    i.title = item.title
-                    i.url = item.url
-                    i.idCate = item.idCate
-                    i.typeSource = item.typeSource
-                    arr.append(i)
-                }
-                for (index, item) in Constant.CATEGORY_TUOI_TRE.enumerated() {
-                    let i = CDCategory(context: AppDelegate.context)
-                    i.indexCategory = Int64(index)
-                    i.title = item.title
-                    i.url = item.url
-                    i.idCate = item.idCate
-                    i.typeSource = item.typeSource
-                    arr.append(i)
-                }
-                try AppDelegate.context.save()
-                
-                let repoNews = NewsRepositoryImp()
-                
-                getNewsFromServer(repoNews: repoNews, completionHandler: { arr in
-                    _ = repoNews.insertNewsByCategory(arrNews: arr)
-                })
-                
-            }
-        }
-        catch let error {
-            print("Lỗi khi lưu\(error)")
-        }
-    }
-    private func getNewsFromServer(repoNews: NewsRepositoryImp ,completionHandler: @escaping (([News]) -> ())) {
-        DispatchQueue.global(qos: .background).async {
-            let vnExpressNews = repoNews.getAllNewsFromServerSource(typeSource: .vnExpress)
-            let tuoiTreNews = repoNews.getAllNewsFromServerSource(typeSource: .tuoiTre)
-            DispatchQueue.main.async {
-                completionHandler(vnExpressNews + tuoiTreNews)
             }
         }
     }

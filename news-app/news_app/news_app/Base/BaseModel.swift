@@ -23,12 +23,13 @@ class BaseModel  {
     ) {
         if blockUI == true {
             DispatchQueue.main.async {
-                
+                self.delegate?.startLoading()
             }
         }
         DispatchQueue.global().async {
             let result = task()
             DispatchQueue.main.async {
+                self.delegate?.cancelLoading()
                 complete(result)
             }
         }

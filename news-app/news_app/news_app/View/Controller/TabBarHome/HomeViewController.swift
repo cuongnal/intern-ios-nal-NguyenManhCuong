@@ -35,12 +35,12 @@ class HomeViewController : BaseViewController {
     }
     
     func setUpHomeCollectionView(typeSource : TypeClickPopover = .vnExpress) {
-        if homeCollectionView.list.count != 0 {
-            homeCollectionView.list.removeAll()
+        if homeCollectionView.data.count != 0 {
+            homeCollectionView.data.removeAll()
             homeCollectionView.reloadData()
         }
         homeModel.getCategoryByUser(typeClick: typeSource, callBack: { [weak self] (arrCategory) in
-            self?.homeCollectionView.list = arrCategory
+            self?.homeCollectionView.data = arrCategory
             self?.homeCollectionView.reloadData()
         })
     }

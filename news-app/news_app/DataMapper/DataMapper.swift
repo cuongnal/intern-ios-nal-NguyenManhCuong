@@ -27,6 +27,19 @@ class DataMapper {
         }
         return arr
     }
+    
+    class func MapCDCategoryToEntity(withCDCategory arrCDCate : [CDCategory]) -> [Category] {
+        var arr : [Category] = []
+        for tg in arrCDCate {
+            var item = Category()
+            item.idCate = tg.idCate
+            item.url = tg.url
+            item.typeSource = tg.typeSource
+            item.title = tg.title
+            arr.append(item)
+        }
+        return arr
+    }
     class func MapCDUsertoEntity(withCDUser cdUser: CDUser) -> User {
         return User(idUser: cdUser.idUser, email: cdUser.email, listIndexCategory: cdUser.listIndexCategory)
     }

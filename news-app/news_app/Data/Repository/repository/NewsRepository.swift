@@ -10,7 +10,7 @@ import Foundation
 protocol NewsRepository {
     func getAllNews() -> [CDNews]
     
-    func getNewsByCategory(category: Category) -> [News]
+    func getNewsOfCategory(category: Category) -> [News]
     
     func insertNewsByCategory(arrNews : [News]) -> Bool
     
@@ -23,5 +23,6 @@ protocol NewsRepository {
     
     func insertNewsToBookmark(withNews news : News, withUserLogin user : User)
     
-    func getBookmarkWithUser (withUserLogin user : User) -> [News]
+    func getBookmarkOfUser (withUserLogin user : User) -> [News]
+    func getBookmarkOfCategory(withUserLogin user : User, category : Category) -> [News]
 }

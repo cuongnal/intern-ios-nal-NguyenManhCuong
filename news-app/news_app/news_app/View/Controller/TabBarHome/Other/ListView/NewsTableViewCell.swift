@@ -29,18 +29,12 @@ class NewsTableViewCell : UITableViewCell, UIPopoverPresentationControllerDelega
         authorNews.text = item.author
         titleNews.text = item.title
         imageNews.image = UIImage(named: "test")
-//        imageNews.kf.setImage(with: URL(string: item.image),placeholder: UIImage(named: "placeholderImage"),
-//                              options: [
-//                                .processor(ResizingImageProcessor(referenceSize: CGSize(width: 140, height: 140))),
-//                                .scaleFactor(UIScreen.main.scale),
-//                                .transition(.fade(1)),
-//                                .cacheOriginalImage
-//                              ])
+
         popupMenu.addTarget(self, action: #selector(touchPopUp), for: .touchUpInside)
     }
     @objc func touchPopUp() {
         guard let news = news else{ return }
-        var data : [String : Any] = [Constant.ANCHOR_POPOVER: self.popupMenu!, Constant.Key.KEY_NEWS_BOOKMARK : news]
+        let data : [String : Any] = [Constant.ANCHOR_POPOVER: self.popupMenu!, Constant.Key.KEY_NEWS_BOOKMARK : news]
         NotificationCenter.default.post(name: NSNotification.Name(Constant.POP_OVER_NOTIFICATION), object: nil, userInfo: data)
     }
 }

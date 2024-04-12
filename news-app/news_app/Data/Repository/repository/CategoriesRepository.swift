@@ -9,4 +9,6 @@ import Foundation
 
 protocol CategoriesRepository {
     func getCategoriesByTypeSource(withTypeSource type : TypeSource, withUser user : User) -> [Category]
+    
+    func getAll() -> [Category]
 }

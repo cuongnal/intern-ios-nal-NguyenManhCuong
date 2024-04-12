@@ -10,6 +10,7 @@ import UIKit
 class AppNavigationViewController : UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        AppNavigationModel().importDataDefault()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

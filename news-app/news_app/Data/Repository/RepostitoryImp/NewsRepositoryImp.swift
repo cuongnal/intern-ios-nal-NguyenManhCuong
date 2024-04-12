@@ -12,7 +12,7 @@ class NewsRepositoryImp : NewsRepository {
     
     let parser = XMLParserToObject.getInstance()
     
-    func getNewsByCategory(category: Category) -> [News] {
+    func getNewsOfCategory(category: Category) -> [News] {
         do {
             let arrCDNews = try CDNews.getCDNewsByCategory(idCate: category.idCate)
             var arrNews : [News] = []
@@ -90,9 +90,9 @@ class NewsRepositoryImp : NewsRepository {
         }
     }
     
-    func getBookmarkWithUser(withUserLogin user: User) -> [News] {
+    func getBookmarkOfUser(withUserLogin user: User) -> [News] {
         do {
-            var arr = try CDNews.getBookmarkWithUser(withUser: user)
+            let arr = try CDNews.getBookmarkWithUser(withUser: user)
             return DataMapper.MapCDNewsToEntity(withArrayCDNews: arr)
         }
         catch let err {
@@ -100,9 +100,14 @@ class NewsRepositoryImp : NewsRepository {
             return []
         }
     }
-    func getBookmarkWithCategory(withUserLogin user : User) -> (arrNews : [News], arrCate : [Category]) {
+    func getBookmarkOfCategory(withUserLogin user : User, category : Category) -> [News] {
         do {
-            var arr = CDNews.getBookmarkWithUser(withUser: <#T##User#>)
+            let arrCDNews = try CDNews.getBookmarkWithUser(withUser: user, withCategory: category)
+            return DataMapper.MapCDNewsToEntity(withArrayCDNews: arrCDNews)
+        }
+        catch let err{
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
+            return []
         }
     }
     

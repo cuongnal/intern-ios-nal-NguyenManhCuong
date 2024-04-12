@@ -16,7 +16,7 @@ class HomeModel : BaseModel {
     func fetchDataNews(category : Category, callBack : @escaping (([News]) -> Void)) {
         excuteNetwork(
             task: { [weak self] in
-                let arr =  self?.newsRepository.getNewsByCategory(category: category)
+                let arr =  self?.newsRepository.getNewsOfCategory(category: category)
                 self?.arrNews.removeAll()
                 self?.arrNews.append(contentsOf: arr ?? [])
             },

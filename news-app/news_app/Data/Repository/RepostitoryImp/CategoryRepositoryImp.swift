@@ -19,6 +19,26 @@ class CategoryRepositoryImp : CategoriesRepository {
             print("Function:   \(#function)   line: \(#line)   error: \(err)")
             return []
         }
-
+        
+    }
+    func getAll() -> [Category] {
+        do {
+            let arr = try CDCategory.getAll()
+            return DataMapper.MapCDCategoryToEntity(withCDCategory: arr)
+        }
+        catch let err {
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
+            return []
+        }
+    }
+    func getCategoryWithUUID(withUUIDs uuids : [UUID]) -> [Category] {
+        do {
+            let arr = try CDCategory.getCategory(withUUIDs: uuids)
+            return DataMapper.MapCDCategoryToEntity(withCDCategory: arr)
+        }
+        catch let err {
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
+            return []
+        }
     }
 }

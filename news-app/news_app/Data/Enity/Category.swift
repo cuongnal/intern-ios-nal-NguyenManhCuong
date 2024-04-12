@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-public struct Category {
+public struct Category : Hashable{
     var idCate : UUID!
     var title : String!
     var url : String!

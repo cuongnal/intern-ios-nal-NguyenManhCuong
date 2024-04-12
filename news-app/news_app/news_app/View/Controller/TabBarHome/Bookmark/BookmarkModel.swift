@@ -10,10 +10,38 @@ import UIKit
 
 class BookmarkModel : BaseModel {
     var newsRepository = NewsRepositoryImp()
+    var categoryRepository = CategoryRepositoryImp()
+    var arrCategory : [Category] = []
+    var arrNews : [News] = []
     
-    func getNews(callBack : @escaping ((arr) -> Void) ) {
-        excuteTask(task: {
-            newsRepository.get
-        }, complete: <#T##((T?) -> Void)##((T?) -> Void)##(T?) -> Void#>)
+    
+    func getCategoryAndNews(callBack : @escaping (([Category]) -> Void) ) {
+        excuteTask(task: { [weak self] in
+            let arrNews = self?.newsRepository.getBookmarkOfUser(withUserLogin: UserDefaults.getUser()!)
+            let arrUUID = self?.filterCategory(arrNews: arrNews)
+            guard let arrUUID = arrUUID else {return}
+            let arrCate = self?.categoryRepository.getCategoryWithUUID(withUUIDs: arrUUID)
+            self?.arrCategory = arrCate ?? []
+            self?.arrNews = arrNews ?? []
+        }, complete: { [self] _ in
+            callBack(arrCategory)
+        })
     }
+    func getBookmarkOfCategory(withCategory cate: Category, callBack : @escaping (([News]?) -> Void)) {
+        excuteTask(task: { [weak self] in
+            self?.newsRepository.getBookmarkOfCategory(withUserLogin: UserDefaults.getUser()!, category: cate)
+        }, complete: { (arrNewsOfCategory) in
+            callBack(arrNewsOfCategory)
+        })
+    }
+    private func filterCategory(arrNews : [News]?) -> [UUID] {
+        var set: Set<UUID> = []
+        guard let arrNews = arrNews else {return []}
+        
+        for item in arrNews {
+            set.insert(item.idCate)
+        }
+        return Array(set)
+    }
+    
 }

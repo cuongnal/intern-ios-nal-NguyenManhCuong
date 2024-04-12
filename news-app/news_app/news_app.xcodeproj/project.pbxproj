@@ -61,6 +61,7 @@
 		CE1DADDE2BBFA96F00F87A47 /* UsersRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DADDD2BBFA96F00F87A47 /* UsersRepositoryImp.swift */; };
 		CE1DAE202BBFE2CA00F87A47 /* DataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DAE1F2BBFE2CA00F87A47 /* DataMapper.swift */; };
 		CE1DAE332BBFE5CE00F87A47 /* CDUserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DAE322BBFE5CE00F87A47 /* CDUserExtension.swift */; };
+		CE54ACFF2BC8ED220042AB73 /* AppNavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54ACFE2BC8ED220042AB73 /* AppNavigationModel.swift */; };
 		CE9A31AC2BC01F070035C298 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A31AB2BC01F070035C298 /* User.swift */; };
 		CEA2C1F72BC38FB900C4B2B3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2C1F62BC38FB900C4B2B3 /* BaseViewController.swift */; };
 		CEA2C1F92BC3969800C4B2B3 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2C1F82BC3969800C4B2B3 /* LoadingViewController.swift */; };
@@ -173,6 +174,7 @@
 		CE1DADDD2BBFA96F00F87A47 /* UsersRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepositoryImp.swift; sourceTree = "<group>"; };
 		CE1DAE1F2BBFE2CA00F87A47 /* DataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMapper.swift; sourceTree = "<group>"; };
 		CE1DAE322BBFE5CE00F87A47 /* CDUserExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDUserExtension.swift; sourceTree = "<group>"; };
+		CE54ACFE2BC8ED220042AB73 /* AppNavigationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationModel.swift; sourceTree = "<group>"; };
 		CE9A31AB2BC01F070035C298 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CEA2C1F62BC38FB900C4B2B3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CEA2C1F82BC3969800C4B2B3 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 				AD8DBC142B9EF4C40070D7A7 /* Extension */,
 				ADA2C3F52BA93E9A009E4F7C /* View */,
 				CEF6E0F42BC6781700DBA72B /* AppNavigationViewController.swift */,
+				CE54ACFE2BC8ED220042AB73 /* AppNavigationModel.swift */,
 				AD8DBBDA2B9AE92A0070D7A7 /* AppDelegate.swift */,
 				AD8DBBDC2B9AE92A0070D7A7 /* SceneDelegate.swift */,
 				AD8DBBE02B9AE92A0070D7A7 /* Main.storyboard */,
@@ -828,6 +831,7 @@
 				CEC12A762BC7EB6100A6CF21 /* CategoryCollectionViewCell.swift in Sources */,
 				ADE00FF52BAAE4210041DE42 /* HomeTableView.swift in Sources */,
 				CE1DADDA2BBFA22900F87A47 /* CategoryRepositoryImp.swift in Sources */,
+				CE54ACFF2BC8ED220042AB73 /* AppNavigationModel.swift in Sources */,
 				AD8E538F2BB5743E000103DA /* AccountViewController.swift in Sources */,
 				CEC541F12BC795DF00D8691B /* SearchModel.swift in Sources */,
 				ADA136132BBBE64C00E74F6E /* DataBase.xcdatamodeld in Sources */,
