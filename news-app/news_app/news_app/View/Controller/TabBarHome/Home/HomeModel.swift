@@ -37,6 +37,14 @@ class HomeModel : BaseModel {
             })
     }
     
+    func saveBookmark(withNews news : News, callBack : @escaping (() -> Void) ) {
+        excuteTask(task: { [weak self] in
+            self?.newsRepository.insertNewsToBookmark(withNews: news, withUserLogin: UserDefaults.getUser()!)
+        }, complete: {_ in
+            callBack()
+        })
+    }
+    
     
 }
 

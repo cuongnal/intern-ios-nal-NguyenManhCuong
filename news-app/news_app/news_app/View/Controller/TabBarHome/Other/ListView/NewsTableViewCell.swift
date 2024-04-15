@@ -7,10 +7,11 @@
 
 import UIKit
 import UIKit
-//import Kingfisher
 import Foundation
 import SwiftUI
-class NewsTableViewCell : UITableViewCell, UIPopoverPresentationControllerDelegate {
+
+
+class NewsTableViewCell : UITableViewCell {
     
     @IBOutlet weak var popupMenu: UIButton!
     @IBOutlet weak var timeNews: UILabel!
@@ -18,6 +19,8 @@ class NewsTableViewCell : UITableViewCell, UIPopoverPresentationControllerDelega
     @IBOutlet weak var authorNews: UILabel!
     @IBOutlet weak var imageNews: UIImageView!
     @IBOutlet weak var titleNews: UILabel!
+    
+    var onTouchCallback : ((News, UIView) -> Void)?
     var news : News?
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -33,8 +36,6 @@ class NewsTableViewCell : UITableViewCell, UIPopoverPresentationControllerDelega
         popupMenu.addTarget(self, action: #selector(touchPopUp), for: .touchUpInside)
     }
     @objc func touchPopUp() {
-        guard let news = news else{ return }
-        let data : [String : Any] = [Constant.ANCHOR_POPOVER: self.popupMenu!, Constant.Key.KEY_NEWS_BOOKMARK : news]
-        NotificationCenter.default.post(name: NSNotification.Name(Constant.POP_OVER_NOTIFICATION), object: nil, userInfo: data)
+        onTouchCallback?(news!, popupMenu)
     }
 }

@@ -48,7 +48,7 @@ class SignUpSignInViewController: BaseViewController {
                     self?.showAlertError(error: error!)
                     return
                 }
-                self?.navigationController?.pushViewController(tabBar, animated: true)
+                self?.setRootViewControllerApp(withConstantNavKey: Constant.Key.NAV_HOME)
             })
         }
         else {
@@ -57,7 +57,7 @@ class SignUpSignInViewController: BaseViewController {
                     self?.showAlertError(error: error!)
                     return
                 }
-                self?.navigationController?.pushViewController(tabBar, animated: true)
+                self?.setRootViewControllerApp(withConstantNavKey: Constant.Key.NAV_HOME)
             })
         }
     }

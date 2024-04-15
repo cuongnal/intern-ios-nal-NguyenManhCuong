@@ -27,7 +27,7 @@ class SearchViewController : BaseViewController {
         })
     }
     private func handlerCallBack() {
-        searchTableView.callBack = { [weak self] (item) in
+        searchTableView.onTouchNewsCallback = { [weak self] (item) in
             self?.openWebKitView(item: item)
         }
     }

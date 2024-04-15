@@ -253,6 +253,7 @@
 		5E6C339B2BCAFC76009ADB8C /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				CE54ACFE2BC8ED220042AB73 /* AppNavigationModel.swift */,
 				CEF6E0F42BC6781700DBA72B /* AuthNavigationController.swift */,
 				5E6C339C2BCAFCAF009ADB8C /* HomeNavigationController.swift */,
 			);
@@ -305,7 +306,6 @@
 				AD8DBC142B9EF4C40070D7A7 /* Extension */,
 				ADA2C3F52BA93E9A009E4F7C /* View */,
 				5E6C339B2BCAFC76009ADB8C /* Navigation */,
-				CE54ACFE2BC8ED220042AB73 /* AppNavigationModel.swift */,
 				AD8DBBDA2B9AE92A0070D7A7 /* AppDelegate.swift */,
 				AD8DBBDC2B9AE92A0070D7A7 /* SceneDelegate.swift */,
 				AD8DBBE02B9AE92A0070D7A7 /* Main.storyboard */,

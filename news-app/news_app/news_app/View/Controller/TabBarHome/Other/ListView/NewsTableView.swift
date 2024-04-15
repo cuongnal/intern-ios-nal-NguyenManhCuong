@@ -9,7 +9,8 @@ import Foundation
 import UIKit
 class NewsTableView : UITableView, UITableViewDataSource, UITableViewDelegate {
     var data : [News] = []
-    var callBack : ((News) -> ())!
+    var onTouchNewsCallback : ((News) -> ())!
+    var openPopUp : ((News,UIView) -> ())!
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.delegate = self
@@ -22,10 +23,13 @@ class NewsTableView : UITableView, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = tableView.dequeueReusableCell(withIdentifier: Constant.NEWS_TABLE_VIEW_CELL, for: indexPath) as! NewsTableViewCell
         item.setUpView(item: data[indexPath.row])
+        item.onTouchCallback = { [weak self] (itemNews, anchor) in
+            self?.openPopUp?(itemNews, anchor)
+        }
         return item
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        callBack(data[indexPath.item])
+        onTouchNewsCallback(data[indexPath.item])
         self.deselectRow(at: indexPath, animated: false)
     }
     

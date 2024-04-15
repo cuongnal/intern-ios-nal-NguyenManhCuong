@@ -50,14 +50,15 @@ extension CDNews {
         cdUser?.addToSentNews(cdNews)
         try AppDelegate.context.save()
     }
-    @nonobjc public class func saveBookmarkWithUser(withNews news : News , withUser user : User) throws {
+    @nonobjc public class func saveBookmarkWithUser(withNews news : News , withUser user : User) throws -> Bool{
         let cdUser = try CDUser.fetchUserById(idUser: user.idUser!)
         let cdNews = try CDNews.getCDNews(withNewsEntity: news)
         guard let cdNews = cdNews else {
-            return
+            return false
         }
         cdUser?.addToSaveBookmark(cdNews)
         try AppDelegate.context.save()
+        return true
     }
 
     @nonobjc public class func getSentWithUser(withUser user : User) throws -> [CDNews] {
@@ -89,8 +90,34 @@ extension CDNews {
         }
         return []
     }
-    
-    
+    @nonobjc public class func isBookmarkUser (withNews news : News, withUser user : User) throws -> Bool {
+        let cdUser = try CDUser.fetchUserById(idUser: user.idUser!)
+        let a = CDNews.fetchRequest()
+        if let cdUser = cdUser {
+            let preFirst = NSPredicate(format: "ANY saveBookmark == %@", cdUser)
+            let preSecond = NSPredicate(format: "%K == %@", #keyPath(CDNews.idNews),news.idNews as CVarArg )
+            a.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [preFirst,preSecond])
+            return try AppDelegate.context.fetch(a).count != 0
+        }
+        return false
+    }
+    @nonobjc public class func deleteBookmarkItemNews(withNews news : News, user : User) throws {
+        let cdUser = try CDUser.fetchUserById(idUser: user.idUser!)
+        let a = CDNews.fetchRequest()
+        if let cdUser = cdUser {
+            let preFirst = NSPredicate(format: "ANY saveBookmark == %@", cdUser)
+            let preSecond = NSPredicate(format: "%K == %@", #keyPath(CDNews.idNews),news.idNews as CVarArg )
+            a.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [preFirst,preSecond])
+            
+            let itemDelete = try AppDelegate.context.fetch(a).first
+            guard let itemDelete = itemDelete else {
+                return
+            }
+            AppDelegate.context.delete(itemDelete)
+            try AppDelegate.context.save()
+        }
+
+    } 
     
     
 }

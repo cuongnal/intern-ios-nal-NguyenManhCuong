@@ -14,10 +14,10 @@ class WebViewController : BaseViewController, WKNavigationDelegate {
     
     @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var webKitView: WKWebView!
-    var webViewModel = WebModel(newsRepository: NewsRepositoryImp() )
+    var webModel = WebModel(newsRepository: NewsRepositoryImp() )
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpBarButton()
+        
         webKitView.navigationDelegate = self
         loading.hidesWhenStopped = true
         
@@ -26,15 +26,26 @@ class WebViewController : BaseViewController, WKNavigationDelegate {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
         guard let item = newsItem, let url = URL(string: item.link) else {return}
+        
+        webModel.isBookmarkUser(withNews: item, callBack: { [weak self](isCheck) in
+            self?.setUpBarButton(isCheckBookmarked: isCheck)
+        })
         self.webKitView.load (URLRequest(url: url, cachePolicy: .reloadRevalidatingCacheData, timeoutInterval: 5.0))
     }
-    func setUpBarButton() {
+    func setUpBarButton(isCheckBookmarked : Bool) {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_back"),
                                                                 style: .done,
                                                                 target: self,
                                                                 action: #selector(self.goBack))
-        let btnShare = UIBarButtonItem(image: UIImage(named: "ic_share"), style: .plain, target: self, action: #selector(sharingNewsToOther))
-        let btnBookmark = UIBarButtonItem(image: UIImage(named: "ic_bookmark"), style: .plain, target: self, action: #selector(saveToBookmark))
+        let btnShare = UIBarButtonItem(image: UIImage(named: "ic_share"),
+                                       style: .plain,
+                                       target: self,
+                                       action: #selector(sharingNewsToOther))
+        
+        let btnBookmark = UIBarButtonItem(image: UIImage(named: isCheckBookmarked ? "ic_bookmarked" : "ic_bookmark"),
+                                          style: .plain,
+                                          target: self,
+                                          action: #selector(saveToBookmark))
         
         btnBookmark.setTitleTextAttributes([
             .font: UIFont.systemFont(ofSize: 17, weight: .bold),
@@ -51,8 +62,14 @@ class WebViewController : BaseViewController, WKNavigationDelegate {
         
     }
     @objc private func saveToBookmark() {
-        saveBookmark(news: newsItem)
-        self.show(text: Constant.SAVED_BOOKMARK)
+        if !webModel.isCheckBookmarked {
+            webModel.saveBookmark(withNews: newsItem!)
+            setUpBarButton(isCheckBookmarked: true)
+            showToast(text: Constant.SAVED_BOOKMARK)
+        }
+        else {
+           
+        }
     }
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         loading.stopAnimating()
@@ -63,7 +80,7 @@ class WebViewController : BaseViewController, WKNavigationDelegate {
         guard let newsItem = newsItem else {
             return
         }
-        webViewModel.saveNews(withNews: newsItem)
+        webModel.saveNews(withNews: newsItem)
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
@@ -72,5 +89,4 @@ class WebViewController : BaseViewController, WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         // loading.stopAnimating()
     }
-    
 }

@@ -12,12 +12,14 @@ class BookmarkViewController : BaseViewController {
     
     @IBOutlet weak var bookmarkCollectionView: BookmarkCollectionView!
     @IBOutlet weak var bookmarkTableView: BookmarkTableView!
+    var popoverTableViewCell : PopoverTableViewCellVC!
     let bookmarkModel = BookmarkModel(newsRepository: NewsRepositoryImp(), categoryRepository: CategoryRepositoryImp() )
     override func viewDidLoad() {
         super.viewDidLoad()
         bookmarkTableView.register(UINib(nibName: Constant.NEWS_TABLE_VIEW_CELL, bundle: .main), forCellReuseIdentifier: Constant.NEWS_TABLE_VIEW_CELL)
         bookmarkCollectionView.register(UINib(nibName: Constant.CATEGORY_COLLECTION_VIEW_CELL, bundle: .main), forCellWithReuseIdentifier: Constant.CATEGORY_COLLECTION_VIEW_CELL)
-
+        
+        popoverTableViewCell = PopoverTableViewCellVC(nibName: "PopoverViewController", bundle: nil) as PopoverTableViewCellVC
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,8 +48,12 @@ class BookmarkViewController : BaseViewController {
                 self?.bookmarkTableView.reloadData()
             })
         }
-        bookmarkTableView.callBack = { [weak self] (itemNews) in
+        bookmarkTableView.onTouchNewsCallback = { [weak self] (itemNews) in
             self?.openWebKitView(item: itemNews)
+        }
+        
+        bookmarkTableView.openPopUp = { [weak self] (itemNews, anchor) in
+            self?.showPopover(withNews: itemNews, withAnchor: anchor)
         }
     }
     
@@ -61,4 +67,35 @@ class BookmarkViewController : BaseViewController {
         btnLeftFirst.customView = label
         navigationController?.navigationBar.topItem?.leftBarButtonItem = btnLeftFirst
     }
+
+}
+extension BookmarkViewController {
+    func showPopover(withNews news : News, withAnchor positionAnchor : UIView) {
+        
+        popoverTableViewCell.setUp(anchor: positionAnchor)
+        popoverTableViewCell.popoverPresentationController?.delegate = self
+        present(popoverTableViewCell, animated: true, completion: nil)
+        
+        popoverTableViewCell.callBack = {[weak self] (type) in
+            if type == .bookmark {
+                self?.unBookmark(news : news)
+            }
+            else {
+                self?.shareNews(news: news)
+            }
+        }
+    }
+    func unBookmark(news : News) {
+        bookmarkModel.unBookmarkNews(withNews: news, callBack: { [weak self] (arr) in
+            if arr.count - 1  <= 0{
+                self?.setUpView()
+            }
+            self?.bookmarkTableView.data.removeAll(where: {$0.idNews == news.idNews})
+            self?.bookmarkTableView.reloadData()
+        } )
+    }
+    func shareNews(news : News) {
+        
+    }
+    
 }

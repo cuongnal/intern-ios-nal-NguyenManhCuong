@@ -14,8 +14,8 @@ class HomeViewController : BaseViewController {
     @IBOutlet weak var titleOfNews: UILabel!
     @IBOutlet weak var homeCollectionView : HomeCollectionView!
     @IBOutlet weak var homeTableView : HomeTableView!
-    var popover : PopoverChangeSourceVC!
-    
+    var popoverChangeSource : PopoverChangeSourceVC!
+    var popoverTableViewCell : PopoverTableViewCellVC!
     @IBOutlet weak var iconNotification: UIButton!
     
     let homeModel = HomeModel()
@@ -25,9 +25,9 @@ class HomeViewController : BaseViewController {
         homeCollectionView.register(UINib(nibName: Constant.CATEGORY_COLLECTION_VIEW_CELL, bundle: .main), forCellWithReuseIdentifier: Constant.CATEGORY_COLLECTION_VIEW_CELL)
         
         setUpHomeCollectionView()
-        popover = PopoverChangeSourceVC(nibName: "PopoverViewController", bundle: nil) as PopoverChangeSourceVC
+        popoverChangeSource = PopoverChangeSourceVC(nibName: "PopoverViewController", bundle: nil) as PopoverChangeSourceVC
+        popoverTableViewCell = PopoverTableViewCellVC(nibName: "PopoverViewController", bundle: nil) as PopoverTableViewCellVC
         handlerCallBack()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,8 +56,12 @@ class HomeViewController : BaseViewController {
             }
         }
         
-        homeTableView.callBack = {[weak self] item in
+        homeTableView.onTouchNewsCallback = {[weak self] item in
             self?.openWebKitView(item: item)
+        }
+        
+        homeTableView.openPopUp = { [weak self] (itemNews, positionAnchor) in
+            self?.showPopover(withNews: itemNews, withAnchor: positionAnchor)
         }
     }
     
@@ -66,18 +70,39 @@ class HomeViewController : BaseViewController {
         self.view.removeFromSuperview()
     }
     @IBAction func onTouchBtnNotification(_ sender: Any) {
-        popover.setUp(anchor: iconNotification)
-        popover.popoverPresentationController?.delegate = self
-        present(popover, animated: true, completion: nil)
-        popover.callBack = {[weak self]
+        popoverChangeSource.setUp(anchor: iconNotification)
+        popoverChangeSource.popoverPresentationController?.delegate = self
+        present(popoverChangeSource, animated: true, completion: nil)
+        popoverChangeSource.callBack = {[weak self]
             (type) in
             if type == .vnExpress || type == .tuoiTre {
                 self?.setUpHomeCollectionView(typeSource: type)
             }
         }
-
     }
 
 }
+extension HomeViewController {
+    func showPopover(withNews news : News, withAnchor positionAnchor : UIView) {
 
+        popoverTableViewCell.setUp(anchor: positionAnchor)
+        popoverTableViewCell.popoverPresentationController?.delegate = self
+        present(popoverTableViewCell, animated: true, completion: nil)
+        
+        popoverTableViewCell.callBack = {[weak self] (type) in
+            if type == .bookmark {
+                self?.saveBookmark(news : news)
+            }
+            else {
+                self?.shareNews(news: news)
+            }
+        }
+    }
+    func saveBookmark(news : News) {
+        homeModel.saveBookmark(withNews: news, callBack: {})
+    }
+    func shareNews(news : News) {
+        
+    }
+}
 

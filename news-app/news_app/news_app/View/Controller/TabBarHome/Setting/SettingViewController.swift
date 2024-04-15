@@ -7,7 +7,7 @@
 
 import UIKit
 import FirebaseAuth
-class SettingViewController : UIViewController{
+class SettingViewController : BaseViewController{
     
     @IBOutlet weak var settingTableView: SettingTableView!
     override func viewDidLoad() {
@@ -74,8 +74,7 @@ class SettingViewController : UIViewController{
     }
     func logOut() {
         UserDefaults.standard.removeObject(forKey: Constant.Key.USER_LOGIN)
-       // Auth.auth().signOut(
-        navigationController?.popToRootViewController(animated: true)
+        self.setRootViewControllerApp(withConstantNavKey: Constant.Key.NAV_AUTH)
     }
     
 }

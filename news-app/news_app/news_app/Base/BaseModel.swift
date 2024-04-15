@@ -14,11 +14,6 @@ protocol BaseModelDelegate{
 class BaseModel  {
     weak var delegate : BaseViewController?
     
-    class func saveBookmark(withNews news : News) {
-        DispatchQueue.global().async {
-            NewsRepositoryImp().insertNewsToBookmark(withNews: news, withUserLogin: UserDefaults.getUser()!)
-        }
-    }
     func excuteTask<T>(blockUI : Bool = false,
                        task : @escaping (()-> T?),
                        complete : @escaping ((T?) -> Void)

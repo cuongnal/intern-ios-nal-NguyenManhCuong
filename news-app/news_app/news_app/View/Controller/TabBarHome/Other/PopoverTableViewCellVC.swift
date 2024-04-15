@@ -45,4 +45,5 @@ public enum TypeClickPopover : String{
     case tuoiTre
     case share
     case bookmark
+    case unBookmark
 }

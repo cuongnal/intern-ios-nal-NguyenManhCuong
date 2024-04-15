@@ -19,10 +19,16 @@ protocol NewsRepository {
     func getAllNewsFromServerSource (typeSource : TypeSource) -> [News]
     
     func insertNewsSentWithUser (withUserLogin user : User , withNews news : News)
+    
     func getNewsSentWithUser(withUserLogin user : User)  -> [News]
     
-    func insertNewsToBookmark(withNews news : News, withUserLogin user : User)
+    func insertNewsToBookmark(withNews news : News, withUserLogin user : User) -> Bool
     
     func getBookmarkOfUser (withUserLogin user : User) -> [News]
+    
     func getBookmarkOfCategory(withUserLogin user : User, category : Category) -> [News]
+    
+    func isBookmarkUser(news : News, withUserLogin user : User) -> Bool
+    
+    func deleteBookmarkItem(withNews news : News, withUserLogin user : User)
 }

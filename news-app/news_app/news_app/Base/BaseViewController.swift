@@ -8,12 +8,13 @@
 import Foundation
 import UIKit
 
-class BaseViewController : UIViewController, BaseModelDelegate, UIPopoverPresentationControllerDelegate {
+class BaseViewController : UIViewController, BaseModelDelegate, UIPopoverPresentationControllerDelegate, UIGestureRecognizerDelegate {
     private lazy var loadingController = LoadingViewController()
     private lazy var popover = PopoverTableViewCellVC(nibName: "PopoverViewController", bundle: nil) as PopoverTableViewCellVC
     override func viewDidLoad() {
         super.viewDidLoad()
-        receiverNotificationCenter()
+
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     func openWebKitView(item : News) {
         guard let acc = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController else {
@@ -39,38 +40,6 @@ class BaseViewController : UIViewController, BaseModelDelegate, UIPopoverPresent
         alert.addAction(action)
         present(alert, animated: true)
     }
-    
-    func receiverNotificationCenter() {
-        NotificationCenter.default.addObserver(self, selector: #selector(showPopover(_:)), name: NSNotification.Name(Constant.POP_OVER_NOTIFICATION), object: nil)
-    }
-    @objc func showPopover(_ notification: Notification) {
-        let positionAnchor = (notification.userInfo?[Constant.ANCHOR_POPOVER]) as? UIButton
-        let itemNews = (notification.userInfo?[Constant.Key.KEY_NEWS_BOOKMARK]) as? News
-        guard let positionAnchor = positionAnchor else {
-            guard let item = itemNews else {return}
-            saveBookmark(news: item)
-            return
-        }
-        popover.setUp(anchor: positionAnchor)
-        popover.popoverPresentationController?.delegate = self
-        present(popover, animated: true, completion: nil)
-        
-        popover.callBack = {[weak self] (type) in
-            if type == .bookmark {
-                self?.saveBookmark(news : itemNews)
-            }
-            else {
-                self?.shareNews(news: itemNews)
-            }
-        }
-    }
-    func saveBookmark(news : News?) {
-        guard let news = news else {
-            return
-        }
-        BaseModel.saveBookmark(withNews: news)
-        self.show(text: Constant.SAVED_BOOKMARK)
-    }
     func show(text : String) {
         let toast = UITextView(frame: CGRect(x: self.view.frame.size.width/4, y: self.view.frame.size.height * 5 / 6, width: (self.view.frame.size.width/8)*4, height: 40))
         toast.backgroundColor = UIColor.black
@@ -89,9 +58,21 @@ class BaseViewController : UIViewController, BaseModelDelegate, UIPopoverPresent
             toast.alpha = 0
         }, completion: {_ in toast.removeFromSuperview()})
     }
-    open func shareNews(news : News?) {}
-    
+    // hiện popover
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
+    }
+    func setRootViewControllerApp(withConstantNavKey nav : String) {
+        if nav == Constant.Key.NAV_HOME  {
+            let navHome = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: nav) as! HomeNavigationController
+            UIApplication.shared.windows.first?.rootViewController = navHome
+            UIApplication.shared.windows.first?.makeKeyAndVisible()
+        }
+        else {
+            let navHome = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: nav) as! AuthNavigationController
+            UIApplication.shared.windows.first?.rootViewController = navHome
+            UIApplication.shared.windows.first?.makeKeyAndVisible()
+        }
+        
     }
 }

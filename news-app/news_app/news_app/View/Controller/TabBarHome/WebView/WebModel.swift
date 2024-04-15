@@ -8,10 +8,36 @@
 import Foundation
 class WebModel : BaseModel {
     let newsRepository : NewsRepository
-    init(newsRepository: NewsRepository) {
-        self.newsRepository = newsRepository
-    }
+    var isCheckBookmarked = false
+    init(newsRepository: NewsRepository) {self.newsRepository = newsRepository}
+    
     func saveNews(withNews news : News) {
         self.newsRepository.insertNewsSentWithUser(withUserLogin:UserDefaults.getUser()! , withNews: news)
     }
+    func saveBookmark(withNews news : News) {
+        excuteTask(task: { [weak self] in
+            self?.newsRepository.insertNewsToBookmark(withNews: news, withUserLogin: UserDefaults.getUser()!)
+        },complete: { [weak self] (isInsert) in
+            guard let isInsert = isInsert else {
+                self?.isCheckBookmarked = false
+                return
+            }
+            self?.isCheckBookmarked = isInsert
+        })
+        
+    }
+    func isBookmarkUser(withNews news : News, callBack : @escaping (Bool) -> ()) {
+        excuteTask(task: { [weak self] in
+            self?.newsRepository.isBookmarkUser(news: news, withUserLogin: UserDefaults.getUser()!)
+        }, complete: { [weak self](isBookmark) in
+            guard let isBookmark = isBookmark else {
+                callBack(false)
+                return
+            }
+            self?.isCheckBookmarked = isBookmark
+            callBack(isBookmark)
+        }
+        )
+    }
+    
 }

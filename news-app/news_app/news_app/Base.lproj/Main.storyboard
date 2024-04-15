@@ -99,7 +99,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="onTouchSignUpAndSignIn:" destination="9ew-W2-eFB" eventType="touchUpInside" id="lfP-qI-EfX"/>
+                                    <action selector="onTouchBtnSignUpAndSignIn:" destination="9ew-W2-eFB" eventType="touchUpInside" id="hmt-8a-zqe"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News 24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geP-Ti-8EH">
@@ -225,7 +225,7 @@
                                             </attributedString>
                                         </state>
                                         <connections>
-                                            <action selector="onTouchRegisterButton:" destination="9ew-W2-eFB" eventType="touchUpInside" id="d8t-gz-717"/>
+                                            <action selector="onTouchBtnRegister:" destination="9ew-W2-eFB" eventType="touchUpInside" id="pBO-1M-lpN"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -891,6 +891,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nTf-nA-cRg">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="labelColor"/>
                     </navigationBar>
                     <connections>
                         <segue destination="d8K-do-hvh" kind="relationship" relationship="rootViewController" id="exd-LW-f1y"/>

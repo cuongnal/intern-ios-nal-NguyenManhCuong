@@ -83,10 +83,14 @@ class NewsRepositoryImp : NewsRepository {
         }
     }
     
-    func insertNewsToBookmark(withNews news: News, withUserLogin user: User){
-        do {try CDNews.saveBookmarkWithUser(withNews: news, withUser: user)}
+    func insertNewsToBookmark(withNews news: News, withUserLogin user: User) -> Bool{
+        do {
+            return try CDNews.saveBookmarkWithUser(withNews: news, withUser: user)
+            
+        }
         catch let err {
             print("Function:   \(#function)   line: \(#line)   error: \(err)")
+            return false
         }
     }
     
@@ -108,6 +112,23 @@ class NewsRepositoryImp : NewsRepository {
         catch let err{
             print("Function:   \(#function)   line: \(#line)   error: \(err)")
             return []
+        }
+    }
+    func isBookmarkUser(news : News, withUserLogin user : User) -> Bool {
+        do {
+            return try CDNews.isBookmarkUser(withNews: news, withUser: user)
+        }
+        catch let err {
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
+            return false
+        }
+    }
+    func deleteBookmarkItem(withNews news : News, withUserLogin user : User) {
+        do {
+            try CDNews.deleteBookmarkItemNews(withNews: news, user: user)
+        }
+        catch let err {
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
         }
     }
     
