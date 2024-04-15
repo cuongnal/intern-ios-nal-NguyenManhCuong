@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iaj-DQ-4Xe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SLo-pF-VoL">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -61,7 +61,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="onTouchBtnSignInWithEmail" destination="9ew-W2-eFB" eventType="touchUpInside" id="qH9-iL-a78"/>
+                                            <action selector="onTouchBtnEmail" destination="9ew-W2-eFB" eventType="touchUpInside" id="qH9-iL-a78"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v97-ng-d5K">
@@ -259,7 +259,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="lrH-uO-G4B"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="lrH-uO-G4B"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="btnForgotPassword" destination="Z7v-jh-Q79" id="fho-7K-tjb"/>
@@ -279,7 +279,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b93-60-iUG" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="149" y="244"/>
+            <point key="canvasLocation" x="148" y="264"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="ScS-X4-hD7">
@@ -290,7 +290,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="nQW-eR-0ng">
-                                <rect key="frame" x="137.66666666666663" y="54" width="140.33333333333337" height="40"/>
+                                <rect key="frame" x="137.66666666666663" y="98" width="140.33333333333337" height="40"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newsLogo 1" translatesAutoresizingMaskIntoConstraints="NO" id="rjC-OY-wLg">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -308,7 +308,7 @@
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="W1j-5A-Dp5" customClass="HomeCollectionView" customModule="news_app" customModuleProvider="target">
-                                <rect key="frame" x="20" y="109" width="374" height="50"/>
+                                <rect key="frame" x="20" y="153" width="374" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7mj-F5-KKV"/>
@@ -348,11 +348,11 @@
                                 </cells>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jyg-qs-t9v" customClass="HomeTableView" customModule="news_app" customModuleProvider="target">
-                                <rect key="frame" x="20" y="174" width="374" height="629"/>
+                                <rect key="frame" x="20" y="218" width="374" height="585"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUo-ID-pqn">
-                                <rect key="frame" x="374" y="56" width="20" height="36"/>
+                                <rect key="frame" x="374" y="100" width="20" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="Mvv-y8-VWY"/>
                                 </constraints>
@@ -394,7 +394,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x4T-n7-7lr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1113" y="-537"/>
+            <point key="canvasLocation" x="926" y="-1102"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="vaf-vc-dAg">
@@ -435,7 +435,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CP9-8N-e2Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2189.8550724637685" y="-527.00892857142856"/>
+            <point key="canvasLocation" x="925" y="-1764"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="Zwu-fD-uft">
@@ -549,7 +549,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="uUi-Hr-VSl"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="uUi-Hr-VSl"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="btnReset" destination="lTv-nS-fHt" id="2F2-Vh-jFM"/>
@@ -559,7 +559,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rNd-yt-1QA" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-180" y="984"/>
+            <point key="canvasLocation" x="1057" y="700"/>
         </scene>
         <!--Loading Controller-->
         <scene sceneID="289-UB-ha4">
@@ -585,18 +585,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="D2x-st-IPF"/>
-                    <connections>
-                        <segue destination="9ew-W2-eFB" kind="show" id="R9v-Gi-EKH"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iGz-1F-QeJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1043" y="218"/>
+            <point key="canvasLocation" x="-1794" y="-88"/>
         </scene>
-        <!--App Navigation View Controller-->
+        <!--Auth Navigation Controller-->
         <scene sceneID="Vzw-ZY-Cu3">
             <objects>
-                <navigationController storyboardIdentifier="AppNavi" id="iaj-DQ-4Xe" customClass="AppNavigationViewController" customModule="news_app" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavAuth" id="iaj-DQ-4Xe" customClass="AuthNavigationController" customModule="news_app" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="5DV-o2-3Ng"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EDz-eQ-o08">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -604,12 +601,12 @@
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="SLo-pF-VoL" kind="relationship" relationship="rootViewController" id="CXG-QA-hJY"/>
+                        <segue destination="9ew-W2-eFB" kind="relationship" relationship="rootViewController" id="iXt-BV-xL1"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eAD-Ba-Nrp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2074" y="218"/>
+            <point key="canvasLocation" x="-688" y="264"/>
         </scene>
         <!--Bookmark View Controller-->
         <scene sceneID="Uvl-OV-gwJ">
@@ -620,7 +617,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wfu-h2-kaI" customClass="BookmarkCollectionView" customModule="news_app" customModuleProvider="target">
-                                <rect key="frame" x="20" y="44" width="374" height="50"/>
+                                <rect key="frame" x="20" y="88" width="374" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="RIL-M7-SY7"/>
@@ -634,7 +631,7 @@
                                 <cells/>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" separatorInsetReference="fromAutomaticInsets" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PVP-5J-oli" customClass="BookmarkTableView" customModule="news_app" customModuleProvider="target">
-                                <rect key="frame" x="20" y="94" width="374" height="719"/>
+                                <rect key="frame" x="20" y="138" width="374" height="675"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
@@ -663,7 +660,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L4W-pT-kL1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3788" y="-527"/>
+            <point key="canvasLocation" x="2843" y="-1102"/>
         </scene>
         <!--Pick Language View Controller-->
         <scene sceneID="wly-ke-6hp">
@@ -754,6 +751,8 @@
                             <constraint firstItem="WUr-ma-HfD" firstAttribute="top" secondItem="I8F-9X-fVt" secondAttribute="top" id="efJ-7S-Imw"/>
                         </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="414" height="896"/>
                     <connections>
                         <outlet property="viewParent" destination="RE1-UZ-rjV" id="lyX-17-OAU"/>
                         <outlet property="viewPickerLanguage" destination="Rsc-WF-PsU" id="CNu-Vb-e4g"/>
@@ -761,7 +760,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tHR-nh-8vG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4867" y="-1154"/>
+            <point key="canvasLocation" x="3790" y="-1765"/>
         </scene>
         <!--Settings-->
         <scene sceneID="ug3-dc-x8C">
@@ -772,7 +771,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" separatorInsetReference="fromAutomaticInsets" rowHeight="55" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kDy-JW-jN5" customClass="SettingTableView" customModule="news_app" customModuleProvider="target">
-                                <rect key="frame" x="20" y="64" width="374" height="759"/>
+                                <rect key="frame" x="20" y="108" width="374" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <sections/>
@@ -798,7 +797,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="blV-Nb-c7I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4866.666666666667" y="-506.25"/>
+            <point key="canvasLocation" x="3790" y="-1102"/>
         </scene>
         <!--Account View Controller-->
         <scene sceneID="qKO-tC-NVN">
@@ -829,7 +828,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYW-Rx-Kbk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5664" y="-506"/>
+            <point key="canvasLocation" x="4643" y="-1102"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="LS3-yr-OTy">
+            <objects>
+                <viewController id="uOv-M6-UX4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4lx-Zb-4NK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Ex7-qX-02H"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vOa-pe-lGo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5472" y="-1102"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="sdy-Pg-Cah">
@@ -840,7 +854,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="96Y-fe-Khm" customClass="SearchTableView" customModule="news_app" customModuleProvider="target">
-                                <rect key="frame" x="15" y="54" width="384" height="759"/>
+                                <rect key="frame" x="15" y="98" width="384" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -868,7 +882,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zh2-hX-fjt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2980" y="-527"/>
+            <point key="canvasLocation" x="1904" y="-1102"/>
+        </scene>
+        <!--Home Navigation Controller-->
+        <scene sceneID="go6-ac-PYP">
+            <objects>
+                <navigationController storyboardIdentifier="NavHome" id="FKh-nL-GOi" customClass="HomeNavigationController" customModule="news_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nTf-nA-cRg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="d8K-do-hvh" kind="relationship" relationship="rootViewController" id="exd-LW-f1y"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jcK-L0-kun" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-688" y="-408"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="3Iu-7d-ZIq">
@@ -891,7 +921,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LAg-Wm-4Zh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1300" y="244"/>
+            <point key="canvasLocation" x="148" y="-408"/>
         </scene>
         <!--Policy View Controller-->
         <scene sceneID="Sdf-ZO-MaK">
@@ -926,7 +956,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zq9-ln-hZ9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="593" y="984"/>
+            <point key="canvasLocation" x="2181" y="700"/>
         </scene>
     </scenes>
     <resources>
@@ -942,13 +972,13 @@
         <image name="ic_twitter" width="45" height="42"/>
         <image name="newsLogo 1" width="90" height="90"/>
         <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -87,6 +87,8 @@ struct Constant {
         static let KEY_TYPE_VN_EXPRESS = "KEY_TYPE_VN_EXPRESS"
         static let KEY_TYPE_TUOI_TRE = "KEY_TYPE_TUOI_TRE"
         static let USER_LOGIN = "USER_LOGIN"
+        static let NAV_HOME = "NavHome"
+        static let NAV_AUTH = "NavAuth"
     }
     struct Error {
         static let LABLE_ERROR = "Lỗi"

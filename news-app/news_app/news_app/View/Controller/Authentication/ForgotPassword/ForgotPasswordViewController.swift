@@ -18,10 +18,7 @@ class ForgotPasswordViewController : BaseViewController{
     let authenModel = AuthenticationModel(categoryRepository: CategoryRepositoryImp(), userRepository: UsersRepositoryImp() )
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_back"),
-                                                                style: .done,
-                                                                target: self,
-                                                                action: #selector(self.goBack))
+  
     }
     
     @objc private func goBack() {

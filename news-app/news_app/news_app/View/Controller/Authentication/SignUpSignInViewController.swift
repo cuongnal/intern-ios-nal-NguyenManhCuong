@@ -36,8 +36,10 @@ class SignUpSignInViewController: BaseViewController {
         view.addGestureRecognizer(tapGesture)
         hiddenView()
     }
-    
-    @IBAction func onTouchSignUpAndSignIn(_ sender: Any) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    @IBAction func onTouchBtnSignUpAndSignIn(_ sender: Any) {
         let tabBar = storyboard?.instantiateViewController(withIdentifier: "TabBarHome") as! TabBarController
         
         if flagCheckSignInSignUp == .signIn {
@@ -60,14 +62,14 @@ class SignUpSignInViewController: BaseViewController {
         }
     }
     
-    @IBAction func onTouchBtnSignInWithEmail() {
+    @IBAction func onTouchBtnEmail() {
         flagCheckSignInSignUp = .signIn
         UIView.transition(with: self.view.superview!, duration: 0.3, options:
                 .transitionFlipFromLeft, animations: {self.hiddenView()}, completion: nil)
         flagSign = .signIn
     }
     
-    @IBAction func onTouchRegisterButton(_ sender: Any) {
+    @IBAction func onTouchBtnRegister(_ sender: Any) {
         flagCheckSignInSignUp = .signUp
         UIView.transition(with: self.view.superview!, duration: 0.2, options:
                 .transitionFlipFromLeft, animations: {self.hiddenView()}, completion: nil)
