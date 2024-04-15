@@ -31,7 +31,7 @@ class NewsTableViewCell : UITableViewCell {
         typeNews.text = item.typeCategory
         authorNews.text = item.author
         titleNews.text = item.title
-        imageNews.image = UIImage(named: "test")
+        imageNews.image = UIImage(data: ImageCache.setImageWithURL(withURL: news!.image))
 
         popupMenu.addTarget(self, action: #selector(touchPopUp), for: .touchUpInside)
     }

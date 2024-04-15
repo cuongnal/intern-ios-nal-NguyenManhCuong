@@ -69,6 +69,7 @@ class BookmarkViewController : BaseViewController {
     }
 
 }
+
 extension BookmarkViewController {
     func showPopover(withNews news : News, withAnchor positionAnchor : UIView) {
         
