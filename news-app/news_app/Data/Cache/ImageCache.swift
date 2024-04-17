@@ -2,32 +2,51 @@
 //  ImageCache.swift
 //  news_app
 //
-//  Created by Manhcuong on 15/04/2024.
+//  Created by Manhcuong on 17/04/2024.
 //
 
 import Foundation
+import UIKit
 
-class ImageCache {
-    class func getImageURLToCache(withURL string : String) {
-        guard let url = URL(string: string) else {return}
-        
-        var urlRequest = URLRequest(url: url)
-        if URLCache.shared.cachedResponse(for: urlRequest) != nil {
-            return
+class ImageCache  {
+    private class func getFolderImageNews() -> URL {
+        let dirPaths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let path = dirPaths[0].appendingPathComponent("ImageNews")
+        return path
+    }
+
+    class func createFolderImageNews () {
+        do {
+            try FileManager.default.createDirectory(at: getFolderImageNews(), withIntermediateDirectories: true)
         }
-        URLSession.shared.dataTask(with: URLRequest(url: url)) { data, response,err in
-            guard (200...299).contains((response as! HTTPURLResponse).statusCode ), err != nil, let data = data,let response = response else {
-                return
-            }
-            let cacheImage = CachedURLResponse(response: response , data: data)
-            URLCache.shared.storeCachedResponse(cacheImage, for: urlRequest)
+        catch let err {
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
         }
     }
-    class func setImageWithURL(withURL string : String) -> Data {
-        guard let url = URL(string: string) else {return Data()}
-        if let cacheImage = URLCache.shared.cachedResponse(for: URLRequest(url: url)) {
-            return cacheImage.data
+    
+    class func insertImage(withDataImage data : Data, idNews : String) {
+        if !FileManager.default.fileExists(atPath: getFolderImageNews().path) {
+            createFolderImageNews()
         }
-        return Data()
+        do {
+            let imageURL = getFolderImageNews().appendingPathComponent("\(idNews).dat")
+            try data.write(to: imageURL)
+        }
+        catch let err {
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
+        }
+    }
+    class func getImage(idNews : String) -> UIImage? {
+        
+        if !FileManager.default.fileExists(atPath: getFolderImageNews().path) {return nil}
+        
+        let path = getFolderImageNews().appendingPathComponent("\(idNews).dat")
+        do {
+            return try UIImage(data: Data(contentsOf: path))
+        }
+        catch let err {
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
+            return nil
+        }
     }
 }

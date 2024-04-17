@@ -46,14 +46,14 @@ class DataMapper {
     class func MapCDNewsToEntity(withCDNews cdNews : CDNews) -> News {
         var news = News()
         news.idNews = cdNews.idNews ?? ""
-        news.image = cdNews.image ?? ""
+        news.urlImage = cdNews.image ?? ""
         news.title = cdNews.title ?? ""
         news.pubDate = cdNews.pubDate ?? ""
         news.idCate = cdNews.idCate!
         news.author = cdNews.author ?? ""
         news.typeCategory = cdNews.categoriesNews?.title ?? ""
         news.link = cdNews.link ?? ""
-        news.description = cdNews.des ?? ""
+        news.des = cdNews.des ?? ""
         return news
     }
     class func MapCDNewsToEntity(withArrayCDNews arrCDNews : [CDNews]) -> [News] {
@@ -61,14 +61,14 @@ class DataMapper {
         for item in arrCDNews {
             var news = News()
             news.idNews = item.idNews ?? ""
-            news.image = item.image ?? ""
+            news.urlImage = item.image ?? ""
             news.title = item.title ?? ""
             news.pubDate = item.pubDate ?? ""
             news.idCate = item.idCate!
             news.author = item.author ?? ""
             news.typeCategory = item.categoriesNews?.title ?? ""
             news.link = item.link ?? ""
-            news.description = item.des ?? ""
+            news.des = item.des ?? ""
             arr.append(news)
         }
         return arr

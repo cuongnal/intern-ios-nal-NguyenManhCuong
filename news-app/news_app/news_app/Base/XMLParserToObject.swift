@@ -50,7 +50,6 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         self.elementName = elementName
-        print("ElementName = \(elementName)")
         if(elementName == rootElement) {
             flag = true
             news = News()
@@ -98,7 +97,7 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
             case "pubDate" :
                 news?.pubDate += String(data: CDATABlock, encoding: .utf8)?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
             case "description" :
-                news?.description += String(data: CDATABlock, encoding: .utf8)?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+                news?.des += String(data: CDATABlock, encoding: .utf8)?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
             default : break
             }
         }
@@ -121,8 +120,8 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
                 try arrNews[index].pubDate = DateFormatter().convertStringDateFormat(dateString: item.pubDate) ?? ""
             }
             catch {}
-            if let stringStart = item.description.range(of: "src=\""), let stringEnd = item.description.range(of: "\"",range: stringStart.upperBound..<item.description.endIndex){
-                arrNews[index].image = String(item.description[stringStart.upperBound..<stringEnd.lowerBound])
+            if let stringStart = item.des.range(of: "src=\""), let stringEnd = item.des.range(of: "\"",range: stringStart.upperBound..<item.des.endIndex){
+                arrNews[index].urlImage = String(item.des[stringStart.upperBound..<stringEnd.lowerBound])
                 
             }
         }

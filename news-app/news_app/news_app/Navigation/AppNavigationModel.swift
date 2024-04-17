@@ -9,6 +9,8 @@ import Foundation
 
 class AppNavigationModel : BaseModel {
     
+    private var newsRepository = NewsRepositoryImp()
+    
     func importDataDefault() {
         
         do {
@@ -42,8 +44,8 @@ class AppNavigationModel : BaseModel {
                 })
             }
         }
-        catch let error {
-            print("Lỗi khi lưu\(error)")
+        catch let err {
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
         }
     }
     private func getNewsFromServer(repoNews: NewsRepositoryImp ,completionHandler: @escaping (([News]) -> ())) {
@@ -56,7 +58,6 @@ class AppNavigationModel : BaseModel {
         })
         
     }
-    
 }
 
 // 

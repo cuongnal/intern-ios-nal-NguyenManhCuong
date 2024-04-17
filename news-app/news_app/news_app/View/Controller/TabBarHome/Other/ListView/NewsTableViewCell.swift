@@ -22,6 +22,7 @@ class NewsTableViewCell : UITableViewCell {
     
     var onTouchCallback : ((News, UIView) -> Void)?
     var news : News?
+    var imageDownload = ImageDownloader()
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -31,11 +32,21 @@ class NewsTableViewCell : UITableViewCell {
         typeNews.text = item.typeCategory
         authorNews.text = item.author
         titleNews.text = item.title
-        imageNews.image = UIImage(data: ImageCache.setImageWithURL(withURL: news!.image))
-
+        imageNews.image = news?.image
+        
+//        imageDownload.setImage(news: item, callBackDataImage: { (img) in
+//            guard let img = img else {return}
+//            DispatchQueue.main.async {
+//                self.imageNews.image = img
+//            }
+//        })
         popupMenu.addTarget(self, action: #selector(touchPopUp), for: .touchUpInside)
     }
     @objc func touchPopUp() {
         onTouchCallback?(news!, popupMenu)
+    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageDownload.task?.cancel()
     }
 }

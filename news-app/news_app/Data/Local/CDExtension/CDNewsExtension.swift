@@ -24,9 +24,9 @@ extension CDNews {
             let cdN = CDNews(context: AppDelegate.context)
             let cate = try CDCategory.getCDCategory(idCate: item.idCate)
             cdN.author = item.author
-            cdN.des = item.description
+            cdN.des = item.des
             cdN.idNews = item.idNews
-            cdN.image = item.image
+            cdN.image = item.urlImage
             cdN.link = item.link
             cdN.pubDate = item.pubDate
             cdN.title = item.title
