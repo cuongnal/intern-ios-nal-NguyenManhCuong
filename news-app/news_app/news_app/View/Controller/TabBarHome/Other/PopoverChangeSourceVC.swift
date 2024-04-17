@@ -39,7 +39,7 @@ class PopoverChangeSourceVC : UIViewController {
         ppc?.permittedArrowDirections = hiddenDirections ? [] : .up
         ppc?.sourceView = anchor
         
-        ppc!.popoverLayoutMargins = hiddenDirections ? UIEdgeInsets() : UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 0)
+        ppc?.popoverLayoutMargins = hiddenDirections ? UIEdgeInsets() : UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 0)
         
         ppc?.sourceRect = hiddenDirections ? CGRect(x: 0, y: 80, width: 0, height: 0) : CGRect.null
     }

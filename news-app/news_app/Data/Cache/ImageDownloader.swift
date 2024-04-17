@@ -8,14 +8,15 @@
 import Foundation
 import UIKit
 
+fileprivate let queue = DispatchQueue(label: "ImageDownloaderQueue", attributes: .concurrent, autoreleaseFrequency: .workItem)
 class ImageDownloader {
+    
     var task : URLSessionDataTask!
     
-    func setImage(news : News, callBackDataImage : @escaping ((UIImage?) -> Void)) {
-        DispatchQueue.global().async { [self] in
-            
+    func setImage(news : News, callBackDataImage : @escaping ((News,UIImage?) -> Void)) {
+        queue.async { [self] in
             if let data = ImageCache.getImage(idNews: news.idNews){
-                callBackDataImage(data)
+                callBackDataImage(news, data)
                 return
             }
             
@@ -25,13 +26,13 @@ class ImageDownloader {
                 guard let response = response,
                       (200...299).contains((response as! HTTPURLResponse).statusCode ),
                       error == nil, let data = data else {
-                    callBackDataImage(nil)
+                    callBackDataImage(news,nil)
                     print("API_IMAGE:   \(#function)   line: \(#line)   error: \(String(describing: error))")
                     return
                 }
                 guard let uiImage = UIImage(data: data) else {return}
                 
-                callBackDataImage(uiImage)
+                callBackDataImage(news,uiImage)
                 ImageCache.insertImage(withDataImage: data, idNews: news.idNews)
             }
             task.resume()

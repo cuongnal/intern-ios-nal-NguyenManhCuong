@@ -7,10 +7,9 @@
 
 import UIKit
 import CryptoKit
-public class News : NSObject  {
+public struct News {
     var idNews : String!
     var urlImage : String = ""
-    @objc dynamic var image = UIImage()
     var title : String = ""
     var pubDate : String = ""
     var idCate : UUID!
@@ -18,7 +17,7 @@ public class News : NSObject  {
     var typeCategory : String = "Trang chủ"
     var link : String = ""
     var des : String = ""
-    func createPrimaryKey() {
+    mutating func createPrimaryKey() {
         let inputData = Data((pubDate + title).utf8)
         let hashedData = SHA256.hash(data: inputData)
         idNews = hashedData.compactMap { String(format: "%02x", $0) }.joined()
@@ -34,7 +33,7 @@ public class News : NSObject  {
         self.link = link
         self.des = description
     }
-    override init() {}
+    init() {}
 }
 public enum TypeSource : String {
     case vnExpress = "VN_EXPRESS"
