@@ -12,4 +12,5 @@ public struct Category : Hashable{
     var title : String!
     var url : String!
     var typeSource : String!
+    var index : Int!
 }

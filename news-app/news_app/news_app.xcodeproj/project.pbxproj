@@ -492,10 +492,10 @@
 		B2F8DE272BBEA47600A471EB /* Enity */ = {
 			isa = PBXGroup;
 			children = (
-				CE9A31AB2BC01F070035C298 /* User.swift */,
-				ADE00FF22BAAE01A0041DE42 /* News.swift */,
-				ADE535862BB119E3004E2D42 /* Category.swift */,
 				ADA5EC5D2BB10A7D00A26281 /* Api.swift */,
+				CE9A31AB2BC01F070035C298 /* User.swift */,
+				ADE535862BB119E3004E2D42 /* Category.swift */,
+				ADE00FF22BAAE01A0041DE42 /* News.swift */,
 			);
 			path = Enity;
 			sourceTree = "<group>";

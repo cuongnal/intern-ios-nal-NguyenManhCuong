@@ -18,6 +18,7 @@ class HomeCollectionView : CategoryCollectionView, UICollectionViewDragDelegate,
     override func reloadData() {
         super.reloadData()
         oldSelectedItemAt = IndexPath(item: 0, section: 0)
+        print("đã set về 0")
         self.layoutIfNeeded()
         if data.isEmpty {
             return
@@ -41,17 +42,30 @@ class HomeCollectionView : CategoryCollectionView, UICollectionViewDragDelegate,
         guard let destinationIndexPath = coordinator.destinationIndexPath else {return} // kiểm tra xem có vị trí đích để thả không
         
         let items = coordinator.items
-        if let item = items.first {
-            let draggedIndexPath = item.sourceIndexPath
+        if let item = items.first, let draggedIndexPath = item.sourceIndexPath {
             
-            collectionView.performBatchUpdates( {
+            collectionView.performBatchUpdates( { [weak self] in
+                guard let self = self else {return}
                 collectionView.insertItems(at: [destinationIndexPath])
-                collectionView.deleteItems(at: [draggedIndexPath!])
-            },completion: { [weak self] _ in
-                coordinator.drop(item.dragItem, toItemAt: destinationIndexPath)
-                self?.data.swapAt(destinationIndexPath.item, draggedIndexPath!.item)
-                self?.itemSwap = (destinationIndexPath, draggedIndexPath!)
-            })
+                collectionView.deleteItems(at: [draggedIndexPath])
+                coordinator.drop(item.dragItem, toItemAt: destinationIndexPath)   // hoàn thành việc thả
+                
+                let dataCellOld = data[draggedIndexPath.item]
+                
+                self.data.remove(at: draggedIndexPath.item)
+                self.data.insert(dataCellOld, at: destinationIndexPath.item)
+                
+                switch (true) {
+                case self.oldSelectedItemAt == draggedIndexPath :
+                    self.oldSelectedItemAt = destinationIndexPath
+                case draggedIndexPath < self.oldSelectedItemAt && destinationIndexPath >= self.oldSelectedItemAt :
+                    self.oldSelectedItemAt.row -= 1
+                case draggedIndexPath > self.oldSelectedItemAt && destinationIndexPath <= self.oldSelectedItemAt :
+                    self.oldSelectedItemAt.row += 1
+                default : break
+                }
+                
+            },completion: nil)
         }
     }
     
@@ -59,12 +73,10 @@ class HomeCollectionView : CategoryCollectionView, UICollectionViewDragDelegate,
         let d = UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
         return d
     }
-    private var itemSwap :(old : IndexPath, new : IndexPath)?
     func collectionView(_ collectionView: UICollectionView, dropSessionDidEnd session: UIDropSession) {
-        guard let itemSwap = itemSwap else {return}
-        reloadItems(at: [itemSwap.new])
-        reloadItems(at: [itemSwap.old])
+       // super.reloadData()
     }
+
 }
 
 

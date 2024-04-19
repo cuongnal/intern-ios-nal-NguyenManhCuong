@@ -22,6 +22,7 @@ class DataMapper {
                 item.url = tg.url
                 item.typeSource = tg.typeSource
                 item.title = tg.title
+                item.index = Int(tg.indexCategory)
                 arr.append(item)
             }
         }

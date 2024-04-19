@@ -45,6 +45,13 @@ class HomeModel : BaseModel {
         })
     }
     
+    func updateIndexCategoryOfUser(categories : [Category]) {
+//        excuteTask(task: {
+//
+//        }, complete: {
+//
+//        })
+    }
     
 }
 

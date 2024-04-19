@@ -17,18 +17,18 @@ class AppNavigationModel : BaseModel {
             var arr : [CDCategory] = []
             let item :[CDCategory] = try AppDelegate.context.fetch(CDCategory.fetchRequest())
             if item.count == 0 {
-                for (index, item) in Constant.CATEGORY_VN_EXPRESS.enumerated() {
+                for (_, item) in Constant.CATEGORY_VN_EXPRESS.enumerated() {
                     let i = CDCategory(context: AppDelegate.context)
-                    i.indexCategory = Int64(index)
+                    i.indexCategory = Int64(item.index)
                     i.title = item.title
                     i.url = item.url
                     i.idCate = item.idCate
                     i.typeSource = item.typeSource
                     arr.append(i)
                 }
-                for (index, item) in Constant.CATEGORY_TUOI_TRE.enumerated() {
+                for (_, item) in Constant.CATEGORY_TUOI_TRE.enumerated() {
                     let i = CDCategory(context: AppDelegate.context)
-                    i.indexCategory = Int64(index)
+                    i.indexCategory = Int64(item.index)
                     i.title = item.title
                     i.url = item.url
                     i.idCate = item.idCate
