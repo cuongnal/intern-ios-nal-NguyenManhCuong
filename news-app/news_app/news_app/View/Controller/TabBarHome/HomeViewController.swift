@@ -25,9 +25,9 @@ class HomeViewController : BaseViewController {
         homeCollectionView.register(UINib(nibName: Constant.CATEGORY_COLLECTION_VIEW_CELL, bundle: .main), forCellWithReuseIdentifier: Constant.CATEGORY_COLLECTION_VIEW_CELL)
         
         setUpHomeCollectionView()
-        popoverChangeSource = PopoverChangeSourceVC(nibName: "PopoverViewController", bundle: nil) as PopoverChangeSourceVC
+        popoverChangeSource = PopoverChangeSourceVC(nibName: "PopoverChangeSource", bundle: nil) as PopoverChangeSourceVC
         popoverTableViewCell = PopoverTableViewCellVC(nibName: "PopoverViewController", bundle: nil) as PopoverTableViewCellVC
-        handlerCallBack()
+        handlerCallback()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,16 +41,16 @@ class HomeViewController : BaseViewController {
             homeCollectionView.reloadData()
         }
         titleOfNews.text = typeSource == .vnExpress ? Constant.VN_EXPRESS : Constant.TUOI_TRE
-        homeModel.getCategoryByUser(typeClick: typeSource, callBack: { [weak self] (arrCategory) in
+        homeModel.getCategoryByUser(typeClick: typeSource, callback: { [weak self] (arrCategory) in
             self?.homeCollectionView.data = arrCategory
             self?.homeCollectionView.reloadData()
         })
     }
     
-    func handlerCallBack() {
-        homeCollectionView.callBack = {[weak self] category in
+    func handlerCallback() {
+        homeCollectionView.onTouchItemCallback = {[weak self] category in
             if URL(string: category.url) != nil {
-                self?.homeModel.fetchDataNews(category: category, callBack: { (arrNews) in
+                self?.homeModel.fetchDataNews(category: category, callback: { (arrNews) in
                     self?.homeTableView.setUpHomeTableView(arrNews: arrNews)
                 })
             }
@@ -63,6 +63,10 @@ class HomeViewController : BaseViewController {
         homeTableView.openPopUp = { [weak self] (itemNews, positionAnchor) in
             self?.showPopover(withNews: itemNews, withAnchor: positionAnchor)
         }
+        
+        homeCollectionView.callbackDragDropItem = { [weak self] (arrCategory) in
+            self?.homeModel.updateIndexCategoryOfUser(categories: arrCategory)
+        }
     }
     
     @objc private func back() {
@@ -73,36 +77,49 @@ class HomeViewController : BaseViewController {
         popoverChangeSource.setUp(anchor: iconNotification)
         popoverChangeSource.popoverPresentationController?.delegate = self
         present(popoverChangeSource, animated: true, completion: nil)
-        popoverChangeSource.callBack = {[weak self]
+        popoverChangeSource.callback = {[weak self]
             (type) in
             if type == .vnExpress || type == .tuoiTre {
                 self?.setUpHomeCollectionView(typeSource: type)
             }
         }
     }
-
+    
 }
 extension HomeViewController {
     func showPopover(withNews news : News, withAnchor positionAnchor : UIView) {
-
+        
         popoverTableViewCell.setUp(anchor: positionAnchor)
         popoverTableViewCell.popoverPresentationController?.delegate = self
-        present(popoverTableViewCell, animated: true, completion: nil)
-        
-        popoverTableViewCell.callBack = {[weak self] (type) in
-            if type == .bookmark {
-                self?.saveBookmark(news : news)
+
+        homeModel.isBookmarkUser(withNews: news, callbackIsBookmark: { [weak self] (isBookmark) in
+            guard let self = self, let popoverTableViewCell = self.popoverTableViewCell else{ return
             }
-            else {
-                self?.shareNews(news: news)
+            
+            popoverTableViewCell.type = isBookmark ? .popoverRemoveBookmark : .popoverBookmark
+            
+            self.present(popoverTableViewCell, animated: true, completion: nil)
+            popoverTableViewCell.callback = {[weak self] (type) in
+                switch (type){
+                case .bookmark :
+                    self?.saveBookmark(news : news)
+                case .removeBookmark :
+                    self?.removeBookmark(news: news)
+                case .share :
+                    self?.shareNews(news: news)
+                default : break
+                }
             }
-        }
+        })
     }
     func saveBookmark(news : News) {
-        homeModel.saveBookmark(withNews: news, callBack: {})
+        homeModel.saveBookmark(withNews: news, callback: {})
     }
     func shareNews(news : News) {
         
+    }
+    func removeBookmark(news : News) {
+        homeModel.deleteBookmarkNews(withNews: news)
     }
 }
 

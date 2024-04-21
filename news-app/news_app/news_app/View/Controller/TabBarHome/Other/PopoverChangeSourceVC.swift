@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 class PopoverChangeSourceVC : UIViewController {
     
-    lazy var callBack : ((TypeClickPopover) -> ())? = nil
+    lazy var callback : ((TypeClickPopover) -> ())? = nil
     
     @IBOutlet weak var btnFirst: UIButton!
     @IBOutlet weak var btnSecond: UIButton!
@@ -24,12 +24,12 @@ class PopoverChangeSourceVC : UIViewController {
     
     @IBAction func touchFirst(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
-        callBack!(.vnExpress)
+        callback!(.vnExpress)
     }
     
     @IBAction func touchSecond(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
-        callBack!(.tuoiTre)
+        callback!(.tuoiTre)
     }
     
     func setUp(anchor : UIView, hiddenDirections : Bool) {
@@ -44,7 +44,7 @@ class PopoverChangeSourceVC : UIViewController {
         ppc?.sourceRect = hiddenDirections ? CGRect(x: 0, y: 80, width: 0, height: 0) : CGRect.null
     }
     func setUp(anchor : UIView) {
-        self.preferredContentSize = CGSize(width: 180, height: 90)
+        self.preferredContentSize = CGSize(width: 160, height: 90)
         self.modalPresentationStyle = .popover
         let ppc = self.popoverPresentationController
         ppc?.permittedArrowDirections = .up

@@ -10,7 +10,8 @@ import Foundation
 extension CDCategory {
     @nonobjc public class func getCDCategory(category : Category) throws -> CDCategory? {
         let a = CDCategory.fetchRequest()
-        a.predicate = NSPredicate(format: "%K == %@", #keyPath(CDCategory.idCate), category.idCate as CVarArg)
+        guard let idCate = category.idCate as? CVarArg else {return nil}
+        a.predicate = NSPredicate(format: "%K == %@", #keyPath(CDCategory.idCate), idCate)
         return try AppDelegate.context.fetch(a).first ?? nil
     }
     @nonobjc public class func getCDCategory(idCate : UUID) throws -> CDCategory? {

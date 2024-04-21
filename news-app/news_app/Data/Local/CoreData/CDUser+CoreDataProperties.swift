@@ -2,7 +2,7 @@
 //  CDUser+CoreDataProperties.swift
 //  news_app
 //
-//  Created by user on 4/11/24.
+//  Created by Manhcuong on 19/04/2024.
 //
 //
 
@@ -19,25 +19,8 @@ extension CDUser {
     @NSManaged public var email: String?
     @NSManaged public var idUser: String?
     @NSManaged public var listIndexCategory: Dictionary<String , Array<Int> >?
-    @NSManaged public var seenNews: NSSet?
     @NSManaged public var saveBookmark: NSSet?
-
-}
-
-// MARK: Generated accessors for seenNews
-extension CDUser {
-
-    @objc(addSeenNewsObject:)
-    @NSManaged public func addToSentNews(_ value: CDNews)
-
-    @objc(removeSeenNewsObject:)
-    @NSManaged public func removeFromSeenNews(_ value: CDNews)
-
-    @objc(addSeenNews:)
-    @NSManaged public func addToSeenNews(_ values: NSSet)
-
-    @objc(removeSeenNews:)
-    @NSManaged public func removeFromSeenNews(_ values: NSSet)
+    @NSManaged public var sentNews: NSSet?
 
 }
 
@@ -55,6 +38,23 @@ extension CDUser {
 
     @objc(removeSaveBookmark:)
     @NSManaged public func removeFromSaveBookmark(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for sentNews
+extension CDUser {
+
+    @objc(addSentNewsObject:)
+    @NSManaged public func addToSentNews(_ value: CDNews)
+
+    @objc(removeSentNewsObject:)
+    @NSManaged public func removeFromSentNews(_ value: CDNews)
+
+    @objc(addSentNews:)
+    @NSManaged public func addToSentNews(_ values: NSSet)
+
+    @objc(removeSentNews:)
+    @NSManaged public func removeFromSentNews(_ values: NSSet)
 
 }
 

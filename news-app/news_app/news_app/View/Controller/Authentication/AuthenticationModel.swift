@@ -34,17 +34,17 @@ class AuthenticationModel  : BaseModel {
         return checkErrorEmail(email: email) && checkErrorPassword(password: password)
     }
     
-    func signInEmail(email : String, password : String, callBack : @escaping ((Bool, String?) -> Void)) {
+    func signInEmail(email : String, password : String, callback : @escaping ((Bool, String?) -> Void)) {
         self.delegate?.startLoading()
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] (authResult, error) in
             if let error = error {
-                callBack(false, FirebaseErrorCode.error(withError: error) )
+                callback(false, FirebaseErrorCode.error(withError: error) )
                 return
             }
             let user : User? = self?.userRepository.getUserDetail(idUser: (authResult?.user.uid)!)
             if let user = user {
                 UserDefaults.setUser(user: user)
-                callBack(true, nil)
+                callback(true, nil)
                 self?.delegate?.cancelLoading()
             }
             else {
@@ -54,7 +54,7 @@ class AuthenticationModel  : BaseModel {
                 user.listIndexCategory = UserDefaults.standard.setIndexCategoryDefault()
                 let userInsert : User? = self?.userRepository.insertUser(user: user)
                 UserDefaults.setUser(user: userInsert!)
-                callBack(true, nil)
+                callback(true, nil)
                 self?.delegate?.cancelLoading()
             }
         }
@@ -67,11 +67,11 @@ class AuthenticationModel  : BaseModel {
     //        })
     //    }
     
-    func signUpEmail(email : String, password : String, callBack : @escaping ((Bool, String?) -> Void)) {
+    func signUpEmail(email : String, password : String, callback : @escaping ((Bool, String?) -> Void)) {
         self.delegate?.startLoading()
         Auth.auth().createUser(withEmail: email, password: password, completion: { [weak self](authDataResult,error) in
             if let error = error  {
-                callBack(false, FirebaseErrorCode.error(withError: error))
+                callback(false, FirebaseErrorCode.error(withError: error))
                 return
             }
             var user = User()
@@ -80,7 +80,7 @@ class AuthenticationModel  : BaseModel {
             user.listIndexCategory = UserDefaults.standard.setIndexCategoryDefault()
             let userInsert : User? = self?.userRepository.insertUser(user: user)
             UserDefaults.setUser(user: userInsert!)
-            callBack(true, nil)
+            callback(true, nil)
             self?.delegate?.cancelLoading()
         })
     }

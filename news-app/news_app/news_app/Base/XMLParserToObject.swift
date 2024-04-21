@@ -34,7 +34,8 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
     func callFromByUrl(category : Category, result : ([News])  -> ()) {
         self.category = category
         arrNews = []
-        let parser = XMLParser(contentsOf: URL(string: category.url)!)
+        guard let stringURL = category.url, let url = URL(string: stringURL) else {return}
+        let parser = XMLParser(contentsOf: url)
         parser?.delegate = self
         parser?.parse()
         result(arrNews)
@@ -42,7 +43,8 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
     func callFromByUrl(category : Category) -> [News] {
         self.category = category
         arrNews = []
-        let parser = XMLParser(contentsOf: URL(string: category.url)!)
+        guard let stringURL = category.url, let url = URL(string: stringURL) else {return []}
+        let parser = XMLParser(contentsOf: url)
         parser?.delegate = self
         parser?.parse()
         return arrNews

@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7F26F7A7-4A0E-4A0D-B6D5-05E70E1C25A4"
+            uuid = "38DD22CE-90B3-484F-AC1E-C2BCEC03381A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "news_app/View/Controller/TabBarHome/Home/HomeCollectionView.swift"
+            filePath = "Data/Repository/RepostitoryImp/NewsRepositoryImp.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "collectionView(_:performDropWith:)"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "insertNewsToBookmark(withNews:withUserLogin:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

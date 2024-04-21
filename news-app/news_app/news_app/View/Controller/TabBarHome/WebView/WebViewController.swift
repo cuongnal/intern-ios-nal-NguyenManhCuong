@@ -27,7 +27,7 @@ class WebViewController : BaseViewController, WKNavigationDelegate {
         navigationController?.isNavigationBarHidden = false
         guard let item = newsItem, let url = URL(string: item.link) else {return}
         
-        webModel.isBookmarkUser(withNews: item, callBack: { [weak self](isCheck) in
+        webModel.isBookmarkUser(withNews: item, callback: { [weak self](isCheck) in
             self?.setUpBarButton(isCheckBookmarked: isCheck)
         })
         self.webKitView.load (URLRequest(url: url, cachePolicy: .reloadRevalidatingCacheData, timeoutInterval: 5.0))

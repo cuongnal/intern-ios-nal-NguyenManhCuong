@@ -8,12 +8,12 @@
 import Foundation
 //import Kingfisher
 class HomeModel : BaseModel {
-    var newsRepository : NewsRepository! = NewsRepositoryImp()
+    var newsRepository : NewsRepository = NewsRepositoryImp()
     var arrNews : [News] = []
     var categoryRepository = CategoryRepositoryImp()
+    var userRepository : UsersRepository = UsersRepositoryImp()
     
-    
-    func fetchDataNews(category : Category, callBack : @escaping (([News]) -> Void)) {
+    func fetchDataNews(category : Category, callback : @escaping (([News]) -> Void)) {
         excuteNetwork(
             task: { [weak self] in
                 let arr =  self?.newsRepository.getNewsOfCategory(category: category)
@@ -22,35 +22,58 @@ class HomeModel : BaseModel {
             },
             complete: { [weak self] _ in
                 guard let arr = self?.arrNews else {return}
-                callBack(arr)
+                callback(arr)
             }
         )
     }
-    func getCategoryByUser(typeClick : TypeClickPopover, callBack : @escaping (([Category]) -> Void) ) {
+    func getCategoryByUser(typeClick : TypeClickPopover, callback : @escaping (([Category]) -> Void) ) {
         let type = typeClick == .tuoiTre ? TypeSource.tuoiTre : TypeSource.vnExpress
         excuteTask(
             task: {[weak self] in
-                return self!.categoryRepository.getCategoriesByTypeSource(withTypeSource: type, withUser: UserDefaults.getUser()!)
+                return self?.categoryRepository.getCategoriesByTypeSource(withTypeSource: type, withUser: UserDefaults.getUser()!)
             },
             complete: { (arrCategory) in
-                callBack(arrCategory!)
+                if let arrCategory = arrCategory {
+                    callback(arrCategory)
+                }
             })
     }
     
-    func saveBookmark(withNews news : News, callBack : @escaping (() -> Void) ) {
+    func saveBookmark(withNews news : News, callback : @escaping (() -> Void) ) {
         excuteTask(task: { [weak self] in
             self?.newsRepository.insertNewsToBookmark(withNews: news, withUserLogin: UserDefaults.getUser()!)
         }, complete: {_ in
-            callBack()
+            callback()
         })
     }
     
     func updateIndexCategoryOfUser(categories : [Category]) {
-//        excuteTask(task: {
-//
-//        }, complete: {
-//
-//        })
+        excuteTask(task: { [weak self] in
+            let dicIndex = self?.userRepository.updateIndexCategories(withCategories: categories, user: UserDefaults.getUser()!)
+            let user = UserDefaults.getUser()
+            guard let dicIndex = dicIndex, var user = user else {return}
+            user.listIndexCategory = dicIndex
+            UserDefaults.setUser(user: user)
+        }, complete: { _ in})
+    }
+    
+    func isBookmarkUser(withNews news : News, callbackIsBookmark : @escaping (Bool) -> ()) {
+        excuteTask(task: { [weak self] in
+            self?.newsRepository.isBookmarkUser(news: news, withUserLogin: UserDefaults.getUser()!)
+        }, complete: { (isBookmark) in
+            guard let isBookmark = isBookmark else {
+                callbackIsBookmark(false)
+                return
+            }
+            callbackIsBookmark(isBookmark)
+        }
+        )
+    }
+    func deleteBookmarkNews (withNews news : News) {
+        excuteTask(task: { [weak self] in
+            self?.newsRepository.deleteBookmarkItem(withNews: news, withUserLogin: UserDefaults.getUser()! )
+            return self?.newsRepository.getBookmarkOfCategory(withUserLogin: UserDefaults.getUser()!, category: Category(idCate: news.idCate))
+        }, complete: { _ in})
     }
     
 }

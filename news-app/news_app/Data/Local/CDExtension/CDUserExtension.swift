@@ -22,4 +22,11 @@ extension CDUser {
         try AppDelegate.context.save()
         return u
     }
+    @nonobjc public class func updateUser(withDictionaryIndex dicIndex : Dictionary<String , Array<Int> >, with user : User) throws {
+        let a = CDUser.fetchRequest()
+        a.predicate = NSPredicate(format: "%K == %@",#keyPath(CDUser.idUser), user.idUser! )
+        try AppDelegate.context.fetch(a).first?.listIndexCategory = dicIndex
+        
+        try AppDelegate.context.save()
+    }
 }

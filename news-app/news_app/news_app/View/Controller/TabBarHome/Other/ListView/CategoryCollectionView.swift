@@ -11,7 +11,7 @@ import UIKit
 class CategoryCollectionView : UICollectionView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
     var oldSelectedItemAt : IndexPath = IndexPath(row: 0, section: 0)
     
-    var callBack : ((Category) -> ())?
+    var onTouchItemCallback : ((Category) -> ())?
     var data : [Category] = []
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -38,7 +38,7 @@ class CategoryCollectionView : UICollectionView, UICollectionViewDelegateFlowLay
         
         oldSelectedItemAt = indexPath
         
-        callBack!(data[indexPath.row])
+        onTouchItemCallback!(data[indexPath.row])
     }
     
 }

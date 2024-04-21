@@ -30,19 +30,23 @@ class BookmarkViewController : BaseViewController {
     }
     func setUpView() {
         // lần đầu tiên khi mở thì phải gọi
-        bookmarkModel.getCategoryAndNews(callBack: {[weak self](arrCategory) in
+        bookmarkModel.getCategoryAndNews(callback: {[weak self](arrCategory) in
             self?.bookmarkCollectionView.data = arrCategory
             self?.bookmarkCollectionView.reloadData()
-            guard arrCategory.count > 0 else {return}
-            self?.bookmarkModel.getBookmarkOfCategory(withCategory: arrCategory[0], callBack: {[weak self] (arrNews)in
+            guard arrCategory.count > 0 else {
+                self?.bookmarkTableView.data.removeAll()
+                self?.bookmarkTableView.reloadData()
+                return
+            }
+            self?.bookmarkModel.getBookmarkOfCategory(withCategory: arrCategory[0], callback: {[weak self] (arrNews)in
                 guard let arrNews = arrNews else {return}
                 self?.bookmarkTableView.data = arrNews
                 self?.bookmarkTableView.reloadData()
             })
         })
         // xử lý callBack khi người dùng bấm nút
-        bookmarkCollectionView.callBack = {[weak self] (item) in
-            self?.bookmarkModel.getBookmarkOfCategory(withCategory: item, callBack: { [weak self] (arrNews) in
+        bookmarkCollectionView.onTouchItemCallback = {[weak self] (item) in
+            self?.bookmarkModel.getBookmarkOfCategory(withCategory: item, callback: { [weak self] (arrNews) in
                 guard let arrNews = arrNews else {return}
                 self?.bookmarkTableView.data = arrNews
                 self?.bookmarkTableView.reloadData()
@@ -72,13 +76,15 @@ class BookmarkViewController : BaseViewController {
 
 extension BookmarkViewController {
     func showPopover(withNews news : News, withAnchor positionAnchor : UIView) {
-        
         popoverTableViewCell.setUp(anchor: positionAnchor)
         popoverTableViewCell.popoverPresentationController?.delegate = self
+        
+        popoverTableViewCell.type = .popoverRemoveBookmark
+        
         present(popoverTableViewCell, animated: true, completion: nil)
         
-        popoverTableViewCell.callBack = {[weak self] (type) in
-            if type == .bookmark {
+        popoverTableViewCell.callback = {[weak self] (type) in
+            if type == .removeBookmark {
                 self?.unBookmark(news : news)
             }
             else {
@@ -88,7 +94,7 @@ extension BookmarkViewController {
     }
     func unBookmark(news : News) {
         bookmarkModel.unBookmarkNews(withNews: news, callBack: { [weak self] (arr) in
-            if arr.count - 1  <= 0{
+            if arr.count == 0{
                 self?.setUpView()
             }
             self?.bookmarkTableView.data.removeAll(where: {$0.idNews == news.idNews})

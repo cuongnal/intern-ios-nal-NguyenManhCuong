@@ -32,7 +32,7 @@ class BaseViewController : UIViewController, BaseModelDelegate, UIPopoverPresent
     }
     func showAlertError (withTitle title : String = Constant.Error.LABLE_ERROR, error : String) {
         cancelLoading()
-        let alert : UIAlertController! = UIAlertController(title: title, message: error, preferredStyle: .alert)
+        let alert : UIAlertController = UIAlertController(title: title, message: error, preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Cancel", style: .cancel, handler: {[weak self] _ in
             self?.dismiss(animated: false)

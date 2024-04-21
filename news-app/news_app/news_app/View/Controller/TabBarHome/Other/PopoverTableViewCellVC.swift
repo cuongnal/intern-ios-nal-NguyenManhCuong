@@ -9,26 +9,41 @@ import UIKit
 
 class PopoverTableViewCellVC: UIViewController{
     
-    lazy var callBack : ((TypeClickPopover) -> ())? = nil
+    @IBOutlet weak var iconBookmark: UIImageView!
+    lazy var callback : ((TypeClickPopover) -> ())? = nil
     @IBOutlet weak var btnFirst: UIButton!
     @IBOutlet weak var btnSecond: UIButton!
+    var type : TypePopoverBookmark?
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        setTitle()
+        super.viewWillAppear(animated)
+    }
+    private func setTitle() {
+        guard let type = type else {return}
         btnFirst.setTitle(Constant.SHARE, for: .normal)
-        btnSecond.setTitle(Constant.BOOKMARK,for: .normal)
-        
-        btnFirst.setImage(UIImage(named: "ic_share"), for: .normal)
-        btnSecond.setImage(UIImage(named: "ic_bookmark"), for: .normal)
+        if type == .popoverBookmark {
+            btnSecond.setTitle(TypePopoverBookmark.popoverBookmark.rawValue,for: .normal)
+            iconBookmark.image = UIImage(named: "ic_bookmark")
+        }
+        else {
+            btnSecond.setTitle(TypePopoverBookmark.popoverRemoveBookmark.rawValue,for: .normal)
+            iconBookmark.image = UIImage(named: "ic_bookmarked")
+        }
     }
     // first là share
     @IBAction func touchFirst(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
-        callBack!(.share)
+        callback?(.share)
     }
     //second là bookmark
     @IBAction func touchSecond(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
-        callBack!(.bookmark)
+        guard let type = type else {return}
+        type == .popoverBookmark ? callback?(.bookmark) : callback?(.removeBookmark)
+        dismiss(animated: true)
     }
     func setUp(anchor : UIView) {
         self.preferredContentSize = CGSize(width: 180, height: 90)
@@ -45,5 +60,9 @@ public enum TypeClickPopover : String{
     case tuoiTre
     case share
     case bookmark
-    case unBookmark
+    case removeBookmark
+}
+public enum TypePopoverBookmark : String {
+    case popoverRemoveBookmark = "Remove Bookmark"
+    case popoverBookmark = "Bookmark"
 }

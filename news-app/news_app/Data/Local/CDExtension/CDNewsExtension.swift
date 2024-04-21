@@ -65,7 +65,7 @@ extension CDNews {
         let cdUser = try CDUser.fetchUserById(idUser: user.idUser!)
         let a = CDNews.fetchRequest()
         if let cdUser = cdUser {
-            a.predicate = NSPredicate(format: "ANY seenNews == %@", cdUser)
+            a.predicate = NSPredicate(format: "ANY sentNews == %@", cdUser)
             return try AppDelegate.context.fetch(a)
         }
         return []

@@ -11,7 +11,6 @@ class DataMapper {
     
     class func MapCDCategoryToEntity(withTypeSource type: TypeSource, withUser user: User, cdCategory : [CDCategory]) -> [Category] {
         var arr : [Category] = []
-        
         for i in stride(from: 0, to: user.listIndexCategory![type.rawValue]!.count, by:1) {
             let indexCategory : Int = user.listIndexCategory![type.rawValue]![i]
             var item : Category = Category()

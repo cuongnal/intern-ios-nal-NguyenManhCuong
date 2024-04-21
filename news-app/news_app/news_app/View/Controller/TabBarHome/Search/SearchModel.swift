@@ -13,11 +13,11 @@ class SearchModel  : BaseModel{
         self.newsRepository = newsRepository
     }
     
-    func getAllNews(callBack : @escaping ([News]) -> Void) {
+    func getAllNews(callback : @escaping ([News]) -> Void) {
         excuteTask(blockUI: true, task: { [weak self] in
             self?.newsRepository.getNewsSentWithUser(withUserLogin: UserDefaults.getUser()!)
         }, complete: {(arrNews) in
-            callBack(arrNews!)
+            callback(arrNews!)
         })
     }
     

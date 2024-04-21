@@ -43,7 +43,7 @@ class SignUpSignInViewController: BaseViewController {
         let tabBar = storyboard?.instantiateViewController(withIdentifier: "TabBarHome") as! TabBarController
         
         if flagCheckSignInSignUp == .signIn {
-            authenModel.signInEmail(email: inputEmail.text!, password: inputPassword.text!, callBack: { [weak self](complete, error)  in
+            authenModel.signInEmail(email: inputEmail.text!, password: inputPassword.text!, callback: { [weak self](complete, error)  in
                 guard complete else {
                     self?.showAlertError(error: error!)
                     return
@@ -52,7 +52,7 @@ class SignUpSignInViewController: BaseViewController {
             })
         }
         else {
-            authenModel.signUpEmail(email: inputEmail.text!, password: inputPassword.text!, callBack: { [weak self](complete, error)  in
+            authenModel.signUpEmail(email: inputEmail.text!, password: inputPassword.text!, callback: { [weak self](complete, error)  in
                 guard complete else {
                     self?.showAlertError(error: error!)
                     return

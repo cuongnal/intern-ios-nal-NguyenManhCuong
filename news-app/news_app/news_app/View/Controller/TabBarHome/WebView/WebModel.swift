@@ -26,16 +26,16 @@ class WebModel : BaseModel {
         })
         
     }
-    func isBookmarkUser(withNews news : News, callBack : @escaping (Bool) -> ()) {
+    func isBookmarkUser(withNews news : News, callback : @escaping (Bool) -> ()) {
         excuteTask(task: { [weak self] in
             self?.newsRepository.isBookmarkUser(news: news, withUserLogin: UserDefaults.getUser()!)
         }, complete: { [weak self](isBookmark) in
             guard let isBookmark = isBookmark else {
-                callBack(false)
+                callback(false)
                 return
             }
             self?.isCheckBookmarked = isBookmark
-            callBack(isBookmark)
+            callback(isBookmark)
         }
         )
     }

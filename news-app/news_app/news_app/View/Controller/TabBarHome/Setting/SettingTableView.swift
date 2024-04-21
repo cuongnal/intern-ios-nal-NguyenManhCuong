@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 class SettingTableView : UITableView, UITableViewDataSource, UITableViewDelegate {
     var data : [(text: String, image: String, type: TypeItemSelected)] = []
-    var callBack : ((TypeItemSelected) -> ())? = nil
+    var callback : ((TypeItemSelected) -> ())? = nil
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
@@ -30,7 +30,7 @@ class SettingTableView : UITableView, UITableViewDataSource, UITableViewDelegate
         return item
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        callBack!(data[indexPath.row].type)
+        callback!(data[indexPath.row].type)
         self.deselectRow(at: indexPath, animated: false)
     }
     // enum này dùng để check loại item được click là loại nào, sẽ mở ra màn hình tương ứng loại đó

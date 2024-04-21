@@ -20,7 +20,7 @@ class AccountViewController : UIViewController {
     }
     
     func onTouchCell() {
-        accountTableView.callBack = {[weak self](typeItemClick) in
+        accountTableView.callback = {[weak self](typeItemClick) in
             if typeItemClick == .changePassword {
                 self?.changePassword()
             }

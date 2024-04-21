@@ -39,5 +39,27 @@ class UsersRepositoryImp : UsersRepository {
             return nil
         }
     }
+    func updateIndexCategories (withCategories arrCategory : [Category], user : User) -> Dictionary<String , Array<Int> >?{
+        do {
+            var dictionaryIndex = user.listIndexCategory
+            var arr :[Int] = []
+            
+            arrCategory.forEach({
+                guard let index = $0.index else {return}
+                arr.append(index)
+            })
+            guard let typeSource = arrCategory.first?.typeSource, var dictionaryIndex = dictionaryIndex
+            else { return  user.listIndexCategory }
+            
+            dictionaryIndex[typeSource] = arr
+            try CDUser.updateUser(withDictionaryIndex: dictionaryIndex, with: user)
+            
+            return dictionaryIndex
+        }
+        catch let err {
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
+            return user.listIndexCategory
+        }
+    }
     
 }

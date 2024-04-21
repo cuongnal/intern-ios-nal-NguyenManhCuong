@@ -43,7 +43,7 @@ class SettingViewController : BaseViewController{
     }
     
     func onTouchCell() {
-        settingTableView.callBack = { [weak self] (typeItemClick) in
+        settingTableView.callback = { [weak self] (typeItemClick) in
             switch(typeItemClick) {
             case .account :
                 self?.openAccountViewController()

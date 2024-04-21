@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ImageCache  {
+class ImageFolder  {
     private class func getFolderImageNews() -> URL {
         let dirPaths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let path = dirPaths[0].appendingPathComponent("ImageNews")
@@ -45,8 +45,9 @@ class ImageCache  {
             return try UIImage(data: Data(contentsOf: path))
         }
         catch let err {
-            print("Function:   \(#function)   line: \(#line)   error: \(err)")
+          //  print("Function:   \(#function)   line: \(#line)   error: \(err)")
             return nil
         }
     }
+    
 }

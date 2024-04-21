@@ -15,18 +15,18 @@ class SearchViewController : BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchTableView.register(UINib(nibName: Constant.NEWS_TABLE_VIEW_CELL, bundle: .main), forCellReuseIdentifier: Constant.NEWS_TABLE_VIEW_CELL)
-        handlerCallBack()
+        handlerCallback()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
         setLeftTitle()
-        searchModel.getAllNews(callBack: {[weak self ] arrNews in
+        searchModel.getAllNews(callback: {[weak self ] arrNews in
             self?.searchTableView.data = arrNews
             self?.searchTableView.reloadData()
         })
     }
-    private func handlerCallBack() {
+    private func handlerCallback() {
         searchTableView.onTouchNewsCallback = { [weak self] (item) in
             self?.openWebKitView(item: item)
         }

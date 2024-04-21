@@ -19,7 +19,7 @@ class BookmarkModel : BaseModel {
         self.categoryRepository = categoryRepository
     }
     
-    func getCategoryAndNews(callBack : @escaping (([Category]) -> Void) ) {
+    func getCategoryAndNews(callback : @escaping (([Category]) -> Void) ) {
         excuteTask(task: { [weak self] in
             let arrNews = self?.newsRepository.getBookmarkOfUser(withUserLogin: UserDefaults.getUser()!)
             let arrUUID = self?.filterCategory(arrNews: arrNews)
@@ -27,14 +27,14 @@ class BookmarkModel : BaseModel {
             let arrCate = self?.categoryRepository.getCategoryWithUUID(withUUIDs: arrUUID)
             self?.arrCategory = arrCate ?? []
         }, complete: { [self] _ in
-            callBack(arrCategory)
+            callback(arrCategory)
         })
     }
-    func getBookmarkOfCategory(withCategory cate: Category, callBack : @escaping (([News]?) -> Void)) {
+    func getBookmarkOfCategory(withCategory cate: Category, callback : @escaping (([News]?) -> Void)) {
         excuteTask(task: { [weak self] in
             self?.newsRepository.getBookmarkOfCategory(withUserLogin: UserDefaults.getUser()!, category: cate)
         }, complete: { (arrNewsOfCategory) in
-            callBack(arrNewsOfCategory)
+            callback(arrNewsOfCategory)
         })
     }
     private func filterCategory(arrNews : [News]?) -> [UUID] {

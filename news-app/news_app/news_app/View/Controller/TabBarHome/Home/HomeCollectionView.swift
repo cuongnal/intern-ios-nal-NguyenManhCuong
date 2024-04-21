@@ -9,6 +9,7 @@ import SwiftUI
 
 class HomeCollectionView : CategoryCollectionView, UICollectionViewDragDelegate, UICollectionViewDropDelegate {
     
+    var callbackDragDropItem : (([Category]) -> ())?
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.dragInteractionEnabled = true
@@ -18,7 +19,6 @@ class HomeCollectionView : CategoryCollectionView, UICollectionViewDragDelegate,
     override func reloadData() {
         super.reloadData()
         oldSelectedItemAt = IndexPath(item: 0, section: 0)
-        print("đã set về 0")
         self.layoutIfNeeded()
         if data.isEmpty {
             return
@@ -27,7 +27,7 @@ class HomeCollectionView : CategoryCollectionView, UICollectionViewDragDelegate,
         
         // khi bằng reload mà list khác không, chứng tỏ là mới mở app, hoặc đổi source báo, nên gọi callback luôn
         if data.count > 0 {
-            callBack?(data[0])
+            onTouchItemCallback?(data[0])
         }
     }
     
@@ -74,7 +74,8 @@ class HomeCollectionView : CategoryCollectionView, UICollectionViewDragDelegate,
         return d
     }
     func collectionView(_ collectionView: UICollectionView, dropSessionDidEnd session: UIDropSession) {
-       // super.reloadData()
+        super.reloadData()
+        callbackDragDropItem?(self.data)
     }
 
 }

@@ -36,7 +36,8 @@ class NewsTableViewCell : UITableViewCell {
         imageNews.image = nil
         imageDownload.setImage(news: item, callBackDataImage: {[weak self] (itemNews, img) in
             guard let img = img, itemNews.idNews == self?.news?.idNews  else {return}
-            img.prepareForDisplay { convertedImage in
+            
+            img.prepareForDisplay {[weak self] convertedImage in
                 DispatchQueue.main.async {
                     self?.imageNews.image = convertedImage
                 }

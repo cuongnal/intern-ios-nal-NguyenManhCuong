@@ -15,7 +15,7 @@ class ImageDownloader {
     
     func setImage(news : News, callBackDataImage : @escaping ((News,UIImage?) -> Void)) {
         queue.async { [self] in
-            if let data = ImageCache.getImage(idNews: news.idNews){
+            if let data = ImageFolder.getImage(idNews: news.idNews){
                 callBackDataImage(news, data)
                 return
             }
@@ -33,7 +33,7 @@ class ImageDownloader {
                 guard let uiImage = UIImage(data: data) else {return}
                 
                 callBackDataImage(news,uiImage)
-                ImageCache.insertImage(withDataImage: data, idNews: news.idNews)
+                ImageFolder.insertImage(withDataImage: data, idNews: news.idNews)
             }
             task.resume()
         }
