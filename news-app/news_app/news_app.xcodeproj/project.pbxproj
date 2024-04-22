@@ -11,6 +11,7 @@
 		5E6C339D2BCAFCAF009ADB8C /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C339C2BCAFCAF009ADB8C /* HomeNavigationController.swift */; };
 		5E8DE24C2BD27904008966F6 /* PopoverChangeSource.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E8DE24B2BD27904008966F6 /* PopoverChangeSource.xib */; };
 		5E9BC7502BCD38D100473163 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9BC74F2BCD38D100473163 /* ImageDownloader.swift */; };
+		5ECBFE2C2BD61FB900462756 /* SearchBarHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECBFE2B2BD61FB900462756 /* SearchBarHome.swift */; };
 		5ECE8C412BD4C730001A32E9 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE8C402BD4C730001A32E9 /* ChangePasswordViewController.swift */; };
 		5EF172242BCF759C00B52384 /* ImageFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF172232BCF759C00B52384 /* ImageFolder.swift */; };
 		AD0914172BA8129900287227 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0914162BA8129900287227 /* Constant.swift */; };
@@ -119,6 +120,7 @@
 		5E6C339C2BCAFCAF009ADB8C /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		5E8DE24B2BD27904008966F6 /* PopoverChangeSource.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopoverChangeSource.xib; sourceTree = "<group>"; };
 		5E9BC74F2BCD38D100473163 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		5ECBFE2B2BD61FB900462756 /* SearchBarHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarHome.swift; sourceTree = "<group>"; };
 		5ECE8C402BD4C730001A32E9 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		5EF172232BCF759C00B52384 /* ImageFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFolder.swift; sourceTree = "<group>"; };
 		6701503E613DEACD71C45A02 /* Pods-news_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-news_app.debug.xcconfig"; path = "Target Support Files/Pods-news_app/Pods-news_app.debug.xcconfig"; sourceTree = "<group>"; };
@@ -469,6 +471,7 @@
 				ADE00FF42BAAE4210041DE42 /* HomeTableView.swift */,
 				ADA2C3F32BA9329B009E4F7C /* HomeViewController.swift */,
 				AD9B87422BBAC46D0052A68A /* HomeModel.swift */,
+				5ECBFE2B2BD61FB900462756 /* SearchBarHome.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -479,8 +482,8 @@
 				CE54AD002BC90FC40042AB73 /* ForgotPassword */,
 				AD8DBBDE2B9AE92A0070D7A7 /* SignUpSignInViewController.swift */,
 				AD8E537D2BB3D718000103DA /* AuthenticationModel.swift */,
-				ADA2F70F2BB2C0F7009CB25C /* Policy */,
 				5ECE8C402BD4C730001A32E9 /* ChangePasswordViewController.swift */,
+				ADA2F70F2BB2C0F7009CB25C /* Policy */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -929,6 +932,7 @@
 				ADA2F7132BB2C3E0009CB25C /* PolicyViewController.swift in Sources */,
 				CEC541F32BC795FF00D8691B /* SearchTableView.swift in Sources */,
 				CEC12A6B2BC7E70400A6CF21 /* BookmarkCollectionView.swift in Sources */,
+				5ECBFE2C2BD61FB900462756 /* SearchBarHome.swift in Sources */,
 				CE9A31AC2BC01F070035C298 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

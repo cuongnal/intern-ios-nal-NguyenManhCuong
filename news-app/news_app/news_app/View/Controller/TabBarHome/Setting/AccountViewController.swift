@@ -27,7 +27,10 @@ class AccountViewController : UIViewController {
         }
     }
     func changePassword() {
-        
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "ChangePassword") as? ChangePasswordViewController else {
+            return
+        }
+        navigationController?.pushViewController(vc, animated: true)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

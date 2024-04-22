@@ -11,6 +11,7 @@ import FirebaseAuth
 import FirebaseCore
 class HomeViewController : BaseViewController {
     
+    
     @IBOutlet weak var titleOfNews: UILabel!
     @IBOutlet weak var homeCollectionView : HomeCollectionView!
     @IBOutlet weak var homeTableView : HomeTableView!
@@ -18,7 +19,9 @@ class HomeViewController : BaseViewController {
     var popoverTableViewCell : PopoverTableViewCellVC!
     @IBOutlet weak var iconNotification: UIButton!
     
+    @IBOutlet weak var searchBarHome: SearchBarHome!
     let homeModel = HomeModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         homeTableView.register(UINib(nibName: Constant.NEWS_TABLE_VIEW_CELL, bundle: .main), forCellReuseIdentifier: Constant.NEWS_TABLE_VIEW_CELL)
@@ -49,12 +52,23 @@ class HomeViewController : BaseViewController {
     
     func handlerCallback() {
         homeCollectionView.onTouchItemCallback = {[weak self] category in
+            self?.homeTableView.category = category
             if URL(string: category.url) != nil {
                 self?.homeModel.fetchDataNews(category: category, callback: { (arrNews) in
                     self?.homeTableView.setUpHomeTableView(arrNews: arrNews)
                 })
             }
         }
+        
+        homeTableView.pullToRefreshCallback = { [weak self] category in
+            self?.homeModel.fetchDataNewsRemote(category: category, callback: { [weak self ](arrNews) in
+                self?.homeTableView.data.removeAll()
+                self?.homeTableView.data.append(contentsOf: arrNews)
+                self?.homeTableView.stopRefreshing()
+                self?.homeTableView.reloadData()
+            })
+        }
+        homeTableView.pullToRefresher()
         
         homeTableView.onTouchNewsCallback = {[weak self] item in
             self?.openWebKitView(item: item)
@@ -66,6 +80,35 @@ class HomeViewController : BaseViewController {
         
         homeCollectionView.callbackDragDropItem = { [weak self] (arrCategory) in
             self?.homeModel.updateIndexCategoryOfUser(categories: arrCategory)
+        }
+        handleScrollTableView()
+        handleSearchAction()
+    }
+    func handleSearchAction() {
+        searchBarHome.onTextDidChangeCallback = { textSearch in
+            self.homeModel.searchNewsWithCategory(withArrayText: textSearch, callBack: { [weak self] arrNews in
+                self?.homeTableView.data.removeAll()
+                self?.homeTableView.data.append(contentsOf: arrNews)
+                self?.homeTableView.reloadData()
+            })
+        }
+        searchBarHome.onTouchCancelCallback = {}
+    }
+    func handleScrollTableView() {
+        let x = self.searchBarHome.heightAnchor.constraint(equalToConstant: 45)
+        x.isActive = true
+        
+        homeTableView.scrollDownCallback = {
+            UIView.animate(withDuration: 0.25, delay: 0.1, options: .curveEaseInOut, animations: {
+                x.constant = 45
+                x.isActive = true
+            }, completion: nil)
+        }
+        homeTableView.scrollUpCallback = {
+            UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveEaseInOut, animations: {
+                x.constant = 0
+                x.isActive = true
+            }, completion: nil)
         }
     }
     
@@ -91,7 +134,7 @@ extension HomeViewController {
         
         popoverTableViewCell.setUp(anchor: positionAnchor)
         popoverTableViewCell.popoverPresentationController?.delegate = self
-
+        
         homeModel.isBookmarkUser(withNews: news, callbackIsBookmark: { [weak self] (isBookmark) in
             guard let self = self, let popoverTableViewCell = self.popoverTableViewCell else{ return
             }
@@ -101,13 +144,13 @@ extension HomeViewController {
             self.present(popoverTableViewCell, animated: true, completion: nil)
             popoverTableViewCell.callback = {[weak self] (type) in
                 switch (type){
-                case .bookmark :
-                    self?.saveBookmark(news : news)
-                case .removeBookmark :
-                    self?.removeBookmark(news: news)
-                case .share :
-                    self?.shareNews(news: news)
-                default : break
+                    case .bookmark :
+                        self?.saveBookmark(news : news)
+                    case .removeBookmark :
+                        self?.removeBookmark(news: news)
+                    case .share :
+                        self?.shareNews(news: news)
+                    default : break
                 }
             }
         })

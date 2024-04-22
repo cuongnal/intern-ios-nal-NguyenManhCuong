@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 
+private let insertNewsSemaphore = DispatchSemaphore(value: 1)
 extension CDNews {
     @nonobjc public class func getCDNewsByCategory(idCate : UUID) throws -> [CDNews]  {
         let a = CDNews.fetchRequest()
@@ -20,6 +21,11 @@ extension CDNews {
         return try AppDelegate.context.fetch(a).first
     }
     @nonobjc public class func insertNews(listNews : [News], category : Category? = nil) throws -> Bool {
+        insertNewsSemaphore.wait()
+        defer {
+            insertNewsSemaphore.signal()
+        }
+ 
         for item in listNews {
             let cdN = CDNews(context: AppDelegate.context)
             let cate = try CDCategory.getCDCategory(idCate: item.idCate)
@@ -35,6 +41,7 @@ extension CDNews {
         }
         try AppDelegate.context.save()
         return true
+        
     }
     @nonobjc public class func getAll() throws -> [CDNews] {
         let a = CDNews.fetchRequest()
@@ -60,7 +67,7 @@ extension CDNews {
         try AppDelegate.context.save()
         return true
     }
-
+    
     @nonobjc public class func getSentWithUser(withUser user : User) throws -> [CDNews] {
         let cdUser = try CDUser.fetchUserById(idUser: user.idUser!)
         let a = CDNews.fetchRequest()
@@ -90,6 +97,7 @@ extension CDNews {
         }
         return []
     }
+    
     @nonobjc public class func isBookmarkUser (withNews news : News, withUser user : User) throws -> Bool {
         let cdUser = try CDUser.fetchUserById(idUser: user.idUser!)
         let a = CDNews.fetchRequest()
@@ -113,11 +121,29 @@ extension CDNews {
             guard let itemDelete = itemDelete else {
                 return
             }
-            AppDelegate.context.delete(itemDelete)
+            cdUser.removeFromSaveBookmark(itemDelete)
             try AppDelegate.context.save()
         }
-
-    } 
+        
+    }
+    @nonobjc public class func deleteNewsOfCategory(withCategory category : Category) throws{
+        let a = CDNews.fetchRequest()
+        a.predicate = NSPredicate(format: "%K == %@", #keyPath(CDNews.idCate), category.idCate! as CVarArg)
+        
+        var arrCDNews = try AppDelegate.context.fetch(a)
+        
+        let user = CDUser.fetchRequest()
+        
+        for itemCDNews in arrCDNews {
+            user.predicate = NSPredicate(format: "ANY saveBookmark == %@", itemCDNews)
+            var cdUser = try AppDelegate.context.fetch(user).first
+            if cdUser == nil {
+                AppDelegate.context.delete(itemCDNews)
+                try AppDelegate.context.save()
+            }
+        }
+        try AppDelegate.context.save()
+    }
     
     
 }

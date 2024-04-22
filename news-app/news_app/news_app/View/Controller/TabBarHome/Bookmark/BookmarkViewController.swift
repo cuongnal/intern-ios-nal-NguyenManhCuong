@@ -49,6 +49,7 @@ class BookmarkViewController : BaseViewController {
             self?.bookmarkModel.getBookmarkOfCategory(withCategory: item, callback: { [weak self] (arrNews) in
                 guard let arrNews = arrNews else {return}
                 self?.bookmarkTableView.data = arrNews
+                self?.bookmarkTableView.category = item
                 self?.bookmarkTableView.reloadData()
             })
         }

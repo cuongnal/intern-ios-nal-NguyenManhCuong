@@ -131,5 +131,13 @@ class NewsRepositoryImp : NewsRepository {
             print("Function:   \(#function)   line: \(#line)   error: \(err)")
         }
     }
+    func deleteNewsOfCategory(withCategory category : Category) {
+        do {
+            try CDNews.deleteNewsOfCategory(withCategory: category)
+        }
+        catch let err {
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
+        }
+    }
     
 }

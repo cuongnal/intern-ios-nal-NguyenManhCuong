@@ -9,12 +9,17 @@ import Foundation
 import UIKit
 class NewsTableView : UITableView, UITableViewDataSource, UITableViewDelegate {
     var data : [News] = []
+    var category : Category?
     var onTouchNewsCallback : ((News) -> ())!
     var openPopUp : ((News,UIView) -> ())!
+    
+    private var refresher : UIRefreshControl?
+    var pullToRefreshCallback : ((Category) -> Void )?
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.delegate = self
         self.dataSource = self
+        self.refresher = UIRefreshControl()
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
@@ -32,5 +37,20 @@ class NewsTableView : UITableView, UITableViewDataSource, UITableViewDelegate {
         onTouchNewsCallback(data[indexPath.item])
         self.deselectRow(at: indexPath, animated: false)
     }
+    func pullToRefresher() {
+        guard let refresher = refresher else{ return }
+        self.alwaysBounceVertical = true
+        refresher.tintColor = UIColor.red
+        refresher.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        addSubview(refresher)
+    }
+    @objc func loadData() {
+        guard let category = category else {return}
+        self.refresher?.beginRefreshing()
+        pullToRefreshCallback?(category)
+    }
     
+    func stopRefreshing() {
+        self.refresher?.endRefreshing()
+    }
 }

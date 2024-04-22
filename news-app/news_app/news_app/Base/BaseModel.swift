@@ -16,7 +16,7 @@ class BaseModel  {
     
     func excuteTask<T>(blockUI : Bool = false,
                        task : @escaping (()-> T?),
-                       complete : @escaping ((T?) -> Void)
+                       complete : ((T?) -> Void)?
     ) {
         if blockUI == true {
             DispatchQueue.main.async {
@@ -27,7 +27,7 @@ class BaseModel  {
             let result = task()
             DispatchQueue.main.async {
                 self.delegate?.cancelLoading()
-                complete(result)
+                complete?(result)
             }
         }
     }

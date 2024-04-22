@@ -106,7 +106,6 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
     }
     
     func parserDidEndDocument(_ parser: XMLParser) {
-        print("Đã xong -----------------------")
         formatDateAndImage()
     }
     
