@@ -104,11 +104,16 @@ class HomeViewController : BaseViewController {
                 x.isActive = true
             }, completion: nil)
         }
-        homeTableView.scrollUpCallback = {
+        homeTableView.scrollUpCallback = {[weak self] in
+            guard let isCheck = self?.searchBarHome?.textSearching.isEmpty else {
+                return
+            }
+            if isCheck {
             UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveEaseInOut, animations: {
                 x.constant = 0
                 x.isActive = true
             }, completion: nil)
+        }
         }
     }
     

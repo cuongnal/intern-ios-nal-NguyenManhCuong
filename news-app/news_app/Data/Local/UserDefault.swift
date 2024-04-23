@@ -30,10 +30,10 @@ extension UserDefaults {
                 TypeSource.vnExpress.rawValue : [20,15,14,3,16,6,5,4,8,9,10,11,12,13,0,21,17,7,18,19,1,2] ]
     }
     
-    func getValue<T : Decodable> (_ type: T, forKey : String ) -> T? where T : Decodable {
+    func getValue<T : Decodable> (swiftClass type: T.Type, forKey : String ) -> T? where T : Decodable {
         if let data = self.data(forKey: forKey) {
             do {
-                let value = try JSONDecoder().decode(T.self, from: data)
+                let value = try JSONDecoder().decode(type, from: data)
                 return value
             }
             catch{

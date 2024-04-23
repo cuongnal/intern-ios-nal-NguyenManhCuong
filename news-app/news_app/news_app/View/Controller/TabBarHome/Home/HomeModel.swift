@@ -41,7 +41,7 @@ class HomeModel : BaseModel {
     private func updateDataNewsLocal(category : Category, arr : [News]) {
         excuteTask(task: { [weak self] in
             guard !arr.isEmpty else {return}
-         //   self?.newsRepository.deleteNewsOfCategory(withCategory:category)
+            self?.newsRepository.deleteNewsOfCategory(withCategory:category)
             _ = self?.newsRepository.insertNewsByCategory(arrNews: arr)
         }, complete: nil)
     }

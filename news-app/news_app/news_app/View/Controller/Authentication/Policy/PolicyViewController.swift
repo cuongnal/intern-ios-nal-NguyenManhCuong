@@ -44,11 +44,11 @@ class PolicyViewController : UIViewController {
             .foregroundColor : UIColor.black
         ]
         let strPolicyApp = NSMutableAttributedString()
-        let title_1 = NSAttributedString(string: Constant.TITLE_POLICY_1, attributes: titleFormat)
-        let title_2 = NSAttributedString(string: Constant.TITLE_POLICY_2, attributes: titleFormat)
-        let bodyPolicy_1 = NSAttributedString(string: Constant.POLICY_1, attributes: bodyFormat)
-        let bodyPolicy_2 = NSAttributedString(string: Constant.POLICY_2, attributes: bodyFormat)
-        let bodyPolicy_3 = NSAttributedString(string: Constant.POLICY_3, attributes: bodyFormat)
+        let title_1 = NSAttributedString(string: AppDefault.TITLE_POLICY_1, attributes: titleFormat)
+        let title_2 = NSAttributedString(string: AppDefault.TITLE_POLICY_2, attributes: titleFormat)
+        let bodyPolicy_1 = NSAttributedString(string: AppDefault.POLICY_1, attributes: bodyFormat)
+        let bodyPolicy_2 = NSAttributedString(string: AppDefault.POLICY_2, attributes: bodyFormat)
+        let bodyPolicy_3 = NSAttributedString(string: AppDefault.POLICY_3, attributes: bodyFormat)
         strPolicyApp.append(title_1)
         strPolicyApp.append(bodyPolicy_1)
         strPolicyApp.append(title_2)

@@ -35,7 +35,7 @@
                                             <constraint firstAttribute="height" constant="1" id="QCK-rO-tBI"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="Or Sign Up with" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIF-Af-iGi">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="Or Sign Up with" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIF-Af-iGi" propertyAccessControl="localizable">
                                         <rect key="frame" x="118.33333333333334" y="0.0" width="117.33333333333334" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
@@ -269,11 +269,12 @@
                         <outlet property="imageLogo" destination="qKv-C8-KvH" id="Ahb-4t-Got"/>
                         <outlet property="inputEmail" destination="R8D-Wx-wQv" id="E4k-RD-Gc5"/>
                         <outlet property="inputPassword" destination="kgy-r8-yx5" id="DLA-n8-upZ"/>
+                        <outlet property="labelDoNotHaveAcc" destination="DrJ-Zh-qDw" id="oIJ-hE-Yvs"/>
                         <outlet property="labelEmail" destination="oVo-Hu-xpD" id="Gkq-cd-xfO"/>
                         <outlet property="labelIncorrectEmail" destination="2Ij-dv-sF3" id="X1B-II-CEO"/>
                         <outlet property="labelIncorrectPassword" destination="Pkh-hR-OC8" id="n7T-WI-Mkl"/>
                         <outlet property="labelPassword" destination="LlV-Wd-ivP" id="1Ff-bD-Vcg"/>
-                        <outlet property="policyView" destination="ORA-vH-wXB" id="gFI-w0-Q4d"/>
+                        <outlet property="policyView" destination="ORA-vH-wXB" id="08l-gW-f6K"/>
                         <outlet property="registerView" destination="UOF-se-lsx" id="xe3-gO-Enb"/>
                     </connections>
                 </viewController>

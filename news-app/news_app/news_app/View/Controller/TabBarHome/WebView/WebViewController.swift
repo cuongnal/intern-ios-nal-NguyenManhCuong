@@ -45,7 +45,7 @@ class WebViewController : BaseViewController, WKNavigationDelegate {
         let btnBookmark = UIBarButtonItem(image: UIImage(named: isCheckBookmarked ? "ic_bookmarked" : "ic_bookmark"),
                                           style: .plain,
                                           target: self,
-                                          action: #selector(saveToBookmark))
+                                          action: #selector(onTouchBookmark))
         
         btnBookmark.setTitleTextAttributes([
             .font: UIFont.systemFont(ofSize: 17, weight: .bold),
@@ -61,14 +61,16 @@ class WebViewController : BaseViewController, WKNavigationDelegate {
     @objc private func sharingNewsToOther() {
         
     }
-    @objc private func saveToBookmark() {
+    @objc private func onTouchBookmark() {
         if !webModel.isCheckBookmarked {
             webModel.saveBookmark(withNews: newsItem!)
             setUpBarButton(isCheckBookmarked: true)
             showToast(text: Constant.SAVED_BOOKMARK)
         }
         else {
-           
+            webModel.unBookmark(withNews: newsItem!)
+            setUpBarButton(isCheckBookmarked: false)
+            showToast(text: Constant.DELETED_BOOKMARK)
         }
     }
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {

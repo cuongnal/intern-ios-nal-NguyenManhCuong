@@ -24,7 +24,7 @@ class SettingViewController : BaseViewController{
     func setUpLabel() {
         let btnLeftFirst = UIBarButtonItem()
         let label = UILabel()
-        label.text = Constant.SETTING
+        label.text = LanguageManager.setText(withKey: KeyText.SETTING)
         label.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         label.textColor = .black
@@ -45,14 +45,14 @@ class SettingViewController : BaseViewController{
     func onTouchCell() {
         settingTableView.callback = { [weak self] (typeItemClick) in
             switch(typeItemClick) {
-            case .account :
-                self?.openAccountViewController()
-            case .languages:
-                self?.changeLanguages()
-            case .logOut:
-                self?.logOut()
-            default:
-                return
+                case .account :
+                    self?.openAccountViewController()
+                case .languages:
+                    self?.changeLanguages()
+                case .logOut:
+                    self?.logOut()
+                default:
+                    return
             }
         }
         
@@ -61,7 +61,12 @@ class SettingViewController : BaseViewController{
         guard let p = storyboard?.instantiateViewController(withIdentifier: Constant.PICK_LANGUAGE_VIEW_CONTROLLER) as? PickLanguageViewController else { return  }
         p.modalPresentationStyle = .overFullScreen
         p.callBack = { (language) in
-            return
+            if language == .english {
+                LanguageManager.changeLanguage(withTypeLanguage: .english)
+            }
+            else {
+                LanguageManager.changeLanguage(withTypeLanguage: .vietnamese)
+            }
         }
         present(p, animated: true)
     }

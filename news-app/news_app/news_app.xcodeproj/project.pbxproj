@@ -10,6 +10,9 @@
 		544050A4B8741F87310CF21A /* Pods_news_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB8E695BE926F81C9A6D2F6 /* Pods_news_appTests.framework */; };
 		5E6C339D2BCAFCAF009ADB8C /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C339C2BCAFCAF009ADB8C /* HomeNavigationController.swift */; };
 		5E8DE24C2BD27904008966F6 /* PopoverChangeSource.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E8DE24B2BD27904008966F6 /* PopoverChangeSource.xib */; };
+		5E94B2302BD76A4E00C80A7B /* AppDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E94B22F2BD76A4E00C80A7B /* AppDefault.swift */; };
+		5E94B2332BD78E7200C80A7B /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E94B2322BD78E7200C80A7B /* LanguageManager.swift */; };
+		5E94B2352BD79EED00C80A7B /* KeyText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E94B2342BD79EED00C80A7B /* KeyText.swift */; };
 		5E9BC7502BCD38D100473163 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9BC74F2BCD38D100473163 /* ImageDownloader.swift */; };
 		5ECBFE2C2BD61FB900462756 /* SearchBarHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECBFE2B2BD61FB900462756 /* SearchBarHome.swift */; };
 		5ECE8C412BD4C730001A32E9 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE8C402BD4C730001A32E9 /* ChangePasswordViewController.swift */; };
@@ -119,6 +122,9 @@
 		56E073DA07F2045BFAA7D6AA /* Pods-news_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-news_app.release.xcconfig"; path = "Target Support Files/Pods-news_app/Pods-news_app.release.xcconfig"; sourceTree = "<group>"; };
 		5E6C339C2BCAFCAF009ADB8C /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		5E8DE24B2BD27904008966F6 /* PopoverChangeSource.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopoverChangeSource.xib; sourceTree = "<group>"; };
+		5E94B22F2BD76A4E00C80A7B /* AppDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefault.swift; sourceTree = "<group>"; };
+		5E94B2322BD78E7200C80A7B /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
+		5E94B2342BD79EED00C80A7B /* KeyText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyText.swift; sourceTree = "<group>"; };
 		5E9BC74F2BCD38D100473163 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		5ECBFE2B2BD61FB900462756 /* SearchBarHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarHome.swift; sourceTree = "<group>"; };
 		5ECE8C402BD4C730001A32E9 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
@@ -149,7 +155,6 @@
 		AD8E53822BB54E97000103DA /* SettingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableView.swift; sourceTree = "<group>"; };
 		AD8E53842BB54EA7000103DA /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		AD8E53862BB54EC0000103DA /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		AD8E53882BB5502C000103DA /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
 		AD8E53892BB5502C000103DA /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		AD8E538B2BB55177000103DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AD8E538D2BB55179000103DA /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -270,6 +275,17 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		5E94B2312BD78E1800C80A7B /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				AD8E538C2BB55177000103DA /* Localizable.strings */,
+				AD9B873E2BBA946C0052A68A /* PickLanguageViewController.swift */,
+				5E94B2322BD78E7200C80A7B /* LanguageManager.swift */,
+				5E94B2342BD79EED00C80A7B /* KeyText.swift */,
+			);
+			path = Language;
+			sourceTree = "<group>";
+		};
 		5E9BC74E2BCD37A700473163 /* Cache */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,12 +298,12 @@
 		AD0914152BA8128A00287227 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				AD8E538C2BB55177000103DA /* Localizable.strings */,
 				AD0914162BA8129900287227 /* Constant.swift */,
 				ADA5EC5F2BB10B7A00A26281 /* XMLParserToObject.swift */,
 				AD9B87402BBABD030052A68A /* BaseModel.swift */,
 				CEA2C1F62BC38FB900C4B2B3 /* BaseViewController.swift */,
 				CEA2C1F82BC3969800C4B2B3 /* LoadingViewController.swift */,
+				5E94B22F2BD76A4E00C80A7B /* AppDefault.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -381,12 +397,12 @@
 		AD8E53812BB529C0000103DA /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				5E94B2312BD78E1800C80A7B /* Language */,
 				AD8E53822BB54E97000103DA /* SettingTableView.swift */,
 				AD8E53842BB54EA7000103DA /* SettingTableViewCell.swift */,
 				AD8E53912BB576EA000103DA /* SettingTableViewCell.xib */,
 				AD8E538E2BB5743E000103DA /* AccountViewController.swift */,
 				AD8E53862BB54EC0000103DA /* SettingViewController.swift */,
-				AD9B873E2BBA946C0052A68A /* PickLanguageViewController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -888,6 +904,7 @@
 				CEC541E82BC788C800D8691B /* CDNews+CoreDataClass.swift in Sources */,
 				ADE00FEC2BAABD9C0041DE42 /* HomeCollectionView.swift in Sources */,
 				AD9B87432BBAC46D0052A68A /* HomeModel.swift in Sources */,
+				5E94B2302BD76A4E00C80A7B /* AppDefault.swift in Sources */,
 				ADD5E5EA2BB1987B00D296E5 /* ForgotPasswordViewController.swift in Sources */,
 				AD0914172BA8129900287227 /* Constant.swift in Sources */,
 				B2F8DE2D2BBEA6DC00A471EB /* NewsRepositoryImp.swift in Sources */,
@@ -901,8 +918,10 @@
 				CE1DADDC2BBFA8AF00F87A47 /* UsersRepository.swift in Sources */,
 				CEC12A6D2BC7E71C00A6CF21 /* BookmarkCollectionViewCell.swift in Sources */,
 				ADA0BAE62BB2A26F007B39A8 /* TabBarController.swift in Sources */,
+				5E94B2332BD78E7200C80A7B /* LanguageManager.swift in Sources */,
 				CEC541E72BC788C800D8691B /* CDCategory+CoreDataProperties.swift in Sources */,
 				CE1DAE332BBFE5CE00F87A47 /* CDUserExtension.swift in Sources */,
+				5E94B2352BD79EED00C80A7B /* KeyText.swift in Sources */,
 				CEC12A672BC7E4A900A6CF21 /* BookmarkTableView.swift in Sources */,
 				CEA2C1FF2BC3E14100C4B2B3 /* CDCategoryExtension.swift in Sources */,
 				ADE00FEA2BAAB9B50041DE42 /* HomeCollectionViewCell.swift in Sources */,
@@ -974,7 +993,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				AD8DBBE12B9AE92A0070D7A7 /* Base */,
-				AD8E53882BB5502C000103DA /* vi */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

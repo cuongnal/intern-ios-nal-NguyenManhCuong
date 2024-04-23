@@ -17,7 +17,7 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
     
     private var elementName : String = ""
     private var news : News? = nil
-    private var category : Category = Constant.CATEGORY_VN_EXPRESS[0]
+    private var category : Category = AppDefault.CATEGORY_VN_EXPRESS[0]
     
     private static var instance : XMLParserToObject? = nil
     private override init() {

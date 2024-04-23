@@ -53,12 +53,12 @@ class NewsRepositoryImp : NewsRepository {
     func getAllNewsFromServerSource (typeSource : TypeSource) -> [News] {
         var arrNews : [News] = []
         if typeSource == .vnExpress {
-            for item in Constant.CATEGORY_VN_EXPRESS {
+            for item in AppDefault.CATEGORY_VN_EXPRESS {
                 arrNews.append(contentsOf: parser.callFromByUrl(category: item))
             }
         }
         else {
-            for item in Constant.CATEGORY_TUOI_TRE {
+            for item in AppDefault.CATEGORY_TUOI_TRE {
                 arrNews.append(contentsOf: parser.callFromByUrl(category: item))
             }
         }
@@ -106,6 +106,7 @@ class NewsRepositoryImp : NewsRepository {
     }
     func getBookmarkOfCategory(withUserLogin user : User, category : Category) -> [News] {
         do {
+            
             let arrCDNews = try CDNews.getBookmarkWithUser(withUser: user, withCategory: category)
             return DataMapper.MapCDNewsToEntity(withArrayCDNews: arrCDNews)
         }

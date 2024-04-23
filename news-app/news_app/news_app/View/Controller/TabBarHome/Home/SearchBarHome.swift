@@ -12,6 +12,7 @@ class SearchBarHome : UISearchBar, UISearchBarDelegate {
     var onTouchCancelCallback : (() -> Void)?
     var onTextDidChangeCallback : (([String]) -> Void)?
     private var timer : Timer?
+    var textSearching =  ""
     required init?(coder : NSCoder) {
         super.init(coder: coder)
         self.delegate = self
@@ -20,6 +21,7 @@ class SearchBarHome : UISearchBar, UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         timer?.invalidate()
+        textSearching = searchText
         if searchText.isEmpty {
             onTextDidChangeCallback?([])
             return
@@ -31,6 +33,7 @@ class SearchBarHome : UISearchBar, UISearchBarDelegate {
         }
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        textSearching = ""
         onTouchCancelCallback?()
     }
 }

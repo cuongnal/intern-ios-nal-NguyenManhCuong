@@ -9,6 +9,7 @@ import Foundation
 import CoreData
 
 private let insertNewsSemaphore = DispatchSemaphore(value: 1)
+
 extension CDNews {
     @nonobjc public class func getCDNewsByCategory(idCate : UUID) throws -> [CDNews]  {
         let a = CDNews.fetchRequest()
@@ -21,25 +22,22 @@ extension CDNews {
         return try AppDelegate.context.fetch(a).first
     }
     @nonobjc public class func insertNews(listNews : [News], category : Category? = nil) throws -> Bool {
-        insertNewsSemaphore.wait()
-        defer {
-            insertNewsSemaphore.signal()
+         try AppDelegate.context.performAndWait {
+            for item in listNews {
+                let cdN = CDNews(context: AppDelegate.context)
+                let cate = try CDCategory.getCDCategory(idCate: item.idCate)
+                cdN.author = item.author
+                cdN.des = item.des
+                cdN.idNews = item.idNews
+                cdN.image = item.urlImage
+                cdN.link = item.link
+                cdN.pubDate = item.pubDate
+                cdN.title = item.title
+                cdN.idCate = item.idCate
+                cate?.addToCategoriesNews(cdN)
+            }
+            try AppDelegate.context.save()
         }
- 
-        for item in listNews {
-            let cdN = CDNews(context: AppDelegate.context)
-            let cate = try CDCategory.getCDCategory(idCate: item.idCate)
-            cdN.author = item.author
-            cdN.des = item.des
-            cdN.idNews = item.idNews
-            cdN.image = item.urlImage
-            cdN.link = item.link
-            cdN.pubDate = item.pubDate
-            cdN.title = item.title
-            cdN.idCate = item.idCate
-            cate?.addToCategoriesNews(cdN)
-        }
-        try AppDelegate.context.save()
         return true
         
     }
@@ -63,8 +61,10 @@ extension CDNews {
         guard let cdNews = cdNews else {
             return false
         }
-        cdUser?.addToSaveBookmark(cdNews)
-        try AppDelegate.context.save()
+        try AppDelegate.context.performAndWait {
+            cdUser?.addToSaveBookmark(cdNews)
+            try AppDelegate.context.save()
+        }
         return true
     }
     
@@ -127,22 +127,22 @@ extension CDNews {
         
     }
     @nonobjc public class func deleteNewsOfCategory(withCategory category : Category) throws{
-        let a = CDNews.fetchRequest()
-        a.predicate = NSPredicate(format: "%K == %@", #keyPath(CDNews.idCate), category.idCate! as CVarArg)
-        
-        var arrCDNews = try AppDelegate.context.fetch(a)
-        
-        let user = CDUser.fetchRequest()
-        
-        for itemCDNews in arrCDNews {
-            user.predicate = NSPredicate(format: "ANY saveBookmark == %@", itemCDNews)
-            var cdUser = try AppDelegate.context.fetch(user).first
-            if cdUser == nil {
-                AppDelegate.context.delete(itemCDNews)
-                try AppDelegate.context.save()
+        try AppDelegate.context.performAndWait {
+            let a = CDNews.fetchRequest()
+            a.predicate = NSPredicate(format: "%K == %@", #keyPath(CDNews.idCate), category.idCate! as CVarArg)
+            let arrCDNews = try AppDelegate.context.fetch(a)
+            
+            let user = CDUser.fetchRequest()
+            for itemCDNews in arrCDNews {
+                user.predicate = NSPredicate(format: "ANY saveBookmark == %@", itemCDNews)
+                let cdUser = try AppDelegate.context.fetch(user).first
+                if cdUser == nil {
+                    AppDelegate.context.delete(itemCDNews)
+                    try AppDelegate.context.save()
+                }
             }
+            try AppDelegate.context.save()
         }
-        try AppDelegate.context.save()
     }
     
     

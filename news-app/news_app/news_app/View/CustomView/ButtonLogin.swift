@@ -30,4 +30,6 @@ class ButtonLogin: UIButton {
     }
     
 }
-
+public protocol XIBLocalizable {
+    var localeKey: String? { get set }
+}

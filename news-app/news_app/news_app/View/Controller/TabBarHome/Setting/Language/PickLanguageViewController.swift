@@ -13,8 +13,8 @@ class PickLanguageViewController : UIViewController, UIPickerViewDelegate, UIPic
 
     @IBOutlet weak var viewParent: UIView!
     @IBOutlet weak var viewPickerLanguage: UIPickerView!
-    var data : [TypeLanguage] = [.vietNamese, .english]
-    var callBack : ((TypeLanguage) -> ())!
+    var data : [PickerLanguage] = [.vietNamese, .english]
+    var callBack : ((PickerLanguage) -> ())!
     override func viewDidLoad() {
         super.viewDidLoad()
         viewPickerLanguage.dataSource = self
@@ -48,7 +48,7 @@ class PickLanguageViewController : UIViewController, UIPickerViewDelegate, UIPic
     }
     
 }
-enum TypeLanguage : String{
+enum PickerLanguage : String{
     case vietNamese = "Tiếng Việt"
     case english = "English"
 }

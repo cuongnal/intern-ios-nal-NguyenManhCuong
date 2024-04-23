@@ -6,9 +6,9 @@
   
 */
 // title báo
-"Home" = "Home";
-"World" = "World";
-"News" = "News";
+"Home" = "Trang chủ";
+"World" = "Thế giới";
+"News" = "Báo Mới";
 "Business" = "Business";
 "Startup" = "Startup";
 "Entertainment" = "Entertainment";
@@ -46,3 +46,26 @@
 "Relax" = "Relax";
 "Readers as Reporter" = "Readers as Reporter";
 "Travel" = "Travel";
+
+"SEARCH"  = "Tìm kiếm";
+"SETTING" = "Cài đặt";
+"ACCOUNT" = "Tài khoản";
+"CATEGORIES" = "Quản lý danh mục";
+"CHANGE_PASSWORD" = "Thay đổi mật khẩu";
+"LOG_OUT" = "Đăng xuất";
+"CANCEL" = "Hủy";
+"LANGUAGES" = "Ngôn ngữ";
+"BOOKMARKED" = "Đã lưu";
+
+
+//authentication
+"NEWS_24" = "Báo mới 24h";
+"EMAIL" = "Email";
+"PASSWORD" = "Mật khẩu";
+"SIGN_UP" = "Đăng ký";
+"SIGN_IN" = "Đăng nhập";
+"FORGOT_PASSWORD" = "Quên mật khẩu";
+"POLICY" = "Điều khoản sử dụng";
+"TITLE_POLICY" = "Bằng cách đăng ký Báo Mới 24h, bạn chấp nhận";
+"DO_NOT_HAVE_ACCOUNT" = "Không có tài khoản";
+"REGISTER" = "Đăng ký";

@@ -38,10 +38,10 @@ class SettingTableView : UITableView, UITableViewDataSource, UITableViewDelegate
         case account, languages, categories, logOut, user, changePassword
     }
     
-    static let SETTING_TABLE_LIST_ITEM = [(text: "Account",image: "ic_person", type : TypeItemSelected.account),
-                                          (text: "Languages", image: "ic_question", type: .languages),
-                                          (text: "Categories management", image: "ic_question", type: .categories),
-                                          (text: "Log out", image: "ic_logout", type: .logOut)]
+    static let SETTING_TABLE_LIST_ITEM = [(text: LanguageManager.setText(withKey: KeyText.ACCOUNT),image: "ic_person", type : TypeItemSelected.account),
+                                          (text: LanguageManager.setText(withKey: KeyText.LANGUAGES), image: "ic_question", type: .languages),
+                                          (text: LanguageManager.setText(withKey: KeyText.CATEGORIES), image: "ic_question", type: .categories),
+                                          (text: LanguageManager.setText(withKey: KeyText.LOG_OUT), image: "ic_logout", type: .logOut)]
     
     static let ACCOUNT_TABLE_LIST_ITEM = [(text: UserDefaults.getUser()?.email ?? "",image: "ic_email", type: TypeItemSelected.user),
                                           (text: "Change password",image: "ic_lock", type: .changePassword)]

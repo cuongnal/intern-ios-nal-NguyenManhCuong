@@ -36,7 +36,7 @@ extension String {
 }
 extension UIViewController {
     func showToast(text : String) {
-        let toast = UITextView(frame: CGRect(x: self.view.frame.size.width/7, y: self.view.frame.size.height * 5 / 6, width: (self.view.frame.size.width/8)*6, height: 55))
+        let toast = UITextView(frame: CGRect(x: self.view.frame.size.width/7, y: self.view.frame.size.height * 5 / 6, width: (self.view.frame.size.width/8)*6, height: 45))
         toast.backgroundColor = UIColor.black
         toast.textColor = Constant.COLOR_WHITE
         toast.text = text
@@ -45,11 +45,11 @@ extension UIViewController {
         toast.font = UIFont.systemFont(ofSize: 16)
         toast.layer.cornerRadius = 25
         toast.clipsToBounds = true
-        toast.textContainerInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0);
+        toast.textContainerInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0);
         toast.updateConstraintsIfNeeded()
         self.view.addSubview(toast)
         toast.didMoveToSuperview()
-        UIView.animate(withDuration: 4, delay: 0.1, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 2.5, delay: 0.1, options: .curveEaseInOut, animations: {
             toast.alpha = 0
         }, completion: {_ in toast.removeFromSuperview()})
     }

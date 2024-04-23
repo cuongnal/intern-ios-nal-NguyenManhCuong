@@ -15,9 +15,13 @@ extension CDCategory {
         return try AppDelegate.context.fetch(a).first ?? nil
     }
     @nonobjc public class func getCDCategory(idCate : UUID) throws -> CDCategory? {
-        let a = CDCategory.fetchRequest()
-        a.predicate = NSPredicate(format: "%K == %@", #keyPath(CDCategory.idCate), idCate as CVarArg)
-        return try AppDelegate.context.fetch(a).first ?? nil
+        var category: CDCategory?
+        try AppDelegate.context.performAndWait {
+            let a = CDCategory.fetchRequest()
+            a.predicate = NSPredicate(format: "%K == %@", #keyPath(CDCategory.idCate), idCate as CVarArg)
+            category = try AppDelegate.context.fetch(a).first ?? nil
+        }
+        return category
     }
     @nonobjc public class func getCDCategoryWithTypeSource(withTypeSource type : TypeSource) throws -> [CDCategory] {
         let a = CDCategory.fetchRequest()

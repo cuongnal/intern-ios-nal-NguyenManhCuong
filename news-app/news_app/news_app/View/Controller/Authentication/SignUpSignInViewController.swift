@@ -12,7 +12,7 @@ class SignUpSignInViewController: BaseViewController {
     @IBOutlet weak var imageLogo: UIImageView!
     @IBOutlet weak var labelPassword: UILabel!
     @IBOutlet weak var labelEmail: UILabel!
-    @IBOutlet weak var policyView: UIView!
+    @IBOutlet weak var policyView: UILabel!
     @IBOutlet weak var btnPolicy : UIButton!
     @IBOutlet weak var inputPassword: CustomTextField!
     @IBOutlet weak var inputEmail: CustomTextField!
@@ -35,6 +35,8 @@ class SignUpSignInViewController: BaseViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
         hiddenView()
+        
+        setUpLanguage()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -110,7 +112,7 @@ class SignUpSignInViewController: BaseViewController {
             registerView.isHidden = true
             btnForgotPassword.alpha = 0
             btnSignInWithEmail.isHidden = false
-            btnSignUpAndSignIn.setTitle("Sign up", for: .normal)
+            btnSignUpAndSignIn.setTitle(LanguageManager.setText(withKey: KeyText.SIGN_UP), for: .normal)
         }
         else {
             btnSignInWithEmail.isHidden = true
@@ -119,9 +121,17 @@ class SignUpSignInViewController: BaseViewController {
             registerView.isHidden = false
             btnForgotPassword.alpha = 1
             btnSignInWithEmail.isHidden = true
-            btnSignUpAndSignIn.setTitle("Sign In", for: .normal)
+            btnSignUpAndSignIn.setTitle(LanguageManager.setText(withKey: KeyText.SIGN_IN), for: .normal)
         }
     }
+    func setUpLanguage() {
+        inputEmail.placeholder = LanguageManager.setText(withKey: KeyText.EMAIL)
+        inputPassword.placeholder = LanguageManager.setText(withKey: KeyText.PASSWORD)
+        btnPolicy.setTitle(LanguageManager.setText(withKey: KeyText.POLICY), for: .normal)
+        policyView.text = LanguageManager.setText(withKey: KeyText.TITLE_POLICY)
+        labelDoNotHaveAcc.text = LanguageManager.setText(withKey: KeyText.DO_NOT_HAVE_ACCOUNT)
+    }
+    @IBOutlet weak var labelDoNotHaveAcc: UILabel!
 }
 enum typeSignUpIn {
     case signIn, signUp

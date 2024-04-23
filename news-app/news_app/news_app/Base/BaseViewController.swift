@@ -13,7 +13,7 @@ class BaseViewController : UIViewController, BaseModelDelegate, UIPopoverPresent
     private lazy var popover = PopoverTableViewCellVC(nibName: "PopoverViewController", bundle: nil) as PopoverTableViewCellVC
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        Self.self
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     func openWebKitView(item : News) {

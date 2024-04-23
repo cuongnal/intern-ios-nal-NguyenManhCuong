@@ -50,4 +50,28 @@
 // string app
 "Incorrect password" = "Incorrect password";
 "Email error" = "Email error";
-"Terms & Conditions" = "Terms & Conditions";
+
+"SEARCH"  = "Search";
+"SETTING" = "Setting";
+"ACCOUNT" = "Account";
+"CATEGORIES" = "Categories management";
+"CHANGE_PASSWORD" = "Change Password";
+"LOG_OUT" = "Log out";
+"CANCEL" = "Cancel";
+"LANGUAGES" = "Languages";
+"BOOKMARKED" = "Bookmarked";
+
+
+//authentication
+"NEWS_24" = "News 24";
+"EMAIL" = "Email";
+"PASSWORD" = "Password";
+"SIGN_UP" = "Sign up";
+"SIGN_IN" = "Sign in";
+"FORGOT_PASSWORD" = "Forgot password";
+"POLICY" = "Terms & Conditions";
+"TITLE_POLICY" = "By signing up to News24 you are accepting our";
+"DO_NOT_HAVE_ACCOUNT" = "Don’t have an account?";
+"REGISTER" = "Register";
+
+

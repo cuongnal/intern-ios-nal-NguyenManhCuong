@@ -26,6 +26,13 @@ class WebModel : BaseModel {
         })
         
     }
+    func unBookmark (withNews news : News) {
+        excuteTask(task: { [weak self] in
+            self?.newsRepository.deleteBookmarkItem(withNews: news, withUserLogin: UserDefaults.getUser()!)
+        }, complete: { [weak self] _ in
+            self?.isCheckBookmarked = false
+        })
+    }
     func isBookmarkUser(withNews news : News, callback : @escaping (Bool) -> ()) {
         excuteTask(task: { [weak self] in
             self?.newsRepository.isBookmarkUser(news: news, withUserLogin: UserDefaults.getUser()!)
