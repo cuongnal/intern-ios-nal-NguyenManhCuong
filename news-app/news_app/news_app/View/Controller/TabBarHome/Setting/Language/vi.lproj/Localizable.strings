@@ -1,10 +1,10 @@
 /* 
-  Localizable.strings
-  news_app
-
-  Created by hiepnv1 on 27/03/2024.
-  
-*/
+ Localizable.strings
+ news_app
+ 
+ Created by hiepnv1 on 27/03/2024.
+ 
+ */
 // title báo
 "Home" = "Trang chủ";
 "World" = "Thế giới";
@@ -46,7 +46,13 @@
 "Relax" = "Relax";
 "Readers as Reporter" = "Readers as Reporter";
 "Travel" = "Travel";
+"PARAGRAP_1" = "Điều 1 \n \n";
+"PARAGRAP_2" = "Điều 2 \n \n";
+"PARAGRAP_1_DETAIL" = "Khách hàng rất quan trọng, khách hàng sẽ được khách hàng theo đuổi. Mattis bị đầu độc, sư tử diam. Nhưng đã đến lúc uống và uống nước sốt. Hãy để anh ta buồn bã trong cuộc sống ngoài feugiat. Phim hoạt hình chuột máy bay sân sau xe tải. Cũng không phải, quá trình bệnh tật của người nhân viên sẽ được sinh ra để ấn định thời đại đồ đồng. Bóng đá là một trò đùa. Và, cổ họng của ullamcorper pellentesque đôi khi khác rất nhiều. \n \n";
 
+"PARAGRAP_2_DETAIL" = "Nó luôn cần thiết trong cuộc sống nhưng phải đặt nền móng cho các cầu thủ. Anh, những người chơi đều có màu nâu đồng, để mai là sòng bài. Trên thực tế, cần có thời gian để nhân viên ghét xe tải. Orci mang thai và cổ họng và eu Phasellus elit, đất. Khối lượng lacinia nói trên trong tủ lạnh. Chúc may mắn và thúc đẩy hãng hàng không. Fringilla trước mặt hồ lên men, những điều thú vị cuối tuần, cũng không phải những chiếc xe tải. Ngày mai tôi sẽ bay về nước tôi. Không phải cuộc đời mà là kết quả của sự run rẩy nên là một chiếc gối buồn. Đó là lợi thế của vùng đất buồn ở Mauris scelerisque fringilla. Mauris quam euismod sit viverra a dictumst arcu sed laoreet. Anh ấy luôn muốn uống rượu trong sân. Bây giờ chúng ta hãy sống trong thế giới bóng đá. Euismod orci, để đạt được kết quả mong muốn \n \n";
+
+"PARAGRAP_3_DETAIL" = "Ornare quis arcu eget aliquet pretium. Viverra nulla fringilla eget nibh habitasse cras vestibulum amet. Dui luctus dictum leo vulputate tristique lacus. Facilisis facilisi ullamcorper et vitae. Diam molestie sit laoreet lacinia ultrices. Convallis et ipsum quis consectetur sed. Quisque libero lectus quam in leo tincidunt. Venenatis id sodales pellentesque aliquet nibh egestas suspendisse nibh. Hendrerit non mauris, magna malesuada venenatis, eu. Enim, sed metus porttitor amet tortor neque sed. \n \n";
 "SEARCH"  = "Tìm kiếm";
 "SETTING" = "Cài đặt";
 "ACCOUNT" = "Tài khoản";
@@ -67,5 +73,14 @@
 "FORGOT_PASSWORD" = "Quên mật khẩu";
 "POLICY" = "Điều khoản sử dụng";
 "TITLE_POLICY" = "Bằng cách đăng ký Báo Mới 24h, bạn chấp nhận";
-"DO_NOT_HAVE_ACCOUNT" = "Không có tài khoản";
+"DO_NOT_HAVE_ACCOUNT" = "Chưa có tài khoản ?";
 "REGISTER" = "Đăng ký";
+"OR_SIGN_UP_WITH" = "Hoặc đăng ký với ";
+
+"INCORRECT_PASSWORD" = "Mật khẩu không hợp lệ";
+"INCORRECT_EMAIL" = "Email không hợp lệ";
+"INPUT_EMAIL_TO_BE_SENT_RESET_PASSWORD" = "Nhập vào email của bạn để nhận liên kết thay đổi mật khẩu";
+"DID_NOT_RECEIVE_AN_EMAIL" = "Chưa nhận được email ?";
+"RE_SEND" = "Gửi lại";
+"RESET" = "Đặt lại";
+

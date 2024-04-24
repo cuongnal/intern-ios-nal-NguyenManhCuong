@@ -19,6 +19,7 @@ class HomeViewController : BaseViewController {
     var popoverTableViewCell : PopoverTableViewCellVC!
     @IBOutlet weak var iconNotification: UIButton!
     
+    @IBOutlet weak var searchBarHeight: NSLayoutConstraint!
     @IBOutlet weak var searchBarHome: SearchBarHome!
     let homeModel = HomeModel()
     
@@ -95,25 +96,25 @@ class HomeViewController : BaseViewController {
         searchBarHome.onTouchCancelCallback = {}
     }
     func handleScrollTableView() {
-        let x = self.searchBarHome.heightAnchor.constraint(equalToConstant: 45)
-        x.isActive = true
-        
-        homeTableView.scrollDownCallback = {
-            UIView.animate(withDuration: 0.25, delay: 0.1, options: .curveEaseInOut, animations: {
-                x.constant = 45
-                x.isActive = true
+        homeTableView.scrollDownCallback = { [weak self] in
+            UIView.animate(withDuration: 0.2, delay: 0.1, options: .curveEaseInOut, animations: {
+                self?.searchBarHeight.constant = 45
+                self?.view.setNeedsLayout()
+                self?.view.layoutIfNeeded()
             }, completion: nil)
         }
         homeTableView.scrollUpCallback = {[weak self] in
-            guard let isCheck = self?.searchBarHome?.textSearching.isEmpty else {
+            guard let self = self else {return}
+            guard let textIsEmpty = self.searchBarHome?.textSearching.isEmpty else {
                 return
             }
-            if isCheck {
-            UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveEaseInOut, animations: {
-                x.constant = 0
-                x.isActive = true
-            }, completion: nil)
-        }
+            if textIsEmpty {
+                UIView.animate(withDuration: 0.2) {
+                    self.searchBarHeight.constant = 0
+                    self.view.setNeedsLayout()
+                    self.view.layoutIfNeeded()
+                }
+            }
         }
     }
     

@@ -15,7 +15,7 @@ struct KeyText {
     static let LOG_OUT = "LOG_OUT"
     static let CANCEL = "CANCEL"
     static let LANGUAGES = "LANGUAGES"
-    
+    static let SEARCH = "SEARCH"
     
     //Authentication
     
@@ -30,4 +30,17 @@ struct KeyText {
     static let TITLE_POLICY = "TITLE_POLICY"
     static let DO_NOT_HAVE_ACCOUNT = "DO_NOT_HAVE_ACCOUNT"
     static let REGISTER = "REGISTER"
+    static let OR_SIGN_UP_WITH = "OR_SIGN_UP_WITH"
+    static let INCORRECT_PASSWORD = "INCORRECT_PASSWORD";
+    static let INCORRECT_EMAIL = "INCORRECT_EMAIL";
+    static let PARAGRAP_1 = "PARAGRAP_1"
+    static let PARAGRAP_2 = "PARAGRAP_2"
+    static let PARAGRAP_1_DETAIL = "PARAGRAP_1_DETAIL"
+    static let PARAGRAP_2_DETAIL = "PARAGRAP_2_DETAIL"
+    static let PARAGRAP_3_DETAIL = "PARAGRAP_3_DETAIL"
+    
+    static let INPUT_EMAIL_TO_BE_SENT_RESET_PASSWORD = "INPUT_EMAIL_TO_BE_SENT_RESET_PASSWORD"
+    static let DID_NOT_RECEIVE_AN_EMAIL = "DID_NOT_RECEIVE_AN_EMAIL"
+    static let RE_SEND = "RE_SEND"
+    static let RESET = "RESET"
 }

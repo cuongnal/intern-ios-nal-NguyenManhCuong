@@ -11,20 +11,25 @@ class LanguageManager  {
     class func changeLanguage(withTypeLanguage type : TypeLanguage = .vietnamese) {
         let path = Bundle.main.path(forResource: type.rawValue, ofType: "lproj")
         print(path)
-        guard let path = path else {return}
-        UserDefaults.standard.set(path, forKey: Constant.Key.KEY_LANGUAGE_APP)
+        guard path != nil else {return}
+        UserDefaults.standard.setValue(withAnyObject: type, key: Constant.Key.KEY_LANGUAGE_APP)
         UserDefaults.standard.synchronize()
     }
     class func setText(withKey key : String) -> String {
-        
-        guard let path = UserDefaults.standard.string(forKey: Constant.Key.KEY_LANGUAGE_APP),
+
+        guard let type = UserDefaults.standard.getValue(swiftClass: TypeLanguage.self, forKey: Constant.Key.KEY_LANGUAGE_APP),
+            let path = Bundle.main.path(forResource: type.rawValue, ofType: "lproj"),
         let bundle = Bundle(path: path) else {
+            print("Khong tao dc")
             return ""
         }
-        
-        return NSLocalizedString(key, bundle:bundle , comment: "")
+        Bundle.main.localization = "vi"
+        return NSLocalizedString(key , comment: "")
     }
-    enum TypeLanguage : String {
+    class func setDefaultLanguage() {
+        changeLanguage()
+    }
+    enum TypeLanguage : String, Codable {
         case vietnamese = "vi"
         case english = "en"
     }

@@ -19,6 +19,7 @@ class ForgotPasswordViewController : BaseViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_back"), style: .done, target: self, action: #selector(goBack))
+        setUpLanguage()
     }
     
     @objc private func goBack() {
@@ -37,5 +38,18 @@ class ForgotPasswordViewController : BaseViewController{
         }
         btnReset.setColorButton(flag: true)
     }
+    func setUpLanguage() {
+        btnReset.setTitle(LanguageManager.setText(withKey: KeyText.RESET), for: .normal)
+        titleLogo.text = LanguageManager.setText(withKey: KeyText.NEWS_24)
+        labelNoti.text = LanguageManager.setText(withKey: KeyText.INPUT_EMAIL_TO_BE_SENT_RESET_PASSWORD)
+        btnReSend.text = LanguageManager.setText(withKey: KeyText.RE_SEND)
+        titleResend.text = LanguageManager.setText(withKey: KeyText.DID_NOT_RECEIVE_AN_EMAIL)
+        
+    }
+    
+    @IBOutlet weak var btnReSend: UILabel!
+    @IBOutlet weak var titleResend: UILabel!
+    @IBOutlet weak var titleLogo: UILabel!
+    @IBOutlet weak var labelNoti: UILabel!
 }
 

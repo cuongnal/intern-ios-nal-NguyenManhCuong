@@ -155,7 +155,6 @@
 		AD8E53822BB54E97000103DA /* SettingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableView.swift; sourceTree = "<group>"; };
 		AD8E53842BB54EA7000103DA /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		AD8E53862BB54EC0000103DA /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		AD8E53892BB5502C000103DA /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		AD8E538B2BB55177000103DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AD8E538D2BB55179000103DA /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AD8E538E2BB5743E000103DA /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
@@ -1001,7 +1000,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				AD8DBBE62B9AE9300070D7A7 /* Base */,
-				AD8E53892BB5502C000103DA /* vi */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

@@ -44,5 +44,5 @@ class SettingTableView : UITableView, UITableViewDataSource, UITableViewDelegate
                                           (text: LanguageManager.setText(withKey: KeyText.LOG_OUT), image: "ic_logout", type: .logOut)]
     
     static let ACCOUNT_TABLE_LIST_ITEM = [(text: UserDefaults.getUser()?.email ?? "",image: "ic_email", type: TypeItemSelected.user),
-                                          (text: "Change password",image: "ic_lock", type: .changePassword)]
+                                          (text: LanguageManager.setText(withKey: KeyText.CHANGE_PASSWORD),image: "ic_lock", type: .changePassword)]
 }

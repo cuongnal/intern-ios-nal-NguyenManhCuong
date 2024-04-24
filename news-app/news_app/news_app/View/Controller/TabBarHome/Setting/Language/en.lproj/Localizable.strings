@@ -47,6 +47,14 @@
 "Readers as Reporter" = "Bạn đọc làm báo";
 "Travel" = "Du lịch";
 
+"PARAGRAP_1" = "Paragrap 1";
+"PARAGRAP_2" = "Paragrap 2";
+"PARAGRAP_1_DETAIL" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis quis venenatis, diam leo. Sed bibendum ac dui condimentum consequat tempus vel sit. Lectus sit tristique in nullam vitae sed feugiat. Aliquet diam elit mus viverra. Neque, molestie morbi cursus amet pellentesque aenean posuere nascetur. Eu risus id ultricies est. Ac, faucibus pellentesque ullamcorper amet diam varius interdum. \n \n";
+
+"PARAGRAP_2_DETAIL" = "Sit in vitae semper egestas sed posuere tellus nisl diam. Ipsum, nisl aenean fusce a, ut cras varius et. Enim egestas tempus velit molestie odio in aliquet. Orci gravida ac faucibus et eu phasellus elit, tellus. Dictum lacinia massa in amet elit. Felis magna et dis adipiscing porttitor sed. Fringilla ante lacus fermentum, ultricies volutpat neque, aliquet. Cras leo, porttitor tellus mi in. Nec volutpat in sed consequat pharetra tristique pulvinar sit. Id commodo tristique tellus in fringilla scelerisque mauris. Mauris quam euismod sit viverra a dictumst arcu sed laoreet. Volutpat bibendum amet diam semper. Nunc tellus eu auctor tellus vivamus a. Euismod orci, ut consequat consectetur praesent quis euismod id. \n \n";
+
+"PARAGRAP_3_DETAIL" = "Ornare quis arcu eget aliquet pretium. Viverra nulla fringilla eget nibh habitasse cras vestibulum amet. Dui luctus dictum leo vulputate tristique lacus. Facilisis facilisi ullamcorper et vitae. Diam molestie sit laoreet lacinia ultrices. Convallis et ipsum quis consectetur sed. Quisque libero lectus quam in leo tincidunt. Venenatis id sodales pellentesque aliquet nibh egestas suspendisse nibh. Hendrerit non mauris, magna malesuada venenatis, eu. Enim, sed metus porttitor amet tortor neque sed. \n \n";
+
 // string app
 "Incorrect password" = "Incorrect password";
 "Email error" = "Email error";
@@ -71,7 +79,16 @@
 "FORGOT_PASSWORD" = "Forgot password";
 "POLICY" = "Terms & Conditions";
 "TITLE_POLICY" = "By signing up to News24 you are accepting our";
-"DO_NOT_HAVE_ACCOUNT" = "Don’t have an account?";
+"DO_NOT_HAVE_ACCOUNT" = "Don’t have an account ?";
 "REGISTER" = "Register";
+"OR_SIGN_UP_WITH" = "Or Sign up with";
+
+"INCORRECT_PASSWORD" = "Incorrect password";
+"INCORRECT_EMAIL" = "Incorrect email";
+"INPUT_EMAIL_TO_BE_SENT_RESET_PASSWORD" = "Enter your email to be sent a reset password link.";
+"DID_NOT_RECEIVE_AN_EMAIL" = "Didn't receive an email ?";
+"RE_SEND" = "Re-Send";
+"RESET" = "Reset";
+
 
 

@@ -130,7 +130,19 @@ class SignUpSignInViewController: BaseViewController {
         btnPolicy.setTitle(LanguageManager.setText(withKey: KeyText.POLICY), for: .normal)
         policyView.text = LanguageManager.setText(withKey: KeyText.TITLE_POLICY)
         labelDoNotHaveAcc.text = LanguageManager.setText(withKey: KeyText.DO_NOT_HAVE_ACCOUNT)
+        btnRegister.setTitle(LanguageManager.setText(withKey: KeyText.REGISTER), for: .normal)
+        btnForgotPassword.setTitle(LanguageManager.setText(withKey: KeyText.FORGOT_PASSWORD), for: .normal)
+        labelOrSigUpWith.text = LanguageManager.setText(withKey: KeyText.OR_SIGN_UP_WITH)
+        labelLogo.text = LanguageManager.setText(withKey: KeyText.NEWS_24)
+        labelIncorrectEmail.text = LanguageManager.setText(withKey: KeyText.INCORRECT_EMAIL)
+        labelIncorrectPassword.text = LanguageManager.setText(withKey: KeyText.INCORRECT_PASSWORD)
+        
+        labelPassword.text = LanguageManager.setText(withKey: KeyText.PASSWORD)
     }
+    
+    @IBOutlet weak var labelLogo: UILabel!
+    @IBOutlet weak var labelOrSigUpWith: UILabel!
+    @IBOutlet weak var btnRegister: UIButton!
     @IBOutlet weak var labelDoNotHaveAcc: UILabel!
 }
 enum typeSignUpIn {
