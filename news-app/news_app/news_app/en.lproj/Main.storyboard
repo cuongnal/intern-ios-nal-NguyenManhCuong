@@ -682,51 +682,37 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.16816559848406457" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RE1-UZ-rjV">
-                                <rect key="frame" x="30" y="380" width="354" height="150"/>
+                                <rect key="frame" x="40" y="380" width="334" height="150"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VUM-lt-Ynh">
-                                        <rect key="frame" x="30" y="5.5" width="75" height="34.5"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUM-lt-Ynh">
+                                        <rect key="frame" x="30" y="6" width="75" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="dP8-Us-Q5P"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Huỷ">
-                                                    <attributes>
-                                                        <font key="NSFont" metaFont="system" size="19"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
+                                        <state key="normal" title="Huỷ"/>
                                         <connections>
                                             <action selector="cancleViewController:" destination="elr-XO-uC7" eventType="touchUpInside" id="zk1-mV-Lwg"/>
                                         </connections>
                                     </button>
                                     <pickerView contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Rsc-WF-PsU">
-                                        <rect key="frame" x="30" y="40" width="294" height="90"/>
+                                        <rect key="frame" x="20" y="40" width="294" height="90"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="iDR-qJ-zo2"/>
                                         </constraints>
                                     </pickerView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g5C-q8-K66">
-                                        <rect key="frame" x="249" y="5.5" width="75" height="34.5"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5C-q8-K66">
+                                        <rect key="frame" x="229" y="6" width="75" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="y3O-6a-MLb"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Chọn">
-                                                    <attributes>
-                                                        <font key="NSFont" metaFont="system" size="19"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
+                                        <state key="normal" title="Chọn"/>
                                         <connections>
                                             <action selector="chooseLanguage:" destination="elr-XO-uC7" eventType="touchUpInside" id="RRj-lx-gFX"/>
                                         </connections>
@@ -736,12 +722,12 @@
                                 <constraints>
                                     <constraint firstItem="Rsc-WF-PsU" firstAttribute="top" secondItem="VUM-lt-Ynh" secondAttribute="bottom" id="0Px-7D-rgX"/>
                                     <constraint firstItem="VUM-lt-Ynh" firstAttribute="leading" secondItem="RE1-UZ-rjV" secondAttribute="leading" constant="30" id="ddY-ny-b7O"/>
-                                    <constraint firstAttribute="trailing" secondItem="Rsc-WF-PsU" secondAttribute="trailing" constant="30" id="gdA-1p-W7Q"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rsc-WF-PsU" secondAttribute="trailing" constant="20" id="gdA-1p-W7Q"/>
                                     <constraint firstAttribute="bottom" secondItem="Rsc-WF-PsU" secondAttribute="bottom" constant="20" id="i2J-bm-Nhe"/>
                                     <constraint firstAttribute="trailing" secondItem="g5C-q8-K66" secondAttribute="trailing" constant="30" id="lUY-ol-PLM"/>
                                     <constraint firstItem="Rsc-WF-PsU" firstAttribute="top" secondItem="g5C-q8-K66" secondAttribute="bottom" id="qUL-VF-zZI"/>
                                     <constraint firstAttribute="height" constant="150" id="tS1-Hf-bDG"/>
-                                    <constraint firstItem="Rsc-WF-PsU" firstAttribute="leading" secondItem="RE1-UZ-rjV" secondAttribute="leading" constant="30" id="zPV-H7-Ngu"/>
+                                    <constraint firstItem="Rsc-WF-PsU" firstAttribute="leading" secondItem="RE1-UZ-rjV" secondAttribute="leading" constant="20" id="zPV-H7-Ngu"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -752,15 +738,17 @@
                             <constraint firstAttribute="bottom" secondItem="WUr-ma-HfD" secondAttribute="bottom" id="F2M-tq-KNM"/>
                             <constraint firstItem="RE1-UZ-rjV" firstAttribute="centerY" secondItem="bmv-ED-6aD" secondAttribute="centerY" id="I6I-G9-iDl"/>
                             <constraint firstItem="WUr-ma-HfD" firstAttribute="leading" secondItem="bmv-ED-6aD" secondAttribute="leading" id="Rzd-Vl-q9a"/>
-                            <constraint firstItem="bmv-ED-6aD" firstAttribute="trailing" secondItem="RE1-UZ-rjV" secondAttribute="trailing" constant="30" id="SAH-8Z-P1V"/>
+                            <constraint firstItem="bmv-ED-6aD" firstAttribute="trailing" secondItem="RE1-UZ-rjV" secondAttribute="trailing" constant="40" id="SAH-8Z-P1V"/>
                             <constraint firstItem="bmv-ED-6aD" firstAttribute="trailing" secondItem="WUr-ma-HfD" secondAttribute="trailing" id="SVB-96-nxP"/>
-                            <constraint firstItem="RE1-UZ-rjV" firstAttribute="leading" secondItem="bmv-ED-6aD" secondAttribute="leading" constant="30" id="b0N-KW-OwP"/>
+                            <constraint firstItem="RE1-UZ-rjV" firstAttribute="leading" secondItem="bmv-ED-6aD" secondAttribute="leading" constant="40" id="b0N-KW-OwP"/>
                             <constraint firstItem="WUr-ma-HfD" firstAttribute="top" secondItem="I8F-9X-fVt" secondAttribute="top" id="efJ-7S-Imw"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
+                        <outlet property="btnCancle" destination="VUM-lt-Ynh" id="Ebw-mw-ePv"/>
+                        <outlet property="btnSelected" destination="g5C-q8-K66" id="cIU-vo-XlA"/>
                         <outlet property="viewParent" destination="RE1-UZ-rjV" id="lyX-17-OAU"/>
                         <outlet property="viewPickerLanguage" destination="Rsc-WF-PsU" id="CNu-Vb-e4g"/>
                     </connections>

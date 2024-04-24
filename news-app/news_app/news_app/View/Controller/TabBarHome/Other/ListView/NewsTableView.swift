@@ -12,13 +12,15 @@ class NewsTableView : UITableView, UITableViewDataSource, UITableViewDelegate {
     var category : Category?
     var onTouchNewsCallback : ((News) -> ())!
     var openPopUp : ((News,UIView) -> ())!
-    
+
     private var refresher : UIRefreshControl?
     var pullToRefreshCallback : ((Category) -> Void )?
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.delegate = self
         self.dataSource = self
+        keyboardDismissMode = .onDrag
+
         self.refresher = UIRefreshControl()
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

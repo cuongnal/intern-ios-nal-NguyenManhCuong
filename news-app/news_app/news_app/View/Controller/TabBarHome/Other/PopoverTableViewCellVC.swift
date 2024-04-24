@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PopoverTableViewCellVC: UIViewController{
+class PopoverTableViewCellVC: BaseViewController{
     
     @IBOutlet weak var iconBookmark: UIImageView!
     lazy var callback : ((TypeClickPopover) -> ())? = nil
@@ -21,18 +21,22 @@ class PopoverTableViewCellVC: UIViewController{
         setTitle()
         super.viewWillAppear(animated)
     }
+    override func setUpLanguage() {
+        setTitle()
+    }
     private func setTitle() {
         guard let type = type else {return}
-        btnFirst.setTitle(Constant.SHARE, for: .normal)
+        btnFirst.setTitle(LanguageManager.getText(withKey: .SHARE),for: .normal)
         if type == .popoverBookmark {
-            btnSecond.setTitle(TypePopoverBookmark.popoverBookmark.rawValue,for: .normal)
+            btnSecond.setTitle(LanguageManager.getText(withKey: .BOOKMARK),for: .normal)
             iconBookmark.image = UIImage(named: "ic_bookmark")
         }
         else {
-            btnSecond.setTitle(TypePopoverBookmark.popoverRemoveBookmark.rawValue,for: .normal)
+            btnSecond.setTitle(LanguageManager.getText(withKey: .REMOVE_BOOKMARK),for: .normal)
             iconBookmark.image = UIImage(named: "ic_bookmarked")
         }
     }
+    
     // first là share
     @IBAction func touchFirst(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)

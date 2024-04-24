@@ -8,17 +8,24 @@
 import Foundation
 import UIKit
 
-class PickLanguageViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class PickLanguageViewController : BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
 
+    @IBOutlet weak var btnSelected: UIButton!
+    @IBOutlet weak var btnCancle: UIButton!
     @IBOutlet weak var viewParent: UIView!
     @IBOutlet weak var viewPickerLanguage: UIPickerView!
     var data : [PickerLanguage] = [.vietNamese, .english]
-    var callBack : ((PickerLanguage) -> ())!
+    var callBackChangeLanguage : ((PickerLanguage) -> ())!
     override func viewDidLoad() {
         super.viewDidLoad()
         viewPickerLanguage.dataSource = self
         viewPickerLanguage.delegate = self
+        setUpLanguage()
+    }
+    override func setUpLanguage() {
+        btnCancle.setTitle(LanguageManager.getText(withKey: KeyText.CANCEL), for: .normal)
+        btnSelected.setTitle(LanguageManager.getText(withKey: KeyText.CHOOSE), for: .normal)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -33,7 +40,7 @@ class PickLanguageViewController : UIViewController, UIPickerViewDelegate, UIPic
         dismiss(animated: true)
     }
     @IBAction func chooseLanguage(_ sender: Any) {
-        callBack(data[viewPickerLanguage.selectedRow(inComponent: 0)])
+        callBackChangeLanguage(data[viewPickerLanguage.selectedRow(inComponent: 0)])
         dismiss(animated: true)
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {

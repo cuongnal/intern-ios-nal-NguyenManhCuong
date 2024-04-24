@@ -112,7 +112,7 @@ class SignUpSignInViewController: BaseViewController {
             registerView.isHidden = true
             btnForgotPassword.alpha = 0
             btnSignInWithEmail.isHidden = false
-            btnSignUpAndSignIn.setTitle(LanguageManager.setText(withKey: KeyText.SIGN_UP), for: .normal)
+            btnSignUpAndSignIn.setTitle(LanguageManager.getText(withKey: KeyText.SIGN_UP), for: .normal)
         }
         else {
             btnSignInWithEmail.isHidden = true
@@ -121,23 +121,23 @@ class SignUpSignInViewController: BaseViewController {
             registerView.isHidden = false
             btnForgotPassword.alpha = 1
             btnSignInWithEmail.isHidden = true
-            btnSignUpAndSignIn.setTitle(LanguageManager.setText(withKey: KeyText.SIGN_IN), for: .normal)
+            btnSignUpAndSignIn.setTitle(LanguageManager.getText(withKey: KeyText.SIGN_IN), for: .normal)
         }
     }
-    func setUpLanguage() {
-        inputEmail.placeholder = LanguageManager.setText(withKey: KeyText.EMAIL)
-        inputPassword.placeholder = LanguageManager.setText(withKey: KeyText.PASSWORD)
-        btnPolicy.setTitle(LanguageManager.setText(withKey: KeyText.POLICY), for: .normal)
-        policyView.text = LanguageManager.setText(withKey: KeyText.TITLE_POLICY)
-        labelDoNotHaveAcc.text = LanguageManager.setText(withKey: KeyText.DO_NOT_HAVE_ACCOUNT)
-        btnRegister.setTitle(LanguageManager.setText(withKey: KeyText.REGISTER), for: .normal)
-        btnForgotPassword.setTitle(LanguageManager.setText(withKey: KeyText.FORGOT_PASSWORD), for: .normal)
-        labelOrSigUpWith.text = LanguageManager.setText(withKey: KeyText.OR_SIGN_UP_WITH)
-        labelLogo.text = LanguageManager.setText(withKey: KeyText.NEWS_24)
-        labelIncorrectEmail.text = LanguageManager.setText(withKey: KeyText.INCORRECT_EMAIL)
-        labelIncorrectPassword.text = LanguageManager.setText(withKey: KeyText.INCORRECT_PASSWORD)
+    override func setUpLanguage() {
+        inputEmail.placeholder = LanguageManager.getText(withKey: KeyText.EMAIL)
+        inputPassword.placeholder = LanguageManager.getText(withKey: KeyText.PASSWORD)
+        btnPolicy.setTitle(LanguageManager.getText(withKey: KeyText.POLICY), for: .normal)
+        policyView.text = LanguageManager.getText(withKey: KeyText.TITLE_POLICY)
+        labelDoNotHaveAcc.text = LanguageManager.getText(withKey: KeyText.DO_NOT_HAVE_ACCOUNT)
+        btnRegister.setTitle(LanguageManager.getText(withKey: KeyText.REGISTER), for: .normal)
+        btnForgotPassword.setTitle(LanguageManager.getText(withKey: KeyText.FORGOT_PASSWORD), for: .normal)
+        labelOrSigUpWith.text = LanguageManager.getText(withKey: KeyText.OR_SIGN_UP_WITH)
+        labelLogo.text = LanguageManager.getText(withKey: KeyText.NEWS_24)
+        labelIncorrectEmail.text = LanguageManager.getText(withKey: KeyText.INCORRECT_EMAIL)
+        labelIncorrectPassword.text = LanguageManager.getText(withKey: KeyText.INCORRECT_PASSWORD)
         
-        labelPassword.text = LanguageManager.setText(withKey: KeyText.PASSWORD)
+        labelPassword.text = LanguageManager.getText(withKey: KeyText.PASSWORD)
     }
     
     @IBOutlet weak var labelLogo: UILabel!

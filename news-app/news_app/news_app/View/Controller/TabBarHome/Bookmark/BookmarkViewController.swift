@@ -28,6 +28,10 @@ class BookmarkViewController : BaseViewController {
         setLeftTitle()
         setUpView()
     }
+    override func setUpLanguage() {
+        setLeftTitle()
+        bookmarkTableView.reloadData()
+    }
     func setUpView() {
         // lần đầu tiên khi mở thì phải gọi
         bookmarkModel.getCategoryAndNews(callback: {[weak self](arrCategory) in
@@ -65,14 +69,14 @@ class BookmarkViewController : BaseViewController {
     private func setLeftTitle() {
         let btnLeftFirst = UIBarButtonItem()
         let label = UILabel()
-        label.text = Constant.BOOKMARKED
+        label.text = LanguageManager.getText(withKey: .BOOKMARKED)
         label.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         label.textColor = .black
         btnLeftFirst.customView = label
         navigationController?.navigationBar.topItem?.leftBarButtonItem = btnLeftFirst
     }
-
+    
 }
 
 extension BookmarkViewController {
@@ -103,7 +107,7 @@ extension BookmarkViewController {
         } )
     }
     func shareNews(news : News) {
-        
+        presenShareSheet(withNews: news)
     }
     
 }

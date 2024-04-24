@@ -9,23 +9,38 @@ import Foundation
 
 class LanguageManager  {
     class func changeLanguage(withTypeLanguage type : TypeLanguage = .vietnamese) {
-        let path = Bundle.main.path(forResource: type.rawValue, ofType: "lproj")
-        print(path)
-        guard path != nil else {return}
         UserDefaults.standard.setValue(withAnyObject: type, key: Constant.Key.KEY_LANGUAGE_APP)
         UserDefaults.standard.synchronize()
+        NotificationCenter.default
+            .post(name: NSNotification.Name("ABC"),
+                  object: nil)
     }
-    class func setText(withKey key : String) -> String {
+    class func getText(withKey key : KeyText) -> String {
 
-        guard let type = UserDefaults.standard.getValue(swiftClass: TypeLanguage.self, forKey: Constant.Key.KEY_LANGUAGE_APP),
-            let path = Bundle.main.path(forResource: type.rawValue, ofType: "lproj"),
-        let bundle = Bundle(path: path) else {
-            print("Khong tao dc")
-            return ""
-        }
-        Bundle.main.localization = "vi"
-        return NSLocalizedString(key , comment: "")
+        let typeLanguage = UserDefaults.standard.getValue(swiftClass: TypeLanguage.self, forKey: Constant.Key.KEY_LANGUAGE_APP) ?? TypeLanguage.english
+        let path = Bundle.main.path(forResource: typeLanguage.rawValue, ofType: "lproj")
+        
+        guard let bundle = Bundle(path: path!) else {return ""}
+        return bundle.localizedString(forKey: key.rawValue, value: nil, table: nil)
+        
+       // return NSLocalizedString(key.rawValue,bundle: bundle, comment: "")
+        
     }
+    class func getText(withString string : String) -> String {
+        let typeLanguage = UserDefaults.standard.getValue(swiftClass: TypeLanguage.self, forKey: Constant.Key.KEY_LANGUAGE_APP) ?? TypeLanguage.english
+        let path = Bundle.main.path(forResource: typeLanguage.rawValue, ofType: "lproj")
+        
+        guard let bundle = Bundle(path: path!) else {return ""}
+        return bundle.localizedString(forKey: string, value: nil, table: nil)
+    }
+//    class func setText(withKey key : KeyText) -> String {
+//
+//        UserDefaults.standard.set(["en"], forKey: "AppleLanguages")
+//        UserDefaults.standard.synchronize()
+//
+//        return NSLocalizedString(key.rawValue, comment: "")
+//    }
+    
     class func setDefaultLanguage() {
         changeLanguage()
     }

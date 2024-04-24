@@ -30,7 +30,9 @@ class NewsTableViewCell : UITableViewCell {
     func setUpView(item: News) {
         news = item
         timeNews.text = item.pubDate
-        typeNews.text = item.typeCategory
+        
+        typeNews.text = LanguageManager.getText(withString: item.typeCategory)
+        
         authorNews.text = item.author
         titleNews.text = item.title
         imageNews.image = nil

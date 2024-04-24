@@ -49,7 +49,7 @@ class ChangePasswordViewController : BaseViewController {
     
     func setButton() {
         let btnLeftFirst = UIBarButtonItem(image: UIImage(named: "ic_back"), style: .plain, target: self, action: #selector(goBack))
-        let btnLeftSecond = UIBarButtonItem(title: Constant.ACCOUNT, style: .plain, target: nil, action: nil)
+        let btnLeftSecond = UIBarButtonItem(title: LanguageManager.getText(withKey: .ACCOUNT), style: .plain, target: nil, action: nil)
         
         btnLeftSecond.setTitleTextAttributes([
             .font: UIFont.systemFont(ofSize: 17, weight: .bold),

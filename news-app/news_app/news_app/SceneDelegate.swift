@@ -26,9 +26,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navAuth = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constant.Key.NAV_AUTH) as! AuthNavigationController
         
         if UserDefaults.standard.getValue(swiftClass: LanguageManager.TypeLanguage.self, forKey: Constant.Key.KEY_LANGUAGE_APP) == nil{
-            LanguageManager.changeLanguage(withTypeLanguage: .english)
+            LanguageManager.setDefaultLanguage()
         }
-        LanguageManager.changeLanguage(withTypeLanguage: .english)
         UserDefaults.standard.synchronize()
         if UserDefaults.getUser() == nil {
             window?.rootViewController = navAuth

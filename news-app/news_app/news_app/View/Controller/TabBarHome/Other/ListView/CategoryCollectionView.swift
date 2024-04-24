@@ -12,6 +12,7 @@ class CategoryCollectionView : UICollectionView, UICollectionViewDelegateFlowLay
     var oldSelectedItemAt : IndexPath = IndexPath(row: 0, section: 0)
     
     var onTouchItemCallback : ((Category) -> ())?
+    
     var data : [Category] = []
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -25,7 +26,7 @@ class CategoryCollectionView : UICollectionView, UICollectionViewDelegateFlowLay
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CATEGORY_COLLECTION_VIEW_CELL, for: indexPath) as! CategoryCollectionViewCell
-        cell.label.text = data[indexPath.item].title
+        cell.label.text = LanguageManager.getText(withString: data[indexPath.item].title)
         cell.setBackGround(flag: indexPath == oldSelectedItemAt)
         return cell
     }

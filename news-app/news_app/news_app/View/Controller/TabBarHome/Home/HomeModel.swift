@@ -29,14 +29,15 @@ class HomeModel : BaseModel {
     }
     func fetchDataNewsRemote(category : Category, callback : @escaping ( ([News]) -> Void)) {
         excuteNetwork(
-        task: { [weak self] in
-            let arr = self?.newsRepository.getNewsFromServer(category: category)
-            self?.arrNews.append(contentsOf: arr ?? [])
-            return arr
-        }, complete: {[weak self](arr) in
-            callback(arr ?? [])
-            self?.updateDataNewsLocal(category: category, arr : arr ?? [])
-        })
+            task: { [weak self] in
+                let arr = self?.newsRepository.getNewsFromServer(category: category)
+                self?.arrNews.removeAll()
+                self?.arrNews.append(contentsOf: arr ?? [])
+                return arr
+            }, complete: {[weak self](arr) in
+                callback(arr ?? [])
+                self?.updateDataNewsLocal(category: category, arr : arr ?? [])
+            })
     }
     private func updateDataNewsLocal(category : Category, arr : [News]) {
         excuteTask(task: { [weak self] in
@@ -95,16 +96,22 @@ class HomeModel : BaseModel {
         }, complete: nil)
     }
     
-
-    func searchNewsWithCategory (withArrayText arrText : [String], callBack: @escaping (([News]) -> Void)) {
+    
+    func searchNewsWithCategory (withArrayTextSearch arrText : [String], callBack: @escaping (([News]) -> Void)) {
         excuteTask(task: { [weak self] in
             
             guard arrText.count != 0 else {return self?.arrNews}
+            
+            var arrTextSearch  : [String] = []
+            for item in arrText {
+                arrTextSearch.append(item.folding(options : .diacriticInsensitive,locale: Locale(identifier: "en_US")))
+            }
             var resultSearchNews : [News] = []
             guard let arrNews = self?.arrNews else { return resultSearchNews }
             
             for item in arrNews {
-                let isMatch = arrText.allSatisfy { keyword in
+                
+                let isMatch = arrTextSearch.allSatisfy { keyword in
                     let folding = item.title.folding(options : .diacriticInsensitive,locale: Locale(identifier: "en_US"))
                     return folding.lowercased().contains(keyword.lowercased())
                 }

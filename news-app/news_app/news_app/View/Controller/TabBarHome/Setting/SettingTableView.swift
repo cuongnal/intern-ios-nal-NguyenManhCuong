@@ -38,11 +38,14 @@ class SettingTableView : UITableView, UITableViewDataSource, UITableViewDelegate
         case account, languages, categories, logOut, user, changePassword
     }
     
-    static let SETTING_TABLE_LIST_ITEM = [(text: LanguageManager.setText(withKey: KeyText.ACCOUNT),image: "ic_person", type : TypeItemSelected.account),
-                                          (text: LanguageManager.setText(withKey: KeyText.LANGUAGES), image: "ic_question", type: .languages),
-                                          (text: LanguageManager.setText(withKey: KeyText.CATEGORIES), image: "ic_question", type: .categories),
-                                          (text: LanguageManager.setText(withKey: KeyText.LOG_OUT), image: "ic_logout", type: .logOut)]
-    
-    static let ACCOUNT_TABLE_LIST_ITEM = [(text: UserDefaults.getUser()?.email ?? "",image: "ic_email", type: TypeItemSelected.user),
-                                          (text: LanguageManager.setText(withKey: KeyText.CHANGE_PASSWORD),image: "ic_lock", type: .changePassword)]
+    class func getSettingTableListItem() -> [(text: String, image: String, type: SettingTableView.TypeItemSelected)] {
+        return [(text: LanguageManager.getText(withKey: KeyText.ACCOUNT),image: "ic_person", type :  TypeItemSelected.account),
+                (text: LanguageManager.getText(withKey: KeyText.LANGUAGES), image: "ic_question", type: .languages),
+                (text: LanguageManager.getText(withKey: KeyText.CATEGORIES), image: "ic_question", type: .categories),
+                (text: LanguageManager.getText(withKey: KeyText.LOG_OUT), image: "ic_logout", type: .logOut)]
+    }
+    class func getAccountTableListItem () -> [(text: String, image: String, type: SettingTableView.TypeItemSelected)] {
+        return [(text: UserDefaults.getUser()?.email ?? "",image: "ic_email", type: TypeItemSelected.user),
+                (text: LanguageManager.getText(withKey: KeyText.CHANGE_PASSWORD),image: "ic_lock", type: .changePassword)]
+    }
 }

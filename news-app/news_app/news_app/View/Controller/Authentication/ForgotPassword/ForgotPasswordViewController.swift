@@ -38,12 +38,12 @@ class ForgotPasswordViewController : BaseViewController{
         }
         btnReset.setColorButton(flag: true)
     }
-    func setUpLanguage() {
-        btnReset.setTitle(LanguageManager.setText(withKey: KeyText.RESET), for: .normal)
-        titleLogo.text = LanguageManager.setText(withKey: KeyText.NEWS_24)
-        labelNoti.text = LanguageManager.setText(withKey: KeyText.INPUT_EMAIL_TO_BE_SENT_RESET_PASSWORD)
-        btnReSend.text = LanguageManager.setText(withKey: KeyText.RE_SEND)
-        titleResend.text = LanguageManager.setText(withKey: KeyText.DID_NOT_RECEIVE_AN_EMAIL)
+    override func setUpLanguage() {
+        btnReset.setTitle(LanguageManager.getText(withKey: KeyText.RESET), for: .normal)
+        titleLogo.text = LanguageManager.getText(withKey: KeyText.NEWS_24)
+        labelNoti.text = LanguageManager.getText(withKey: KeyText.INPUT_EMAIL_TO_BE_SENT_RESET_PASSWORD)
+        btnReSend.text = LanguageManager.getText(withKey: KeyText.RE_SEND)
+        titleResend.text = LanguageManager.getText(withKey: KeyText.DID_NOT_RECEIVE_AN_EMAIL)
         
     }
     

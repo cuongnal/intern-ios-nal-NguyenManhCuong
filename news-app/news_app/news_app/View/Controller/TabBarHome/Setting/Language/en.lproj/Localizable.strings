@@ -8,44 +8,44 @@
 // title báo
 "Home" = "Trang chủ";
 "World" = "Thế giới";
-"News" = "Thời sự";
-"Business" = "Kinh doanh";
+"News" = "Báo Mới";
+"Business" = "Business";
 "Startup" = "Startup";
-"Entertainment" = "Giải trí";
-"Sports" = "Thể thao";
-"Law" = "Pháp luật";
-"Education" = "Giáo dục";
-"Latest News" = "Tin mới nhất";
-"Hot News" = "Tin nổi bật";
-"Health" = "Sức khỏe";
-"Lifestyle" = "Đời sống";
-"Travel" = "Du lịch";
-"Science" = "Khoa học";
-"Digital" = "Số hóa";
-"Cars" = "Xe";
-"Opinion" = "Ý kiến";
-"Confessions" = "Tâm sự";
-"Jokes" = "Cười";
-"Most Viewed" = "Tin xem nhiều";
+"Entertainment" = "Entertainment";
+"Sports" = "Sports";
+"Law" = "Law";
+"Education" = "Education";
+"Latest News" = "Latest News";
+"Hot News" = "Hot News";
+"Health" = "Health";
+"Lifestyle" = "Lifestyle";
+"Travel" = "Travel";
+"Science" = "Science";
+"Digital" = "Digital";
+"Cars" = "Cars";
+"Opinion" = "Opinion";
+"Confessions" = "Confessions";
+"Jokes" = "Jokes";
+"Most Viewed" = "Most Viewed";
 
-"Home" = "Trang chủ";
-"News" = "Thời sự";
-"World" = "Thế giới";
-"Law" = "Pháp luật";
-"Business" = "Kinh doanh";
-"Technology" = "Công nghệ";
-"Cars" = "Xe";
-"Youth Life" = "Nhịp sống trẻ";
-"Culture" = "Văn hóa";
-"Entertainment" = "Giải trí";
-"Sports" = "Thể thao";
-"Education" = "Giáo dục";
-"Science" = "Khoa học";
-"Health" = "Sức khỏe";
-"Fake News" = "Giả thật";
-"Relax" = "Thư giãn";
-"Readers as Reporter" = "Bạn đọc làm báo";
-"Travel" = "Du lịch";
+"Home" = "Home";
+"News" = "News";
+"World" = "World";
+"Law" = "Law";
+"Business" = "Business";
+"Technology" = "Technology";
+"Cars" = "Cars";
+"Youth Life" = "Youth Life";
+"Culture" = "Culture";
+"Entertainment" = "Entertainment";
+"Sports" = "Sports";
+"Education" = "Education";
+"Science" = "Science";
+"Health" = "Health";
+"Fake News" = "Fake News";
+"Relax" = "Relax";
+"Readers as Reporter" = "Readers as Reporter";
+"Travel" = "Travel";
 
 "PARAGRAP_1" = "Paragrap 1";
 "PARAGRAP_2" = "Paragrap 2";
@@ -66,11 +66,15 @@
 "CHANGE_PASSWORD" = "Change Password";
 "LOG_OUT" = "Log out";
 "CANCEL" = "Cancel";
+"CHOOSE" = "Choose";
 "LANGUAGES" = "Languages";
+"BOOKMARK" = "Bookmark";
 "BOOKMARKED" = "Bookmarked";
-
+"REMOVE_BOOKMARK" = "Remove Bookmark";
+"SHARE" = "Share";
 
 //authentication
+
 "NEWS_24" = "News 24";
 "EMAIL" = "Email";
 "PASSWORD" = "Password";

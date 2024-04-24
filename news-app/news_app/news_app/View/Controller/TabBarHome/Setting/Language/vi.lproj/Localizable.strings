@@ -6,46 +6,48 @@
  
  */
 // title báo
+
 "Home" = "Trang chủ";
 "World" = "Thế giới";
-"News" = "Báo Mới";
-"Business" = "Business";
+"News" = "Thời sự";
+"Business" = "Kinh doanh";
 "Startup" = "Startup";
-"Entertainment" = "Entertainment";
-"Sports" = "Sports";
-"Law" = "Law";
-"Education" = "Education";
-"Latest News" = "Latest News";
-"Hot News" = "Hot News";
-"Health" = "Health";
-"Lifestyle" = "Lifestyle";
-"Travel" = "Travel";
-"Science" = "Science";
-"Digital" = "Digital";
-"Cars" = "Cars";
-"Opinion" = "Opinion";
-"Confessions" = "Confessions";
-"Jokes" = "Jokes";
-"Most Viewed" = "Most Viewed";
+"Entertainment" = "Giải trí";
+"Sports" = "Thể thao";
+"Law" = "Pháp luật";
+"Education" = "Giáo dục";
+"Latest News" = "Tin mới nhất";
+"Hot News" = "Tin nổi bật";
+"Health" = "Sức khỏe";
+"Lifestyle" = "Đời sống";
+"Travel" = "Du lịch";
+"Science" = "Khoa học";
+"Digital" = "Số hóa";
+"Cars" = "Xe";
+"Opinion" = "Ý kiến";
+"Confessions" = "Tâm sự";
+"Jokes" = "Cười";
+"Most Viewed" = "Tin xem nhiều";
 
-"Home" = "Home";
-"News" = "News";
-"World" = "World";
-"Law" = "Law";
-"Business" = "Business";
-"Technology" = "Technology";
-"Cars" = "Cars";
-"Youth Life" = "Youth Life";
-"Culture" = "Culture";
-"Entertainment" = "Entertainment";
-"Sports" = "Sports";
-"Education" = "Education";
-"Science" = "Science";
-"Health" = "Health";
-"Fake News" = "Fake News";
-"Relax" = "Relax";
-"Readers as Reporter" = "Readers as Reporter";
-"Travel" = "Travel";
+"Home" = "Trang chủ";
+"News" = "Thời sự";
+"World" = "Thế giới";
+"Law" = "Pháp luật";
+"Business" = "Kinh doanh";
+"Technology" = "Công nghệ";
+"Cars" = "Xe";
+"Youth Life" = "Nhịp sống trẻ";
+"Culture" = "Văn hóa";
+"Entertainment" = "Giải trí";
+"Sports" = "Thể thao";
+"Education" = "Giáo dục";
+"Science" = "Khoa học";
+"Health" = "Sức khỏe";
+"Fake News" = "Giả thật";
+"Relax" = "Thư giãn";
+"Readers as Reporter" = "Bạn đọc làm báo";
+"Travel" = "Du lịch";
+
 "PARAGRAP_1" = "Điều 1 \n \n";
 "PARAGRAP_2" = "Điều 2 \n \n";
 "PARAGRAP_1_DETAIL" = "Khách hàng rất quan trọng, khách hàng sẽ được khách hàng theo đuổi. Mattis bị đầu độc, sư tử diam. Nhưng đã đến lúc uống và uống nước sốt. Hãy để anh ta buồn bã trong cuộc sống ngoài feugiat. Phim hoạt hình chuột máy bay sân sau xe tải. Cũng không phải, quá trình bệnh tật của người nhân viên sẽ được sinh ra để ấn định thời đại đồ đồng. Bóng đá là một trò đùa. Và, cổ họng của ullamcorper pellentesque đôi khi khác rất nhiều. \n \n";
@@ -60,11 +62,15 @@
 "CHANGE_PASSWORD" = "Thay đổi mật khẩu";
 "LOG_OUT" = "Đăng xuất";
 "CANCEL" = "Hủy";
+"CHOOSE" = "Chọn";
 "LANGUAGES" = "Ngôn ngữ";
+"BOOKMARK" = "Lưu lại";
 "BOOKMARKED" = "Đã lưu";
-
+"REMOVE_BOOKMARK" = "Hủy lưu";
+"SHARE" = "Chia sẻ";
 
 //authentication
+
 "NEWS_24" = "Báo mới 24h";
 "EMAIL" = "Email";
 "PASSWORD" = "Mật khẩu";

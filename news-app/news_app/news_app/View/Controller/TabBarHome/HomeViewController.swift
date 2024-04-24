@@ -32,8 +32,13 @@ class HomeViewController : BaseViewController {
         popoverChangeSource = PopoverChangeSourceVC(nibName: "PopoverChangeSource", bundle: nil) as PopoverChangeSourceVC
         popoverTableViewCell = PopoverTableViewCellVC(nibName: "PopoverViewController", bundle: nil) as PopoverTableViewCellVC
         handlerCallback()
+        searchBarHome.placeholder = LanguageManager.getText(withKey: .SEARCH)
     }
-    
+    override func setUpLanguage() {
+        searchBarHome.placeholder = LanguageManager.getText(withKey: .SEARCH)
+        homeCollectionView.reloadData()
+        homeTableView.reloadData()
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
@@ -87,7 +92,7 @@ class HomeViewController : BaseViewController {
     }
     func handleSearchAction() {
         searchBarHome.onTextDidChangeCallback = { textSearch in
-            self.homeModel.searchNewsWithCategory(withArrayText: textSearch, callBack: { [weak self] arrNews in
+            self.homeModel.searchNewsWithCategory(withArrayTextSearch: textSearch, callBack: { [weak self] arrNews in
                 self?.homeTableView.data.removeAll()
                 self?.homeTableView.data.append(contentsOf: arrNews)
                 self?.homeTableView.reloadData()
@@ -161,13 +166,13 @@ extension HomeViewController {
             }
         })
     }
-    func saveBookmark(news : News) {
+    private func saveBookmark(news : News) {
         homeModel.saveBookmark(withNews: news, callback: {})
     }
-    func shareNews(news : News) {
-        
+    private func shareNews(news : News) {
+        presenShareSheet(withNews: news)
     }
-    func removeBookmark(news : News) {
+    private func removeBookmark(news : News) {
         homeModel.deleteBookmarkNews(withNews: news)
     }
 }

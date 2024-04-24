@@ -7,40 +7,44 @@
 
 import Foundation
 
-struct KeyText {
-    static let SETTING = "SETTING"
-    static let ACCOUNT = "ACCOUNT"
-    static let CATEGORIES = "CATEGORIES"
-    static let CHANGE_PASSWORD = "CHANGE_PASSWORD"
-    static let LOG_OUT = "LOG_OUT"
-    static let CANCEL = "CANCEL"
-    static let LANGUAGES = "LANGUAGES"
-    static let SEARCH = "SEARCH"
-    
+enum KeyText : String{
+    case SETTING = "SETTING"
+    case ACCOUNT = "ACCOUNT"
+    case CATEGORIES = "CATEGORIES"
+    case CHANGE_PASSWORD = "CHANGE_PASSWORD"
+    case LOG_OUT = "LOG_OUT"
+    case CANCEL = "CANCEL"
+    case CHOOSE = "CHOOSE"
+    case LANGUAGES = "LANGUAGES"
+    case SEARCH = "SEARCH"
+    case BOOKMARK = "BOOKMARK"
+    case BOOKMARKED = "BOOKMARKED"
+    case REMOVE_BOOKMARK = "REMOVE_BOOKMARK"
+    case SHARE = "SHARE"
     //Authentication
     
     //authentication
-    static let NEWS_24 = "NEWS_24"
-    static let EMAIL = "EMAIL";
-    static let PASSWORD = "PASSWORD";
-    static let SIGN_UP = "SIGN_UP";
-    static let SIGN_IN = "SIGN_IN";
-    static let FORGOT_PASSWORD = "FORGOT_PASSWORD"
-    static let POLICY = "POLICY"
-    static let TITLE_POLICY = "TITLE_POLICY"
-    static let DO_NOT_HAVE_ACCOUNT = "DO_NOT_HAVE_ACCOUNT"
-    static let REGISTER = "REGISTER"
-    static let OR_SIGN_UP_WITH = "OR_SIGN_UP_WITH"
-    static let INCORRECT_PASSWORD = "INCORRECT_PASSWORD";
-    static let INCORRECT_EMAIL = "INCORRECT_EMAIL";
-    static let PARAGRAP_1 = "PARAGRAP_1"
-    static let PARAGRAP_2 = "PARAGRAP_2"
-    static let PARAGRAP_1_DETAIL = "PARAGRAP_1_DETAIL"
-    static let PARAGRAP_2_DETAIL = "PARAGRAP_2_DETAIL"
-    static let PARAGRAP_3_DETAIL = "PARAGRAP_3_DETAIL"
+    case NEWS_24 = "NEWS_24"
+    case EMAIL = "EMAIL";
+    case PASSWORD = "PASSWORD";
+    case SIGN_UP = "SIGN_UP";
+    case SIGN_IN = "SIGN_IN";
+    case FORGOT_PASSWORD = "FORGOT_PASSWORD"
+    case POLICY = "POLICY"
+    case TITLE_POLICY = "TITLE_POLICY"
+    case DO_NOT_HAVE_ACCOUNT = "DO_NOT_HAVE_ACCOUNT"
+    case REGISTER = "REGISTER"
+    case OR_SIGN_UP_WITH = "OR_SIGN_UP_WITH"
+    case INCORRECT_PASSWORD = "INCORRECT_PASSWORD";
+    case INCORRECT_EMAIL = "INCORRECT_EMAIL";
+    case PARAGRAP_1 = "PARAGRAP_1"
+    case PARAGRAP_2 = "PARAGRAP_2"
+    case PARAGRAP_1_DETAIL = "PARAGRAP_1_DETAIL"
+    case PARAGRAP_2_DETAIL = "PARAGRAP_2_DETAIL"
+    case PARAGRAP_3_DETAIL = "PARAGRAP_3_DETAIL"
     
-    static let INPUT_EMAIL_TO_BE_SENT_RESET_PASSWORD = "INPUT_EMAIL_TO_BE_SENT_RESET_PASSWORD"
-    static let DID_NOT_RECEIVE_AN_EMAIL = "DID_NOT_RECEIVE_AN_EMAIL"
-    static let RE_SEND = "RE_SEND"
-    static let RESET = "RESET"
+    case INPUT_EMAIL_TO_BE_SENT_RESET_PASSWORD = "INPUT_EMAIL_TO_BE_SENT_RESET_PASSWORD"
+    case DID_NOT_RECEIVE_AN_EMAIL = "DID_NOT_RECEIVE_AN_EMAIL"
+    case RE_SEND = "RE_SEND"
+    case RESET = "RESET"
 }

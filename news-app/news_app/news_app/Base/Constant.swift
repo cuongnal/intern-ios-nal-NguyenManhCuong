@@ -16,10 +16,6 @@ struct Constant {
     static let COLOR_BLACK = UIColor.black
     static let KEY_ITEM_NEWS = "key_item_news"
     static let ANCHOR_POPOVER = "Anchor_Popover"
-    static let SETTING = "Settings"
-    static let ACCOUNT = "Account"
-    static let SEARCH = "Search"
-    static let BOOKMARKED = "Bookmarked"
     static let VN_EXPRESS = "Vn Express"
     static let TUOI_TRE = "Tuổi Trẻ"
     static let SHARE = "Share"
@@ -29,11 +25,8 @@ struct Constant {
     static let CATEGORY_COLLECTION_VIEW_CELL = "CategoryCollectionViewCell"
     static let NEWS_TABLE_VIEW_CELL = "NewsTableViewCell"
     static let SETTING_TABLE_VIEW_CELLS = "SettingTableViewCell"
-    static let ERROR_PASSWORD = "Incorrect password"
-    static let ERROR_EMAIL = "Email error"
     static let SAVED_BOOKMARK = "Đã lưu bookmark"
     static let DELETED_BOOKMARK = "Đã xóa bookmark"
-    static let TEARMS_AND_CONDITIONS = "Terms & Conditions"
     
     struct Key {
         static let KEY_NEWS_BOOKMARK = "KEY_NEWS_BOOKMARK"
