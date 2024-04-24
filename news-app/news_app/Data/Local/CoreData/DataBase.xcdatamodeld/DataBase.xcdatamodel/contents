@@ -23,6 +23,7 @@
     </entity>
     <entity name="CDUser" representedClassName="CDUser" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="hiddenCategories" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="idUser" attributeType="String"/>
         <attribute name="listIndexCategory" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="Dictionary&lt;String , Array&lt;Int&gt; &gt;"/>
         <relationship name="saveBookmark" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDNews" inverseName="saveBookmark" inverseEntity="CDNews"/>

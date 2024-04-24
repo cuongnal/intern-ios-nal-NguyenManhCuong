@@ -10,9 +10,14 @@ import FirebaseAuth
 class SettingViewController : BaseViewController{
     
     @IBOutlet weak var settingTableView: SettingTableView!
+    let settingModel = SettingModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
+        settingModel.delegate = self
+        
+        
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -26,14 +31,14 @@ class SettingViewController : BaseViewController{
     func setUpLabel() {
         let btnLeftFirst = UIBarButtonItem()
         let label = UILabel()
-        label.text = LanguageManager.getText(withKey: KeyText.SETTING)
+        label.text = LanguageManager.getText(withKey: KeyText.setting)
         label.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         label.textColor = .black
         btnLeftFirst.customView = label
         navigationController?.navigationBar.topItem?.leftBarButtonItem = btnLeftFirst
-//        navigationController?.navigationBar.topItem?.title = Constant.SETTING
-//        navigationController?.navigationBar.topItem?.titleView = UIView()
+        //        navigationController?.navigationBar.topItem?.title = Constant.SETTING
+        //        navigationController?.navigationBar.topItem?.titleView = UIView()
     }
     @objc func nilAction() {}
     
@@ -53,6 +58,8 @@ class SettingViewController : BaseViewController{
                     self?.changeLanguages()
                 case .logOut:
                     self?.logOut()
+                case .categories :
+                    self?.showAlertHideCategories()
                 default:
                     return
             }
@@ -80,7 +87,33 @@ class SettingViewController : BaseViewController{
         
     }
     private func logOut() {
-        UserDefaults.standard.removeObject(forKey: Constant.Key.USER_LOGIN)
-        self.setRootViewControllerApp(withConstantNavKey: Constant.Key.NAV_AUTH)
+        settingModel.logOutEmail {
+            UserDefaults.standard.removeObject(forKey: Constant.Key.USER_LOGIN)
+            self.setRootViewControllerApp(withConstantNavKey: Constant.Key.NAV_AUTH)
+        }
+    }
+    private func showAlertHideCategories() {
+        let alert : UIAlertController = UIAlertController(title: LanguageManager.getText(withKey: .settingCategories), message: LanguageManager.getText(withKey: .questionHiddenCategories), preferredStyle: .alert)
+        
+        let actionShow = UIAlertAction(title: LanguageManager.getText(withKey: .show), style: .cancel, handler: {[weak self] _ in
+            self?.setHiddenCategories(isHidden: false)
+            self?.dismiss(animated: false)
+        })
+        let actionHide = UIAlertAction(title: LanguageManager.getText(withKey: .hide), style: .default, handler: {[weak self] _ in
+            self?.setHiddenCategories(isHidden: true)
+            self?.dismiss(animated: false)
+        })
+        alert.addAction(actionShow)
+        alert.addAction(actionHide)
+        present(alert, animated: true)
+    }
+    private func setHiddenCategories(isHidden : Bool) {
+        settingModel.updateUser(isHiddenCategories: isHidden, callback: {
+            NotificationCenter.default
+                        .post(name: NSNotification.Name("HIDE"),
+                         object: nil,
+                         userInfo: nil)
+        })
+        
     }
 }

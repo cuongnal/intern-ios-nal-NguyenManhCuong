@@ -30,7 +30,7 @@ class AuthenticationModel  : BaseModel {
         return password!.count >= 6
     }
     
-    func isTouchBtnSignUpSignIn(email : String?, password : String?) -> Bool {
+    func isEnableTouchBtnSignUpSignIn(email : String?, password : String?) -> Bool {
         return checkErrorEmail(email: email) && checkErrorPassword(password: password)
     }
     
@@ -59,13 +59,6 @@ class AuthenticationModel  : BaseModel {
             }
         }
     }
-    //    private func getCategory(result : @escaping (([Category]) -> Void)) {
-    //        excuteTask(task: { [weak self] in
-    //            self?.categoryRepository.getCategoriesByTypeSource(withTypeSource:.vnExpress, withUser: UserDefaults.getUser()!)
-    //        }, complete: { (arr) in
-    //            result(arr!)
-    //        })
-    //    }
     
     func signUpEmail(email : String, password : String, callback : @escaping ((Bool, String?) -> Void)) {
         self.delegate?.startLoading()
@@ -84,18 +77,28 @@ class AuthenticationModel  : BaseModel {
             self?.delegate?.cancelLoading()
         })
     }
-    func getAllNews() {
-        //        excuteNetwork(task: { [weak self] in
-        //            let remoteArrNews  : [News]? = self?.remoteGetAllNewsUseCase.getAllNews()
-        //            let localArrNews : [CDNews]? = self?.localGetAllNewsUseCase.getAllNews()
-        //            if let remoteArrNews = remoteArrNews, let localArrNews = localArrNews {
-        //               return self?.insertNewsUseCase.insertAllNews(remoteArrNews: remoteArrNews, localArrNews: localArrNews)
-        //            } else {
-        //                return false
-        //            }
-        //        }, complete: {(isInsert) in
-        //
-        //        })
+    func changePassword(withCurrentPassword currentPassword : String, newPassword : String, callback : @escaping ((Bool,String) -> Void) ) {
+        self.delegate?.startLoading()
+        let user = Auth.auth().currentUser
+        let credential : AuthCredential = EmailAuthProvider.credential(withEmail: UserDefaults.getUser()!.email!, password: currentPassword)
+        user?.reauthenticate(with: credential) { [weak self] (authResult, err)  in
+            if let err = err {
+                callback(false,FirebaseErrorCode.error(withError: err))
+                self?.delegate?.cancelLoading()
+            }
+            else {
+                Auth.auth().currentUser?.updatePassword(to: newPassword) { [weak self] err in
+                    if err == nil {
+                        callback(true, LanguageManager.getText(withKey: .successChangePassword))
+                        self?.delegate?.cancelLoading()
+                    }
+                    else {
+                        callback(true, LanguageManager.getText(withKey: .errorChangePassword))
+                        self?.delegate?.cancelLoading()
+                    }
+                }
+            }
+        }
     }
 }
 

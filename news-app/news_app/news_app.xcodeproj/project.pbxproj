@@ -16,6 +16,7 @@
 		5E9BC7502BCD38D100473163 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9BC74F2BCD38D100473163 /* ImageDownloader.swift */; };
 		5ECBFE2C2BD61FB900462756 /* SearchBarHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECBFE2B2BD61FB900462756 /* SearchBarHome.swift */; };
 		5ECE8C412BD4C730001A32E9 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE8C402BD4C730001A32E9 /* ChangePasswordViewController.swift */; };
+		5EECA6D02BD9672B00E1A645 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EECA6CF2BD9672B00E1A645 /* SettingModel.swift */; };
 		5EF172242BCF759C00B52384 /* ImageFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF172232BCF759C00B52384 /* ImageFolder.swift */; };
 		AD0914172BA8129900287227 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0914162BA8129900287227 /* Constant.swift */; };
 		AD74958F2BBD7209002CF754 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD74958E2BBD7209002CF754 /* GoogleService-Info.plist */; };
@@ -130,6 +131,7 @@
 		5ECE8C402BD4C730001A32E9 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		5EDBA78B2BD8AC8100521DF2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5EDBA78C2BD8AC8100521DF2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5EECA6CF2BD9672B00E1A645 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
 		5EF172232BCF759C00B52384 /* ImageFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFolder.swift; sourceTree = "<group>"; };
 		6701503E613DEACD71C45A02 /* Pods-news_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-news_app.debug.xcconfig"; path = "Target Support Files/Pods-news_app/Pods-news_app.debug.xcconfig"; sourceTree = "<group>"; };
 		68DCC8678D7E07D559F6AD51 /* Pods-news_appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-news_appTests.release.xcconfig"; path = "Target Support Files/Pods-news_appTests/Pods-news_appTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 				AD8E53912BB576EA000103DA /* SettingTableViewCell.xib */,
 				AD8E538E2BB5743E000103DA /* AccountViewController.swift */,
 				AD8E53862BB54EC0000103DA /* SettingViewController.swift */,
+				5EECA6CF2BD9672B00E1A645 /* SettingModel.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -927,6 +930,7 @@
 				AD9287132BBA8DD500A9246F /* PopoverTableViewCellVC.swift in Sources */,
 				CEF6E0F32BC649EA00DBA72B /* FirebaseErrorCode.swift in Sources */,
 				CEC12A7A2BC7F1C100A6CF21 /* PopoverChangeSourceVC.swift in Sources */,
+				5EECA6D02BD9672B00E1A645 /* SettingModel.swift in Sources */,
 				AD8E537E2BB3D718000103DA /* AuthenticationModel.swift in Sources */,
 				B2F8DE2F2BBEB27200A471EB /* NewsRepository.swift in Sources */,
 				5E6C339D2BCAFCAF009ADB8C /* HomeNavigationController.swift in Sources */,

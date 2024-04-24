@@ -12,4 +12,5 @@ protocol UsersRepository {
     func getUserDetail(idUser : String) -> User?
     func insertUser(user : User) -> User?
     func updateIndexCategories (withCategories arrCategory : [Category], user : User) -> Dictionary<String , Array<Int> >?
+    func updateUser(user : User) 
 }

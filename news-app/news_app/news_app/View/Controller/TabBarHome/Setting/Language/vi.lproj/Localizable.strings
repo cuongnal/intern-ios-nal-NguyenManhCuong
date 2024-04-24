@@ -68,7 +68,26 @@
 "BOOKMARKED" = "Đã lưu";
 "REMOVE_BOOKMARK" = "Hủy lưu";
 "SHARE" = "Chia sẻ";
+"SAVE" = "Lưu";
+"ERROR" = "Lỗi";
+"SUCCESS" = "Thành công";
+"ERROR_CHANGE_PASSWORD" = "Lỗi khi đổi mật khẩu, vui lòng thử lại sau";
+"SUCCESS_CHANGE_PASSWORD" = "Đổi mật khẩu thành công";
+"CURRENT_PASSWORD" = "Nhập mật khẩu cũ";
+"NEW_PASSWORD" = "Nhập mật khẩu mới";
+"CONFIRM_PASSWORD" = "Nhập lại mật khẩu";
+"PASSWORD_ARE_NOT_THE_SAME" = "Mật khẩu không giống nhau";
 
+"ERROR_PASSWORD" = "Mật khẩu không chính xác";
+"ERROR_EMAIL_IS_NOT_REGISTER" = "Email chưa được đăng ký";
+"EMAIL_ALREADY_IN_USE" = "Email đã được sử dụng";
+"INVALID_EMAIL" = "Email không hợp lệ";
+"ERROR_NIL" = "Lỗi không xác định : \n";
+"ERROR_SENT_MAIL" = "Email sent. Please check your email to reset your password";
+"QUESTION_HIDDEN_CATEGORIES" = "Bạn có muốn ẩn danh mục tin tức ?";
+"HIDE" = "Ẩn";
+"SHOW" = "Hiện";
+"SETTING_CATEGORIES" = "Cài đặt danh mục";
 //authentication
 
 "NEWS_24" = "Báo mới 24h";

@@ -387,6 +387,7 @@
                     <navigationItem key="navigationItem" id="uBg-S2-biG"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="homeCollectionHeight" destination="7mj-F5-KKV" id="uZa-d6-sIw"/>
                         <outlet property="homeCollectionView" destination="W1j-5A-Dp5" id="VOz-I4-wyu"/>
                         <outlet property="homeTableView" destination="jyg-qs-t9v" id="BAe-tH-8xH"/>
                         <outlet property="iconNotification" destination="RUo-ID-pqn" id="u5l-ol-sYG"/>
@@ -689,7 +690,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="dP8-Us-Q5P"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Huỷ"/>
@@ -709,7 +710,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="y3O-6a-MLb"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Chọn"/>
@@ -836,7 +837,7 @@
                             <stackView opaque="NO" contentMode="scaleAspectFit" semanticContentAttribute="forceLeftToRight" axis="vertical" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="oef-V2-Chi" userLabel="group_input">
                                 <rect key="frame" x="10" y="98" width="394" height="300"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxw-L6-noJ" userLabel="LabelCurrentPassword">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CurrentPassword" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxw-L6-noJ" userLabel="LabelCurrentPassword">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -851,7 +852,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" textContentType="email"/>
                                         <connections>
-                                            <action selector="editingChangeCurrentPassword:" destination="uOv-M6-UX4" eventType="editingDidEnd" id="cY3-jk-JoF"/>
+                                            <action selector="editingChangeCurrentPassword:" destination="uOv-M6-UX4" eventType="editingChanged" id="For-xZ-g42"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email error" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bha-BC-zkk" userLabel="ErrorCurrentPassword">
@@ -875,10 +876,10 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                         <connections>
-                                            <action selector="edittingChangeNewPassword:" destination="uOv-M6-UX4" eventType="editingDidEnd" id="XSC-r3-jPu"/>
+                                            <action selector="edittingChangeNewPassword:" destination="uOv-M6-UX4" eventType="editingChanged" id="Y6j-Sm-mTM"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Incorrect password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eD1-bi-OTi" userLabel="ErrorNewPassword">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Incorrect password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eD1-bi-OTi" userLabel="ErrorNewPassword">
                                         <rect key="frame" x="0.0" y="181.5" width="394" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
@@ -899,7 +900,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                         <connections>
-                                            <action selector="editingChangeConfirmPassword:" destination="uOv-M6-UX4" eventType="editingDidEnd" id="Y1w-1b-s4v"/>
+                                            <action selector="editingChangeConfirmPassword:" destination="uOv-M6-UX4" eventType="editingChanged" id="C1a-H7-Mq9"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Incorrect password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sv0-Ej-zxD" userLabel="ErrorConfirmPassword">

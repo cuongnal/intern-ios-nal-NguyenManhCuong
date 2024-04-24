@@ -24,12 +24,12 @@ class PickLanguageViewController : BaseViewController, UIPickerViewDelegate, UIP
         setUpLanguage()
     }
     override func setUpLanguage() {
-        btnCancle.setTitle(LanguageManager.getText(withKey: KeyText.CANCEL), for: .normal)
-        btnSelected.setTitle(LanguageManager.getText(withKey: KeyText.CHOOSE), for: .normal)
+        btnCancle.setTitle(LanguageManager.getText(withKey: KeyText.cancel), for: .normal)
+        btnSelected.setTitle(LanguageManager.getText(withKey: KeyText.choose), for: .normal)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewParent.layer.cornerRadius = 30
+        viewParent.layer.cornerRadius = 20
 
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

@@ -33,6 +33,7 @@ extension String {
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegex)
         return emailPred.evaluate(with: self)
     }
+    func isNotEmpty() -> Bool {return !self.isEmpty}
 }
 extension UIViewController {
     func showToast(text : String) {

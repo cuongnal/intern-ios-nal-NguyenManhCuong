@@ -72,6 +72,27 @@
 "BOOKMARKED" = "Bookmarked";
 "REMOVE_BOOKMARK" = "Remove Bookmark";
 "SHARE" = "Share";
+"SAVE" = "Save";
+"ERROR" = "Error";
+"SUCCESS" = "Success";
+"ERROR_CHANGE_PASSWORD" = "Error changing password, please try again later";
+"SUCCESS_CHANGE_PASSWORD" = "Changed password successfully";
+
+"CURRENT_PASSWORD" = "Current password";
+"NEW_PASSWORD" = "New password";
+"CONFIRM_PASSWORD" = "Confirm password";
+"PASSWORD_ARE_NOT_THE_SAME" = "Password are not the same";
+
+"ERROR_PASSWORD" = "Incorrect Password";
+"ERROR_EMAIL_IS_NOT_REGISTER" = "Email is not register";
+"EMAIL_ALREADY_IN_USE" = "Email Already in use";
+"INVALID_EMAIL" = "Invalid email";
+"ERROR_NIL" = "An unknown error : \n";
+"ERROR_SENT_MAIL" = "Email sent. Please check your email to reset your password";
+"QUESTION_HIDDEN_CATEGORIES" = "Do you want to hide the news category ?";
+"HIDE" = "Hide";
+"SHOW" = "Show";
+"SETTING_CATEGORIES" = "Setting Categories";
 
 //authentication
 

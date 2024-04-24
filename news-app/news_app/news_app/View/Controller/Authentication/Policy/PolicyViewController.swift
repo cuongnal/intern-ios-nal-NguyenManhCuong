@@ -18,7 +18,7 @@ class PolicyViewController : UIViewController {
         super.viewDidLoad()
         getPolicyApp()
         let btnLeftFirst = UIBarButtonItem(image: UIImage(named: "ic_back"), style: .plain, target: self, action: #selector(goBack))
-        let btnLeftSecond = UIBarButtonItem(title: LanguageManager.getText(withKey: KeyText.POLICY), style: .plain, target: nil, action: nil)
+        let btnLeftSecond = UIBarButtonItem(title: LanguageManager.getText(withKey: KeyText.policy), style: .plain, target: nil, action: nil)
 
         btnLeftSecond.setTitleTextAttributes([
             .font: UIFont.systemFont(ofSize: 17, weight: .bold),
@@ -44,11 +44,11 @@ class PolicyViewController : UIViewController {
             .foregroundColor : UIColor.black
         ]
         let strPolicyApp = NSMutableAttributedString()
-        let title_1 = NSAttributedString(string: LanguageManager.getText(withKey: KeyText.PARAGRAP_1), attributes: titleFormat)
-        let title_2 = NSAttributedString(string: LanguageManager.getText(withKey: KeyText.PARAGRAP_2), attributes: titleFormat)
-        let bodyPolicy_1 = NSAttributedString(string: LanguageManager.getText(withKey: KeyText.PARAGRAP_1_DETAIL), attributes: bodyFormat)
-        let bodyPolicy_2 = NSAttributedString(string: LanguageManager.getText(withKey: KeyText.PARAGRAP_2_DETAIL), attributes: bodyFormat)
-        let bodyPolicy_3 = NSAttributedString(string: LanguageManager.getText(withKey: KeyText.PARAGRAP_3_DETAIL), attributes: bodyFormat)
+        let title_1 = NSAttributedString(string: LanguageManager.getText(withKey: KeyText.paragraph1), attributes: titleFormat)
+        let title_2 = NSAttributedString(string: LanguageManager.getText(withKey: KeyText.paragraph2), attributes: titleFormat)
+        let bodyPolicy_1 = NSAttributedString(string: LanguageManager.getText(withKey: KeyText.paragraph1Detail), attributes: bodyFormat)
+        let bodyPolicy_2 = NSAttributedString(string: LanguageManager.getText(withKey: KeyText.paragraph2Detail), attributes: bodyFormat)
+        let bodyPolicy_3 = NSAttributedString(string: LanguageManager.getText(withKey: KeyText.paragraph3Detail), attributes: bodyFormat)
         strPolicyApp.append(title_1)
         strPolicyApp.append(bodyPolicy_1)
         strPolicyApp.append(title_2)

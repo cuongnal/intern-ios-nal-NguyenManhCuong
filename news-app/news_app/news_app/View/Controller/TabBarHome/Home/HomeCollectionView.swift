@@ -19,7 +19,9 @@ class HomeCollectionView : CategoryCollectionView, UICollectionViewDragDelegate,
     override func reloadData() {
         super.reloadData()
         oldSelectedItemAt = IndexPath(item: 0, section: 0)
+        
         self.layoutIfNeeded()
+        
         if data.isEmpty {
             return
         }

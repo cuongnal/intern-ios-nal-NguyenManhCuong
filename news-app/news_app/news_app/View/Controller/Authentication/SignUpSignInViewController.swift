@@ -42,12 +42,12 @@ class SignUpSignInViewController: BaseViewController {
         super.viewWillAppear(animated)
     }
     @IBAction func onTouchBtnSignUpAndSignIn(_ sender: Any) {
-        let tabBar = storyboard?.instantiateViewController(withIdentifier: "TabBarHome") as! TabBarController
+        _ = storyboard?.instantiateViewController(withIdentifier: "TabBarHome") as! TabBarController
         
         if flagCheckSignInSignUp == .signIn {
             authenModel.signInEmail(email: inputEmail.text!, password: inputPassword.text!, callback: { [weak self](complete, error)  in
                 guard complete else {
-                    self?.showAlertError(error: error!)
+                    self?.showAlert(message: error!)
                     return
                 }
                 self?.setRootViewControllerApp(withConstantNavKey: Constant.Key.NAV_HOME)
@@ -56,7 +56,7 @@ class SignUpSignInViewController: BaseViewController {
         else {
             authenModel.signUpEmail(email: inputEmail.text!, password: inputPassword.text!, callback: { [weak self](complete, error)  in
                 guard complete else {
-                    self?.showAlertError(error: error!)
+                    self?.showAlert(message: error!)
                     return
                 }
                 self?.setRootViewControllerApp(withConstantNavKey: Constant.Key.NAV_HOME)
@@ -81,7 +81,8 @@ class SignUpSignInViewController: BaseViewController {
     @IBAction func passwordEditingChanged(_ sender: Any) {
         labelPassword.alpha = inputPassword.text?.isEmpty == true ? 0 : 1
         labelIncorrectPassword.alpha = authenModel.checkErrorPassword(password: inputPassword.text) ? 0 : 1
-        guard authenModel.isTouchBtnSignUpSignIn(email: inputEmail?.text, password: inputPassword?.text) == true else{
+        
+        guard authenModel.isEnableTouchBtnSignUpSignIn(email: inputEmail?.text, password: inputPassword?.text) == true else{
             btnSignUpAndSignIn.setColorButton(flag: false)
             return
         }
@@ -90,7 +91,8 @@ class SignUpSignInViewController: BaseViewController {
     @IBAction func emailEditingChanged(_ sender : Any) {
         labelEmail.alpha = inputEmail.text?.isEmpty == true ? 0 : 1
         labelIncorrectEmail.alpha = authenModel.checkErrorEmail(email: inputEmail.text) ? 0 : 1
-        guard authenModel.isTouchBtnSignUpSignIn(email: inputEmail?.text, password: inputPassword?.text) == true else{
+        
+        guard authenModel.isEnableTouchBtnSignUpSignIn(email: inputEmail?.text, password: inputPassword?.text) == true else{
             btnSignUpAndSignIn.setColorButton(flag: false)
             return
         }
@@ -112,7 +114,7 @@ class SignUpSignInViewController: BaseViewController {
             registerView.isHidden = true
             btnForgotPassword.alpha = 0
             btnSignInWithEmail.isHidden = false
-            btnSignUpAndSignIn.setTitle(LanguageManager.getText(withKey: KeyText.SIGN_UP), for: .normal)
+            btnSignUpAndSignIn.setTitle(LanguageManager.getText(withKey: KeyText.signUp), for: .normal)
         }
         else {
             btnSignInWithEmail.isHidden = true
@@ -121,23 +123,23 @@ class SignUpSignInViewController: BaseViewController {
             registerView.isHidden = false
             btnForgotPassword.alpha = 1
             btnSignInWithEmail.isHidden = true
-            btnSignUpAndSignIn.setTitle(LanguageManager.getText(withKey: KeyText.SIGN_IN), for: .normal)
+            btnSignUpAndSignIn.setTitle(LanguageManager.getText(withKey: KeyText.signIn), for: .normal)
         }
     }
     override func setUpLanguage() {
-        inputEmail.placeholder = LanguageManager.getText(withKey: KeyText.EMAIL)
-        inputPassword.placeholder = LanguageManager.getText(withKey: KeyText.PASSWORD)
-        btnPolicy.setTitle(LanguageManager.getText(withKey: KeyText.POLICY), for: .normal)
-        policyView.text = LanguageManager.getText(withKey: KeyText.TITLE_POLICY)
-        labelDoNotHaveAcc.text = LanguageManager.getText(withKey: KeyText.DO_NOT_HAVE_ACCOUNT)
-        btnRegister.setTitle(LanguageManager.getText(withKey: KeyText.REGISTER), for: .normal)
-        btnForgotPassword.setTitle(LanguageManager.getText(withKey: KeyText.FORGOT_PASSWORD), for: .normal)
-        labelOrSigUpWith.text = LanguageManager.getText(withKey: KeyText.OR_SIGN_UP_WITH)
-        labelLogo.text = LanguageManager.getText(withKey: KeyText.NEWS_24)
-        labelIncorrectEmail.text = LanguageManager.getText(withKey: KeyText.INCORRECT_EMAIL)
-        labelIncorrectPassword.text = LanguageManager.getText(withKey: KeyText.INCORRECT_PASSWORD)
+        inputEmail.placeholder = LanguageManager.getText(withKey: KeyText.email)
+        inputPassword.placeholder = LanguageManager.getText(withKey: KeyText.password)
+        btnPolicy.setTitle(LanguageManager.getText(withKey: KeyText.policy), for: .normal)
+        policyView.text = LanguageManager.getText(withKey: KeyText.titlePolicy)
+        labelDoNotHaveAcc.text = LanguageManager.getText(withKey: KeyText.doNotHaveAccount)
+        btnRegister.setTitle(LanguageManager.getText(withKey: KeyText.register), for: .normal)
+        btnForgotPassword.setTitle(LanguageManager.getText(withKey: KeyText.forgotPassword), for: .normal)
+        labelOrSigUpWith.text = LanguageManager.getText(withKey: KeyText.orSignUpWith)
+        labelLogo.text = LanguageManager.getText(withKey: KeyText.news24)
+        labelIncorrectEmail.text = LanguageManager.getText(withKey: KeyText.incorrectEmail)
+        labelIncorrectPassword.text = LanguageManager.getText(withKey: KeyText.incorrectPassword)
         
-        labelPassword.text = LanguageManager.getText(withKey: KeyText.PASSWORD)
+        labelPassword.text = LanguageManager.getText(withKey: KeyText.password)
     }
     
     @IBOutlet weak var labelLogo: UILabel!

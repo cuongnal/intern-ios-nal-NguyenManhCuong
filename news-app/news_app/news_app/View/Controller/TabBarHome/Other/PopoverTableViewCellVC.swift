@@ -26,13 +26,13 @@ class PopoverTableViewCellVC: BaseViewController{
     }
     private func setTitle() {
         guard let type = type else {return}
-        btnFirst.setTitle(LanguageManager.getText(withKey: .SHARE),for: .normal)
+        btnFirst.setTitle(LanguageManager.getText(withKey: .share),for: .normal)
         if type == .popoverBookmark {
-            btnSecond.setTitle(LanguageManager.getText(withKey: .BOOKMARK),for: .normal)
+            btnSecond.setTitle(LanguageManager.getText(withKey: .bookmark),for: .normal)
             iconBookmark.image = UIImage(named: "ic_bookmark")
         }
         else {
-            btnSecond.setTitle(LanguageManager.getText(withKey: .REMOVE_BOOKMARK),for: .normal)
+            btnSecond.setTitle(LanguageManager.getText(withKey: .removeBookmark),for: .normal)
             iconBookmark.image = UIImage(named: "ic_bookmarked")
         }
     }

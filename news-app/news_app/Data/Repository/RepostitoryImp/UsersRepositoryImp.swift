@@ -41,7 +41,7 @@ class UsersRepositoryImp : UsersRepository {
     }
     func updateIndexCategories (withCategories arrCategory : [Category], user : User) -> Dictionary<String , Array<Int> >?{
         do {
-            var dictionaryIndex = user.listIndexCategory
+            let dictionaryIndex = user.listIndexCategory
             var arr :[Int] = []
             
             arrCategory.forEach({
@@ -61,5 +61,14 @@ class UsersRepositoryImp : UsersRepository {
             return user.listIndexCategory
         }
     }
+    func updateUser(user: User) {
+        do {
+            try CDUser.updateUser(user: user)
+        }
+        catch let err {
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
+        }
+    }
+    
     
 }

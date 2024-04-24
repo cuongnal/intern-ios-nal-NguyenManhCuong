@@ -69,7 +69,7 @@ class BookmarkViewController : BaseViewController {
     private func setLeftTitle() {
         let btnLeftFirst = UIBarButtonItem()
         let label = UILabel()
-        label.text = LanguageManager.getText(withKey: .BOOKMARKED)
+        label.text = LanguageManager.getText(withKey: .bookmarked)
         label.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         label.textColor = .black

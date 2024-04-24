@@ -19,14 +19,28 @@ extension CDUser {
         u.email = user.email
         u.idUser = user.idUser
         u.listIndexCategory = user.listIndexCategory
+        u.hiddenCategories = user.hiddenCategories
         try AppDelegate.context.save()
         return u
     }
+    
     @nonobjc public class func updateUser(withDictionaryIndex dicIndex : Dictionary<String , Array<Int> >, with user : User) throws {
         let a = CDUser.fetchRequest()
         a.predicate = NSPredicate(format: "%K == %@",#keyPath(CDUser.idUser), user.idUser! )
         try AppDelegate.context.fetch(a).first?.listIndexCategory = dicIndex
         
         try AppDelegate.context.save()
+    }
+    @nonobjc public class func updateUser(user : User) throws {
+        guard let idUser = user.idUser else {return}
+        let u = CDUser.fetchRequest()
+        u.predicate = NSPredicate(format: "%K == %@", #keyPath(CDUser.idUser), idUser as CVarArg)
+        
+        var cdUser = try AppDelegate.context.fetch(u).first
+        
+        cdUser?.hiddenCategories = user.hiddenCategories
+        
+        try AppDelegate.context.save()
+        
     }
 }

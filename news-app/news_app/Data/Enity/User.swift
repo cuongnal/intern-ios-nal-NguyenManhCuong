@@ -11,4 +11,5 @@ public struct User : Codable {
     var idUser : String?
     var email : String?
     var listIndexCategory : [String: [Int]]?
+    var hiddenCategories : Bool = false
 }

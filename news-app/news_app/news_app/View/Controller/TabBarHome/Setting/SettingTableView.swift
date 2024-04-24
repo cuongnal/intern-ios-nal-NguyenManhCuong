@@ -39,13 +39,13 @@ class SettingTableView : UITableView, UITableViewDataSource, UITableViewDelegate
     }
     
     class func getSettingTableListItem() -> [(text: String, image: String, type: SettingTableView.TypeItemSelected)] {
-        return [(text: LanguageManager.getText(withKey: KeyText.ACCOUNT),image: "ic_person", type :  TypeItemSelected.account),
-                (text: LanguageManager.getText(withKey: KeyText.LANGUAGES), image: "ic_question", type: .languages),
-                (text: LanguageManager.getText(withKey: KeyText.CATEGORIES), image: "ic_question", type: .categories),
-                (text: LanguageManager.getText(withKey: KeyText.LOG_OUT), image: "ic_logout", type: .logOut)]
+        return [(text: LanguageManager.getText(withKey: KeyText.account),image: "ic_person", type :  TypeItemSelected.account),
+                (text: LanguageManager.getText(withKey: KeyText.languages), image: "ic_question", type: .languages),
+                (text: LanguageManager.getText(withKey: KeyText.categories), image: "ic_question", type: .categories),
+                (text: LanguageManager.getText(withKey: KeyText.logOut), image: "ic_logout", type: .logOut)]
     }
     class func getAccountTableListItem () -> [(text: String, image: String, type: SettingTableView.TypeItemSelected)] {
         return [(text: UserDefaults.getUser()?.email ?? "",image: "ic_email", type: TypeItemSelected.user),
-                (text: LanguageManager.getText(withKey: KeyText.CHANGE_PASSWORD),image: "ic_lock", type: .changePassword)]
+                (text: LanguageManager.getText(withKey: KeyText.changePassword),image: "ic_lock", type: .changePassword)]
     }
 }

@@ -40,11 +40,11 @@ class BaseViewController : UIViewController, BaseModelDelegate, UIPopoverPresent
     func cancelLoading() {
         loadingController.dismiss(animated: false)
     }
-    func showAlertError (withTitle title : String = Constant.Error.LABLE_ERROR, error : String) {
+    func showAlert (withTitle title : String = LanguageManager.getText(withKey: .error), message : String) {
         cancelLoading()
-        let alert : UIAlertController = UIAlertController(title: title, message: error, preferredStyle: .alert)
+        let alert : UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let action = UIAlertAction(title: "Cancel", style: .cancel, handler: {[weak self] _ in
+        let action = UIAlertAction(title: LanguageManager.getText(withKey: .cancel), style: .cancel, handler: {[weak self] _ in
             self?.dismiss(animated: false)
         })
         alert.addAction(action)

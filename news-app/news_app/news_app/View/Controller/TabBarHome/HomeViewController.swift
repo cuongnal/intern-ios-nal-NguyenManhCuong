@@ -19,6 +19,7 @@ class HomeViewController : BaseViewController {
     var popoverTableViewCell : PopoverTableViewCellVC!
     @IBOutlet weak var iconNotification: UIButton!
     
+    @IBOutlet weak var homeCollectionHeight: NSLayoutConstraint!
     @IBOutlet weak var searchBarHeight: NSLayoutConstraint!
     @IBOutlet weak var searchBarHome: SearchBarHome!
     let homeModel = HomeModel()
@@ -32,11 +33,31 @@ class HomeViewController : BaseViewController {
         popoverChangeSource = PopoverChangeSourceVC(nibName: "PopoverChangeSource", bundle: nil) as PopoverChangeSourceVC
         popoverTableViewCell = PopoverTableViewCellVC(nibName: "PopoverViewController", bundle: nil) as PopoverTableViewCellVC
         handlerCallback()
-        searchBarHome.placeholder = LanguageManager.getText(withKey: .SEARCH)
+        searchBarHome.placeholder = LanguageManager.getText(withKey: .search)
+        
+        
+        NotificationCenter.default
+            .addObserver(self,
+                         selector:#selector(hiddenCategories),
+                         name: NSNotification.Name ("HIDE"),                                           object: nil)
+    }
+    @objc private func hiddenCategories () {
+        let isHidden : Bool = UserDefaults.getUser()?.hiddenCategories ?? false
+        
+        if isHidden {
+            homeCollectionView.isHidden = isHidden
+            homeCollectionHeight.constant = 0
+        }
+        else {
+            homeCollectionView.isHidden = isHidden
+            homeCollectionHeight.constant = 45
+        }
     }
     override func setUpLanguage() {
-        searchBarHome.placeholder = LanguageManager.getText(withKey: .SEARCH)
-        homeCollectionView.reloadData()
+        searchBarHome.placeholder = LanguageManager.getText(withKey: .search)
+        if UserDefaults.getUser()?.hiddenCategories == false {
+            homeCollectionView.reloadData()
+        }
         homeTableView.reloadData()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +75,7 @@ class HomeViewController : BaseViewController {
             self?.homeCollectionView.data = arrCategory
             self?.homeCollectionView.reloadData()
         })
+        hiddenCategories()
     }
     
     func handlerCallback() {
