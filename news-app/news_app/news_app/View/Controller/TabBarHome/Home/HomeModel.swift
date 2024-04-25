@@ -27,24 +27,19 @@ class HomeModel : BaseModel {
             }
         )
     }
-    func fetchDataNewsRemote(category : Category, callback : @escaping ( ([News]) -> Void)) {
+    func refreshDataNewsRemote(category : Category, callback : @escaping ( ([News]) -> Void)) {
         excuteNetwork(
             task: { [weak self] in
                 let arr = self?.newsRepository.getNewsFromServer(category: category)
                 self?.arrNews.removeAll()
                 self?.arrNews.append(contentsOf: arr ?? [])
-                return arr
-            }, complete: {[weak self](arr) in
+                _ = self?.newsRepository.insertNewsByCategory(arrNews: arr ?? [])
+                let arrNewsOfLocal = self?.newsRepository.getNewsOfCategory(category: category)
+                self?.arrNews = arrNewsOfLocal ?? []
+                return arrNewsOfLocal
+            }, complete: {(arr) in
                 callback(arr ?? [])
-                self?.updateDataNewsLocal(category: category, arr : arr ?? [])
             })
-    }
-    private func updateDataNewsLocal(category : Category, arr : [News]) {
-        excuteTask(task: { [weak self] in
-            guard !arr.isEmpty else {return}
-            self?.newsRepository.deleteNewsOfCategory(withCategory:category)
-            _ = self?.newsRepository.insertNewsByCategory(arrNews: arr)
-        }, complete: nil)
     }
     func getCategoryByUser(typeClick : TypeClickPopover, callback : @escaping (([Category]) -> Void) ) {
         let type = typeClick == .tuoiTre ? TypeSource.tuoiTre : TypeSource.vnExpress

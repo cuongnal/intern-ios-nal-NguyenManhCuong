@@ -78,7 +78,7 @@ class HomeViewController : BaseViewController {
         }
         
         homeTableView.pullToRefreshCallback = { [weak self] category in
-            self?.homeModel.fetchDataNewsRemote(category: category, callback: { [weak self ](arrNews) in
+            self?.homeModel.refreshDataNewsRemote(category: category, callback: { [weak self ](arrNews) in
                 self?.homeTableView.data.removeAll()
                 self?.homeTableView.data.append(contentsOf: arrNews)
                 self?.homeTableView.stopRefreshing()

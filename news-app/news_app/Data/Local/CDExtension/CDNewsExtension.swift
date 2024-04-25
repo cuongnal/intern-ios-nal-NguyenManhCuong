@@ -24,17 +24,21 @@ extension CDNews {
     @nonobjc public class func insertNews(listNews : [News], category : Category? = nil) throws -> Bool {
          try AppDelegate.context.performAndWait {
             for item in listNews {
-                let cdN = CDNews(context: AppDelegate.context)
-                let cate = try CDCategory.getCDCategory(idCate: item.idCate)
-                cdN.author = item.author
-                cdN.des = item.des
-                cdN.idNews = item.idNews
-                cdN.image = item.urlImage
-                cdN.link = item.link
-                cdN.pubDate = item.pubDate
-                cdN.title = item.title
-                cdN.idCate = item.idCate
-                cate?.addToCategoriesNews(cdN)
+                let a = CDNews.fetchRequest()
+                a.predicate = NSPredicate(format: "%K == %@", #keyPath(CDNews.idNews), item.idNews as CVarArg)
+                if try AppDelegate.context.fetch(a).count == 0 {
+                    let cdN = CDNews(context: AppDelegate.context)
+                    let cate = try CDCategory.getCDCategory(idCate: item.idCate)
+                    cdN.author = item.author
+                    cdN.des = item.des
+                    cdN.idNews = item.idNews
+                    cdN.image = item.urlImage
+                    cdN.link = item.link
+                    cdN.pubDate = item.pubDate
+                    cdN.title = item.title
+                    cdN.idCate = item.idCate
+                    cate?.addToCategoriesNews(cdN)
+                }
             }
             try AppDelegate.context.save()
         }
