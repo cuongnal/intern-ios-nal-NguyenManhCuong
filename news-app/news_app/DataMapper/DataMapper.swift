@@ -27,6 +27,26 @@ class DataMapper {
         }
         return arr
     }
+    class func MapCDCategoryToEntity(withTypeSource type: TypeSource, cdCategory : [CDCategory]) -> [Category] {
+        var arr : [Category] = []
+        let indexDefault = UserDefaults.standard.setIndexCategoryDefault()
+        
+        for i in stride(from: 0, to: indexDefault[type.rawValue]!.count, by:1) {
+            let indexCategory : Int = indexDefault[type.rawValue]![i]
+            var item : Category = Category()
+            
+            let tg = cdCategory.first(where: {$0.indexCategory == indexCategory})
+            if let tg = tg {
+                item.idCate = tg.idCate
+                item.url = tg.url
+                item.typeSource = tg.typeSource
+                item.title = tg.title
+                item.index = Int(tg.indexCategory)
+                arr.append(item)
+            }
+        }
+        return arr
+    }
     
     class func MapCDCategoryToEntity(withCDCategory arrCDCate : [CDCategory]) -> [Category] {
         var arr : [Category] = []

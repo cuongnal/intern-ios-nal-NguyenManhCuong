@@ -32,12 +32,25 @@ class CategoryRepositoryImp : CategoryRepository {
             return []
         }
     }
-
+    // sắp xếp theo index
     func getAllCategoriesByTypeSource(withTypeSource type : TypeSource, withUser user : User) -> [Category] {
         do {
             
             let arr =  try CDCategory.getCDCategoryWithTypeSource(withTypeSource: type)
             return DataMapper.MapCDCategoryToEntity(withTypeSource: type, withUser : user, cdCategory: arr)
+        }
+        catch let err {
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
+            return []
+        }
+        
+    }
+    // không sắp xếp theo index
+    func getAllCategoriesByTypeSource(withTypeSource type : TypeSource) -> [Category] {
+        do {
+            
+            let arr =  try CDCategory.getCDCategoryWithTypeSource(withTypeSource: type)
+            return DataMapper.MapCDCategoryToEntity(withTypeSource: type, cdCategory: arr)
         }
         catch let err {
             print("Function:   \(#function)   line: \(#line)   error: \(err)")

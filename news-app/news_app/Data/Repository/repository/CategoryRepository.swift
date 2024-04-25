@@ -14,4 +14,6 @@ public protocol CategoryRepository {
     
     func getCategoryWithUUID(withUUIDs uuids : [UUID]) -> [Category]
     func getAllCategoriesByTypeSource(withTypeSource type : TypeSource, withUser user : User) -> [Category]
+    
+    func getAllCategoriesByTypeSource(withTypeSource type : TypeSource) -> [Category] 
 }
