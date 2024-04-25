@@ -102,6 +102,18 @@ class AuthenticationModel  : BaseModel {
             }
         }
     }
+    func sendEmailResetPassword(withEmail email : String,callback : @escaping ((String) -> Void)) {
+        delegate?.startLoading()
+        Auth.auth().sendPasswordReset(withEmail: email) {[weak self] (err) in
+            if err == nil {
+                callback("")
+            }
+            else {
+                callback(FirebaseErrorCode.error(withError: err!))
+            }
+            self?.delegate?.cancelLoading()
+        }
+    }
 }
 
 enum TypeScreen {

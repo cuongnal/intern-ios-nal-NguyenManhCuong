@@ -43,10 +43,10 @@ extension UIViewController {
         toast.text = text
         toast.textAlignment = .center
         toast.alpha = 1
-        toast.font = UIFont.systemFont(ofSize: 16)
+        toast.font = UIFont.systemFont(ofSize: 14)
         toast.layer.cornerRadius = 25
         toast.clipsToBounds = true
-        toast.textContainerInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0);
+        toast.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10);
         toast.updateConstraintsIfNeeded()
         self.view.addSubview(toast)
         toast.didMoveToSuperview()

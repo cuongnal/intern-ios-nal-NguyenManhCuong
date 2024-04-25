@@ -44,7 +44,6 @@ struct Constant {
         static let EMAIL_ALREADY_IN_USE = "Email đã được sử dụng"
         static let INVALID_EMAIL = "Email không hợp lệ"
         static let NIL = "Lỗi không xác định : \n"
-        static let ERROR_SENT_MAIL = "Email sent. Please check your email to reset your password"
     }
     
 }

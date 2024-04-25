@@ -59,10 +59,20 @@ class PopoverTableViewCellVC: BaseViewController{
         
         let screenHeight = UIScreen.main.bounds.height
         let d = anchor.convert(anchor.bounds, to: UIScreen.main.coordinateSpace)
-        let distanceToBottom = screenHeight - d.maxY
         
-        if distanceToBottom < 120 {
-            ppc?.permittedArrowDirections = .down
+        if isKeyboardShowing {
+            let distanceToBottom = screenHeight - keyboardHeight - d.maxY
+            
+            if distanceToBottom < 130 {
+                ppc?.permittedArrowDirections = .down
+            }
+        }
+        else {
+            let distanceToBottom = screenHeight - d.maxY
+            
+            if distanceToBottom < 120 {
+                ppc?.permittedArrowDirections = .down
+            }
         }
         
     }

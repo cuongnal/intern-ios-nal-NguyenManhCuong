@@ -88,7 +88,7 @@
 "EMAIL_ALREADY_IN_USE" = "Email Already in use";
 "INVALID_EMAIL" = "Invalid email";
 "ERROR_NIL" = "An unknown error : \n";
-"ERROR_SENT_MAIL" = "Email sent. Please check your email to reset your password";
+
 "QUESTION_HIDDEN_CATEGORIES" = "Do you want to hide the news category ?";
 "HIDE" = "Hide";
 "SHOW" = "Show";
@@ -99,6 +99,7 @@
 "NOTIFICATION" = "Notification";
 "Save_display_category_settings" = "Save display category settings";
 "Changed_category_display" = "Changed category display";
+
 //authentication
 
 "NEWS_24" = "News 24";
@@ -120,6 +121,7 @@
 "DID_NOT_RECEIVE_AN_EMAIL" = "Didn't receive an email ?";
 "RE_SEND" = "Re-Send";
 "RESET" = "Reset";
+"ERROR_SENT_MAIL" = "Email sent. Please check your email to reset your password";
 
 
 

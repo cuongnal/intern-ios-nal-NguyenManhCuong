@@ -13,15 +13,15 @@ class NewsTableView : UITableView, UITableViewDataSource, UITableViewDelegate {
     var onTouchNewsCallback : ((News) -> ())!
     var openPopUp : ((News,UIView) -> ())!
 
-    private var refresher : UIRefreshControl?
+    private var refresh : UIRefreshControl?
     var pullToRefreshCallback : ((Category) -> Void )?
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.delegate = self
         self.dataSource = self
         keyboardDismissMode = .onDrag
-
-        self.refresher = UIRefreshControl()
+        self.refresh = UIRefreshControl()
+       
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
@@ -39,20 +39,20 @@ class NewsTableView : UITableView, UITableViewDataSource, UITableViewDelegate {
         onTouchNewsCallback(data[indexPath.item])
         self.deselectRow(at: indexPath, animated: false)
     }
-    func pullToRefresher() {
-        guard let refresher = refresher else{ return }
+    func pullToRefresh() {
+        guard let refresh = refresh else{ return }
         self.alwaysBounceVertical = true
-        refresher.tintColor = UIColor.red
-        refresher.addTarget(self, action: #selector(loadData), for: .valueChanged)
-        addSubview(refresher)
+        refresh.tintColor = UIColor.red
+        refresh.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        addSubview(refresh)
     }
     @objc func loadData() {
         guard let category = category else {return}
-        self.refresher?.beginRefreshing()
+        self.refresh?.beginRefreshing()
         pullToRefreshCallback?(category)
     }
     
     func stopRefreshing() {
-        self.refresher?.endRefreshing()
+        self.refresh?.endRefreshing()
     }
 }

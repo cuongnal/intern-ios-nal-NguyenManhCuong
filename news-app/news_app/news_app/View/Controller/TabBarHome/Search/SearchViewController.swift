@@ -12,6 +12,9 @@ class SearchViewController : BaseViewController {
     private let searchModel = SearchModel(newsRepository: NewsRepositoryImp() )
     private let btnLeftFirst = UIBarButtonItem()
     @IBOutlet weak var searchTableView: SearchTableView!
+    
+    @IBOutlet weak var searchBar: SearchBarHome!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchTableView.register(UINib(nibName: Constant.NEWS_TABLE_VIEW_CELL, bundle: .main), forCellReuseIdentifier: Constant.NEWS_TABLE_VIEW_CELL)
@@ -21,15 +24,25 @@ class SearchViewController : BaseViewController {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
         setLeftTitle()
-        searchModel.getAllNews(callback: {[weak self ] arrNews in
-            self?.searchTableView.data = arrNews
-            self?.searchTableView.reloadData()
-        })
+        if !searchBar.isTextSearching {
+            searchModel.getAllNews(callback: {[weak self ] arrNews in
+                self?.searchTableView.data = arrNews
+                self?.searchTableView.reloadData()
+            })
+        }
     }
     private func handlerCallback() {
         searchTableView.onTouchNewsCallback = { [weak self] (item) in
             self?.openWebKitView(item: item)
         }
+        searchBar.onTextDidChangeCallback = { [weak self] (text) in
+            self?.searchModel.searchNewsWithCategory(withArrayTextSearch: text, callBack: { (arrNews) in
+                self?.searchTableView.data.removeAll()
+                self?.searchTableView.data.append(contentsOf: arrNews)
+                self?.searchTableView.reloadData()
+            })
+        }
+        searchBar.onTouchCancelCallback = { }
     }
     private func setLeftTitle() {
         let btnLeftFirst = UIBarButtonItem()
@@ -40,5 +53,7 @@ class SearchViewController : BaseViewController {
         label.textColor = .black
         btnLeftFirst.customView = label
         navigationController?.navigationBar.topItem?.leftBarButtonItem = btnLeftFirst
+        
+        searchBar.placeholder = LanguageManager.getText(withKey: .search)
     }
 }

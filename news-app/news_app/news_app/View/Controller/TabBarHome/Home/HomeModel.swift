@@ -92,25 +92,30 @@ class HomeModel : BaseModel {
     }
     
     
-    func searchNewsWithCategory (withArrayTextSearch arrText : [String], callBack: @escaping (([News]) -> Void)) {
+    func searchNewsWithCategory (withArrayTextSearch searchText : String, callBack: @escaping (([News]) -> Void)) {
         excuteTask(task: { [weak self] in
+            guard searchText.isNotEmpty() else {
+                return self?.arrNews ?? []
+            }
             
-            guard arrText.count != 0 else {return self?.arrNews}
-            
+            let arrText = searchText.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")
+
             var arrTextSearch  : [String] = []
             for item in arrText {
-                arrTextSearch.append(item.folding(options : .diacriticInsensitive,locale: Locale(identifier: "en_US")))
+                arrTextSearch.append(item.folding(options : .diacriticInsensitive,locale: nil))
             }
             var resultSearchNews : [News] = []
             guard let arrNews = self?.arrNews else { return resultSearchNews }
-            
+
             for item in arrNews {
-                
                 let isMatch = arrTextSearch.allSatisfy { keyword in
-                    let folding = item.title.folding(options : .diacriticInsensitive,locale: Locale(identifier: "en_US"))
+                    let folding = item.title.folding(options : .diacriticInsensitive,locale: nil)
                     return folding.lowercased().contains(keyword.lowercased())
                 }
-                if isMatch { resultSearchNews.append(item) }
+                if isMatch {
+                    resultSearchNews.append(item)
+
+                }
             }
             return resultSearchNews
         }, complete: { (arr) in

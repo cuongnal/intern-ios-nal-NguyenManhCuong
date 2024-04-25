@@ -10,9 +10,9 @@ import UIKit
 
 class SearchBarHome : UISearchBar, UISearchBarDelegate {
     var onTouchCancelCallback : (() -> Void)?
-    var onTextDidChangeCallback : (([String]) -> Void)?
+    var onTextDidChangeCallback : ((String) -> Void)?
     private var timer : Timer?
-    var textSearching =  ""
+    var isTextSearching =  false
     required init?(coder : NSCoder) {
         super.init(coder: coder)
         self.delegate = self
@@ -21,19 +21,18 @@ class SearchBarHome : UISearchBar, UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         timer?.invalidate()
-        textSearching = searchText
+        isTextSearching = searchText.isEmpty ? false : true
         if searchText.isEmpty {
-            onTextDidChangeCallback?([])
+            onTextDidChangeCallback?("")
             return
         }
-        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) {[weak self] timer in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) {[weak self] timer in
             
-            let arrText = searchText.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")
-            self?.onTextDidChangeCallback?(arrText)
+            self?.onTextDidChangeCallback?(searchText)
         }
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        textSearching = ""
+        isTextSearching = false
         onTouchCancelCallback?()
     }
 }

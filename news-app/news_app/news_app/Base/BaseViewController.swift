@@ -10,16 +10,32 @@ import UIKit
 
 class BaseViewController : UIViewController, BaseModelDelegate, UIPopoverPresentationControllerDelegate, UIGestureRecognizerDelegate {
     private lazy var loadingController = LoadingViewController()
+    lazy var isKeyboardShowing = false
+    lazy var keyboardHeight :CGFloat = 0
     private lazy var popover = PopoverTableViewCellVC(nibName: "PopoverViewController", bundle: nil) as PopoverTableViewCellVC
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
         NotificationCenter.default
-                          .addObserver(self, selector:#selector(onChangeLanguage),
+            .addObserver(self, selector:#selector(onChangeLanguage),
                          name: NSNotification.Name ("ABC"),object: nil)
         
+    }
+    @objc func keyboardWillShow(_ notification: Notification) {
+        isKeyboardShowing = true
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            keyboardHeight = keyboardRectangle.height
+        }
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification) {
+        isKeyboardShowing = false
     }
     @objc private func onChangeLanguage() {
         setUpLanguage()
@@ -46,7 +62,6 @@ class BaseViewController : UIViewController, BaseModelDelegate, UIPopoverPresent
         
         let action = UIAlertAction(title: LanguageManager.getText(withKey: titleAction), style: .cancel, handler: {[weak self] _ in
             self?.dismiss(animated: false)
- 
             if action == KeyText.oke {
                 self?.onTouchOkeAlert()
             }
@@ -64,18 +79,18 @@ class BaseViewController : UIViewController, BaseModelDelegate, UIPopoverPresent
             let navHome = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: nav) as! HomeNavigationController
             if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
                 if let window = windowScene.windows.first {
-                        window.rootViewController = navHome
-                        window.makeKeyAndVisible()
-                    }
+                    window.rootViewController = navHome
+                    window.makeKeyAndVisible()
+                }
             }
         }
         else {
             let navAuth = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: nav) as! AuthNavigationController
             if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
                 if let window = windowScene.windows.first {
-                        window.rootViewController = navAuth
-                        window.makeKeyAndVisible()
-                    }
+                    window.rootViewController = navAuth
+                    window.makeKeyAndVisible()
+                }
             }
         }
         

@@ -83,7 +83,6 @@
 "EMAIL_ALREADY_IN_USE" = "Email đã được sử dụng";
 "INVALID_EMAIL" = "Email không hợp lệ";
 "ERROR_NIL" = "Lỗi không xác định : \n";
-"ERROR_SENT_MAIL" = "Email sent. Please check your email to reset your password";
 "QUESTION_HIDDEN_CATEGORIES" = "Bạn có muốn ẩn danh mục tin tức ?";
 "HIDE" = "Ẩn";
 "SHOW" = "Hiện";
@@ -116,4 +115,6 @@
 "DID_NOT_RECEIVE_AN_EMAIL" = "Chưa nhận được email ?";
 "RE_SEND" = "Gửi lại";
 "RESET" = "Đặt lại";
+
+"ERROR_SENT_MAIL" = "Đã gửi email, vui lòng kiểm tra hòm thư của bạn";
 

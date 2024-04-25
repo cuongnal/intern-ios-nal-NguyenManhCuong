@@ -504,12 +504,12 @@
 		ADE00FE82BAAB9760041DE42 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				5ECBFE2B2BD61FB900462756 /* SearchBarHome.swift */,
 				ADE00FE92BAAB9B50041DE42 /* HomeCollectionViewCell.swift */,
 				ADE00FEB2BAABD9C0041DE42 /* HomeCollectionView.swift */,
 				ADE00FF42BAAE4210041DE42 /* HomeTableView.swift */,
 				ADA2C3F32BA9329B009E4F7C /* HomeViewController.swift */,
 				AD9B87422BBAC46D0052A68A /* HomeModel.swift */,
-				5ECBFE2B2BD61FB900462756 /* SearchBarHome.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";

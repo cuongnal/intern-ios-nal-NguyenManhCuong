@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "889BB026-8D2C-4B7A-BF76-BB2A98B572B5"
+            uuid = "6A24F217-B1FE-46DE-99CD-E4691CD3C5D0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "news_app/View/Controller/TabBarHome/Home/HomeModel.swift"
+            filePath = "news_app/View/Controller/TabBarHome/Other/PopoverTableViewCellVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "refreshDataNewsRemote(category:callback:)"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "setUp(anchor:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

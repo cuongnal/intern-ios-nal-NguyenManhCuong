@@ -504,31 +504,35 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="dfX-mD-TPL">
-                                <rect key="frame" x="83" y="589" width="248" height="20.5"/>
+                                <rect key="frame" x="81.5" y="589" width="251.5" height="32"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Didn’t receive an email?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opR-Qs-IbX">
-                                        <rect key="frame" x="0.0" y="0.0" width="180.5" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="180.5" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="re-send" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMl-O0-4gr">
-                                        <rect key="frame" x="183.5" y="0.0" width="64.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcp-vV-RXk">
+                                        <rect key="frame" x="185.5" y="0.0" width="66" height="32"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Re-send"/>
+                                        <connections>
+                                            <action selector="onTouchResend:" destination="65e-VZ-W0W" eventType="touchUpInside" id="a9k-qE-M7M"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="SMl-O0-4gr" secondAttribute="bottom" id="3BJ-Ua-2Sb"/>
-                                    <constraint firstAttribute="trailing" secondItem="SMl-O0-4gr" secondAttribute="trailing" id="G1d-O2-WQy"/>
                                     <constraint firstItem="opR-Qs-IbX" firstAttribute="leading" secondItem="dfX-mD-TPL" secondAttribute="leading" id="IO3-q8-2eQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="hcp-vV-RXk" secondAttribute="trailing" id="JPN-FV-F0R"/>
+                                    <constraint firstItem="hcp-vV-RXk" firstAttribute="top" secondItem="dfX-mD-TPL" secondAttribute="top" id="Jno-We-Khb"/>
+                                    <constraint firstAttribute="bottom" secondItem="hcp-vV-RXk" secondAttribute="bottom" id="OiD-vv-YlD"/>
+                                    <constraint firstItem="hcp-vV-RXk" firstAttribute="leading" secondItem="opR-Qs-IbX" secondAttribute="trailing" constant="5" id="TKL-st-k8g"/>
                                     <constraint firstItem="opR-Qs-IbX" firstAttribute="top" secondItem="dfX-mD-TPL" secondAttribute="top" id="dH8-wn-VaF"/>
-                                    <constraint firstItem="SMl-O0-4gr" firstAttribute="top" secondItem="dfX-mD-TPL" secondAttribute="top" id="mVm-DW-Rm9"/>
                                     <constraint firstItem="opR-Qs-IbX" firstAttribute="leading" secondItem="dfX-mD-TPL" secondAttribute="leading" id="nWb-BA-j0T"/>
                                     <constraint firstAttribute="bottom" secondItem="opR-Qs-IbX" secondAttribute="bottom" id="pE7-2c-dIe"/>
-                                    <constraint firstItem="SMl-O0-4gr" firstAttribute="leading" secondItem="opR-Qs-IbX" secondAttribute="trailing" constant="3" id="zgH-nc-hN5"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -556,13 +560,14 @@
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="uUi-Hr-VSl"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="btnReSend" destination="SMl-O0-4gr" id="Job-21-8Fn"/>
+                        <outlet property="btnReSend" destination="hcp-vV-RXk" id="xP3-E3-0aa"/>
                         <outlet property="btnReset" destination="lTv-nS-fHt" id="9W5-tU-qk7"/>
                         <outlet property="inputEmail" destination="0ML-XX-5dE" id="nsm-0j-R3X"/>
                         <outlet property="labelEmail" destination="Yjo-bg-bX8" id="PuD-k8-Z9U"/>
                         <outlet property="labelNoti" destination="JVd-cp-Kev" id="MXc-e7-OGx"/>
                         <outlet property="titleLogo" destination="t09-A1-emi" id="aXK-Ok-Bb1"/>
                         <outlet property="titleResend" destination="opR-Qs-IbX" id="Sg8-0p-Wfi"/>
+                        <outlet property="viewResendMail" destination="dfX-mD-TPL" id="kFH-rg-MQz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rNd-yt-1QA" sceneMemberID="firstResponder"/>
@@ -998,17 +1003,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="96Y-fe-Khm" customClass="SearchTableView" customModule="news_app" customModuleProvider="target">
-                                <rect key="frame" x="15" y="102" width="384" height="711"/>
+                                <rect key="frame" x="20" y="148" width="374" height="665"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" text="" translatesAutoresizingMaskIntoConstraints="NO" id="FKC-pp-2dw" customClass="SearchBarHome" customModule="news_app" customModuleProvider="target">
+                                <rect key="frame" x="12" y="92" width="390" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aHo-sN-3pu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="aHo-sN-3pu" firstAttribute="bottom" secondItem="96Y-fe-Khm" secondAttribute="bottom" id="38C-IR-ea6"/>
-                            <constraint firstItem="aHo-sN-3pu" firstAttribute="trailing" secondItem="96Y-fe-Khm" secondAttribute="trailing" constant="15" id="cmh-kA-tEl"/>
-                            <constraint firstItem="96Y-fe-Khm" firstAttribute="leading" secondItem="aHo-sN-3pu" secondAttribute="leading" constant="15" id="odf-ts-tjz"/>
-                            <constraint firstItem="96Y-fe-Khm" firstAttribute="top" secondItem="aHo-sN-3pu" secondAttribute="top" constant="10" id="ueA-Bc-bHt"/>
+                            <constraint firstItem="FKC-pp-2dw" firstAttribute="top" secondItem="aHo-sN-3pu" secondAttribute="top" id="b8j-lT-jwR"/>
+                            <constraint firstItem="aHo-sN-3pu" firstAttribute="trailing" secondItem="96Y-fe-Khm" secondAttribute="trailing" constant="20" id="cmh-kA-tEl"/>
+                            <constraint firstItem="FKC-pp-2dw" firstAttribute="leading" secondItem="aHo-sN-3pu" secondAttribute="leading" constant="12" id="jer-CO-BKB"/>
+                            <constraint firstItem="aHo-sN-3pu" firstAttribute="trailing" secondItem="FKC-pp-2dw" secondAttribute="trailing" constant="12" id="nxo-ax-5Su"/>
+                            <constraint firstItem="96Y-fe-Khm" firstAttribute="leading" secondItem="aHo-sN-3pu" secondAttribute="leading" constant="20" id="odf-ts-tjz"/>
+                            <constraint firstItem="96Y-fe-Khm" firstAttribute="top" secondItem="FKC-pp-2dw" secondAttribute="bottom" id="wCN-4C-1xx"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="ic_search" id="w7L-l6-G42">
@@ -1021,12 +1033,13 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="searchBar" destination="FKC-pp-2dw" id="9QK-B4-ko0"/>
                         <outlet property="searchTableView" destination="96Y-fe-Khm" id="BIQ-vB-0E4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zh2-hX-fjt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1904" y="-1102"/>
+            <point key="canvasLocation" x="1902.8985507246377" y="-1102.2321428571429"/>
         </scene>
         <!--Home Navigation Controller-->
         <scene sceneID="go6-ac-PYP">

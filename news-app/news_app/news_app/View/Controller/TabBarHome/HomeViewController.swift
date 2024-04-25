@@ -34,6 +34,7 @@ class HomeViewController : BaseViewController {
         handlerCallback()
         searchBarHome.placeholder = LanguageManager.getText(withKey: .search)
         
+        setUpHomeCollectionView()
         
         NotificationCenter.default
             .addObserver(self,
@@ -51,7 +52,6 @@ class HomeViewController : BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
-        setUpHomeCollectionView()
     }
     
     func setUpHomeCollectionView(typeSource : TypeClickPopover = .vnExpress) {
@@ -76,16 +76,25 @@ class HomeViewController : BaseViewController {
                 })
             }
         }
-        
+        homeTableView.pullToRefresh() // gọi hàm này để đặt chức năng pull To refrshe
         homeTableView.pullToRefreshCallback = { [weak self] category in
             self?.homeModel.refreshDataNewsRemote(category: category, callback: { [weak self ](arrNews) in
-                self?.homeTableView.data.removeAll()
-                self?.homeTableView.data.append(contentsOf: arrNews)
-                self?.homeTableView.stopRefreshing()
-                self?.homeTableView.reloadData()
+                if self?.searchBarHome.isTextSearching == true {
+                    self?.homeModel.searchNewsWithCategory(withArrayTextSearch: self?.searchBarHome.text ?? "", callBack: {[weak self] arrNewsSearch in
+                        self?.homeTableView.data.removeAll()
+                        self?.homeTableView.data.append(contentsOf: arrNewsSearch)
+                        self?.homeTableView.reloadData()
+                        self?.homeTableView.stopRefreshing()
+                    })
+                }
+                else{
+                    self?.homeTableView.data.removeAll()
+                    self?.homeTableView.data.append(contentsOf: arrNews)
+                    self?.homeTableView.reloadData()
+                    self?.homeTableView.stopRefreshing()
+                }
             })
         }
-        homeTableView.pullToRefresher()
         
         homeTableView.onTouchNewsCallback = {[weak self] item in
             self?.openWebKitView(item: item)
@@ -121,10 +130,10 @@ class HomeViewController : BaseViewController {
         }
         homeTableView.scrollUpCallback = {[weak self] in
             guard let self = self else {return}
-            guard let textIsEmpty = self.searchBarHome?.textSearching.isEmpty else {
+            guard let isText = self.searchBarHome?.isTextSearching else {
                 return
             }
-            if textIsEmpty {
+            if !isText {
                 UIView.animate(withDuration: 0.2) {
                     self.searchBarHeight.constant = 0
                     self.view.setNeedsLayout()
