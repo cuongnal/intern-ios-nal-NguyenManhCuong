@@ -758,6 +758,52 @@
             </objects>
             <point key="canvasLocation" x="3790" y="-1765"/>
         </scene>
+        <!--Hide Categories View Controller-->
+        <scene sceneID="e8T-gT-tLT">
+            <objects>
+                <viewController storyboardIdentifier="HideCategoriesViewController" id="Ft6-Dm-9CF" customClass="HideCategoriesViewController" customModule="news_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kfY-Uy-7HY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rtc-EP-3FM">
+                                <rect key="frame" x="10" y="68" width="394" height="32"/>
+                                <segments>
+                                    <segment title="VN Express"/>
+                                    <segment title="Tuổi trẻ"/>
+                                </segments>
+                            </segmentedControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="HideCategories" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tne-Io-XQB">
+                                <rect key="frame" x="10" y="129" width="394" height="300"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Vhd-rC-ctk"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UMC-Qp-6BJ">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Gez-bc-e2f"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Gez-bc-e2f" firstAttribute="trailing" secondItem="rtc-EP-3FM" secondAttribute="trailing" constant="10" id="4Sl-8c-xzo"/>
+                            <constraint firstItem="rtc-EP-3FM" firstAttribute="top" secondItem="Gez-bc-e2f" secondAttribute="top" constant="20" id="5no-xm-FGQ"/>
+                            <constraint firstItem="Gez-bc-e2f" firstAttribute="trailing" secondItem="tne-Io-XQB" secondAttribute="trailing" constant="10" id="O2G-Uy-dhS"/>
+                            <constraint firstItem="tne-Io-XQB" firstAttribute="top" secondItem="rtc-EP-3FM" secondAttribute="bottom" constant="30" id="WEl-1G-MLt"/>
+                            <constraint firstItem="rtc-EP-3FM" firstAttribute="leading" secondItem="Gez-bc-e2f" secondAttribute="leading" constant="10" id="dFx-Xk-5fh"/>
+                            <constraint firstItem="tne-Io-XQB" firstAttribute="leading" secondItem="Gez-bc-e2f" secondAttribute="leading" constant="10" id="iFy-Ip-x98"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G5A-Ew-afp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4647.826086956522" y="-1775.2232142857142"/>
+        </scene>
         <!--Settings-->
         <scene sceneID="ug3-dc-x8C">
             <objects>

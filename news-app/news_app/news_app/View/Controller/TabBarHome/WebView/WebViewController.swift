@@ -59,7 +59,8 @@ class WebViewController : BaseViewController, WKNavigationDelegate {
         self.navigationController?.popViewController(animated: true)
     }
     @objc private func sharingNewsToOther() {
-        
+        guard let news = newsItem else {return}
+        presenShareSheet(withNews: news)
     }
     @objc private func onTouchBookmark() {
         if !webModel.isCheckBookmarked {

@@ -59,7 +59,7 @@ class SettingViewController : BaseViewController{
                 case .logOut:
                     self?.logOut()
                 case .categories :
-                    self?.showAlertHideCategories()
+                    self?.openHideCategoriesVC()
                 default:
                     return
             }
@@ -92,28 +92,9 @@ class SettingViewController : BaseViewController{
             self.setRootViewControllerApp(withConstantNavKey: Constant.Key.NAV_AUTH)
         }
     }
-    private func showAlertHideCategories() {
-        let alert : UIAlertController = UIAlertController(title: LanguageManager.getText(withKey: .settingCategories), message: LanguageManager.getText(withKey: .questionHiddenCategories), preferredStyle: .alert)
+    private func openHideCategoriesVC() {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "HideCategoriesViewController") as? HideCategoriesViewController else {return}
         
-        let actionShow = UIAlertAction(title: LanguageManager.getText(withKey: .show), style: .cancel, handler: {[weak self] _ in
-            self?.setHiddenCategories(isHidden: false)
-            self?.dismiss(animated: false)
-        })
-        let actionHide = UIAlertAction(title: LanguageManager.getText(withKey: .hide), style: .default, handler: {[weak self] _ in
-            self?.setHiddenCategories(isHidden: true)
-            self?.dismiss(animated: false)
-        })
-        alert.addAction(actionShow)
-        alert.addAction(actionHide)
-        present(alert, animated: true)
-    }
-    private func setHiddenCategories(isHidden : Bool) {
-        settingModel.updateUser(isHiddenCategories: isHidden, callback: {
-            NotificationCenter.default
-                        .post(name: NSNotification.Name("HIDE"),
-                         object: nil,
-                         userInfo: nil)
-        })
-        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

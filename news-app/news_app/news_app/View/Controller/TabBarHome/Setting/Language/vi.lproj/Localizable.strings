@@ -88,6 +88,10 @@
 "HIDE" = "Ẩn";
 "SHOW" = "Hiện";
 "SETTING_CATEGORIES" = "Cài đặt danh mục";
+
+"PASSWORD_IS_NOT_INCORRECT_FORMAT" = "Mật khẩu sai định dạng";
+
+"OKE" = "Đồng ý";
 //authentication
 
 "NEWS_24" = "Báo mới 24h";

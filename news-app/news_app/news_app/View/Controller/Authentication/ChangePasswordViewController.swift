@@ -146,17 +146,21 @@ class ChangePasswordViewController : BaseViewController {
     @objc private func saveChangePassword() {
         authenModel.changePassword(withCurrentPassword: inputCurrentPassword.text!, newPassword: inputNewPassword.text!, callback: { [weak self] isSuccessChangePassword, message in
             if isSuccessChangePassword {
-                self?.showAlert(withTitle: LanguageManager.getText(withKey: .success), message: message)
+                self?.showAlert(withTitle: .success, message: message, titleAction: .oke, action: .oke)
+                
             }
             else {
-                self?.showAlert(message: message)
+                self?.showAlert(message: message, titleAction: .oke, action: .cancel)
             }
         })
+    }
+    override func onTouchOkeAlert() {
+        goBack()
     }
     private func setTextLabel() {
         inputNewPassword.placeholder = LanguageManager.getText(withKey: .newPassword)
         labelNewPassword.text = LanguageManager.getText(withKey: .newPassword)
-        errorNewPassword.text = LanguageManager.getText(withKey: .incorrectPassword)
+        errorNewPassword.text = LanguageManager.getText(withKey: .passwordIsNotIncorrectFormat)
         
         labelCurrentPassword.text = LanguageManager.getText(withKey: .currentPassword)
         inputCurrentPassword.placeholder = LanguageManager.getText(withKey: .currentPassword)

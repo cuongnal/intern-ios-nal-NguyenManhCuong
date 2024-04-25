@@ -93,7 +93,9 @@
 "HIDE" = "Hide";
 "SHOW" = "Show";
 "SETTING_CATEGORIES" = "Setting Categories";
+"PASSWORD_IS_NOT_INCORRECT_FORMAT" = "Password invalidate";
 
+"OKE" = "Oke";
 //authentication
 
 "NEWS_24" = "News 24";
@@ -110,6 +112,7 @@
 
 "INCORRECT_PASSWORD" = "Incorrect password";
 "INCORRECT_EMAIL" = "Incorrect email";
+"EMAIL_INVALIDATE" = "Email invalidate";
 "INPUT_EMAIL_TO_BE_SENT_RESET_PASSWORD" = "Enter your email to be sent a reset password link.";
 "DID_NOT_RECEIVE_AN_EMAIL" = "Didn't receive an email ?";
 "RE_SEND" = "Re-Send";

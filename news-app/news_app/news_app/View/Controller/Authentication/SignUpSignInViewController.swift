@@ -47,7 +47,7 @@ class SignUpSignInViewController: BaseViewController {
         if flagCheckSignInSignUp == .signIn {
             authenModel.signInEmail(email: inputEmail.text!, password: inputPassword.text!, callback: { [weak self](complete, error)  in
                 guard complete else {
-                    self?.showAlert(message: error!)
+                    self?.showAlert(message: error!, titleAction: .oke, action: .cancel)
                     return
                 }
                 self?.setRootViewControllerApp(withConstantNavKey: Constant.Key.NAV_HOME)
@@ -56,7 +56,7 @@ class SignUpSignInViewController: BaseViewController {
         else {
             authenModel.signUpEmail(email: inputEmail.text!, password: inputPassword.text!, callback: { [weak self](complete, error)  in
                 guard complete else {
-                    self?.showAlert(message: error!)
+                    self?.showAlert(message: error!, titleAction: .oke, action: .cancel)
                     return
                 }
                 self?.setRootViewControllerApp(withConstantNavKey: Constant.Key.NAV_HOME)
@@ -80,8 +80,12 @@ class SignUpSignInViewController: BaseViewController {
     
     @IBAction func passwordEditingChanged(_ sender: Any) {
         labelPassword.alpha = inputPassword.text?.isEmpty == true ? 0 : 1
-        labelIncorrectPassword.alpha = authenModel.checkErrorPassword(password: inputPassword.text) ? 0 : 1
-        
+        if inputPassword.text?.isEmpty == true {
+            labelIncorrectPassword.alpha = 0
+        }
+        else {
+            labelIncorrectPassword.alpha = authenModel.checkErrorPassword(password: inputPassword.text) ? 0 : 1
+        }
         guard authenModel.isEnableTouchBtnSignUpSignIn(email: inputEmail?.text, password: inputPassword?.text) == true else{
             btnSignUpAndSignIn.setColorButton(flag: false)
             return
@@ -90,8 +94,12 @@ class SignUpSignInViewController: BaseViewController {
     }
     @IBAction func emailEditingChanged(_ sender : Any) {
         labelEmail.alpha = inputEmail.text?.isEmpty == true ? 0 : 1
-        labelIncorrectEmail.alpha = authenModel.checkErrorEmail(email: inputEmail.text) ? 0 : 1
-        
+        if inputEmail.text?.isEmpty == true {
+            labelIncorrectEmail.alpha = 0
+        }
+        else {
+            labelIncorrectEmail.alpha = authenModel.checkErrorEmail(email: inputEmail.text) ? 0 : 1
+        }
         guard authenModel.isEnableTouchBtnSignUpSignIn(email: inputEmail?.text, password: inputPassword?.text) == true else{
             btnSignUpAndSignIn.setColorButton(flag: false)
             return
@@ -136,8 +144,8 @@ class SignUpSignInViewController: BaseViewController {
         btnForgotPassword.setTitle(LanguageManager.getText(withKey: KeyText.forgotPassword), for: .normal)
         labelOrSigUpWith.text = LanguageManager.getText(withKey: KeyText.orSignUpWith)
         labelLogo.text = LanguageManager.getText(withKey: KeyText.news24)
-        labelIncorrectEmail.text = LanguageManager.getText(withKey: KeyText.incorrectEmail)
-        labelIncorrectPassword.text = LanguageManager.getText(withKey: KeyText.incorrectPassword)
+        labelIncorrectEmail.text = LanguageManager.getText(withKey: KeyText.emailInValidate)
+        labelIncorrectPassword.text = LanguageManager.getText(withKey: KeyText.passwordIsNotIncorrectFormat)
         
         labelPassword.text = LanguageManager.getText(withKey: KeyText.password)
     }

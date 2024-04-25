@@ -40,16 +40,21 @@ class BaseViewController : UIViewController, BaseModelDelegate, UIPopoverPresent
     func cancelLoading() {
         loadingController.dismiss(animated: false)
     }
-    func showAlert (withTitle title : String = LanguageManager.getText(withKey: .error), message : String) {
+    func showAlert (withTitle title : KeyText = .error, message : String, titleAction : KeyText, action : KeyText) {
         cancelLoading()
-        let alert : UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alert : UIAlertController = UIAlertController(title: LanguageManager.getText(withKey: title), message: message, preferredStyle: .alert)
         
-        let action = UIAlertAction(title: LanguageManager.getText(withKey: .cancel), style: .cancel, handler: {[weak self] _ in
+        let action = UIAlertAction(title: LanguageManager.getText(withKey: titleAction), style: .cancel, handler: {[weak self] _ in
             self?.dismiss(animated: false)
+ 
+            if action == KeyText.oke {
+                self?.onTouchOkeAlert()
+            }
         })
         alert.addAction(action)
         present(alert, animated: true)
     }
+    func onTouchOkeAlert() {}
     // hiện popover
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none

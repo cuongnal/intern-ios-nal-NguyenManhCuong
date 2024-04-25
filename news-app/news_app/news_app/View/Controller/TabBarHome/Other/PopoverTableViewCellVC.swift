@@ -57,6 +57,14 @@ class PopoverTableViewCellVC: BaseViewController{
         ppc?.sourceView = anchor
         ppc!.popoverLayoutMargins = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 0)
         
+        let screenHeight = UIScreen.main.bounds.height
+        let d = anchor.convert(anchor.bounds, to: UIScreen.main.coordinateSpace)
+        let distanceToBottom = screenHeight - d.maxY
+        
+        if distanceToBottom < 120 {
+            ppc?.permittedArrowDirections = .down
+        }
+        
     }
 }
 public enum TypeClickPopover : String{

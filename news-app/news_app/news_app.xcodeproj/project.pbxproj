@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		544050A4B8741F87310CF21A /* Pods_news_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB8E695BE926F81C9A6D2F6 /* Pods_news_appTests.framework */; };
 		5E6C339D2BCAFCAF009ADB8C /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C339C2BCAFCAF009ADB8C /* HomeNavigationController.swift */; };
+		5E8AB7D52BDA0B1B00D4A4F4 /* HideCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8AB7D42BDA0B1B00D4A4F4 /* HideCategoriesViewController.swift */; };
 		5E8DE24C2BD27904008966F6 /* PopoverChangeSource.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E8DE24B2BD27904008966F6 /* PopoverChangeSource.xib */; };
 		5E94B2302BD76A4E00C80A7B /* AppDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E94B22F2BD76A4E00C80A7B /* AppDefault.swift */; };
 		5E94B2332BD78E7200C80A7B /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E94B2322BD78E7200C80A7B /* LanguageManager.swift */; };
@@ -122,6 +123,7 @@
 		52EE036AA0A908D085E9C8A1 /* Pods-news_appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-news_appTests.debug.xcconfig"; path = "Target Support Files/Pods-news_appTests/Pods-news_appTests.debug.xcconfig"; sourceTree = "<group>"; };
 		56E073DA07F2045BFAA7D6AA /* Pods-news_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-news_app.release.xcconfig"; path = "Target Support Files/Pods-news_app/Pods-news_app.release.xcconfig"; sourceTree = "<group>"; };
 		5E6C339C2BCAFCAF009ADB8C /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
+		5E8AB7D42BDA0B1B00D4A4F4 /* HideCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideCategoriesViewController.swift; sourceTree = "<group>"; };
 		5E8DE24B2BD27904008966F6 /* PopoverChangeSource.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopoverChangeSource.xib; sourceTree = "<group>"; };
 		5E94B22F2BD76A4E00C80A7B /* AppDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefault.swift; sourceTree = "<group>"; };
 		5E94B2322BD78E7200C80A7B /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
@@ -404,6 +406,7 @@
 				AD8E538E2BB5743E000103DA /* AccountViewController.swift */,
 				AD8E53862BB54EC0000103DA /* SettingViewController.swift */,
 				5EECA6CF2BD9672B00E1A645 /* SettingModel.swift */,
+				5E8AB7D42BDA0B1B00D4A4F4 /* HideCategoriesViewController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -916,6 +919,7 @@
 				ADE00FF02BAAD4800041DE42 /* NewsTableViewCell.swift in Sources */,
 				AD8E53872BB54EC0000103DA /* SettingViewController.swift in Sources */,
 				AD9B873F2BBA946C0052A68A /* PickLanguageViewController.swift in Sources */,
+				5E8AB7D52BDA0B1B00D4A4F4 /* HideCategoriesViewController.swift in Sources */,
 				CE1DADDC2BBFA8AF00F87A47 /* UsersRepository.swift in Sources */,
 				CEC12A6D2BC7E71C00A6CF21 /* BookmarkCollectionViewCell.swift in Sources */,
 				ADA0BAE62BB2A26F007B39A8 /* TabBarController.swift in Sources */,

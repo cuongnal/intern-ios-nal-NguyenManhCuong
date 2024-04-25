@@ -100,6 +100,8 @@ enum KeyText: String {
     case show = "SHOW"
     case settingCategories = "SETTING_CATEGORIES"
     
+    case oke = "OKE"
+    
     // Authentication
     case news24 = "NEWS_24"
     case email = "EMAIL"
@@ -113,7 +115,9 @@ enum KeyText: String {
     case register = "REGISTER"
     case orSignUpWith = "OR_SIGN_UP_WITH"
     case incorrectPassword = "INCORRECT_PASSWORD"
+    case passwordIsNotIncorrectFormat = "PASSWORD_IS_NOT_INCORRECT_FORMAT"
     case incorrectEmail = "INCORRECT_EMAIL"
+    case emailInValidate = "Email invalidate"
     case paragraph1 = "PARAGRAP_1"
     case paragraph2 = "PARAGRAP_2"
     case paragraph1Detail = "PARAGRAP_1_DETAIL"
