@@ -9,7 +9,31 @@ import Foundation
 
 class CategoryRepositoryImp : CategoryRepository {
     
-    func getCategoriesByTypeSource(withTypeSource type : TypeSource, withUser user : User) -> [Category] {
+    func getCategoriesBeShownByTypeSource(withTypeSource type : TypeSource, withUser user : User) -> [Category] {
+        do {
+
+            let arrCDCategory =  try CDCategory.getCDCategoryWithTypeSource(withTypeSource: type)
+            let arr = DataMapper.MapCDCategoryToEntity(withTypeSource: type, withUser : user, cdCategory: arrCDCategory)
+            let user = try DataMapper.MapCDUsertoEntity(withCDUser: CDUser.fetchUserById(idUser: user.idUser!) ?? CDUser() )
+
+            var arrCategoryResult :[Category] = []
+            for i in arr {
+                user.listItemShow?[type.rawValue]?.forEach({ value in
+                    if i.index == value {
+                        arrCategoryResult.append(i)
+                    }
+                })
+            }
+            return arrCategoryResult
+
+        }
+        catch let err {
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
+            return []
+        }
+    }
+
+    func getAllCategoriesByTypeSource(withTypeSource type : TypeSource, withUser user : User) -> [Category] {
         do {
             
             let arr =  try CDCategory.getCDCategoryWithTypeSource(withTypeSource: type)

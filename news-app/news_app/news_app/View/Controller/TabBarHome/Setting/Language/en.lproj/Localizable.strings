@@ -96,6 +96,9 @@
 "PASSWORD_IS_NOT_INCORRECT_FORMAT" = "Password invalidate";
 
 "OKE" = "Oke";
+"NOTIFICATION" = "Notification";
+"Save_display_category_settings" = "Save display category settings";
+"Changed_category_display" = "Changed category display";
 //authentication
 
 "NEWS_24" = "News 24";

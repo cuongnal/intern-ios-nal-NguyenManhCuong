@@ -766,21 +766,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rtc-EP-3FM">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rtc-EP-3FM" customClass="SourceSegmentedControl" customModule="news_app" customModuleProvider="target">
                                 <rect key="frame" x="10" y="68" width="394" height="32"/>
                                 <segments>
                                     <segment title="VN Express"/>
                                     <segment title="Tuổi trẻ"/>
                                 </segments>
+                                <connections>
+                                    <action selector="changeSource:" destination="Ft6-Dm-9CF" eventType="valueChanged" id="YFx-xb-bnJ"/>
+                                </connections>
                             </segmentedControl>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="HideCategories" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tne-Io-XQB">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="HideCategories" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tne-Io-XQB" customClass="HideCollectionView" customModule="news_app" customModuleProvider="target">
                                 <rect key="frame" x="10" y="129" width="394" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="Vhd-rC-ctk"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UMC-Qp-6BJ">
-                                    <size key="itemSize" width="128" height="128"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UMC-Qp-6BJ">
+                                    <size key="itemSize" width="128" height="45"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -799,6 +802,10 @@
                             <constraint firstItem="tne-Io-XQB" firstAttribute="leading" secondItem="Gez-bc-e2f" secondAttribute="leading" constant="10" id="iFy-Ip-x98"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="hideCategoriesCV" destination="tne-Io-XQB" id="mZ8-AB-YUt"/>
+                        <outlet property="segmentedControl" destination="rtc-EP-3FM" id="GOd-iB-8Pk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G5A-Ew-afp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

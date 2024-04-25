@@ -92,6 +92,10 @@
 "PASSWORD_IS_NOT_INCORRECT_FORMAT" = "Mật khẩu sai định dạng";
 
 "OKE" = "Đồng ý";
+"NOTIFICATION" = "Thông báo";
+"Save_display_category_settings" = "Lưu lại cài đặt hiển thị danh mục ?";
+
+"Changed_category_display" = "Đã thay đổi cài đặt hiển thị danh mục";
 //authentication
 
 "NEWS_24" = "Báo mới 24h";

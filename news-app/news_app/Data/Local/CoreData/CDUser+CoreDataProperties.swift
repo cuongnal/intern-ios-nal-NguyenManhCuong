@@ -2,7 +2,7 @@
 //  CDUser+CoreDataProperties.swift
 //  news_app
 //
-//  Created by Manhcuong on 24/04/2024.
+//  Created by Manhcuong on 25/04/2024.
 //
 //
 
@@ -17,9 +17,9 @@ extension CDUser {
     }
 
     @NSManaged public var email: String?
+    @NSManaged public var listItemShow: Dictionary<String , Array<Int> >?
     @NSManaged public var idUser: String?
     @NSManaged public var listIndexCategory: Dictionary<String , Array<Int> >?
-    @NSManaged public var hiddenCategories: Bool
     @NSManaged public var saveBookmark: NSSet?
     @NSManaged public var sentNews: NSSet?
 

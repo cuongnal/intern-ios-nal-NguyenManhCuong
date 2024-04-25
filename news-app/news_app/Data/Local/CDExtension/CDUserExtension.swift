@@ -19,7 +19,7 @@ extension CDUser {
         u.email = user.email
         u.idUser = user.idUser
         u.listIndexCategory = user.listIndexCategory
-        u.hiddenCategories = user.hiddenCategories
+        u.listItemShow = user.listItemShow
         try AppDelegate.context.save()
         return u
     }
@@ -36,9 +36,9 @@ extension CDUser {
         let u = CDUser.fetchRequest()
         u.predicate = NSPredicate(format: "%K == %@", #keyPath(CDUser.idUser), idUser as CVarArg)
         
-        var cdUser = try AppDelegate.context.fetch(u).first
+        let cdUser = try AppDelegate.context.fetch(u).first
         
-        cdUser?.hiddenCategories = user.hiddenCategories
+        cdUser?.listItemShow = user.listItemShow
         
         try AppDelegate.context.save()
         

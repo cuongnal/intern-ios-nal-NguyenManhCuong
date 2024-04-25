@@ -39,7 +39,7 @@ class CategoryCollectionView : UICollectionView, UICollectionViewDelegateFlowLay
         
         oldSelectedItemAt = indexPath
         
-        onTouchItemCallback!(data[indexPath.row])
+        onTouchItemCallback?(data[indexPath.row])
     }
     
 }

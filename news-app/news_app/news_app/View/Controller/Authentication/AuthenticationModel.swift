@@ -52,7 +52,9 @@ class AuthenticationModel  : BaseModel {
                 user.email = authResult?.user.email
                 user.idUser = authResult?.user.uid
                 user.listIndexCategory = UserDefaults.standard.setIndexCategoryDefault()
+                
                 let userInsert : User? = self?.userRepository.insertUser(user: user)
+                
                 UserDefaults.setUser(user: userInsert!)
                 callback(true, nil)
                 self?.delegate?.cancelLoading()

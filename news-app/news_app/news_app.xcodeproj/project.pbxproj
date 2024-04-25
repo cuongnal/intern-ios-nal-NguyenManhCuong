@@ -10,6 +10,9 @@
 		544050A4B8741F87310CF21A /* Pods_news_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB8E695BE926F81C9A6D2F6 /* Pods_news_appTests.framework */; };
 		5E6C339D2BCAFCAF009ADB8C /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C339C2BCAFCAF009ADB8C /* HomeNavigationController.swift */; };
 		5E8AB7D52BDA0B1B00D4A4F4 /* HideCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8AB7D42BDA0B1B00D4A4F4 /* HideCategoriesViewController.swift */; };
+		5E8AB7D82BDA29B000D4A4F4 /* HideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8AB7D72BDA29B000D4A4F4 /* HideCollectionViewCell.swift */; };
+		5E8AB7DA2BDA29CB00D4A4F4 /* HideCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8AB7D92BDA29CB00D4A4F4 /* HideCollectionView.swift */; };
+		5E8AB7DC2BDA2A4200D4A4F4 /* SourceSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8AB7DB2BDA2A4200D4A4F4 /* SourceSegmentedControl.swift */; };
 		5E8DE24C2BD27904008966F6 /* PopoverChangeSource.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E8DE24B2BD27904008966F6 /* PopoverChangeSource.xib */; };
 		5E94B2302BD76A4E00C80A7B /* AppDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E94B22F2BD76A4E00C80A7B /* AppDefault.swift */; };
 		5E94B2332BD78E7200C80A7B /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E94B2322BD78E7200C80A7B /* LanguageManager.swift */; };
@@ -124,6 +127,9 @@
 		56E073DA07F2045BFAA7D6AA /* Pods-news_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-news_app.release.xcconfig"; path = "Target Support Files/Pods-news_app/Pods-news_app.release.xcconfig"; sourceTree = "<group>"; };
 		5E6C339C2BCAFCAF009ADB8C /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		5E8AB7D42BDA0B1B00D4A4F4 /* HideCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideCategoriesViewController.swift; sourceTree = "<group>"; };
+		5E8AB7D72BDA29B000D4A4F4 /* HideCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideCollectionViewCell.swift; sourceTree = "<group>"; };
+		5E8AB7D92BDA29CB00D4A4F4 /* HideCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideCollectionView.swift; sourceTree = "<group>"; };
+		5E8AB7DB2BDA2A4200D4A4F4 /* SourceSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceSegmentedControl.swift; sourceTree = "<group>"; };
 		5E8DE24B2BD27904008966F6 /* PopoverChangeSource.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopoverChangeSource.xib; sourceTree = "<group>"; };
 		5E94B22F2BD76A4E00C80A7B /* AppDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefault.swift; sourceTree = "<group>"; };
 		5E94B2322BD78E7200C80A7B /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
@@ -278,6 +284,17 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		5E8AB7D62BDA136300D4A4F4 /* HideCategories */ = {
+			isa = PBXGroup;
+			children = (
+				5E8AB7D42BDA0B1B00D4A4F4 /* HideCategoriesViewController.swift */,
+				5E8AB7D72BDA29B000D4A4F4 /* HideCollectionViewCell.swift */,
+				5E8AB7D92BDA29CB00D4A4F4 /* HideCollectionView.swift */,
+				5E8AB7DB2BDA2A4200D4A4F4 /* SourceSegmentedControl.swift */,
+			);
+			path = HideCategories;
+			sourceTree = "<group>";
+		};
 		5E94B2312BD78E1800C80A7B /* Language */ = {
 			isa = PBXGroup;
 			children = (
@@ -406,7 +423,7 @@
 				AD8E538E2BB5743E000103DA /* AccountViewController.swift */,
 				AD8E53862BB54EC0000103DA /* SettingViewController.swift */,
 				5EECA6CF2BD9672B00E1A645 /* SettingModel.swift */,
-				5E8AB7D42BDA0B1B00D4A4F4 /* HideCategoriesViewController.swift */,
+				5E8AB7D62BDA136300D4A4F4 /* HideCategories */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -890,6 +907,7 @@
 				CE54ACFF2BC8ED220042AB73 /* AppNavigationModel.swift in Sources */,
 				AD8E538F2BB5743E000103DA /* AccountViewController.swift in Sources */,
 				CEC541F12BC795DF00D8691B /* SearchModel.swift in Sources */,
+				5E8AB7DC2BDA2A4200D4A4F4 /* SourceSegmentedControl.swift in Sources */,
 				ADA136132BBBE64C00E74F6E /* DataBase.xcdatamodeld in Sources */,
 				AD8DBC0D2B9B10680070D7A7 /* CustomTextField.swift in Sources */,
 				CEA2C1F72BC38FB900C4B2B3 /* BaseViewController.swift in Sources */,
@@ -901,6 +919,7 @@
 				CE1DADD72BBFA02400F87A47 /* CategoryRepository.swift in Sources */,
 				5EF172242BCF759C00B52384 /* ImageFolder.swift in Sources */,
 				CE1DAE202BBFE2CA00F87A47 /* DataMapper.swift in Sources */,
+				5E8AB7DA2BDA29CB00D4A4F4 /* HideCollectionView.swift in Sources */,
 				CEA2C1F92BC3969800C4B2B3 /* LoadingViewController.swift in Sources */,
 				CEC541EF2BC795D300D8691B /* SearchViewController.swift in Sources */,
 				AD8E53852BB54EA7000103DA /* SettingTableViewCell.swift in Sources */,
@@ -952,6 +971,7 @@
 				ADE00FF32BAAE01A0041DE42 /* News.swift in Sources */,
 				AD8DBBDD2B9AE92A0070D7A7 /* SceneDelegate.swift in Sources */,
 				AD8E53832BB54E97000103DA /* SettingTableView.swift in Sources */,
+				5E8AB7D82BDA29B000D4A4F4 /* HideCollectionViewCell.swift in Sources */,
 				CE1DADDE2BBFA96F00F87A47 /* UsersRepositoryImp.swift in Sources */,
 				CEC541E42BC788C800D8691B /* CDUser+CoreDataClass.swift in Sources */,
 				ADA2F7132BB2C3E0009CB25C /* PolicyViewController.swift in Sources */,

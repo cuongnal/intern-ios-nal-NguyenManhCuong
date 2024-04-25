@@ -41,7 +41,7 @@ class DataMapper {
         return arr
     }
     class func MapCDUsertoEntity(withCDUser cdUser: CDUser) -> User {
-        return User(idUser: cdUser.idUser, email: cdUser.email, listIndexCategory: cdUser.listIndexCategory)
+        return User(idUser: cdUser.idUser, email: cdUser.email, listIndexCategory: cdUser.listIndexCategory, listItemShow: cdUser.listItemShow)
     }
     class func MapCDNewsToEntity(withCDNews cdNews : CDNews) -> News {
         var news = News()
@@ -73,4 +73,5 @@ class DataMapper {
         }
         return arr
     }
+
 }

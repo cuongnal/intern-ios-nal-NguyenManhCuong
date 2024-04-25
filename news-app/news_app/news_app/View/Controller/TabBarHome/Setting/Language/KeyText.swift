@@ -99,7 +99,9 @@ enum KeyText: String {
     case hide = "HIDE"
     case show = "SHOW"
     case settingCategories = "SETTING_CATEGORIES"
-    
+    case notification = "NOTIFICATION"
+    case saveDisplayCategorySettings = "Save_display_category_settings"
+    case changedCategoryDisplay = "Changed_category_display"
     case oke = "OKE"
     
     // Authentication

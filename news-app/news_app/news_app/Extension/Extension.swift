@@ -37,7 +37,7 @@ extension String {
 }
 extension UIViewController {
     func showToast(text : String) {
-        let toast = UITextView(frame: CGRect(x: self.view.frame.size.width/7, y: self.view.frame.size.height * 5 / 6, width: (self.view.frame.size.width/8)*6, height: 45))
+        let toast = UITextView(frame: CGRect(x: self.view.frame.size.width/7, y: self.view.frame.size.height * 5 / 6, width: (self.view.frame.size.width/8)*6, height: 50))
         toast.backgroundColor = UIColor.black
         toast.textColor = Constant.COLOR_WHITE
         toast.text = text

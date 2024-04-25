@@ -29,7 +29,6 @@ class HomeViewController : BaseViewController {
         homeTableView.register(UINib(nibName: Constant.NEWS_TABLE_VIEW_CELL, bundle: .main), forCellReuseIdentifier: Constant.NEWS_TABLE_VIEW_CELL)
         homeCollectionView.register(UINib(nibName: Constant.CATEGORY_COLLECTION_VIEW_CELL, bundle: .main), forCellWithReuseIdentifier: Constant.CATEGORY_COLLECTION_VIEW_CELL)
         
-        setUpHomeCollectionView()
         popoverChangeSource = PopoverChangeSourceVC(nibName: "PopoverChangeSource", bundle: nil) as PopoverChangeSourceVC
         popoverTableViewCell = PopoverTableViewCellVC(nibName: "PopoverViewController", bundle: nil) as PopoverTableViewCellVC
         handlerCallback()
@@ -39,30 +38,20 @@ class HomeViewController : BaseViewController {
         NotificationCenter.default
             .addObserver(self,
                          selector:#selector(hiddenCategories),
-                         name: NSNotification.Name ("HIDE"),                                           object: nil)
+                         name: NSNotification.Name ("HIDE"),object: nil)
     }
     @objc private func hiddenCategories () {
-        let isHidden : Bool = UserDefaults.getUser()?.hiddenCategories ?? false
-        
-        if isHidden {
-            homeCollectionView.isHidden = isHidden
-            homeCollectionHeight.constant = 0
-        }
-        else {
-            homeCollectionView.isHidden = isHidden
-            homeCollectionHeight.constant = 45
-        }
+       
     }
     override func setUpLanguage() {
         searchBarHome.placeholder = LanguageManager.getText(withKey: .search)
-        if UserDefaults.getUser()?.hiddenCategories == false {
-            homeCollectionView.reloadData()
-        }
+        homeCollectionView.reloadData()
         homeTableView.reloadData()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
+        setUpHomeCollectionView()
     }
     
     func setUpHomeCollectionView(typeSource : TypeClickPopover = .vnExpress) {

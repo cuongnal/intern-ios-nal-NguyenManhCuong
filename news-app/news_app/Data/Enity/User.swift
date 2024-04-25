@@ -11,5 +11,6 @@ public struct User : Codable {
     var idUser : String?
     var email : String?
     var listIndexCategory : [String: [Int]]?
-    var hiddenCategories : Bool = false
+    var listItemShow : [String : [Int]]? = [TypeSource.vnExpress.rawValue : Array(0...20),
+                                                TypeSource.tuoiTre.rawValue : Array(0...17)]
 }
