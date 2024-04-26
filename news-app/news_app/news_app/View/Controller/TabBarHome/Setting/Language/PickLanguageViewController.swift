@@ -22,6 +22,16 @@ class PickLanguageViewController : BaseViewController, UIPickerViewDelegate, UIP
         viewPickerLanguage.dataSource = self
         viewPickerLanguage.delegate = self
         setUpLanguage()
+        
+        let typeLanguage = UserDefaults.standard.getValue(swiftClass: LanguageManager.TypeLanguage.self, forKey: Constant.Key.KEY_LANGUAGE_APP) ?? LanguageManager.TypeLanguage.english
+        
+        if typeLanguage == .vietnamese {
+            viewPickerLanguage.selectRow(0, inComponent: 0, animated: true)
+        }
+        else {
+            viewPickerLanguage.selectRow(1, inComponent: 0, animated: true)
+        }
+        
     }
     override func setUpLanguage() {
         btnCancle.setTitle(LanguageManager.getText(withKey: KeyText.cancel), for: .normal)

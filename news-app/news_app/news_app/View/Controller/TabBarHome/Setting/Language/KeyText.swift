@@ -88,6 +88,9 @@ enum KeyText: String {
     case successChangePassword = "SUCCESS_CHANGE_PASSWORD"
     case errorChangePassword = "ERROR_CHANGE_PASSWORD"
     
+    case minuteAgo = "Minute_ago"
+    case hoursAgo = "Hours_ago"
+ 
     case errorPassword = "ERROR_PASSWORD"
     case errorEmailIsNotRegister  = "ERROR_EMAIL_IS_NOT_REGISTER"
     case emailAlreadyInUse  = "EMAIL_ALREADY_IN_USE"

@@ -29,7 +29,10 @@ class NewsTableViewCell : UITableViewCell {
     }
     func setUpView(item: News) {
         news = item
-        timeNews.text = item.pubDate
+        do {
+            timeNews.text = try DateFormatter().convertStringDateFormat(dateString: item.pubDate) ?? ""
+        }
+        catch {}
         
         typeNews.text = LanguageManager.getText(withString: item.typeCategory)
         

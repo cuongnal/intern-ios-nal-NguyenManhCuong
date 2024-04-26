@@ -18,9 +18,9 @@ extension DateFormatter {
         let time = Date().timeIntervalSince(date)
         switch (time/(3600)) {
         case 1...24 :
-            return "\(Int(time/3600)) tiếng trước"
+                return "\(Int(time/3600)) \(LanguageManager.getText(withKey: .hoursAgo))"
         case 0...1 :
-            return "\(Int(time/60)) phút trước"
+                return "\(Int(time/60)) \(LanguageManager.getText(withKey: .minuteAgo))"
         default:
             self.dateFormat = "dd/MM/yyyy"
             return self.string(from: date)

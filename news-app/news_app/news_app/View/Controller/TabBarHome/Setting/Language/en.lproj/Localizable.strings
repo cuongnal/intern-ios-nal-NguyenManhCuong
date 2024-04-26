@@ -100,6 +100,8 @@
 "Save_display_category_settings" = "Save display category settings";
 "Changed_category_display" = "Changed category display";
 
+"Hours_ago" = "hours ago";
+"Minute_ago" = "minute ago";
 //authentication
 
 "NEWS_24" = "News 24";

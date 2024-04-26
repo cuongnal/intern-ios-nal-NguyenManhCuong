@@ -95,6 +95,9 @@
 "Save_display_category_settings" = "Lưu lại cài đặt hiển thị danh mục ?";
 
 "Changed_category_display" = "Đã thay đổi cài đặt hiển thị danh mục";
+
+"Hours_ago" = "tiếng trước";
+"Minute_ago" = "phút trước";
 //authentication
 
 "NEWS_24" = "Báo mới 24h";

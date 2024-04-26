@@ -118,10 +118,7 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
     }
     func formatDateAndImage () {
         for (index, item) in arrNews.enumerated() {
-            do {
-                try arrNews[index].pubDate = DateFormatter().convertStringDateFormat(dateString: item.pubDate) ?? ""
-            }
-            catch {}
+            
             if let stringStart = item.des.range(of: "src=\""), let stringEnd = item.des.range(of: "\"",range: stringStart.upperBound..<item.des.endIndex){
                 arrNews[index].urlImage = String(item.des[stringStart.upperBound..<stringEnd.lowerBound])
                 
