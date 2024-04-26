@@ -330,8 +330,6 @@
 		AD8DBBCE2B9AE92A0070D7A7 = {
 			isa = PBXGroup;
 			children = (
-				ADA1360F2BBBE57000E74F6E /* Data */,
-				CE1DADD82BBFA19600F87A47 /* DataMapper */,
 				AD8DBBD92B9AE92A0070D7A7 /* news_app */,
 				AD8DBBF02B9AE9300070D7A7 /* news_appTests */,
 				AD8DBBFA2B9AE9300070D7A7 /* news_appUITests */,
@@ -355,7 +353,9 @@
 		AD8DBBD92B9AE92A0070D7A7 /* news_app */ = {
 			isa = PBXGroup;
 			children = (
+				ADA1360F2BBBE57000E74F6E /* Data */,
 				AD74958E2BBD7209002CF754 /* GoogleService-Info.plist */,
+				CE1DADD82BBFA19600F87A47 /* DataMapper */,
 				AD0914152BA8128A00287227 /* Base */,
 				AD8DBC142B9EF4C40070D7A7 /* Extension */,
 				ADA2C3F52BA93E9A009E4F7C /* View */,
@@ -460,6 +460,7 @@
 				B2F8DE272BBEA47600A471EB /* Enity */,
 				ADA136102BBBE59100E74F6E /* Local */,
 				ADA136D92BBCEE3400E74F6E /* Repository */,
+				ADA5EC5F2BB10B7A00A26281 /* XMLParserToObject.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -477,7 +478,6 @@
 		ADA136D92BBCEE3400E74F6E /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				ADA5EC5F2BB10B7A00A26281 /* XMLParserToObject.swift */,
 				B2F8DE2B2BBEA6B200A471EB /* repository */,
 				CEA2C2062BC4DD7400C4B2B3 /* RepostitoryImp */,
 			);

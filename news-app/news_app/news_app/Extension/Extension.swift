@@ -64,10 +64,6 @@ extension UIButton {
     }
 }
 extension UIImage {
-    
-    func setImageByUrl (url : URL) {
-       // let path = FileManager.default.urls(for: .documentDirectory, in: <#T##FileManager.SearchPathDomainMask#>)
-    }
     private func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)// lấy đường dẫn tới thư mục document
         let documentsDirectory = paths[0]

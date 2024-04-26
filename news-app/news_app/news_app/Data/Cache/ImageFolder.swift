@@ -45,7 +45,7 @@ class ImageFolder  {
             return try UIImage(data: Data(contentsOf: path))
         }
         catch let err {
-          //  print("Function:   \(#function)   line: \(#line)   error: \(err)")
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
             return nil
         }
     }

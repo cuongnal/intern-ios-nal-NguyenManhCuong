@@ -77,7 +77,6 @@ class XMLParserToObject : NSObject, XMLParserDelegate {
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if flag {
             if elementName == rootElement {
-          //      news?.typeSource = category.title
                 news?.createPrimaryKey()
                 news?.idCate = category.idCate
                 news?.typeCategory = category.title

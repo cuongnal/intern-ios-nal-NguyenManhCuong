@@ -22,7 +22,7 @@ class AccountViewController : BaseViewController {
         onTouchCell()
     }
     func onTouchCell() {
-        accountTableView.callback = {[weak self](typeItemClick) in
+        accountTableView.selectedItemCallback = {[weak self](typeItemClick) in
             if typeItemClick == .changePassword {
                 self?.changePassword()
             }

@@ -8,8 +8,6 @@
 import Foundation
 
 protocol NewsRepository {
-    func getAllNews() -> [CDNews]
-    
     func getNewsOfCategory(category: Category) -> [News]
     
     func insertNewsByCategory(arrNews : [News]) -> Bool

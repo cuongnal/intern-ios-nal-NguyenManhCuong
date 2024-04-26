@@ -9,7 +9,6 @@ import Foundation
 
 class NewsRepositoryImp : NewsRepository {
     
-    
     let parser = XMLParserToObject.getInstance()
     
     func getNewsOfCategory(category: Category) -> [News] {

@@ -9,10 +9,6 @@
 import Foundation
 
 class UsersRepositoryImp : UsersRepository {
-    func getAllUser() {
-        return
-    }
-    
     func getUserDetail(idUser: String) -> User? {
         do {
             let user =  try CDUser.fetchUserById(idUser: idUser)

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class BaseViewController : UIViewController, BaseModelDelegate, UIPopoverPresentationControllerDelegate, UIGestureRecognizerDelegate {
+class BaseViewController : UIViewController, BaseModelDelegate, UIGestureRecognizerDelegate {
     private lazy var loadingController = LoadingViewController()
     lazy var isKeyboardShowing = false
     lazy var keyboardHeight :CGFloat = 0
@@ -23,7 +23,7 @@ class BaseViewController : UIViewController, BaseModelDelegate, UIPopoverPresent
         
         NotificationCenter.default
             .addObserver(self, selector:#selector(onChangeLanguage),
-                         name: NSNotification.Name ("ABC"),object: nil)
+                         name: Constant.NSNoti.CHANGE_LANGUAGE,object: nil)
         
     }
     @objc func keyboardWillShow(_ notification: Notification) {
@@ -70,10 +70,6 @@ class BaseViewController : UIViewController, BaseModelDelegate, UIPopoverPresent
         present(alert, animated: true)
     }
     func onTouchOkeAlert() {}
-    // hiện popover
-    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
-        return .none
-    }
     func setRootViewControllerApp(withConstantNavKey nav : String) {
         if nav == Constant.Key.NAV_HOME  {
             let navHome = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: nav) as! HomeNavigationController
@@ -101,5 +97,12 @@ class BaseViewController : UIViewController, BaseModelDelegate, UIPopoverPresent
         let shareSheetView = UIActivityViewController (activityItems: [url],
                                                        applicationActivities: nil)
         present(shareSheetView, animated: true)
+    }
+}
+
+
+extension BaseViewController : UIPopoverPresentationControllerDelegate {
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
     }
 }

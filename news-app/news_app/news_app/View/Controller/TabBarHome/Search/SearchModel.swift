@@ -23,6 +23,7 @@ class SearchModel  : BaseModel{
             callback(arrNews!)
         })
     }
+    
     func searchNewsWithCategory (withArrayTextSearch searchText : String, callBack: @escaping (([News]) -> Void)) {
         excuteTask(task: { [weak self] in
             guard searchText.isNotEmpty() else {return self?.arrNews}

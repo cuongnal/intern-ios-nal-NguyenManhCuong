@@ -16,7 +16,6 @@ class HideCategoriesViewController : BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hideCategoriesCV.register(UINib(nibName: Constant.CATEGORY_COLLECTION_VIEW_CELL, bundle: .main), forCellWithReuseIdentifier: Constant.CATEGORY_COLLECTION_VIEW_CELL)
-
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -76,11 +75,13 @@ class HideCategoriesViewController : BaseViewController {
                     typeSource: typeSource,
                     callBack: { [weak self] in
                         self?.showToast(text: LanguageManager.getText(withKey: .changedCategoryDisplay))
+                        NotificationCenter.default
+                            .post(name: NSNotification.Name("HIDE"),
+                                  object: nil,
+                                  userInfo: ["typeSource" : typeSource])
                     })
         })
-        let action2 = UIAlertAction(title: LanguageManager.getText(withKey: .cancel), style: .default, handler: {[weak self] _ in
-            self?.dismiss(animated: false)
-        })
+        let action2 = UIAlertAction(title: LanguageManager.getText(withKey: .cancel), style: .default, handler: {_ in})
         alert.addAction(action)
         alert.addAction(action2)
         present(alert, animated: true)

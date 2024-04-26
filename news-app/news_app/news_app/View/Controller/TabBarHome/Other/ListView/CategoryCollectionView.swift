@@ -33,12 +33,10 @@ class CategoryCollectionView : UICollectionView, UICollectionViewDelegateFlowLay
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath == oldSelectedItemAt {return}
-        
         (collectionView.cellForItem(at: indexPath) as! HomeCollectionViewCell).setBackGround(flag: true)
         (collectionView.cellForItem(at: oldSelectedItemAt) as? HomeCollectionViewCell)?.setBackGround(flag: false)
         
         oldSelectedItemAt = indexPath
-        
         onTouchItemCallback?(data[indexPath.row])
     }
     

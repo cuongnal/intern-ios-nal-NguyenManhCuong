@@ -11,14 +11,14 @@ import UIKit
 class HideCollectionView : UICollectionView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
     var listItemShow : [Int] = []
     var typeSource : TypeSource?
-    private let flowLayout = AlighLeftItem()
+    private let flowLayout = AlightLeftCell()
     
     var data : [Category] = []
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.delegate = self
         self.dataSource = self
-        flowLayout.estimatedItemSize = AlighLeftItem.automaticSize
+        flowLayout.estimatedItemSize = AlightLeftCell.automaticSize
         flowLayout.minimumInteritemSpacing = 5
         self.collectionViewLayout = flowLayout
     }
@@ -63,7 +63,7 @@ class HideCollectionView : UICollectionView, UICollectionViewDelegateFlowLayout,
    
 }
 
-class AlighLeftItem : UICollectionViewFlowLayout {
+class AlightLeftCell : UICollectionViewFlowLayout {
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
             guard let originalAttributes = super.layoutAttributesForElements(in: rect) else {
                 return nil

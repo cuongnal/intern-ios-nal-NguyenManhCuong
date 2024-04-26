@@ -27,7 +27,6 @@ class SearchBarHome : UISearchBar, UISearchBarDelegate {
             return
         }
         timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) {[weak self] timer in
-            
             self?.onTextDidChangeCallback?(searchText)
         }
     }

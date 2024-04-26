@@ -7,16 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6A24F217-B1FE-46DE-99CD-E4691CD3C5D0"
+            uuid = "4C235F4F-A3A8-4D5A-B054-1AF6AA5A5A0B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "news_app/View/Controller/TabBarHome/Other/PopoverTableViewCellVC.swift"
+            filePath = "news_app/View/Controller/TabBarHome/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "setUp(anchor:)"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "hiddenCategories(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3497F4D9-3506-44F4-8601-BD0539A81116"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "news_app/View/Controller/TabBarHome/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "hiddenCategories(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

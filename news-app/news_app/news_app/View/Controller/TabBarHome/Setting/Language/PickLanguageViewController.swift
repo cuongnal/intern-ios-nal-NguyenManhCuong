@@ -16,7 +16,7 @@ class PickLanguageViewController : BaseViewController, UIPickerViewDelegate, UIP
     @IBOutlet weak var viewParent: UIView!
     @IBOutlet weak var viewPickerLanguage: UIPickerView!
     var data : [PickerLanguage] = [.vietNamese, .english]
-    var callBackChangeLanguage : ((PickerLanguage) -> ())!
+    var callBackChangeLanguage : ((PickerLanguage) -> ())?
     override func viewDidLoad() {
         super.viewDidLoad()
         viewPickerLanguage.dataSource = self
@@ -30,8 +30,8 @@ class PickLanguageViewController : BaseViewController, UIPickerViewDelegate, UIP
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewParent.layer.cornerRadius = 20
-
     }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -39,19 +39,17 @@ class PickLanguageViewController : BaseViewController, UIPickerViewDelegate, UIP
     @IBAction func cancleViewController(_ sender: Any) {
         dismiss(animated: true)
     }
+    
     @IBAction func chooseLanguage(_ sender: Any) {
-        callBackChangeLanguage(data[viewPickerLanguage.selectedRow(inComponent: 0)])
+        callBackChangeLanguage?(data[viewPickerLanguage.selectedRow(inComponent: 0)])
         dismiss(animated: true)
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return data.count
     }
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
         return data[row].rawValue
-    }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
     }
     
 }

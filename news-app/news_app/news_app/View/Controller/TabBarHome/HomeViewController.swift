@@ -41,8 +41,17 @@ class HomeViewController : BaseViewController {
                          selector:#selector(hiddenCategories),
                          name: NSNotification.Name ("HIDE"),object: nil)
     }
-    @objc private func hiddenCategories () {
-       
+    @objc private func hiddenCategories (_ notification: Notification) {
+        var typeSource = notification.userInfo?["typeSource"] as? TypeSource ?? TypeSource.vnExpress
+        
+        if homeCollectionView.data[0].typeSource != typeSource.rawValue {
+            return
+        }
+        let typeClickPopover = typeSource == .vnExpress ? TypeClickPopover.vnExpress : TypeClickPopover.tuoiTre
+        homeModel.getCategoryByUser(typeClick: typeClickPopover, callback: { [weak self] (arrCategory) in
+            self?.homeCollectionView.data = arrCategory
+            self?.homeCollectionView.reloadData()
+        })
     }
     override func setUpLanguage() {
         searchBarHome.placeholder = LanguageManager.getText(withKey: .search)
@@ -64,7 +73,6 @@ class HomeViewController : BaseViewController {
             self?.homeCollectionView.data = arrCategory
             self?.homeCollectionView.reloadData()
         })
-        hiddenCategories()
     }
     
     func handlerCallback() {
@@ -100,7 +108,7 @@ class HomeViewController : BaseViewController {
             self?.openWebKitView(item: item)
         }
         
-        homeTableView.openPopUp = { [weak self] (itemNews, positionAnchor) in
+        homeTableView.openPopUpCallback = { [weak self] (itemNews, positionAnchor) in
             self?.showPopover(withNews: itemNews, withAnchor: positionAnchor)
         }
         
@@ -121,25 +129,22 @@ class HomeViewController : BaseViewController {
         searchBarHome.onTouchCancelCallback = {}
     }
     func handleScrollTableView() {
-        homeTableView.scrollDownCallback = { [weak self] in
-            UIView.animate(withDuration: 0.2, delay: 0.1, options: .curveEaseInOut, animations: {
-                self?.searchBarHeight.constant = 45
+        homeTableView.scrollDownCallback = {
+            animationHideSearchBar(constant: 56)
+        }
+        homeTableView.scrollUpCallback = {[weak self] in
+            guard let isText = self?.searchBarHome?.isTextSearching else {return}
+            if !isText {
+                animationHideSearchBar(constant: 0)
+            }
+        }
+        
+        func animationHideSearchBar(constant : CGFloat) {
+            UIView.animate(withDuration: 0.2, delay: 0.1, options: .curveEaseInOut, animations: { [weak self] in
+                self?.searchBarHeight.constant = constant
                 self?.view.setNeedsLayout()
                 self?.view.layoutIfNeeded()
             }, completion: nil)
-        }
-        homeTableView.scrollUpCallback = {[weak self] in
-            guard let self = self else {return}
-            guard let isText = self.searchBarHome?.isTextSearching else {
-                return
-            }
-            if !isText {
-                UIView.animate(withDuration: 0.2) {
-                    self.searchBarHeight.constant = 0
-                    self.view.setNeedsLayout()
-                    self.view.layoutIfNeeded()
-                }
-            }
         }
     }
     
@@ -151,7 +156,7 @@ class HomeViewController : BaseViewController {
         popoverChangeSource.setUp(anchor: iconNotification)
         popoverChangeSource.popoverPresentationController?.delegate = self
         present(popoverChangeSource, animated: true, completion: nil)
-        popoverChangeSource.callback = {[weak self]
+        popoverChangeSource.onTouchTypeSourceCallback = {[weak self]
             (type) in
             if type == .vnExpress || type == .tuoiTre {
                 self?.setUpHomeCollectionView(typeSource: type)

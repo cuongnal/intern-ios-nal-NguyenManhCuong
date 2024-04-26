@@ -15,9 +15,6 @@ class SettingViewController : BaseViewController{
         super.viewDidLoad()
         setUpTableView()
         settingModel.delegate = self
-        
-        
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -37,10 +34,7 @@ class SettingViewController : BaseViewController{
         label.textColor = .black
         btnLeftFirst.customView = label
         navigationController?.navigationBar.topItem?.leftBarButtonItem = btnLeftFirst
-        //        navigationController?.navigationBar.topItem?.title = Constant.SETTING
-        //        navigationController?.navigationBar.topItem?.titleView = UIView()
     }
-    @objc func nilAction() {}
     
     func setUpTableView() {
         settingTableView.register(UINib(nibName: "SettingTableViewCell", bundle: .main), forCellReuseIdentifier: Constant.SETTING_TABLE_VIEW_CELLS)
@@ -50,7 +44,7 @@ class SettingViewController : BaseViewController{
     }
     
     func onTouchCell() {
-        settingTableView.callback = { [weak self] (typeItemClick) in
+        settingTableView.selectedItemCallback = { [weak self] (typeItemClick) in
             switch(typeItemClick) {
                 case .account :
                     self?.openAccountViewController()

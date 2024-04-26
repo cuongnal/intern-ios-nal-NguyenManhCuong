@@ -14,12 +14,9 @@ class PopoverTableViewCellVC: BaseViewController{
     @IBOutlet weak var btnFirst: UIButton!
     @IBOutlet weak var btnSecond: UIButton!
     var type : TypePopoverBookmark?
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     override func viewWillAppear(_ animated: Bool) {
-        setTitle()
         super.viewWillAppear(animated)
+        setTitle()
     }
     override func setUpLanguage() {
         setTitle()
@@ -38,12 +35,12 @@ class PopoverTableViewCellVC: BaseViewController{
     }
     
     // first là share
-    @IBAction func touchFirst(_ sender: Any) {
+    @IBAction func touchShare(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
         callback?(.share)
     }
     //second là bookmark
-    @IBAction func touchSecond(_ sender: Any) {
+    @IBAction func touchBookmarkOrUnBookmark(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
         guard let type = type else {return}
         type == .popoverBookmark ? callback?(.bookmark) : callback?(.removeBookmark)

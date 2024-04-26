@@ -23,18 +23,6 @@ class SettingModel : BaseModel {
         delegate?.cancelLoading()
     }
     
-    //    func updateUser(isHiddenCategories isHidden : Bool, callback : @escaping (()-> Void)) {
-    //        excuteTask(task: { [weak self] in
-    //            var user = UserDefaults.getUser()
-    //            user?.hiddenCategories = isHidden
-    //            guard let user = user else {return}
-    //            UserDefaults.setUser(user: user)
-    //            self?.userRepository.updateUser(user:user)
-    //        }, complete: {_ in
-    //            callback()
-    //        })
-    //    }
-    
     func getCategory(typeSource : TypeSource, callBackArrCategory : @escaping( ([Category],[Int]) -> Void)) {
         excuteTask(task: { [weak self] in
             let arrCate = self?.categoryRepository.getAllCategoriesByTypeSource(withTypeSource: typeSource, withUser: UserDefaults.getUser()!)

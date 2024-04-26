@@ -11,7 +11,7 @@ import WebKit
 class WebViewController : BaseViewController, WKNavigationDelegate {
     
     var newsItem : News? = nil
-    
+    var timer : Timer?
     @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var webKitView: WKWebView!
     var webModel = WebModel(newsRepository: NewsRepositoryImp() )
@@ -80,16 +80,32 @@ class WebViewController : BaseViewController, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         loading.startAnimating()
+        timer = Timer.scheduledTimer(timeInterval: 8.0, target: self, selector: #selector(connectTimeOut), userInfo: nil, repeats: false)
         guard let newsItem = newsItem else {
             return
         }
         webModel.saveNews(withNews: newsItem)
     }
     
+    @objc func connectTimeOut(){
+        showAlertWebView()
+    }
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         loading.stopAnimating()
     }
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         // loading.stopAnimating()
+    }
+    private func showAlertWebView() {
+//        let alert : UIAlertController = UIAlertController(title: LanguageManager.getText(withKey: title), message: message, preferredStyle: .alert)
+//        
+//        let action = UIAlertAction(title: LanguageManager.getText(withKey: titleAction), style: .cancel, handler: {[weak self] _ in
+//            self?.dismiss(animated: false)
+//            if action == KeyText.oke {
+//                self?.onTouchOkeAlert()
+//            }
+//        })
+//        alert.addAction(action)
+//        present(alert, animated: true)
     }
 }

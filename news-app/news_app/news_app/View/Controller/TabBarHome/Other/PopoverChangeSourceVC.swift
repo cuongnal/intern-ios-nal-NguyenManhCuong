@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 class PopoverChangeSourceVC : UIViewController {
     
-    lazy var callback : ((TypeClickPopover) -> ())? = nil
+    lazy var onTouchTypeSourceCallback : ((TypeClickPopover) -> ())? = nil
     
     @IBOutlet weak var btnFirst: UIButton!
     @IBOutlet weak var btnSecond: UIButton!
@@ -22,14 +22,14 @@ class PopoverChangeSourceVC : UIViewController {
         btnSecond.setTitle(Constant.TUOI_TRE,for: .normal)
     }
     
-    @IBAction func touchFirst(_ sender: Any) {
+    @IBAction func touchSourceVnExpress(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
-        callback!(.vnExpress)
+        onTouchTypeSourceCallback?(.vnExpress)
     }
     
-    @IBAction func touchSecond(_ sender: Any) {
+    @IBAction func touchSourceTuoiTre(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
-        callback!(.tuoiTre)
+        onTouchTypeSourceCallback?(.tuoiTre)
     }
     
     func setUp(anchor : UIView, hiddenDirections : Bool) {

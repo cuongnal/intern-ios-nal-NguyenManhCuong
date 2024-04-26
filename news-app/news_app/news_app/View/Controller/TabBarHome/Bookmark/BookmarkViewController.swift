@@ -33,7 +33,7 @@ class BookmarkViewController : BaseViewController {
         bookmarkTableView.reloadData()
     }
     func setUpView() {
-        // lần đầu tiên khi mở thì phải gọi
+
         bookmarkModel.getCategoryAndNews(callback: {[weak self](arrCategory) in
             self?.bookmarkCollectionView.data = arrCategory
             self?.bookmarkCollectionView.reloadData()
@@ -61,7 +61,7 @@ class BookmarkViewController : BaseViewController {
             self?.openWebKitView(item: itemNews)
         }
         
-        bookmarkTableView.openPopUp = { [weak self] (itemNews, anchor) in
+        bookmarkTableView.openPopUpCallback = { [weak self] (itemNews, anchor) in
             self?.showPopover(withNews: itemNews, withAnchor: anchor)
         }
     }

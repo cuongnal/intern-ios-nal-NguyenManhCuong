@@ -9,10 +9,9 @@ import Foundation
 import UIKit
 class SettingTableView : UITableView, UITableViewDataSource, UITableViewDelegate {
     var data : [(text: String, image: String, type: TypeItemSelected)] = []
-    var callback : ((TypeItemSelected) -> ())? = nil
+    var selectedItemCallback : ((TypeItemSelected) -> ())? = nil
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
         self.delegate = self
         self.dataSource = self
     }
@@ -30,11 +29,11 @@ class SettingTableView : UITableView, UITableViewDataSource, UITableViewDelegate
         return item
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        callback!(data[indexPath.row].type)
+        selectedItemCallback!(data[indexPath.row].type)
         self.deselectRow(at: indexPath, animated: false)
     }
     // enum này dùng để check loại item được click là loại nào, sẽ mở ra màn hình tương ứng loại đó
-    public enum TypeItemSelected {
+    enum TypeItemSelected {
         case account, languages, categories, logOut, user, changePassword
     }
     

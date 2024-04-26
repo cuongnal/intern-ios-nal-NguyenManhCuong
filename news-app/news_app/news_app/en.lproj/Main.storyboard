@@ -1008,6 +1008,9 @@
                             </tableView>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" text="" translatesAutoresizingMaskIntoConstraints="NO" id="FKC-pp-2dw" customClass="SearchBarHome" customModule="news_app" customModuleProvider="target">
                                 <rect key="frame" x="12" y="92" width="390" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="64o-ur-Vxt"/>
+                                </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
@@ -1034,6 +1037,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchBar" destination="FKC-pp-2dw" id="9QK-B4-ko0"/>
+                        <outlet property="searchBarHeight" destination="64o-ur-Vxt" id="TNp-Hi-diY"/>
                         <outlet property="searchTableView" destination="96Y-fe-Khm" id="BIQ-vB-0E4"/>
                     </connections>
                 </viewController>

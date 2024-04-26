@@ -10,8 +10,8 @@ import UIKit
 class NewsTableView : UITableView, UITableViewDataSource, UITableViewDelegate {
     var data : [News] = []
     var category : Category?
-    var onTouchNewsCallback : ((News) -> ())!
-    var openPopUp : ((News,UIView) -> ())!
+    var onTouchNewsCallback : ((News) -> ())?
+    var openPopUpCallback : ((News,UIView) -> ())?
 
     private var refresh : UIRefreshControl?
     var pullToRefreshCallback : ((Category) -> Void )?
@@ -31,12 +31,12 @@ class NewsTableView : UITableView, UITableViewDataSource, UITableViewDelegate {
         let item = tableView.dequeueReusableCell(withIdentifier: Constant.NEWS_TABLE_VIEW_CELL, for: indexPath) as! NewsTableViewCell
         item.setUpView(item: data[indexPath.row])
         item.onTouchCallback = { [weak self] (itemNews, anchor) in
-            self?.openPopUp?(itemNews, anchor)
+            self?.openPopUpCallback?(itemNews, anchor)
         }
         return item
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        onTouchNewsCallback(data[indexPath.item])
+        onTouchNewsCallback?(data[indexPath.item])
         self.deselectRow(at: indexPath, animated: false)
     }
     func pullToRefresh() {
