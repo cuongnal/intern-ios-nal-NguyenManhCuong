@@ -12,8 +12,13 @@ class NewsTableView : UITableView, UITableViewDataSource, UITableViewDelegate {
     var category : Category?
     var onTouchNewsCallback : ((News) -> ())?
     var openPopUpCallback : ((News,UIView) -> ())?
-
     private var refresh : UIRefreshControl?
+    
+    var scrollUpCallback : (() -> Void)?
+    var scrollDownCallback : (() -> Void)?
+    var flagCheckScrollBySystem = false
+    private var lastContentOffset: CGFloat = 0
+    
     var pullToRefreshCallback : ((Category) -> Void )?
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -54,5 +59,27 @@ class NewsTableView : UITableView, UITableViewDataSource, UITableViewDelegate {
     
     func stopRefreshing() {
         self.refresh?.endRefreshing()
+    }
+}
+
+extension NewsTableView {
+    
+    func setUpHomeTableView(arrNews: [News]) {
+        self.data.removeAll()
+        self.data.append(contentsOf: arrNews)
+        self.reloadData()
+        if data.count != 0 {
+            self.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+        }
+    }
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.lastContentOffset = scrollView.contentOffset.y
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if lastContentOffset < scrollView.contentOffset.y {
+            scrollUpCallback?()
+        } else if self.lastContentOffset >= scrollView.contentOffset.y {
+            scrollDownCallback?()
+        }
     }
 }

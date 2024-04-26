@@ -10,6 +10,9 @@ import UIKit
 
 class BookmarkViewController : BaseViewController {
     
+    @IBOutlet weak var searchBookmarkHeight: NSLayoutConstraint!
+    @IBOutlet weak var searchBookmark: SearchBarHome!
+    
     @IBOutlet weak var bookmarkCollectionView: BookmarkCollectionView!
     @IBOutlet weak var bookmarkTableView: BookmarkTableView!
     var popoverTableViewCell : PopoverTableViewCellVC!
@@ -20,31 +23,67 @@ class BookmarkViewController : BaseViewController {
         bookmarkCollectionView.register(UINib(nibName: Constant.CATEGORY_COLLECTION_VIEW_CELL, bundle: .main), forCellWithReuseIdentifier: Constant.CATEGORY_COLLECTION_VIEW_CELL)
         
         popoverTableViewCell = PopoverTableViewCellVC(nibName: "PopoverViewController", bundle: nil) as PopoverTableViewCellVC
+        searchBookmark.placeholder = LanguageManager.getText(withKey: .search)
+        handleSearchBarBookmark()
+        
+        handleScrollTableView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
         setLeftTitle()
-        setUpView()
+        if !searchBookmark.isTextSearching {
+            setUpView()
+        }
     }
     override func setUpLanguage() {
         setLeftTitle()
+        searchBookmark.placeholder = LanguageManager.getText(withKey: .search)
         bookmarkTableView.reloadData()
     }
+    func handleSearchBarBookmark () {
+        searchBookmark.onTextDidChangeCallback = { textSearch in
+            self.bookmarkModel.searchNewsWithCategoryForBookmark(withArrayTextSearch: textSearch, callBack: { [weak self] arrNews in
+                self?.bookmarkTableView.data.removeAll()
+                self?.bookmarkTableView.data.append(contentsOf: arrNews)
+                self?.bookmarkTableView.reloadData()
+            })
+        }
+    }
+    func handleScrollTableView() {
+        bookmarkTableView.scrollDownCallback = {
+            animationHideSearchBar(constant: 56)
+        }
+        bookmarkTableView.scrollUpCallback = {[weak self] in
+            guard let isText = self?.searchBookmark?.isTextSearching else {return}
+            if !isText {
+                animationHideSearchBar(constant: 0)
+            }
+        }
+        
+        func animationHideSearchBar(constant : CGFloat) {
+            UIView.animate(withDuration: 0.2, delay: 0.1, options: .curveEaseInOut, animations: { [weak self] in
+                self?.searchBookmarkHeight.constant = constant
+                self?.view.setNeedsLayout()
+                self?.view.layoutIfNeeded()
+            }, completion: nil)
+        }
+    }
     func setUpView() {
-
         bookmarkModel.getCategoryAndNews(callback: {[weak self](arrCategory) in
             self?.bookmarkCollectionView.data = arrCategory
             self?.bookmarkCollectionView.reloadData()
             guard arrCategory.count > 0 else {
                 self?.bookmarkTableView.data.removeAll()
                 self?.bookmarkTableView.reloadData()
+                self?.searchBookmark.isHidden = true
                 return
             }
             self?.bookmarkModel.getBookmarkOfCategory(withCategory: arrCategory[0], callback: {[weak self] (arrNews)in
                 guard let arrNews = arrNews else {return}
                 self?.bookmarkTableView.data = arrNews
+                self?.searchBookmark.isHidden = false
                 self?.bookmarkTableView.reloadData()
             })
         })
@@ -79,6 +118,7 @@ class BookmarkViewController : BaseViewController {
     
 }
 
+
 extension BookmarkViewController {
     func showPopover(withNews news : News, withAnchor positionAnchor : UIView) {
         popoverTableViewCell.setUp(anchor: positionAnchor)
@@ -104,6 +144,10 @@ extension BookmarkViewController {
             }
             self?.bookmarkTableView.data.removeAll(where: {$0.idNews == news.idNews})
             self?.bookmarkTableView.reloadData()
+            guard let i = self?.bookmarkCollectionView.oldSelectedItemAt.item else {return}
+            if i > 0 {
+                self?.bookmarkCollectionView.oldSelectedItemAt = IndexPath(row: 0, section: 0)
+            }
         } )
     }
     func shareNews(news : News) {

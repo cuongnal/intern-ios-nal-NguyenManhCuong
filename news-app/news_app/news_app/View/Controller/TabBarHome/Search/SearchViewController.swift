@@ -22,15 +22,17 @@ class SearchViewController : BaseViewController {
         searchTableView.register(UINib(nibName: Constant.NEWS_TABLE_VIEW_CELL, bundle: .main), forCellReuseIdentifier: Constant.NEWS_TABLE_VIEW_CELL)
         handlerCallback()
         
-        searchModel.getAllNews(callback: {[weak self ] arrNews in
-            self?.searchTableView.data = arrNews
-            self?.searchTableView.reloadData()
-        })
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
         setLeftTitle()
+        if !searchBar.isTextSearching {
+            searchModel.getAllNews(callback: {[weak self ] arrNews in
+                self?.searchTableView.data = arrNews
+                self?.searchTableView.reloadData()
+            })
+        }
     }
     private func handlerCallback() {
         searchTableView.onTouchNewsCallback = { [weak self] (item) in

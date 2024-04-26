@@ -629,6 +629,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="O5u-vd-kwX" customClass="SearchBarHome" customModule="news_app" customModuleProvider="target">
+                                <rect key="frame" x="12" y="142" width="390" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="fs5-2n-6eQ"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wfu-h2-kaI" customClass="BookmarkCollectionView" customModule="news_app" customModuleProvider="target">
                                 <rect key="frame" x="20" y="92" width="374" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -644,7 +651,7 @@
                                 <cells/>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" separatorInsetReference="fromAutomaticInsets" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PVP-5J-oli" customClass="BookmarkTableView" customModule="news_app" customModuleProvider="target">
-                                <rect key="frame" x="20" y="142" width="374" height="671"/>
+                                <rect key="frame" x="20" y="198" width="374" height="615"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
@@ -653,12 +660,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="PVP-5J-oli" firstAttribute="leading" secondItem="UfS-Qs-e9j" secondAttribute="leading" constant="20" id="4LT-lM-xrn"/>
+                            <constraint firstItem="O5u-vd-kwX" firstAttribute="leading" secondItem="UfS-Qs-e9j" secondAttribute="leading" constant="12" id="NCP-If-8Un"/>
                             <constraint firstItem="wfu-h2-kaI" firstAttribute="top" secondItem="UfS-Qs-e9j" secondAttribute="top" id="Oxc-1w-PIk"/>
+                            <constraint firstItem="UfS-Qs-e9j" firstAttribute="trailing" secondItem="O5u-vd-kwX" secondAttribute="trailing" constant="12" id="QQX-th-MPx"/>
                             <constraint firstItem="wfu-h2-kaI" firstAttribute="leading" secondItem="UfS-Qs-e9j" secondAttribute="leading" constant="20" id="Up6-V0-7OJ"/>
                             <constraint firstItem="UfS-Qs-e9j" firstAttribute="trailing" secondItem="wfu-h2-kaI" secondAttribute="trailing" constant="20" id="YAh-Zl-81H"/>
                             <constraint firstItem="UfS-Qs-e9j" firstAttribute="trailing" secondItem="PVP-5J-oli" secondAttribute="trailing" constant="20" id="ZbD-nz-Ktv"/>
+                            <constraint firstItem="O5u-vd-kwX" firstAttribute="top" secondItem="wfu-h2-kaI" secondAttribute="bottom" id="bTd-dy-Ioo"/>
                             <constraint firstItem="PVP-5J-oli" firstAttribute="bottom" secondItem="UfS-Qs-e9j" secondAttribute="bottom" id="hE8-4f-ebV"/>
-                            <constraint firstItem="PVP-5J-oli" firstAttribute="top" secondItem="wfu-h2-kaI" secondAttribute="bottom" id="xwJ-qm-F2w"/>
+                            <constraint firstItem="O5u-vd-kwX" firstAttribute="bottom" secondItem="PVP-5J-oli" secondAttribute="top" id="pPr-PU-RVe"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="ic_bookmark" id="dFE-HA-Ano">
@@ -669,6 +679,8 @@
                     <connections>
                         <outlet property="bookmarkCollectionView" destination="wfu-h2-kaI" id="0Ki-K5-bRn"/>
                         <outlet property="bookmarkTableView" destination="PVP-5J-oli" id="nIC-il-8LU"/>
+                        <outlet property="searchBookmark" destination="O5u-vd-kwX" id="DmQ-hG-2RD"/>
+                        <outlet property="searchBookmarkHeight" destination="fs5-2n-6eQ" id="tmS-z1-off"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L4W-pT-kL1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
