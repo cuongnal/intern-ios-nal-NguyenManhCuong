@@ -73,14 +73,24 @@ class HomeViewController : BaseViewController {
             self?.homeCollectionView.data = arrCategory
             self?.homeCollectionView.reloadData()
         })
+        searchBarHome.text = nil
+        searchBarHome.isTextSearching = false
     }
     
     func handlerCallback() {
         homeCollectionView.onTouchItemCallback = {[weak self] category in
-            self?.homeTableView.category = category
-            if URL(string: category.url) != nil {
-                self?.homeModel.fetchDataNews(category: category, callback: { (arrNews) in
-                    self?.homeTableView.setUpHomeTableView(arrNews: arrNews)
+            guard let self = self else {return}
+            self.homeTableView.category = category
+            guard URL(string: category.url) != nil else {return}
+            
+            if self.searchBarHome.isTextSearching == true{
+                self.homeModel.fetchDataNewsAndSearch(category: category, searchText: self.searchBarHome.text ?? "", callback: { (arrNews) in
+                    self.homeTableView.setUpHomeTableView(arrNews: arrNews)
+                })
+                
+            } else {
+                self.homeModel.fetchDataNews(category: category, callback: { (arrNews) in
+                    self.homeTableView.setUpHomeTableView(arrNews: arrNews)
                 })
             }
         }

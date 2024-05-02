@@ -62,7 +62,7 @@ class SettingViewController : BaseViewController{
     }
     func changeLanguages() {
         guard let p = storyboard?.instantiateViewController(withIdentifier: Constant.PICK_LANGUAGE_VIEW_CONTROLLER) as? PickLanguageViewController else { return  }
-        p.modalPresentationStyle = .overFullScreen
+        p.modalPresentationStyle = .formSheet
         p.callBackChangeLanguage = { (language) in
             if language == .english {
                 LanguageManager.changeLanguage(withTypeLanguage: .english)

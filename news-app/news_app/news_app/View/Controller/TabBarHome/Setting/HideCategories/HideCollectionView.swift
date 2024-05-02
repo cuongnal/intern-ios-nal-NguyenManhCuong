@@ -11,18 +11,18 @@ import UIKit
 class HideCollectionView : UICollectionView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
     var listItemShow : [Int] = []
     var typeSource : TypeSource?
-    private let flowLayout = AlightLeftCell()
     
     var data : [Category] = []
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.delegate = self
         self.dataSource = self
-        flowLayout.estimatedItemSize = AlightLeftCell.automaticSize
-        flowLayout.minimumInteritemSpacing = 5
-        self.collectionViewLayout = flowLayout
+        
     }
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.bounds.width
+        return CGSize(width: width/2 - 10, height: 40)
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
     }
@@ -31,7 +31,7 @@ class HideCollectionView : UICollectionView, UICollectionViewDelegateFlowLayout,
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CATEGORY_COLLECTION_VIEW_CELL, for: indexPath) as! CategoryCollectionViewCell
         
         cell.label.text = LanguageManager.getText(withString: data[indexPath.item].title)
-        
+        cell.label.numberOfLines = 0
         for (_,itemSelect) in listItemShow.enumerated() {
             if data[indexPath.item].index == itemSelect {
                 cell.setBackGround(flag: true)
@@ -60,25 +60,25 @@ class HideCollectionView : UICollectionView, UICollectionViewDelegateFlowLayout,
         print(listItemShow)
     }
     
-   
+    
 }
 
-class AlightLeftCell : UICollectionViewFlowLayout {
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-            guard let originalAttributes = super.layoutAttributesForElements(in: rect) else {
-                return nil
-            }
-            var leftMargin: CGFloat = 0.0
-            var lastY: Int = 0
-            return originalAttributes.map {
-                let changedAttribute = $0
-                if Int(changedAttribute.center.y.rounded()) != lastY {
-                    leftMargin = sectionInset.left
-                }
-                changedAttribute.frame.origin.x = leftMargin
-                lastY = Int(changedAttribute.center.y.rounded())
-                leftMargin += changedAttribute.frame.width + minimumInteritemSpacing
-                return changedAttribute
-            }
-        }
-}
+//class AlightLeftCell : UICollectionViewFlowLayout {
+//    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+//            guard let originalAttributes = super.layoutAttributesForElements(in: rect) else {
+//                return nil
+//            }
+//            var leftMargin: CGFloat = 0.0
+//            var lastY: Int = 0
+//            return originalAttributes.map {
+//                let changedAttribute = $0
+//                if Int(changedAttribute.center.y.rounded()) != lastY {
+//                    leftMargin = sectionInset.left
+//                }
+//                changedAttribute.frame.origin.x = leftMargin
+//                lastY = Int(changedAttribute.center.y.rounded())
+//                leftMargin += changedAttribute.frame.width + minimumInteritemSpacing
+//                return changedAttribute
+//            }
+//        }
+//}

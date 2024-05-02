@@ -27,6 +27,21 @@ class HomeModel : BaseModel {
             }
         )
     }
+    func fetchDataNewsAndSearch(category : Category, searchText string : String, callback : @escaping (([News]) -> Void)) {
+        excuteTask(
+            task: { [weak self] in
+                let arr =  self?.newsRepository.getNewsOfCategory(category: category)
+                self?.arrNews.removeAll()
+                self?.arrNews.append(contentsOf: arr ?? [])
+                return arr
+            },
+            complete: { (arr) in
+                self.searchNewsWithCategory(withArrayTextSearch: string, callBack: { arrNews in
+                    callback(arrNews)
+                })
+            }
+        )
+    }
     func refreshDataNewsRemote(category : Category, callback : @escaping ( ([News]) -> Void)) {
         excuteNetwork(
             task: { [weak self] in

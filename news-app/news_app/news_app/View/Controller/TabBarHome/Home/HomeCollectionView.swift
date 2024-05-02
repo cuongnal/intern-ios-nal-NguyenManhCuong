@@ -42,7 +42,7 @@ class HomeCollectionView : CategoryCollectionView, UICollectionViewDragDelegate,
     
     func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
         guard let destinationIndexPath = coordinator.destinationIndexPath else {return} // kiểm tra xem có vị trí đích để thả không
-        
+
         let items = coordinator.items
         if let item = items.first, let draggedIndexPath = item.sourceIndexPath {
             
@@ -80,6 +80,20 @@ class HomeCollectionView : CategoryCollectionView, UICollectionViewDragDelegate,
         callbackDragDropItem?(self.data)
     }
 
+}
+
+@propertyWrapper
+struct CustomAttribute {
+    private var value: String
+
+    init() {
+        self.value = ""
+    }
+
+    var wrappedValue: String {
+        get { return value }
+        set { value = "Custom: \(newValue)" }
+    }
 }
 
 
