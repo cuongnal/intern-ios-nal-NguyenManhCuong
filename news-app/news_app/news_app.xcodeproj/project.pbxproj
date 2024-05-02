@@ -83,8 +83,6 @@
 		CEA2C1FF2BC3E14100C4B2B3 /* CDCategoryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2C1FE2BC3E14100C4B2B3 /* CDCategoryExtension.swift */; };
 		CEC12A652BC7E49100A6CF21 /* BookmarkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC12A642BC7E49100A6CF21 /* BookmarkModel.swift */; };
 		CEC12A672BC7E4A900A6CF21 /* BookmarkTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC12A662BC7E4A900A6CF21 /* BookmarkTableView.swift */; };
-		CEC12A6B2BC7E70400A6CF21 /* BookmarkCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC12A6A2BC7E70400A6CF21 /* BookmarkCollectionView.swift */; };
-		CEC12A6D2BC7E71C00A6CF21 /* BookmarkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC12A6C2BC7E71C00A6CF21 /* BookmarkCollectionViewCell.swift */; };
 		CEC12A722BC7E91A00A6CF21 /* NewsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC12A712BC7E91A00A6CF21 /* NewsTableView.swift */; };
 		CEC12A742BC7EA6F00A6CF21 /* CategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC12A732BC7EA6F00A6CF21 /* CategoryCollectionView.swift */; };
 		CEC12A762BC7EB6100A6CF21 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC12A752BC7EB6100A6CF21 /* CategoryCollectionViewCell.swift */; };
@@ -208,8 +206,6 @@
 		CEA2C1FE2BC3E14100C4B2B3 /* CDCategoryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCategoryExtension.swift; sourceTree = "<group>"; };
 		CEC12A642BC7E49100A6CF21 /* BookmarkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkModel.swift; sourceTree = "<group>"; };
 		CEC12A662BC7E4A900A6CF21 /* BookmarkTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkTableView.swift; sourceTree = "<group>"; };
-		CEC12A6A2BC7E70400A6CF21 /* BookmarkCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCollectionView.swift; sourceTree = "<group>"; };
-		CEC12A6C2BC7E71C00A6CF21 /* BookmarkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEC12A712BC7E91A00A6CF21 /* NewsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableView.swift; sourceTree = "<group>"; };
 		CEC12A732BC7EA6F00A6CF21 /* CategoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionView.swift; sourceTree = "<group>"; };
 		CEC12A752BC7EB6100A6CF21 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -443,8 +439,6 @@
 		ADA0BAE72BB2B24A007B39A8 /* Bookmark */ = {
 			isa = PBXGroup;
 			children = (
-				CEC12A6A2BC7E70400A6CF21 /* BookmarkCollectionView.swift */,
-				CEC12A6C2BC7E71C00A6CF21 /* BookmarkCollectionViewCell.swift */,
 				CEC12A662BC7E4A900A6CF21 /* BookmarkTableView.swift */,
 				ADA0BAE82BB2B3A4007B39A8 /* BookmarkViewController.swift */,
 				CEC12A642BC7E49100A6CF21 /* BookmarkModel.swift */,
@@ -940,7 +934,6 @@
 				AD9B873F2BBA946C0052A68A /* PickLanguageViewController.swift in Sources */,
 				5E8AB7D52BDA0B1B00D4A4F4 /* HideCategoriesViewController.swift in Sources */,
 				CE1DADDC2BBFA8AF00F87A47 /* UsersRepository.swift in Sources */,
-				CEC12A6D2BC7E71C00A6CF21 /* BookmarkCollectionViewCell.swift in Sources */,
 				ADA0BAE62BB2A26F007B39A8 /* TabBarController.swift in Sources */,
 				5E94B2332BD78E7200C80A7B /* LanguageManager.swift in Sources */,
 				CEC541E72BC788C800D8691B /* CDCategory+CoreDataProperties.swift in Sources */,
@@ -976,7 +969,6 @@
 				CEC541E42BC788C800D8691B /* CDUser+CoreDataClass.swift in Sources */,
 				ADA2F7132BB2C3E0009CB25C /* PolicyViewController.swift in Sources */,
 				CEC541F32BC795FF00D8691B /* SearchTableView.swift in Sources */,
-				CEC12A6B2BC7E70400A6CF21 /* BookmarkCollectionView.swift in Sources */,
 				5ECBFE2C2BD61FB900462756 /* SearchBarHome.swift in Sources */,
 				CE9A31AC2BC01F070035C298 /* User.swift in Sources */,
 			);

@@ -122,7 +122,7 @@ enum KeyText: String {
     case incorrectPassword = "INCORRECT_PASSWORD"
     case passwordIsNotIncorrectFormat = "PASSWORD_IS_NOT_INCORRECT_FORMAT"
     case incorrectEmail = "INCORRECT_EMAIL"
-    case emailInValidate = "Email invalidate"
+    case emailInValidate = "EMAIL_INVALIDATE"
     case paragraph1 = "PARAGRAP_1"
     case paragraph2 = "PARAGRAP_2"
     case paragraph1Detail = "PARAGRAP_1_DETAIL"

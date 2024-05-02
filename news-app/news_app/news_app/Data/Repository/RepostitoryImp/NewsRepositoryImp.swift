@@ -139,5 +139,16 @@ class NewsRepositoryImp : NewsRepository {
             print("Function:   \(#function)   line: \(#line)   error: \(err)")
         }
     }
+    func getAllBookmarkWithUser(withUserLogin user: User) -> [News] {
+        do {
+            let arrCDNews = try CDNews.getAllBookmarkWithUser(withUser: user)
+            return DataMapper.MapCDNewsToEntity(withArrayCDNews: arrCDNews)
+        }
+        catch let err {
+            print("Function:   \(#function)   line: \(#line)   error: \(err)")
+            return []
+        }
+    }
+    
     
 }

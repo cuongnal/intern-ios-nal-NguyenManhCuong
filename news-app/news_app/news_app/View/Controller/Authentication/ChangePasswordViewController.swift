@@ -35,6 +35,9 @@ class ChangePasswordViewController : BaseViewController {
         authenModel.delegate = self
         setButton()
         setTextLabel()
+        inputNewPassword.enablePasswordToggle()
+        inputConfirmPassword.enablePasswordToggle()
+        inputCurrentPassword.enablePasswordToggle()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -89,9 +92,10 @@ class ChangePasswordViewController : BaseViewController {
     @IBAction func editingChangeConfirmPassword(_ sender: Any) {
         labelConfirmPassword.alpha = inputConfirmPassword.text?.isEmpty == true ? 0 : 1
         
-        if authenModel.checkErrorPassword(password: inputConfirmPassword.text)
-            || inputNewPassword.text?.isEmpty == true
-        {
+        
+        if (authenModel.checkErrorPassword(password: inputConfirmPassword.text)
+            && inputConfirmPassword.text == inputNewPassword.text)
+            || inputNewPassword.text?.isEmpty == true {
             errorConfirmPassword.alpha = 0
         }
         else {

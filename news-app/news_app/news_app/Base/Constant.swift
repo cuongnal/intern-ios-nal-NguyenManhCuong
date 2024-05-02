@@ -11,7 +11,7 @@ import UIKit
 struct Constant {
     static let IC_PASSWORD_VISIBLE : String = "ic_visibility"
     static let IC_PASSWORD_VISIBLE_OFF : String = "ic_visibility_off"
-    static let COLOR_SIGN_UP_GRAY = UIColor.init(red: 238/255, green: 238/255, blue: 238/255, alpha: 1)
+    static let COLOR_SIGN_UP_GRAY = UIColor.init(red: 218/255, green: 218/255, blue: 218/255, alpha: 1)
     static let COLOR_WHITE = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 255/255)
     static let COLOR_BLACK = UIColor.black
     static let KEY_ITEM_NEWS = "key_item_news"

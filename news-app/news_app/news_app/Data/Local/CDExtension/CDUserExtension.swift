@@ -41,6 +41,6 @@ extension CDUser {
         cdUser?.listItemShow = user.listItemShow
         
         try AppDelegate.context.save()
-        
     }
+    
 }

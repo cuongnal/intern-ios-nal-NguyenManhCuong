@@ -31,4 +31,6 @@ protocol NewsRepository {
     func deleteBookmarkItem(withNews news : News, withUserLogin user : User)
     
     func deleteNewsOfCategory(withCategory category : Category)
+    
+    func getAllBookmarkWithUser(withUserLogin user : User) -> [News] 
 }

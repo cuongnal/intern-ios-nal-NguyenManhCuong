@@ -76,7 +76,7 @@
 "CURRENT_PASSWORD" = "Nhập mật khẩu cũ";
 "NEW_PASSWORD" = "Nhập mật khẩu mới";
 "CONFIRM_PASSWORD" = "Nhập lại mật khẩu";
-"PASSWORD_ARE_NOT_THE_SAME" = "Mật khẩu không giống nhau";
+"PASSWORD_ARE_NOT_THE_SAME" = "Mật khẩu không giống nhau hoặc sai định dạng";
 
 "ERROR_PASSWORD" = "Mật khẩu không chính xác";
 "ERROR_EMAIL_IS_NOT_REGISTER" = "Email chưa được đăng ký";
@@ -114,6 +114,8 @@
 
 "INCORRECT_PASSWORD" = "Mật khẩu không hợp lệ";
 "INCORRECT_EMAIL" = "Email không hợp lệ";
+
+"EMAIL_INVALIDATE" = "Email không hợp lệ";
 "INPUT_EMAIL_TO_BE_SENT_RESET_PASSWORD" = "Nhập vào email của bạn để nhận liên kết thay đổi mật khẩu";
 "DID_NOT_RECEIVE_AN_EMAIL" = "Chưa nhận được email ?";
 "RE_SEND" = "Gửi lại";

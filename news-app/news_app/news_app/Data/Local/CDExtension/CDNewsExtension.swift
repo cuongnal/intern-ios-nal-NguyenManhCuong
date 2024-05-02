@@ -148,6 +148,15 @@ extension CDNews {
             try AppDelegate.context.save()
         }
     }
-    
+    public class func getAllBookmarkWithUser(withUser user : User) throws -> [CDNews] {
+        let cdUser = try CDUser.fetchUserById(idUser: user.idUser!)
+        let a = CDNews.fetchRequest()
+        if let cdUser = cdUser {
+            let preFirst = NSPredicate(format: "ANY saveBookmark == %@", cdUser)
+            a.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [preFirst])
+            return try AppDelegate.context.fetch(a)
+        }
+        return []
+    }
     
 }

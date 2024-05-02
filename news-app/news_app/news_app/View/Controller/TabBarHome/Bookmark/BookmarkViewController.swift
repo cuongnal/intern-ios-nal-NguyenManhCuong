@@ -13,14 +13,12 @@ class BookmarkViewController : BaseViewController {
     @IBOutlet weak var searchBookmarkHeight: NSLayoutConstraint!
     @IBOutlet weak var searchBookmark: SearchBarHome!
     
-    @IBOutlet weak var bookmarkCollectionView: BookmarkCollectionView!
     @IBOutlet weak var bookmarkTableView: BookmarkTableView!
     var popoverTableViewCell : PopoverTableViewCellVC!
     let bookmarkModel = BookmarkModel(newsRepository: NewsRepositoryImp(), categoryRepository: CategoryRepositoryImp() )
     override func viewDidLoad() {
         super.viewDidLoad()
         bookmarkTableView.register(UINib(nibName: Constant.NEWS_TABLE_VIEW_CELL, bundle: .main), forCellReuseIdentifier: Constant.NEWS_TABLE_VIEW_CELL)
-        bookmarkCollectionView.register(UINib(nibName: Constant.CATEGORY_COLLECTION_VIEW_CELL, bundle: .main), forCellWithReuseIdentifier: Constant.CATEGORY_COLLECTION_VIEW_CELL)
         
         popoverTableViewCell = PopoverTableViewCellVC(nibName: "PopoverViewController", bundle: nil) as PopoverTableViewCellVC
         searchBookmark.placeholder = LanguageManager.getText(withKey: .search)
@@ -71,31 +69,11 @@ class BookmarkViewController : BaseViewController {
         }
     }
     func setUpView() {
-        bookmarkModel.getCategoryAndNews(callback: {[weak self](arrCategory) in
-            self?.bookmarkCollectionView.data = arrCategory
-            self?.bookmarkCollectionView.reloadData()
-            guard arrCategory.count > 0 else {
-                self?.bookmarkTableView.data.removeAll()
-                self?.bookmarkTableView.reloadData()
-                self?.searchBookmark.isHidden = true
-                return
-            }
-            self?.bookmarkModel.getBookmarkOfCategory(withCategory: arrCategory[0], callback: {[weak self] (arrNews)in
-                guard let arrNews = arrNews else {return}
-                self?.bookmarkTableView.data = arrNews
-                self?.searchBookmark.isHidden = false
-                self?.bookmarkTableView.reloadData()
-            })
+        bookmarkModel.getAllBookmarkOfUser(callback: { [weak self] arrNews in
+            self?.bookmarkTableView.data.removeAll()
+            self?.bookmarkTableView.data.append(contentsOf: arrNews ?? [])
+            self?.bookmarkTableView.reloadData()
         })
-        // xử lý callBack khi người dùng bấm nút
-        bookmarkCollectionView.onTouchItemCallback = {[weak self] (item) in
-            self?.bookmarkModel.getBookmarkOfCategory(withCategory: item, callback: { [weak self] (arrNews) in
-                guard let arrNews = arrNews else {return}
-                self?.bookmarkTableView.data = arrNews
-                self?.bookmarkTableView.category = item
-                self?.bookmarkTableView.reloadData()
-            })
-        }
         bookmarkTableView.onTouchNewsCallback = { [weak self] (itemNews) in
             self?.openWebKitView(item: itemNews)
         }
@@ -138,16 +116,12 @@ extension BookmarkViewController {
         }
     }
     func unBookmark(news : News) {
-        bookmarkModel.unBookmarkNews(withNews: news, callBack: { [weak self] (arr) in
+        self.bookmarkModel.unBookmarkNews(withNews: news, callBack: { [weak self] (arr) in
             if arr.count == 0{
                 self?.setUpView()
             }
             self?.bookmarkTableView.data.removeAll(where: {$0.idNews == news.idNews})
             self?.bookmarkTableView.reloadData()
-            guard let i = self?.bookmarkCollectionView.oldSelectedItemAt.item else {return}
-            if i > 0 {
-                self?.bookmarkCollectionView.oldSelectedItemAt = IndexPath(row: 0, section: 0)
-            }
         } )
     }
     func shareNews(news : News) {
