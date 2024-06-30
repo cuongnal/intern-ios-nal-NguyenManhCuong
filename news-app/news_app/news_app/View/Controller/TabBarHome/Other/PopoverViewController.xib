@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,56 +13,83 @@
             <connections>
                 <outlet property="btnFirst" destination="HhR-Ah-wnP" id="Esj-nA-JS7"/>
                 <outlet property="btnSecond" destination="EJZ-qm-1fJ" id="qCy-pU-8YM"/>
+                <outlet property="iconBookmark" destination="SPV-kr-R5L" id="qRm-BU-fqx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" restorationIdentifier="PopoverNotification" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="180" height="135"/>
+            <rect key="frame" x="0.0" y="0.0" width="160" height="135"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HhR-Ah-wnP">
-                    <rect key="frame" x="0.0" y="48" width="180" height="45"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="45" id="abn-dU-TIg"/>
-                    </constraints>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HhR-Ah-wnP" userLabel="BtnFirst">
+                    <rect key="frame" x="44" y="48" width="116" height="43.5"/>
                     <color key="tintColor" systemColor="darkTextColor"/>
                     <state key="normal">
                         <attributedString key="attributedTitle"/>
                     </state>
                     <connections>
-                        <action selector="touchFirst:" destination="-1" eventType="touchUpInside" id="bDp-D4-TMT"/>
+                        <action selector="touchShare:" destination="-1" eventType="touchUpInside" id="MxO-cL-Fa0"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EJZ-qm-1fJ">
-                    <rect key="frame" x="0.0" y="93" width="180" height="45"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_share" translatesAutoresizingMaskIntoConstraints="NO" id="WIm-3N-Kwy">
+                    <rect key="frame" x="10" y="58" width="24" height="24"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="45" id="5uq-gD-nTR"/>
+                        <constraint firstAttribute="height" constant="24" id="HPu-Qi-ZPT"/>
+                        <constraint firstAttribute="width" constant="24" id="aD8-dL-hE5"/>
                     </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_bookmark" translatesAutoresizingMaskIntoConstraints="NO" id="SPV-kr-R5L">
+                    <rect key="frame" x="10" y="101.5" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="QPA-lQ-zqv"/>
+                        <constraint firstAttribute="height" constant="24" id="lec-cx-6gC"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EJZ-qm-1fJ" userLabel="BtnSecond">
+                    <rect key="frame" x="44" y="91.5" width="116" height="43.5"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal">
                         <attributedString key="attributedTitle"/>
                     </state>
                     <connections>
-                        <action selector="touchSecond:" destination="-1" eventType="touchUpInside" id="MeY-To-k1g"/>
+                        <action selector="touchBookmarkOrUnBookmark:" destination="-1" eventType="touchUpInside" id="dde-18-noq"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTv-aJ-RX1">
+                    <rect key="frame" x="10" y="91.5" width="150" height="0.5"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.29999999999999999" id="f6p-mF-Kjq"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="HhR-Ah-wnP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="7En-v7-6Wb"/>
-                <constraint firstItem="EJZ-qm-1fJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BmI-Cx-pkd"/>
-                <constraint firstItem="EJZ-qm-1fJ" firstAttribute="top" secondItem="HhR-Ah-wnP" secondAttribute="bottom" id="JLe-Cl-ayL"/>
-                <constraint firstItem="HhR-Ah-wnP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="X0T-ia-K0z"/>
-                <constraint firstAttribute="trailing" secondItem="HhR-Ah-wnP" secondAttribute="trailing" id="hUJ-3T-Y3Y"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EJZ-qm-1fJ" secondAttribute="trailing" id="pab-mi-H60"/>
+                <constraint firstItem="WIm-3N-Kwy" firstAttribute="centerY" secondItem="HhR-Ah-wnP" secondAttribute="centerY" id="93c-1f-Jmv"/>
+                <constraint firstItem="WIm-3N-Kwy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="AjE-ou-RwZ"/>
+                <constraint firstItem="SPV-kr-R5L" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="Hpf-Zz-zU1"/>
+                <constraint firstItem="HhR-Ah-wnP" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="1:2" id="PVK-gM-Qtp"/>
+                <constraint firstItem="SPV-kr-R5L" firstAttribute="centerY" secondItem="EJZ-qm-1fJ" secondAttribute="centerY" id="Sx5-wO-xoX"/>
+                <constraint firstItem="HhR-Ah-wnP" firstAttribute="leading" secondItem="WIm-3N-Kwy" secondAttribute="trailing" constant="10" id="V52-MK-plP"/>
+                <constraint firstItem="HhR-Ah-wnP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="X2q-Z3-Use"/>
+                <constraint firstItem="EJZ-qm-1fJ" firstAttribute="top" secondItem="HhR-Ah-wnP" secondAttribute="bottom" id="fdK-wK-yNc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HhR-Ah-wnP" secondAttribute="trailing" id="hUJ-3T-Y3Y"/>
+                <constraint firstItem="QTv-aJ-RX1" firstAttribute="top" secondItem="HhR-Ah-wnP" secondAttribute="bottom" id="nw7-mw-sPI"/>
+                <constraint firstAttribute="trailing" secondItem="QTv-aJ-RX1" secondAttribute="trailing" id="sQL-E2-uqg"/>
+                <constraint firstItem="EJZ-qm-1fJ" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="1:2" id="syk-sc-xfh"/>
+                <constraint firstItem="QTv-aJ-RX1" firstAttribute="leading" secondItem="SPV-kr-R5L" secondAttribute="leading" id="wrt-Gm-rpX"/>
+                <constraint firstItem="EJZ-qm-1fJ" firstAttribute="leading" secondItem="SPV-kr-R5L" secondAttribute="trailing" constant="10" id="xRg-tj-dR8"/>
+                <constraint firstAttribute="trailing" secondItem="EJZ-qm-1fJ" secondAttribute="trailing" id="zfX-se-P5k"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="131.8840579710145" y="149.66517857142856"/>
         </view>
     </objects>
     <resources>
+        <image name="ic_bookmark" width="25" height="24"/>
+        <image name="ic_share" width="24" height="24"/>
         <systemColor name="darkTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

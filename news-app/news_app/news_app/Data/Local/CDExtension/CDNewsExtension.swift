@@ -51,12 +51,17 @@ extension CDNews {
     }
     
     public class func saveSentNewsWithUser (withNews news : News, withUser user : User) throws {
-        let cdUser = try CDUser.fetchUserById(idUser: user.idUser!)
-        let cdNews = try CDNews.getCDNews(withNewsEntity: news)
-        guard let cdNews = cdNews else {
+        guard let cdUser = try CDUser.fetchUserById(idUser: user.idUser!),
+              let cdNews = try CDNews.getCDNews(withNewsEntity: news) else {
             return
         }
-        cdUser?.addToSentNews(cdNews)
+        if let sentNewsSet = cdUser.sentNews {
+            let sentNewsArray = sentNewsSet.array as! [CDNews]
+            if let existingIndex = sentNewsArray.firstIndex(of: cdNews) {
+                cdUser.removeFromSentNews(at: existingIndex)
+            }
+        }
+        cdUser.insertIntoSentNews(cdNews, at: 0)
         try AppDelegate.context.save()
     }
     public class func saveBookmarkWithUser(withNews news : News , withUser user : User) throws -> Bool{
@@ -66,7 +71,7 @@ extension CDNews {
             return false
         }
         try AppDelegate.context.performAndWait {
-            cdUser?.addToSaveBookmark(cdNews)
+            cdUser?.insertIntoSaveBookmark(cdNews, at: 0)
             try AppDelegate.context.save()
         }
         return true
@@ -74,19 +79,15 @@ extension CDNews {
     
     public class func getSentWithUser(withUser user : User) throws -> [CDNews] {
         let cdUser = try CDUser.fetchUserById(idUser: user.idUser!)
-        let a = CDNews.fetchRequest()
-        if let cdUser = cdUser {
-            a.predicate = NSPredicate(format: "ANY sentNews == %@", cdUser)
-            return try AppDelegate.context.fetch(a)
+        if let cdUser = cdUser, let sentNews = cdUser.sentNews?.array as? [CDNews] {
+            return sentNews
         }
         return []
     }
     public class func getBookmarkWithUser(withUser user : User) throws -> [CDNews] {
         let cdUser = try CDUser.fetchUserById(idUser: user.idUser!)
-        let a = CDNews.fetchRequest()
         if let cdUser = cdUser {
-            a.predicate = NSPredicate(format: "ANY saveBookmark == %@", cdUser)
-            return try AppDelegate.context.fetch(a)
+            return cdUser.saveBookmark?.array as? [CDNews] ?? []
         }
         return []
     }
@@ -152,9 +153,7 @@ extension CDNews {
         let cdUser = try CDUser.fetchUserById(idUser: user.idUser!)
         let a = CDNews.fetchRequest()
         if let cdUser = cdUser {
-            let preFirst = NSPredicate(format: "ANY saveBookmark == %@", cdUser)
-            a.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [preFirst])
-            return try AppDelegate.context.fetch(a)
+            return cdUser.saveBookmark?.array as? [CDNews] ?? []
         }
         return []
     }

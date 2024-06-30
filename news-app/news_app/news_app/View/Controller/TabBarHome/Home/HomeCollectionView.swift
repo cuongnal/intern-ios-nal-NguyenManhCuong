@@ -82,18 +82,5 @@ class HomeCollectionView : CategoryCollectionView, UICollectionViewDragDelegate,
 
 }
 
-@propertyWrapper
-struct CustomAttribute {
-    private var value: String
-
-    init() {
-        self.value = ""
-    }
-
-    var wrappedValue: String {
-        get { return value }
-        set { value = "Custom: \(newValue)" }
-    }
-}
 
 

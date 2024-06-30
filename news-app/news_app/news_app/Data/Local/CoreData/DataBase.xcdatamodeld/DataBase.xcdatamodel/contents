@@ -18,15 +18,15 @@
         <attribute name="pubDate" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="categoriesNews" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDCategory" inverseName="categoriesNews" inverseEntity="CDCategory"/>
-        <relationship name="saveBookmark" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDUser" inverseName="saveBookmark" inverseEntity="CDUser"/>
-        <relationship name="sentNews" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDUser" inverseName="sentNews" inverseEntity="CDUser"/>
+        <relationship name="saveBookmark" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="CDUser" inverseName="saveBookmark" inverseEntity="CDUser"/>
+        <relationship name="sentNews" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="CDUser" inverseName="sentNews" inverseEntity="CDUser"/>
     </entity>
     <entity name="CDUser" representedClassName="CDUser" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="idUser" attributeType="String"/>
         <attribute name="listIndexCategory" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="Dictionary&lt;String , Array&lt;Int&gt; &gt;"/>
         <attribute name="listItemShow" attributeType="Transformable" customClassName="Dictionary&lt;String , Array&lt;Int&gt; &gt;"/>
-        <relationship name="saveBookmark" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDNews" inverseName="saveBookmark" inverseEntity="CDNews"/>
-        <relationship name="sentNews" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDNews" inverseName="sentNews" inverseEntity="CDNews"/>
+        <relationship name="saveBookmark" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="CDNews" inverseName="saveBookmark" inverseEntity="CDNews"/>
+        <relationship name="sentNews" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="CDNews" inverseName="sentNews" inverseEntity="CDNews"/>
     </entity>
 </model>

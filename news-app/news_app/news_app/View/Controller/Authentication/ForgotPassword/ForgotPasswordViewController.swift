@@ -41,9 +41,7 @@ class ForgotPasswordViewController : BaseViewController{
             else {
                 self?.showAlert(message: LanguageManager.getText(withKey: .invalidEmail), titleAction: .oke, action: .cancel)
             }
-            
         })
-
     }
     @IBAction func emailEditingChanged(_ sender : Any) {
         labelEmail.alpha = inputEmail.text?.isEmpty == true ? 0 : 1

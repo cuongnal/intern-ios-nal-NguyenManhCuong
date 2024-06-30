@@ -2,7 +2,7 @@
 //  CDCategory+CoreDataProperties.swift
 //  news_app
 //
-//  Created by Manhcuong on 19/04/2024.
+//  Created by Manhcuong on 02/05/2024.
 //
 //
 

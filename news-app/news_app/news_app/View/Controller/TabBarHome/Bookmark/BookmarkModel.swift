@@ -19,27 +19,6 @@ class BookmarkModel : BaseModel {
         self.categoryRepository = categoryRepository
     }
     
-    func getCategoryAndNews(callback : @escaping (([Category]) -> Void) ) {
-        excuteTask(task: { [weak self] in
-            let arrNews = self?.newsRepository.getBookmarkOfUser(withUserLogin: UserDefaults.getUser()!)
-            let arrUUID = self?.filterCategory(arrNews: arrNews)
-            guard let arrUUID = arrUUID else {return}
-            let arrCate = self?.categoryRepository.getCategoryWithUUID(withUUIDs: arrUUID)
-            self?.arrCategory = arrCate ?? []
-        }, complete: { [self] _ in
-            callback(arrCategory)
-        })
-    }
-    func getBookmarkOfCategory(withCategory cate: Category, callback : @escaping (([News]?) -> Void)) {
-        excuteTask(task: { [weak self] in
-            let arr = self?.newsRepository.getBookmarkOfCategory(withUserLogin: UserDefaults.getUser()!, category: cate)
-            self?.arrNews.removeAll()
-            self?.arrNews.append(contentsOf: arr ?? [])
-            return arr
-        }, complete: { (arrNewsOfCategory) in
-            callback(arrNewsOfCategory)
-        })
-    }
     func getAllBookmarkOfUser(callback : @escaping (([News]?) -> Void)) {
         excuteTask(task: { [weak self] in
             let arr = self?.newsRepository.getAllBookmarkWithUser(withUserLogin: UserDefaults.getUser()!)
